@@ -6,13 +6,61 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>煤价</ion-title>
-  </ion-navbar>
+  <ion-toolbar no-border-top>
+    <ion-searchbar color="primary"
+                   [(ngModel)]="queryText"
+                   (ionInput)="doQuery()"
+                   placeholder="查询">
+    </ion-searchbar>
+  </ion-toolbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-list style="margin-bottom: 0;">
+    <ion-item>
+      <ion-label>煤种</ion-label>
+      <ion-select [(ngModel)]="coalType" interface="popover" (ionChange)="onCoalTypeChange()">
+        <ion-option value="mm" (select)="stpSelect()">面煤</ion-option>
+        <ion-option value="25z">2-5籽</ion-option>
+        <ion-option value="ym">原煤</ion-option>
+        <ion-option value="38k">3-8块</ion-option>
+        <ion-option value="49k">4-9块</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <ion-segment [(ngModel)]="priceType" (ionChange)="changePriceType()" padding >
+    <ion-segment-button value="coal">
+      矿方价
+    </ion-segment-button>
+    <ion-segment-button value="saler">
+      代发价
+    </ion-segment-button>
+  </ion-segment>
+
+  <button ion-item (click)="goToSessionDetail(session)" *ngFor="let coal of coalList" style="font-size: 12px;">
+    <div>
+      <span style="color: blue">{{coal.store}}</span>
+      <span style="float: right">发热量：{{coal.hot}}大卡</span>
+    </div>
+    <div>
+      <span [ngSwitch]="priceType">
+        <span style="color: red;" *ngSwitchCase="'coal'">￥{{coal.coalPrice}}</span>
+        <span style="color: red;" *ngSwitchCase="'saler'">￥{{coal.salePrice}}</span>
+      </span>
+      <span  style="float: right">代发人：{{coal.salerName}} {{coal.salerPhone}}</span>
+    </div>
+  </button>
+
+  <ion-list-header [hidden]="coalList.length > 0">
+    没有查询的数据
+  </ion-list-header>
 
 </ion-content>

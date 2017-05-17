@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import {LoginPage} from "../login-page/login-page";
 
 /**
@@ -15,7 +15,7 @@ import {LoginPage} from "../login-page/login-page";
 })
 export class PersonPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController) {
   }
 
   ionViewDidLoad() {
@@ -27,6 +27,26 @@ export class PersonPage {
       name:"tom",
       job:"IT"
     })
+  }
+
+  logout() {
+    let alert = this.alertCtrl.create({
+      title: '温馨提示',
+      message: '你确定退出吗',
+      buttons: [
+        {
+          text: '确定',
+          handler: () => {
+            console.log('退出成功！');
+          }
+        },
+        {
+          text: '再看看',
+          role: 'cancel'
+        }
+      ]
+    });
+    alert.present();
   }
 
 }
