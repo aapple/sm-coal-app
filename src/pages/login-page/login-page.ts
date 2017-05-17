@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {CoalPricePage} from "../coal-price-page/coal-price-page";
 
 /**
  * Generated class for the LoginPage page.
@@ -19,6 +20,10 @@ export class LoginPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
+  }
+
+  login(){
+    this.navCtrl.push(CoalPricePage);
   }
 
 }

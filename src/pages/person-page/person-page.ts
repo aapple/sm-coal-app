@@ -22,7 +22,7 @@ export class PersonPage {
     console.log('ionViewDidLoad PersonPage');
   }
 
-  login(){
+  gotoLogin(){
     this.navCtrl.push(LoginPage, {
       name:"tom",
       job:"IT"

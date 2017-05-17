@@ -23,14 +23,14 @@
 
     <ion-item>
       <ion-input type="text" placeholder="输入验证码"></ion-input>
-      <button ion-button color="#bdbdbd" clear item-right>获取验证码</button>
+      <button ion-button color="light" clear item-right style="background: #bdbdbd">获取验证码</button>
     </ion-item>
 
 
   </ion-list>
 
   <div padding>
-    <button ion-button color="primary" block>验证手机</button>
+    <button ion-button color="primary" block (click)="login()">验证手机</button>
   </div>
 
 </ion-content>
