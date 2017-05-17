@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {LoginPage} from "../login-page/login-page";
 
 /**
  * Generated class for the PersonPage page.
@@ -19,6 +20,13 @@ export class PersonPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PersonPage');
+  }
+
+  login(){
+    this.navCtrl.push(LoginPage, {
+      name:"tom",
+      job:"IT"
+    })
   }
 
 }
