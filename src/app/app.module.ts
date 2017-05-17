@@ -32,7 +32,8 @@ import {InfoStorePage} from "../pages/info-store-page/info-store-page";
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp, {
-      tabsHideOnSubPages: true
+      tabsHideOnSubPages: true,
+      backButtonText: ''
     })
   ],
   bootstrap: [IonicApp],
