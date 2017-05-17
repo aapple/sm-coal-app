@@ -1,0 +1,19 @@
+<ion-list radio-group [(ngModel)]="fontFamily" (ionChange)="changeFontFamily()">
+  <ion-row>
+    <ion-col>
+      <button (click)="changeFontSize('smaller')" ion-item detail-none class="popover-text-button popover-text-smaller">A</button>
+    </ion-col>
+    <ion-col>
+      <button (click)="changeFontSize('larger')" ion-item detail-none class="popover-text-button popover-text-larger">A</button>
+    </ion-col>
+  </ion-row>
+  <ion-row class="popover-row-dots">
+    <ion-col *ngFor="let item of colorOptions">
+      <button (click)="changeBackground(item)" ion-button="popover-dot" ngClass="{{'popover-dot-'+item.name}}" [class.selected]="background == item.name"></button>
+    </ion-col>
+  </ion-row>
+  <ion-item *ngFor="let item of fontOptions; let key = index;">
+    <ion-label>{{item.title}}</ion-label>
+    <ion-radio value="{{key}}"></ion-radio>
+  </ion-item>
+</ion-list>
