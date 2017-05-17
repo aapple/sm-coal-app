@@ -18,19 +18,19 @@
   <ion-list>
 
     <ion-item>
-      <ion-input type="text" placeholder="输入手机号码"></ion-input>
+      <ion-input type="text" placeholder="输入手机号码" [(ngModel)]="phoneNumber" (keyup)="changePhoneNumber($event)"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-input type="text" placeholder="输入验证码"></ion-input>
-      <button ion-button color="light" clear item-right style="background: #bdbdbd">获取验证码</button>
+      <ion-input type="text" placeholder="输入验证码" [(ngModel)]="validateCode" (keyup)="changeValidateCode($event)"></ion-input>
+      <button ion-button [class]="canGetCode?'able-btn':'disable-btn'" clear item-right (click)="getvalidateCode()">{{codeText}}</button>
     </ion-item>
 
 
   </ion-list>
 
   <div padding>
-    <button ion-button color="primary" block (click)="login()">验证手机</button>
+    <button ion-button [color]="canLogin?'primary':'light'" block (click)="login()" >验证手机</button>
   </div>
 
 </ion-content>
