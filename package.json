@@ -1,7 +1,7 @@
 {
   "name": "ionic-hello-world",
-  "version": "0.0.0",
-  "author": "Ionic Framework",
+  "version": "1.0.0",
+  "author": "Yao Bin",
   "homepage": "http://ionicframework.com/",
   "private": true,
   "scripts": {
@@ -21,11 +21,14 @@
     "@angular/platform-browser": "4.1.0",
     "@angular/platform-browser-dynamic": "4.1.0",
     "@ionic-native/core": "3.7.0",
+    "@ionic-native/in-app-browser": "^3.9.2",
     "@ionic-native/splash-screen": "3.7.0",
     "@ionic-native/status-bar": "3.7.0",
     "@ionic/storage": "2.0.1",
     "ionic-angular": "3.2.1",
     "ionicons": "3.0.0",
+    "moment": "^2.15.1",
+    "ng2-translate": "^4.0.0",
     "rxjs": "5.1.1",
     "sw-toolbox": "3.6.0",
     "zone.js": "0.8.10"
@@ -40,8 +43,17 @@
     "cordova-plugin-statusbar",
     "cordova-plugin-splashscreen",
     "cordova-plugin-device",
-    "ionic-plugin-keyboard"
+    "ionic-plugin-keyboard",
+    "cordova-plugin-badge",
+    "cordova-plugin-camera",
+    "cordova-plugin-inappbrowser",
+    "cordova-plugin-file-transfer",
+    "cordova-plugin-ios-microphone-permissions",
+    "jpush-phonegap-plugin"
   ],
-  "cordovaPlatforms": [],
+  "cordovaPlatforms": [
+    "android@6.2.2",
+    "ios@4.3.1"
+  ],
   "description": "sm-coal-app: An Ionic project"
 }

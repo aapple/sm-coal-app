@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      {{ 'user.Settings'  }}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list padding-top>
+
+    <button ion-item (click)="clearCacheHandler()">
+      <ion-icon name="trash" item-left></ion-icon>
+      {{ 'user.Clear Cache'  }}
+    </button>
+  </ion-list>
+
+  <ion-list>
+    <button ion-item [navPush]="HCAboutPage">
+      <ion-icon name="information-circle" item-left></ion-icon>
+      {{ 'user.About'  }}
+    </button>
+    <button ion-item (click)="openTermsPage()">
+      <ion-icon name="paper" item-left></ion-icon>
+      {{ 'user.Terms'  }}
+    </button>
+    <button ion-item [navPush]="HCGuidePage">
+      <ion-icon name="bulb" item-left></ion-icon>
+      {{ 'user.Guide'  }}
+    </button>
+    <button ion-item [navPush]="HCFeedbackPage">
+      <ion-icon name="paper-plane" item-left></ion-icon>
+      {{ 'user.Feedback'  }}
+    </button>
+  </ion-list>
+
+  <ion-list *ngIf="heyApp.authService.isAuth">
+    <button ion-item (click)="gotoLogOut()">
+      <ion-icon name="log-out" item-left></ion-icon>
+      {{ 'user.Log Out'  }}
+    </button>
+  </ion-list>
+</ion-content>
