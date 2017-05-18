@@ -59,9 +59,15 @@ export class LoginPage {
     if(!this.canLogin){
       return;
     }
-    //this.navCtrl.push(CoalPricePage);
-    this.storageService.writeLoginFlag(true);
-    this.presentToast("验证码错误，请重新输入");
+
+    let result = false;
+    if(result){
+      this.storageService.writeLoginFlag(true);
+      this.navCtrl.popToRoot();
+    } else {
+      this.presentToast("验证码错误，请重新输入");
+    }
+
   }
 
   getvalidateCode() {
