@@ -21,14 +21,14 @@
   <div padding style="background-color:#eee;">
     <ion-list>
       <form #commentForm="ngForm" (ngSubmit)="sendCommentHandler(commentForm)">
-          <ion-item *ngIf="!timelineComment">
-            <ion-textarea #inputComment [(ngModel)]="newComment.content" name="content" required ngModel rows="3" placeholder="{{ 'timeline.Say Something ...'  }}">
-            </ion-textarea>
-          </ion-item>
-          <ion-item *ngIf="timelineComment">
-            <ion-textarea #inputComment [(ngModel)]="newComment.content" name="content" required ngModel rows="3" placeholder="{{ 'timeline.Say Something To ...' :{user: timelineComment.author.nickname} }}">
-            </ion-textarea>
-          </ion-item>
+          <!--<ion-item *ngIf="!timelineComment">-->
+            <!--<ion-textarea #inputComment [(ngModel)]="newComment.content" name="content" required ngModel rows="3" placeholder="{{ 'timeline.Say Something ...'  }}">-->
+            <!--</ion-textarea>-->
+          <!--</ion-item>-->
+          <!--<ion-item *ngIf="timelineComment">-->
+            <!--<ion-textarea #inputComment [(ngModel)]="newComment.content" name="content" required ngModel rows="3" placeholder="{{ 'timeline.Say Something To ...' :{user: timelineComment.author.nickname} }}">-->
+            <!--</ion-textarea>-->
+          <!--</ion-item>-->
       </form>
     </ion-list>
   </div>

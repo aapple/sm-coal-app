@@ -27,6 +27,7 @@ export class MeSettingPage {
     public timelineService: TimelineService,
     public navCtrl: NavController,
     public userService: UserService,
+    public iab : InAppBrowser
   ) {
   }
 
@@ -61,6 +62,9 @@ export class MeSettingPage {
     if (this.heyApp.platform.is('cordova')) {
       //let browser = new InAppBrowser(url, '_system');
       //browser.show();
+
+      const browser = this.iab.create(url);
+      browser.show();
     } else {
       (<any> window).open(url, '_blank');
     }

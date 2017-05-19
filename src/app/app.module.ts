@@ -54,8 +54,8 @@ import { TopicModule } from '../modules/topic/topic.module';
     }),
     CommonModule,
     UserModule,
-    // NoticeModule,
-    // TimelineModule
+    NoticeModule,
+    TimelineModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

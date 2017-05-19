@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController, ViewController } from 'ionic-angular';
-import { ImagePicker, Transfer, Camera } from 'ionic-native';
+import { Transfer, FileUploadOptions, TransferObject } from '@ionic-native/transfer';
+import { Camera, CameraOptions } from '@ionic-native/camera';
+import { File } from '@ionic-native/file';
+import { ImagePicker } from '@ionic-native/image-picker';
 
 import { Timeline } from '../models/timeline.model';
 import { TimelineImg } from '../models/timelineImg.model';
@@ -37,7 +40,10 @@ export class TimelineCreatePage {
     public heyApp: AppService,
     public timelineService: TimelineService,
     public navCtrl: NavController,
-    public viewCtrl: ViewController
+    public viewCtrl: ViewController,
+    public imagePicker: ImagePicker,
+    public camera: Camera,
+    public transfer: Transfer
   ) {
   }
 
@@ -109,7 +115,7 @@ export class TimelineCreatePage {
       options.mediaType = 2;
     }
 
-    Camera.getPicture(options).then((result) => {
+    this.camera.getPicture(options).then((result) => {
       this.waiting = true;
 
       console.log('the file', result);
@@ -127,7 +133,7 @@ export class TimelineCreatePage {
       width: 1200,
       height: 1600,
     };
-    ImagePicker.getPictures(options).then((results) => {
+    this.imagePicker.getPictures(options).then((results) => {
       this.waiting = true;
 
       for (var i = 0; i < results.length; i++) {
@@ -141,14 +147,15 @@ export class TimelineCreatePage {
   //
   // upload imgs by file transfer
   uploadFileByFileTransfer(file, api) {
-    const fileTransfer = new Transfer();
-    let options: any;
+
+    let options: FileUploadOptions;
     options = {
        fileKey: 'uploads[]',
        fileName: file.replace(/^.*[\\\/]/, ''),
        headers: {},
     }
 
+    const fileTransfer: TransferObject = this.transfer.create();
     fileTransfer.upload(file, api, options)
     .then((ret) => {
       this.waiting = false;
