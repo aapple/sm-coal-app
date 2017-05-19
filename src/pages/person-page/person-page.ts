@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import {LoginPage} from "../login-page/login-page";
+import { HCAboutPage } from '../../modules/user/pages/hc-about';
 
 /**
  * Generated class for the PersonPage page.
@@ -27,6 +28,10 @@ export class PersonPage {
       name:"tom",
       job:"IT"
     })
+  }
+
+  gotoAbout(){
+    this.navCtrl.push(HCAboutPage)
   }
 
   logout() {

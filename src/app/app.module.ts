@@ -20,6 +20,12 @@ import {LocalStorageService} from "../providers/local-storage-service";
 import {SessionStorageService} from "../providers/session-storage-service";
 import {StorageService} from "../providers/storage-service";
 
+import { CommonModule } from '../modules/common/common.module';
+import { UserModule } from '../modules/user/user.module';
+import { NoticeModule } from '../modules/notice/notice.module';
+import { TimelineModule } from '../modules/timeline/timeline.module';
+import { TopicModule } from '../modules/topic/topic.module';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -45,7 +51,11 @@ import {StorageService} from "../providers/storage-service";
       modalLeave: 'modal-slide-out',
       tabsPlacement: 'bottom',
       pageTransition: 'ios-transition'
-    })
+    }),
+    CommonModule,
+    UserModule,
+    // NoticeModule,
+    // TimelineModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
