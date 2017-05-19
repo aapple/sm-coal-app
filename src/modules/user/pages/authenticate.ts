@@ -11,45 +11,20 @@ import { UserService} from '../services/user.service';
   templateUrl: 'authenticate.html'
 })
 export class AuthenticatePage {
-  //
-  logInModel: {phone?: number, password?: string} = {};
 
-  //
-  signUpModel: {nickname?: string, phone?: number, verificationCode?: number, password?: string} = {};
+  signUpModel: {phone?: number, verificationCode?: number} = {};
 
-  //
-  currentModal: string = 'LogIn';
-
-  //
   getVerificationCodeBtnText: string;
   getVerificationCodeBtnDisabled: boolean = false;
 
-  //
-  WeChatPlugin: any;
-
-  //
-  hasWeChatApp: boolean = false;
-
-
-  //
-  // constructor
   constructor(
     public heyApp: AppService,
     public userService: UserService,
     public viewCtrl: ViewController,
   ) {
-    this.getVerificationCodeBtnText = 'user.Get Verification Code';
 
-    if (this.heyApp.platform.is('cordova')) {
-      this.WeChatPlugin = (<any> window).Wechat;
-      this.WeChatPlugin.isInstalled(() => {
-        this.hasWeChatApp = true;
-      });
-    }
   }
 
-
-  //
   // cancel modal
   cancelModal() {
     this.viewCtrl.dismiss();
@@ -57,40 +32,11 @@ export class AuthenticatePage {
 
 
   //
-  // login handler
-  logInHandler(ngForm) {
-    let data: Object = {
-      phone: this.logInModel.phone,
-      password: this.logInModel.password,
-    };
-
-    if (ngForm.valid) {
-      this.heyApp.utilityComp.presentLoading();
-
-      this.userService.logIn(data)
-      .then(ret => {
-
-        this.heyApp.authService.logIn(ret);
-        this.viewCtrl.dismiss().then(() => {
-          this.heyApp.utilityComp.dismissLoading();
-          this.heyApp.utilityComp.presentToast(ret.nickname + ', ' + 'user.Welcome back',);
-        });
-      }, (data) => {
-        this.heyApp.utilityComp.dismissLoading();
-        this.heyApp.utilityComp.presentAlter({title: 'user.Log In Failed', subTitle: data._body});
-      });
-    }
-  }
-
-
-  //
   // sign up handler
   signUpHandler(ngForm) {
     let data: Object = {
-      nickname: this.signUpModel.nickname,
       phone: this.signUpModel.phone,
-      code: this.signUpModel.verificationCode,
-      password: this.signUpModel.password,
+      code: this.signUpModel.verificationCode
     };
 
     if (ngForm.valid) {
@@ -101,19 +47,18 @@ export class AuthenticatePage {
         this.heyApp.authService.logIn(ret);
         this.viewCtrl.dismiss().then(() => {
           this.heyApp.utilityComp.dismissLoading();
-          this.heyApp.utilityComp.presentToast('user.Sign Up Success, Welcome ' + ret.nickname);
+          this.heyApp.utilityComp.presentToast('验证成功, 欢迎你： ' + ret.nickname);
         });
       }, (data) => {
         this.heyApp.utilityComp.dismissLoading().then(() => {
           let body = JSON.parse(data._body);
-          this.heyApp.utilityComp.presentAlter({title: 'user.Sign Up Failed', subTitle: body[Object.keys(body)[0]]});
+          this.heyApp.utilityComp.presentAlter({title: '验证失败', subTitle: body[Object.keys(body)[0]]});
         });
       });
     }
   }
 
 
-  //
   // get verification code
   getVerificationCode() {
     this.userService.getVerificationCode({phone: this.signUpModel.phone}).then((res) => {
@@ -128,7 +73,6 @@ export class AuthenticatePage {
         } else {
           clearInterval(verificationCodeInterval);
           this.getVerificationCodeBtnDisabled = false;
-          this.getVerificationCodeBtnText = 'user.Get Verification Code';
         }
       }, 1000);
     }, (res) => {
@@ -136,44 +80,6 @@ export class AuthenticatePage {
     });
   }
 
-
-  //
-  //
-  // goto wechat oauth page
-  gotoWeChatOAuthPage() {
-    location.assign('/api/wechat/o-auth');
-  }
-
-
-  //
-  // login with wechat app
-  loginWithWeChatApp() {
-    this.heyApp.utilityComp.presentLoading();
-
-    let scope = "snsapi_userinfo";
-    let state = "_" + (+new Date());
-
-    this.WeChatPlugin.auth(scope, state, (response) => {
-
-        this.userService.logInWithWechat(response).then((ret) => {
-          this.heyApp.authService.logIn(ret);
-
-          this.viewCtrl.dismiss().then(() => {
-            this.heyApp.utilityComp.dismissLoading();
-            this.heyApp.utilityComp.presentToast(ret.nickname + ', ' + 'user.Welcome back',);
-          });
-        }, (data) => {
-          this.viewCtrl.dismiss().then(() => {
-            this.heyApp.utilityComp.dismissLoading();
-            this.heyApp.utilityComp.presentAlter({title: 'user.Log In Failed', subTitle: data._body});
-          });
-        });
-    }, function (reason) {
-        this.viewCtrl.dismiss().then(() => {
-          this.heyApp.utilityComp.presentAlter({title: 'user.Log In Failed', subTitle: reason});
-        });
-    });
-  }
 
   //
   // open terms page

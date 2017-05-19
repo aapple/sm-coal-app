@@ -1,7 +1,7 @@
 <ion-header class="hide">
   <ion-navbar>
     <ion-title>
-      {{ 'user.Me'  }}
+      我的
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -45,8 +45,8 @@
       </ion-col>
 
       <ion-col id="section-info" *ngIf="!heyApp.authService.isAuth" center class="text-center" tappable (click)="gotoMeProfilePage()">
-        <div class="nickname">{{ 'user.Hey Guys'  }}</div>
-        <div class="bio">{{ "user.Let's Login Now"  }}</div>
+        <div class="nickname">您好</div>
+        <div class="bio">立即登录</div>
       </ion-col>
 
       <ion-col width-10></ion-col>
@@ -55,33 +55,33 @@
 
   <ion-list>
     <ion-list-header>
-      {{ 'user.Mine'  }}
+      我的
     </ion-list-header>
 
     <button ion-item (click)="gotoMeProfilePage()">
       <ion-icon name="person" item-left></ion-icon>
-      {{ 'user.My Profile'  }}
+      我的资料
     </button>
 
     <button ion-item (click)="gotoMyTimelinePage()">
       <ion-icon name="flower" item-left></ion-icon>
-      {{ 'timeline.My Park'  }}
+      煤友圈
     </button>
 
     <button ion-item (click)="gotoMyTopicPage()">
       <ion-icon name="quote" item-left></ion-icon>
-      {{ 'topic.My Topic'  }}
+      后台维护
     </button>
   </ion-list>
 
   <ion-list>
     <ion-list-header>
-      {{ 'user.Setting'  }}
+      设置
     </ion-list-header>
 
     <button ion-item [navPush]="MeSettingPage">
       <ion-icon name="cog" item-left></ion-icon>
-      {{ 'user.Settings'  }}
+      设置
     </button>
   </ion-list>
 </ion-content>

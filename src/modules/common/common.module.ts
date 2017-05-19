@@ -51,14 +51,14 @@ export class CommonModule {
     public events: Events,
     public utilityComp: UtilityComponent
   ) {
-    // // subscribe events
-    // this.subscribeEvents();
-    //
-    // // get auth
-    // this.heyApp.authService.getIsAuth();
-    //
-    // // utilityComp register events
-    // this.utilityComp.registerEvents();
+    // subscribe events
+    this.subscribeEvents();
+
+    // get auth
+    this.heyApp.authService.getIsAuth();
+
+    // utilityComp register events
+    this.utilityComp.registerEvents();
   }
 
 

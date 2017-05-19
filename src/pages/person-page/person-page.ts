@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, Events } from 'ionic-angular';
 import {LoginPage} from "../login-page/login-page";
 import { HCAboutPage } from '../../modules/user/pages/hc-about';
+import {StorageService} from "../../providers/storage-service";
 
 /**
  * Generated class for the PersonPage page.
@@ -16,21 +17,29 @@ import { HCAboutPage } from '../../modules/user/pages/hc-about';
 })
 export class PersonPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController) {
+  isLogin : boolean = false;
+
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              private alertCtrl: AlertController,
+              public events: Events,
+              public storageService: StorageService) {
+
+    this.subscribeEvents();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PersonPage');
   }
 
-  gotoLogin(){
+  gotoLogin() {
     this.navCtrl.push(LoginPage, {
       name:"tom",
       job:"IT"
     })
   }
 
-  gotoAbout(){
+  gotoAbout() {
     this.navCtrl.push(HCAboutPage)
   }
 
@@ -52,6 +61,17 @@ export class PersonPage {
       ]
     });
     alert.present();
+  }
+
+  subscribeEvents() {
+    //
+    // subscribe app goto login
+    this.events.subscribe('app:gotoLogin', (params) => {
+      // this.heyApp.utilityComp.presentModal(AuthenticatePage);
+      //let modal = this.modalCtrl.create(AuthenticatePage)
+      //modal.present();
+      console.log('present login page');
+    });
   }
 
 }

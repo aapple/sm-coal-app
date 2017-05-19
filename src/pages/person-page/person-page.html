@@ -19,7 +19,7 @@
 
     <ion-list>
 
-      <button ion-item (click)="gotoAbout()">
+      <button ion-item >
         <ion-icon name="cart" item-left></ion-icon>
         个人设置
       </button>
@@ -30,6 +30,26 @@
       </button>
 
       <button ion-item>
+        <ion-icon name="medical" item-left></ion-icon>
+        代发价格维护
+      </button>
+
+      <button ion-item>
+        <ion-icon name="medical" item-left></ion-icon>
+        煤矿价格维护
+      </button>
+
+      <button ion-item>
+        <ion-icon name="medical" item-left></ion-icon>
+        兰炭价格维护
+      </button>
+
+      <button ion-item>
+        <ion-icon name="medical" item-left></ion-icon>
+        物流信息维护
+      </button>
+
+      <button ion-item (click)="gotoAbout()">
         <ion-icon name="cafe" item-left></ion-icon>
         关于
       </button>
@@ -39,12 +59,12 @@
         服务条款
       </button>
 
-      <button ion-item (click)="gotoLogin()">
+      <button ion-item (click)="gotoLogin()" [hidden]="isLogin">
         <ion-icon name="beer" item-left></ion-icon>
         登录
       </button>
 
-      <button ion-item (click)="logout()">
+      <button ion-item (click)="logout()" [hidden]="!isLogin">
         <ion-icon name="planet" item-left></ion-icon>
         退出
       </button>

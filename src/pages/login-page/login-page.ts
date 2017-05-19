@@ -60,7 +60,7 @@ export class LoginPage {
       return;
     }
 
-    let result = false;
+    let result = true;
     if(result){
       this.storageService.writeLoginFlag(true);
       this.navCtrl.popToRoot();
