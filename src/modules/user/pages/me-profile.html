@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      {{ 'user.Profile'  }}
+      我的资料
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -9,7 +9,7 @@
 <ion-content>
   <ion-list padding-top>
     <button ion-item [navPush]="MeProfileUpdatePage" [navParams]="{item: 'avatar'}">
-      <ion-label>{{ 'user.Avatar'  }}</ion-label>
+      <ion-label>头像</ion-label>
       <ion-avatar item-right>
         <img src="{{ heyApp.helper.getImg(heyApp.authService.userInfo.avatar) }}?imageView/2/w/100">
       </ion-avatar>
@@ -18,19 +18,19 @@
     <ion-item>
       <ion-label>ID</ion-label>
       <ion-note item-right>
-        {{ heyApp.authService.userInfo.id }}
+        ID
       </ion-note>
     </ion-item>
 
     <button ion-item [navPush]="MeProfileUpdatePage" [navParams]="{item: 'name'}">
-      <ion-label>{{ 'user.Nickname'  }}</ion-label>
+      <ion-label>昵称</ion-label>
       <ion-note item-right>
         {{ heyApp.authService.userInfo.nickname }}
       </ion-note>
     </button>
 
     <button ion-item [navPush]="MeProfileUpdatePage" [navParams]="{item: 'gender'}">
-      <ion-label>{{ 'user.Gender'  }}</ion-label>
+      <ion-label>性别</ion-label>
       <ion-note item-right>
         <span [hidden]="heyApp.authService.userInfo.gender != 1">{{ 'user.Male'  }}</span>
         <span [hidden]="heyApp.authService.userInfo.gender != 2">{{ 'user.Female'  }}</span>
@@ -38,7 +38,7 @@
     </button>
 
     <button ion-item [navPush]="MeProfileUpdatePage" [navParams]="{item: 'bio'}">
-      <ion-label>{{ 'user.Bio'  }}</ion-label>
+      <ion-label>个性签名</ion-label>
       <ion-note item-right>
         {{ heyApp.authService.userInfo.bio }}
       </ion-note>

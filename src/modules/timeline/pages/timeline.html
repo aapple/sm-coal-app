@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      {{ 'timeline.Park'  }}
+      煤友圈
     </ion-title>
 
     <ion-buttons end>
@@ -57,14 +57,14 @@
         <button ion-button icon-only color="grey" clear small (click)="setLikeForTimeline(timeline)">
           <ion-icon color="danger" name="{{ timeline.is_like ? 'heart' : 'heart-outline' }}"></ion-icon>
           &nbsp;
-          <div>{{ timeline.like_num }} {{ 'timeline.Likes'  }}</div>
+          <div>{{ timeline.like_num }} 赞</div>
         </button>
       </ion-col>
       <ion-col>
         <button ion-button icon-only color="grey" clear small (click)="gotoTimelineDetailPage(timeline, i)">
           <ion-icon name="text"></ion-icon>
           &nbsp;
-          <div>{{ timeline.comment_num }} {{ 'timeline.Comments'  }}</div>
+          <div>{{ timeline.comment_num }} 评论</div>
         </button>
       </ion-col>
       <ion-col center class="date">

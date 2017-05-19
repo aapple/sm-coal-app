@@ -8,7 +8,7 @@ import { MeProfilePage } from './me-profile';
 import { MeNoticePage } from '../../notice/pages/me-notice';
 import { MyTimelinePage } from '../../timeline/pages/my-timeline';
 import { MeSettingPage } from './me-setting';
-
+import { TimelinePage } from '../../timeline/pages/timeline';
 
 @Component({
   selector: 'page-me',
@@ -50,7 +50,7 @@ export class MePage {
   // goto me-timeline page
   gotoMyTimelinePage() {
     if (this.heyApp.authService.authOrLogin()) {
-      this.navCtrl.push(MyTimelinePage);
+      this.navCtrl.push(TimelinePage);
     }
   }
 
