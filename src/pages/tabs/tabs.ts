@@ -8,6 +8,8 @@ import { TimelinePage } from '../../modules/timeline/pages/timeline';
 import { TopicPage } from '../../modules/topic/pages/topic';
 import { MePage } from '../../modules/user/pages/me';
 import { CoalPage } from '../../modules/coal/pages/coal';
+import { LantanPage } from '../../modules/lantan/pages/lantan';
+import { InfostorePage } from '../../modules/infostore/pages/infostore';
 
 
 @Component({
@@ -16,8 +18,8 @@ import { CoalPage } from '../../modules/coal/pages/coal';
 export class TabsPage {
 
   tab1Root = CoalPage;
-  tab2Root = CoalPage;
-  tab3Root = CoalPage;
+  tab2Root = LantanPage;
+  tab3Root = InfostorePage;
   tab4Root = MePage;
 
   constructor(
