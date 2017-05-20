@@ -24,6 +24,7 @@ import {StorageService} from "../providers/storage-service";
 import { LantanModule } from '../modules/lantan/lantan.module';
 import { InfostoreModule } from '../modules/infostore/infostore.module';
 import { CoalModule } from '../modules/coal/coal.module';
+import { ManageModule } from '../modules/manage/manage.module';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { CoalModule } from '../modules/coal/coal.module';
     TimelineModule,
     LantanModule,
     InfostoreModule,
+    ManageModule,
     CoalModule
   ],
   bootstrap: [IonicApp],
