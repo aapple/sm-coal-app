@@ -3,12 +3,11 @@ import { Events, Platform, NavController } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import {PersonPage} from "../person-page/person-page";
 import {CoalPricePage} from "../coal-price-page/coal-price-page";
-import {LantanPricePage} from "../lantan-price-page/lantan-price-page";
-import {InfoStorePage} from "../info-store-page/info-store-page";
 
 import { TimelinePage } from '../../modules/timeline/pages/timeline';
 import { TopicPage } from '../../modules/topic/pages/topic';
 import { MePage } from '../../modules/user/pages/me';
+import { CoalPage } from '../../modules/coal/pages/coal';
 
 
 @Component({
@@ -16,15 +15,10 @@ import { MePage } from '../../modules/user/pages/me';
 })
 export class TabsPage {
 
-  tab1Root = CoalPricePage;
-  tab2Root = LantanPricePage;
-  tab3Root = InfoStorePage;
+  tab1Root = CoalPage;
+  tab2Root = CoalPage;
+  tab3Root = CoalPage;
   tab4Root = MePage;
-
-
-  // timelineTabRoot: any = TimelinePage;
-  // topicTabRoot: any = TopicPage;
-  // userTabRoot: any = MePage;
 
   constructor(
     public events: Events,

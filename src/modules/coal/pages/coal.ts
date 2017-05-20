@@ -1,18 +1,12 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the CoalPricePage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
-@IonicPage()
+
 @Component({
-  selector: 'page-coal-price-page',
-  templateUrl: 'coal-price-page.html',
+  selector: 'page-coal',
+  templateUrl: 'coal.html',
 })
-export class CoalPricePage {
+export class CoalPage {
 
   coalType: string = "mm";
   coalList: any = [];
@@ -55,4 +49,5 @@ export class CoalPricePage {
   doQuery(){
     console.log(this.queryText);
   }
+
 }
