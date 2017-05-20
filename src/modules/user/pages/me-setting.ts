@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { InAppBrowser } from '@ionic-native/in-app-browser';
+// import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 import { AppService } from '../../common/services/app.service';
 import { UserService } from '../services/user.service';
@@ -27,7 +27,7 @@ export class MeSettingPage {
     public timelineService: TimelineService,
     public navCtrl: NavController,
     public userService: UserService,
-    public iab : InAppBrowser
+    // public iab : InAppBrowser
   ) {
   }
 
@@ -51,7 +51,7 @@ export class MeSettingPage {
   clearCacheHandler() {
     this.timelineService.timelines = [];
     this.timelineService.clearCache();
-    this.heyApp.utilityComp.presentToast('user.Clear the cache success');
+    this.heyApp.utilityComp.presentToast('清空缓存成功');
   }
 
 
@@ -63,8 +63,8 @@ export class MeSettingPage {
       //let browser = new InAppBrowser(url, '_system');
       //browser.show();
 
-      const browser = this.iab.create(url);
-      browser.show();
+      // const browser = this.iab.create(url);
+      // browser.show();
     } else {
       (<any> window).open(url, '_blank');
     }

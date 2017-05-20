@@ -32,8 +32,8 @@
     <button ion-item [navPush]="MeProfileUpdatePage" [navParams]="{item: 'gender'}">
       <ion-label>性别</ion-label>
       <ion-note item-right>
-        <span [hidden]="heyApp.authService.userInfo.gender != 1">{{ 'user.Male'  }}</span>
-        <span [hidden]="heyApp.authService.userInfo.gender != 2">{{ 'user.Female'  }}</span>
+        <span [hidden]="heyApp.authService.userInfo.gender != 1">男</span>
+        <span [hidden]="heyApp.authService.userInfo.gender != 2">女</span>
       </ion-note>
     </button>
 

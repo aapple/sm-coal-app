@@ -39,7 +39,7 @@ export class UtilityComponent {
   // present loading
   presentLoading() {
     this.loading = this.loadingCtrl.create({
-      content: 'Please Wait ...',
+      content: '请等待 ...',
       duration: 5000,
     });
 
@@ -59,7 +59,7 @@ export class UtilityComponent {
   presentAlter(params?) {
     if (!params) {
       params = {
-        title: 'Alter',
+        title: '温馨提示',
         subTitle: '',
       }
     }
@@ -78,7 +78,7 @@ export class UtilityComponent {
   presentConfirm(params?) {
     if (!params) {
       params = {
-        title: 'Confirm',
+        title: '询问',
         message: '',
       }
     }
@@ -88,13 +88,13 @@ export class UtilityComponent {
       message: params.message,
       buttons: [
         {
-          text: 'Disagree',
+          text: '取消',
           handler: () => {
             console.log('Disagree clicked');
           }
         },
         {
-          text: 'Agree',
+          text: '确认',
           handler: () => {
             console.log('Agree clicked');
           }
@@ -120,7 +120,7 @@ export class UtilityComponent {
 
   //
   // present action sheet
-  presentActionSheet(title = 'Operations', btns: Object[] = []) {
+  presentActionSheet(title = '操作', btns: Object[] = []) {
     let actionSheet = this.actionSheetCtrl.create({
       title: title,
       buttons: btns,

@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      {{ 'user.Settings'  }}
+      设置
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -11,33 +11,33 @@
 
     <button ion-item (click)="clearCacheHandler()">
       <ion-icon name="trash" item-left></ion-icon>
-      {{ 'user.Clear Cache'  }}
+      清空缓存
     </button>
   </ion-list>
 
   <ion-list>
     <button ion-item [navPush]="HCAboutPage">
       <ion-icon name="information-circle" item-left></ion-icon>
-      {{ 'user.About'  }}
+      关于
     </button>
     <button ion-item (click)="openTermsPage()">
       <ion-icon name="paper" item-left></ion-icon>
-      {{ 'user.Terms'  }}
+      用户协议
     </button>
     <button ion-item [navPush]="HCGuidePage">
       <ion-icon name="bulb" item-left></ion-icon>
-      {{ 'user.Guide'  }}
+      用户指南
     </button>
     <button ion-item [navPush]="HCFeedbackPage">
       <ion-icon name="paper-plane" item-left></ion-icon>
-      {{ 'user.Feedback'  }}
+      意见反馈
     </button>
   </ion-list>
 
   <ion-list *ngIf="heyApp.authService.isAuth">
     <button ion-item (click)="gotoLogOut()">
       <ion-icon name="log-out" item-left></ion-icon>
-      {{ 'user.Log Out'  }}
+      退出
     </button>
   </ion-list>
 </ion-content>
