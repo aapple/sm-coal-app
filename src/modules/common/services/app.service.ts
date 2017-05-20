@@ -8,7 +8,8 @@ import { FileUploadService } from './fileUpload.service';
 import { UtilityComponent } from '../pages/utilityComponent';
 
 import moment from 'moment';
-
+import 'moment/src/locale/zh-cn';
+import 'moment/src/locale/en-gb';
 
 @Injectable()
 export class AppService {
@@ -27,6 +28,8 @@ export class AppService {
     public fileUploadService: FileUploadService,
     public utilityComp: UtilityComponent
   ) {
+
+    moment.locale("zh-cn");
   }
 
 }

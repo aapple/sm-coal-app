@@ -55,10 +55,10 @@ export class TimelineDetailPage {
   //
   // present action sheet
   presentActionSheet() {
-    let title = 'Operations';
+    let title = '操作';
 
     let btnDestructive = {
-      text: 'Destructive',
+      text: '删除',
       role: 'destructive',
       handler: () => {
         let self = this;
@@ -67,12 +67,12 @@ export class TimelineDetailPage {
     }
 
     let buttons = [{
-      text: 'Report',
+      text: '报告',
       handler: () => {
-        this.heyApp.utilityComp.presentAlter({title: 'Report', subTitle: 'Thanks For Your Report'});
+        this.heyApp.utilityComp.presentAlter({title: '报告', subTitle: '感谢你的报告'});
       }
     }, {
-      text: 'Cancel',
+      text: '取消',
       role: 'cancel',
       handler: () => {
         console.log('Cancel clicked');

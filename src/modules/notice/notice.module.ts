@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Platform, Events } from 'ionic-angular';
-// import { Badge } from '@ionic-native/badge';
+import { Badge } from 'ionic-native';
 import { CommonModule } from '../common/common.module';
 
 import { AppService } from '../common/services/app.service';
 import { NoticeService } from './services/notice.service';
-
 import { MeNoticePage } from './pages/me-notice';
 
 
@@ -31,7 +30,6 @@ export class NoticeModule {
     public events: Events,
     public heyApp: AppService,
     public noticeService: NoticeService,
-    // public badge: Badge
   ) {
 
     // subscribe events
@@ -81,9 +79,9 @@ export class NoticeModule {
   subscribeEvents() {
     // subscribe auth loggedIn
     this.events.subscribe('auth:loggedIn', () => {
-      // this.noticeService.noticeInterval = setInterval(() => {
-      //   this.noticeService.getIndex();
-      // }, 15000);
+      this.noticeService.noticeInterval = setInterval(() => {
+        this.noticeService.getIndex();
+      }, 15000);
     });
 
     //
@@ -96,7 +94,7 @@ export class NoticeModule {
     // subscribe notice get index
     this.events.subscribe('notice:getIndex', (params) => {
       if (this.platform.is('cordova')) {
-        // this.badge.set(params.num);
+        Badge.set(params.num);
       }
     });
   }

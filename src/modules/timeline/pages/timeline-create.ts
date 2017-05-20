@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, ViewController } from 'ionic-angular';
-import { Transfer, FileUploadOptions, TransferObject } from '@ionic-native/transfer';
-import { Camera, CameraOptions } from '@ionic-native/camera';
-import { File } from '@ionic-native/file';
-import { ImagePicker } from '@ionic-native/image-picker';
+import { ImagePicker, Transfer, Camera } from 'ionic-native';
 
 import { Timeline } from '../models/timeline.model';
 import { TimelineImg } from '../models/timelineImg.model';
@@ -40,10 +37,7 @@ export class TimelineCreatePage {
     public heyApp: AppService,
     public timelineService: TimelineService,
     public navCtrl: NavController,
-    public viewCtrl: ViewController,
-    public imagePicker: ImagePicker,
-    public camera: Camera,
-    public transfer: Transfer
+    public viewCtrl: ViewController
   ) {
   }
 
@@ -55,8 +49,8 @@ export class TimelineCreatePage {
     if (this.imgIdArr.length || ngForm.value.content || this.video) {
       if (this.waiting) {
         let params = {
-          title: 'Waiting',
-          subTitle: 'Waiting For Upload Images Or Video',
+          title: "请等待",
+          subTitle: "正在等待图片或者视频上传",
         }
 
         this.heyApp.utilityComp.presentAlter(params);
@@ -70,15 +64,15 @@ export class TimelineCreatePage {
         };
 
         this.timelineService.store(data)
-        .then((newTimeline: Timeline) => {
-          this.heyApp.utilityComp.dismissLoading();
-          this.dismiss();
-        });
+          .then((newTimeline: Timeline) => {
+            this.heyApp.utilityComp.dismissLoading();
+            this.dismiss();
+          });
       }
     } else {
       let params = {
-        title: 'Alert',
-        subTitle: 'timeline.Please share something that makes sense',
+        title: "提示",
+        subTitle: "随便分享点什么",
       }
 
       this.heyApp.utilityComp.presentAlter(params);
@@ -115,7 +109,7 @@ export class TimelineCreatePage {
       options.mediaType = 2;
     }
 
-    this.camera.getPicture(options).then((result) => {
+    Camera.getPicture(options).then((result) => {
       this.waiting = true;
 
       console.log('the file', result);
@@ -133,7 +127,7 @@ export class TimelineCreatePage {
       width: 1200,
       height: 1600,
     };
-    this.imagePicker.getPictures(options).then((results) => {
+    ImagePicker.getPictures(options).then((results) => {
       this.waiting = true;
 
       for (var i = 0; i < results.length; i++) {
@@ -147,24 +141,23 @@ export class TimelineCreatePage {
   //
   // upload imgs by file transfer
   uploadFileByFileTransfer(file, api) {
-
-    let options: FileUploadOptions;
+    const fileTransfer = new Transfer();
+    let options: any;
     options = {
-       fileKey: 'uploads[]',
-       fileName: file.replace(/^.*[\\\/]/, ''),
-       headers: {},
+      fileKey: 'uploads[]',
+      fileName: file.replace(/^.*[\\\/]/, ''),
+      headers: {},
     }
 
-    const fileTransfer: TransferObject = this.transfer.create();
     fileTransfer.upload(file, api, options)
-    .then((ret) => {
-      this.waiting = false;
+      .then((ret) => {
+        this.waiting = false;
 
-      // merge imgs
-      this.mergeImgs(JSON.parse((<any> ret).response).imgs);
-    }, (err) => {
-      this.waiting = false;
-    })
+        // merge imgs
+        this.mergeImgs(JSON.parse((<any> ret).response).imgs);
+      }, (err) => {
+        this.waiting = false;
+      })
   }
 
 

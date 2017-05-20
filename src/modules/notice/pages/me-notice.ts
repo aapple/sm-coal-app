@@ -114,12 +114,12 @@ export class MeNoticePage {
   // show action sheet
   showActionSheet() {
     let buttons = [{
-      text: 'notice.Check All',
+      text: '所有标记为已读',
       handler: () => {
         this.check(this.getNoticesIds());
       }
     }, {
-      text: 'notice.Remove All',
+      text: '删除所有',
       role: 'destructive',
       handler: () => {
         this.destroyAll();
@@ -127,7 +127,7 @@ export class MeNoticePage {
     }];
 
     let actionSheet = this.actionSheetCtrl.create({
-      title: 'Operations',
+      title: '操作',
       buttons: buttons,
     });
 

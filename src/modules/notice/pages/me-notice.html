@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      {{ 'notice.Notices'  }} ({{ noticeService.noCheckNotices.length }})
+      通知 ({{ noticeService.noCheckNotices.length }})
     </ion-title>
 
     <ion-buttons end>
@@ -13,7 +13,7 @@
 </ion-header>
 
 <ion-content>
-  <div padding [hidden]="noticeService.notices.length > 0">{{ 'notice.You Did Not Have Notices'  }}</div>
+  <div padding [hidden]="noticeService.notices.length > 0" class="text-center">你暂时还没有通知</div>
 
   <ion-list id="section-notices">
     <ion-item-sliding #item *ngFor="let notice of noticeService.notices">
