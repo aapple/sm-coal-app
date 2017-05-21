@@ -25,8 +25,15 @@ import { CoalPage } from './pages/coal';
 })
 export class CoalModule {
   constructor(
-    public heyApp: AppService
+    public heyApp: AppService,
+    public coalService: CoalService
   ) {
+
+    //coalService.getIndex();
+
+    // setInterval(() => {
+    //   coalService.testCokkie();
+    // }, 5000);
 
     this.subscribeEvents();
   }

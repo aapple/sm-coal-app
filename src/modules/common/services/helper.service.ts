@@ -26,6 +26,17 @@ export class Helper {
     }
   }
 
+  // get api
+  getAPP(uri): string {
+    let apiDomain = (window as any).API_DOMAIN;
+
+    if (apiDomain && apiDomain.substring(0, 4) == 'http') {
+      return apiDomain + '/app/' + uri;
+    } else {
+      return (<any> window).location.href + 'app/' + uri;
+    }
+  }
+
 
   //
   // get asset url

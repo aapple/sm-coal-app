@@ -31,19 +31,29 @@ export class CoalService {
   //
   // get index
   getIndex(): Promise<CoalPrice> {
-    let api: string = this.helper.getAPI('notice');
+    let api: string = this.helper.getAPP('login/login?phoneNum=11&verifyCode=111');
 
     return this.http.get(api, this.requestOptions)
     .toPromise()
     .then((response) => {
-      this.coalPrices = response.json();
-      // this.noCheckNotices = this.notices.filter((notice) => {
-      //   return !Boolean(notice.is_checked);
-      // })
-      // this.events.publish('notice:getIndex', {num: this.noCheckNotices.length});
+      //this.coalPrices = response.json();
+      console.log(response.json());
       return response.json();
     })
     .catch(this.handleError);
+  }
+
+  testCokkie(): Promise<CoalPrice> {
+    let api: string = this.helper.getAPP('login/testCookie');
+
+    return this.http.get(api, this.requestOptions)
+      .toPromise()
+      .then((response) => {
+        //this.coalPrices = response.json();
+        console.log(response.json());
+        return response.json();
+      })
+      .catch(this.handleError);
   }
 
 

@@ -9,6 +9,7 @@ import { MeNoticePage } from '../../notice/pages/me-notice';
 import { MyTimelinePage } from '../../timeline/pages/my-timeline';
 import { MeSettingPage } from './me-setting';
 import { TimelinePage } from '../../timeline/pages/timeline';
+import { CoalPriceManagePage } from '../../manage/pages/coal-price-manage';
 
 @Component({
   selector: 'page-me',
@@ -51,6 +52,12 @@ export class MePage {
   gotoMyTimelinePage() {
     if (this.heyApp.authService.authOrLogin()) {
       this.navCtrl.push(TimelinePage);
+    }
+  }
+
+  gotoCoalPriceMangePage() {
+    if (this.heyApp.authService.authOrLogin()) {
+      this.navCtrl.push(CoalPriceManagePage);
     }
   }
 

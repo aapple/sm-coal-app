@@ -26,13 +26,6 @@
       </ion-col>
 
       <ion-col id="section-btns" text-right>
-        <!--
-        <ion-buttons>
-          <button ion-button clear icon-only color="{{ noticeService.noCheckNotices.length ? 'danger' : 'grey' }}" (click)="gotoMeNoticePage()">
-            <ion-icon name="notifications"></ion-icon>
-          </button>
-        </ion-buttons>
-        -->
       </ion-col>
     </ion-row>
 
@@ -68,9 +61,24 @@
       煤友圈
     </button>
 
+    <button ion-item (click)="gotoCoalPriceMangePage()">
+      <ion-icon name="quote" item-left></ion-icon>
+      煤炭矿方价维护
+    </button>
+
     <button ion-item (click)="gotoMyTopicPage()">
       <ion-icon name="quote" item-left></ion-icon>
-      后台维护
+      煤炭代发价维护
+    </button>
+
+    <button ion-item (click)="gotoMyTopicPage()">
+      <ion-icon name="quote" item-left></ion-icon>
+      兰炭价维护
+    </button>
+
+    <button ion-item (click)="gotoMyTopicPage()">
+      <ion-icon name="quote" item-left></ion-icon>
+      信息部物流维护
     </button>
   </ion-list>
 

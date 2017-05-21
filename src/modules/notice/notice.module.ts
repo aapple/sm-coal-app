@@ -79,9 +79,9 @@ export class NoticeModule {
   subscribeEvents() {
     // subscribe auth loggedIn
     this.events.subscribe('auth:loggedIn', () => {
-      this.noticeService.noticeInterval = setInterval(() => {
-        this.noticeService.getIndex();
-      }, 15000);
+      // this.noticeService.noticeInterval = setInterval(() => {
+      //   this.noticeService.getIndex();
+      // }, 15000);
     });
 
     //
