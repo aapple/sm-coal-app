@@ -1,23 +1,26 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the Infostore page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
+import { InfostoreDetailPage } from './infostore-detail'
+
 @Component({
   selector: 'page-infostore',
   templateUrl: 'infostore.html',
 })
 export class InfostorePage {
 
+  infostoreList: any = [];
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.infostoreList = [1, 1, 1,1,1,1,1,1,1];
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad Infostore');
+  }
+
+  gotoInfoStoreDetail(){
+    this.navCtrl.push(InfostoreDetailPage);
   }
 
 }

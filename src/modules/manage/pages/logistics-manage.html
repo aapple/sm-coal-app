@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>煤价管理</ion-title>
+    <ion-title>信息部物流信息管理</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -16,7 +16,7 @@
 <ion-content>
 
   <ion-item>
-    <ion-label>煤矿</ion-label>
+    <ion-label>信息部名称</ion-label>
     <ion-select [(ngModel)]="bure" interface="popover" (ionChange)="onBureChange()">
       <ion-option value="mm">面煤</ion-option>
       <ion-option value="25z">益东煤矿</ion-option>
@@ -27,48 +27,61 @@
   </ion-item>
 
   <ion-item>
-    <ion-label>煤种</ion-label>
+    <ion-label>专线类型</ion-label>
     <ion-select [(ngModel)]="coalType" interface="popover" (ionChange)="onCoalTypeChange()">
-      <ion-option value="mm">面煤</ion-option>
-      <ion-option value="25z">2-5籽</ion-option>
-      <ion-option value="ym">原煤</ion-option>
-      <ion-option value="38k">3-8块</ion-option>
-      <ion-option value="49k">4-9块</ion-option>
+      <ion-option value="mm">河南专线</ion-option>
+      <ion-option value="25z">辽宁专线</ion-option>
+      <ion-option value="ym">陕西专线</ion-option>
+      <ion-option value="38k">河北专线</ion-option>
     </ion-select>
   </ion-item>
 
   <ion-list>
 
     <ion-item>
-      <ion-label fixed>煤炭价格：</ion-label>
+      <ion-label fixed>出发地：</ion-label>
       <ion-input type="text" value=""></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label fixed>发热量：</ion-label>
+      <ion-label fixed>目的地：</ion-label>
       <ion-input type="text"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label fixed>全水分：</ion-label>
+      <ion-label fixed>运费：</ion-label>
       <ion-input type="text"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label fixed>硫份：</ion-label>
+      <ion-label fixed>装车费：</ion-label>
       <ion-input type="text"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label fixed>挥发份：</ion-label>
+      <ion-label fixed>卸车费：</ion-label>
       <ion-input type="text"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label fixed>灰分：</ion-label>
+      <ion-label fixed>煤种：</ion-label>
       <ion-input type="text"></ion-input>
     </ion-item>
 
+    <ion-item>
+      <ion-label fixed>车数：</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>装车时间：</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>卸车时间：</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
   </ion-list>
 
   <div padding>

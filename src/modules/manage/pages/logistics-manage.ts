@@ -9,10 +9,10 @@ import { AppService } from '../../common/services/app.service';
  * on Ionic pages and navigation.
  */
 @Component({
-  selector: 'page-coal-price-manage',
-  templateUrl: 'coal-price-manage.html',
+  selector: 'page-logistics-manage',
+  templateUrl: 'logistics-manage.html',
 })
-export class CoalPriceManagePage {
+export class LogisticsManagePage {
 
   bure: string = "";
   coalType: string = "";
@@ -27,6 +27,7 @@ export class CoalPriceManagePage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad CoalPriceManage');
   }
+
 
   onBureChange() {
 

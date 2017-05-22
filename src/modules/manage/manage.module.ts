@@ -5,6 +5,8 @@ import { AppService } from '../common/services/app.service';
 import { ManageService } from './services/manage.service';
 
 import { CoalPriceManagePage } from './pages/coal-price-manage';
+import { LantanPriceManagePage } from './pages/lantan-price-manage';
+import { LogisticsManagePage } from './pages/logistics-manage';
 
 
 @NgModule({
@@ -12,10 +14,14 @@ import { CoalPriceManagePage } from './pages/coal-price-manage';
     CommonModule,
   ],
   declarations: [
-    CoalPriceManagePage
+    CoalPriceManagePage,
+    LantanPriceManagePage,
+    LogisticsManagePage
   ],
   entryComponents: [
-    CoalPriceManagePage
+    CoalPriceManagePage,
+    LantanPriceManagePage,
+    LogisticsManagePage
   ],
   providers: [
     ManageService,

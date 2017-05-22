@@ -5,6 +5,7 @@ import { AppService } from '../common/services/app.service';
 import { InfostoreService } from './services/infostore.service';
 
 import { InfostorePage } from './pages/infostore';
+import { InfostoreDetailPage } from './pages/infostore-detail';
 
 
 @NgModule({
@@ -12,10 +13,12 @@ import { InfostorePage } from './pages/infostore';
     CommonModule,
   ],
   declarations: [
-    InfostorePage
+    InfostorePage,
+    InfostoreDetailPage
   ],
   entryComponents: [
-    InfostorePage
+    InfostorePage,
+    InfostoreDetailPage
   ],
   providers: [
     InfostorePage,

@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AppService } from '../../common/services/app.service';
-
 /**
  * Generated class for the CoalPriceManage page.
  *
@@ -9,10 +8,10 @@ import { AppService } from '../../common/services/app.service';
  * on Ionic pages and navigation.
  */
 @Component({
-  selector: 'page-coal-price-manage',
-  templateUrl: 'coal-price-manage.html',
+  selector: 'page-lantan-price-manage',
+  templateUrl: 'lantan-price-manage.html',
 })
-export class CoalPriceManagePage {
+export class LantanPriceManagePage {
 
   bure: string = "";
   coalType: string = "";
@@ -27,6 +26,7 @@ export class CoalPriceManagePage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad CoalPriceManage');
   }
+
 
   onBureChange() {
 

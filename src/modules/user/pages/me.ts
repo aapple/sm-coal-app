@@ -10,6 +10,8 @@ import { MyTimelinePage } from '../../timeline/pages/my-timeline';
 import { MeSettingPage } from './me-setting';
 import { TimelinePage } from '../../timeline/pages/timeline';
 import { CoalPriceManagePage } from '../../manage/pages/coal-price-manage';
+import { LantanPriceManagePage } from '../../manage/pages/lantan-price-manage';
+import { LogisticsManagePage } from '../../manage/pages/logistics-manage';
 
 @Component({
   selector: 'page-me',
@@ -18,9 +20,6 @@ import { CoalPriceManagePage } from '../../manage/pages/coal-price-manage';
 export class MePage {
   MeSettingPage = MeSettingPage;
 
-
-  //
-  // constructor
   constructor(
     public heyApp: AppService,
     public noticeService: NoticeService,
@@ -28,9 +27,6 @@ export class MePage {
   ) {
   }
 
-
-  //
-  // goto me-notice page
   gotoMeProfilePage() {
     if (this.heyApp.authService.authOrLogin()) {
       this.navCtrl.push(MeProfilePage);
@@ -38,8 +34,6 @@ export class MePage {
   }
 
 
-  //
-  // goto me-notice page
   gotoMeNoticePage() {
     if (this.heyApp.authService.authOrLogin()) {
       this.navCtrl.push(MeNoticePage);
@@ -47,17 +41,33 @@ export class MePage {
   }
 
 
-  //
-  // goto me-timeline page
   gotoMyTimelinePage() {
     if (this.heyApp.authService.authOrLogin()) {
       this.navCtrl.push(TimelinePage);
     }
   }
 
-  gotoCoalPriceMangePage() {
+  gotoCoalOrignPriceMangePage() {
     if (this.heyApp.authService.authOrLogin()) {
       this.navCtrl.push(CoalPriceManagePage);
+    }
+  }
+
+  gotoCoalSalePriceManagePage() {
+    if (this.heyApp.authService.authOrLogin()) {
+      this.navCtrl.push(CoalPriceManagePage);
+    }
+  }
+
+  gotoLantanPriceManagePage() {
+    if (this.heyApp.authService.authOrLogin()) {
+      this.navCtrl.push(LantanPriceManagePage);
+    }
+  }
+
+  gotoLogisticseManagePage() {
+    if (this.heyApp.authService.authOrLogin()) {
+      this.navCtrl.push(LogisticsManagePage);
     }
   }
 
