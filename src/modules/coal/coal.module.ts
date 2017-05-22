@@ -4,18 +4,20 @@ import { CommonModule } from '../common/common.module';
 import { AppService } from '../common/services/app.service';
 import { CoalService } from './services/coal.service';
 
+import { CoalPriceDetailPage } from './pages/coal-price-detail';
 import { CoalPage } from './pages/coal';
-
 
 @NgModule({
   imports: [
     CommonModule,
   ],
   declarations: [
-    CoalPage
+    CoalPage,
+    CoalPriceDetailPage
   ],
   entryComponents: [
-    CoalPage
+    CoalPage,
+    CoalPriceDetailPage
   ],
   providers: [
     CoalService,

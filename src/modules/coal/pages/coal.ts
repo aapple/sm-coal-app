@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+import { CoalPriceDetailPage } from './coal-price-detail';
+
 
 @Component({
   selector: 'page-coal',
@@ -48,6 +50,10 @@ export class CoalPage {
 
   doQuery(){
     console.log(this.queryText);
+  }
+
+  goCoalPriceDetail() {
+    this.navCtrl.push(CoalPriceDetailPage)
   }
 
 }

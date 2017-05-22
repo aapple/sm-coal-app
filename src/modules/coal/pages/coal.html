@@ -39,7 +39,7 @@
     </ion-segment-button>
   </ion-segment>
 
-  <button ion-item (click)="goToSessionDetail(session)" *ngFor="let coal of coalList" style="font-size: 12px;">
+  <button ion-item (click)="goCoalPriceDetail(coal)" *ngFor="let coal of coalList" style="font-size: 12px;">
     <div>
       <span style="color: blue">{{coal.store}}</span>
       <span style="float: right">发热量：{{coal.hot}}大卡</span>
