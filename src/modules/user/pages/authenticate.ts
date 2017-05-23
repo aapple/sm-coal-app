@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ViewController } from 'ionic-angular';
-import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { InAppBrowser } from 'ionic-native';
 
 import { AppService } from '../../common/services/app.service';
 import { UserService} from '../services/user.service';
@@ -35,8 +35,8 @@ export class AuthenticatePage {
   // sign up handler
   signUpHandler(ngForm) {
     let data: Object = {
-      phone: this.signUpModel.phone,
-      code: this.signUpModel.verificationCode
+      phoneNum: this.signUpModel.phone,
+      verifyCode: this.signUpModel.verificationCode
     };
 
     if (ngForm.valid) {
@@ -61,7 +61,7 @@ export class AuthenticatePage {
 
   // get verification code
   getVerificationCode() {
-    this.userService.getVerificationCode({phone: this.signUpModel.phone}).then((res) => {
+    this.userService.getVerificationCode({phoneNum: this.signUpModel.phone}).then((res) => {
       this.getVerificationCodeBtnText = '60s';
       this.getVerificationCodeBtnDisabled = true;
 
@@ -76,7 +76,7 @@ export class AuthenticatePage {
         }
       }, 1000);
     }, (res) => {
-      this.heyApp.utilityComp.presentAlter({title: 'Alert', subTitle: res._body});
+      this.heyApp.utilityComp.presentAlter({title: '提示', subTitle: res._body});
     });
   }
 
@@ -86,8 +86,8 @@ export class AuthenticatePage {
   openTermsPage() {
     let url = (<any> window).API_DOMAIN + '/docs/terms.html';
     if (this.heyApp.platform.is('cordova')) {
-      // let browser = new InAppBrowser(url, '_system');
-      // browser.show();
+      let browser = new InAppBrowser(url, '_system');
+      browser.show();
     } else {
       (<any> window).open(url, '_blank');
     }

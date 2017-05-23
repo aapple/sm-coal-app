@@ -53,7 +53,7 @@ export class UserService {
   //
   // sign up
   signUp(params): Promise<User> {
-    let api: string = this.helper.getAPI('user/sign-up');
+    let api: string = this.helper.getAPP('login/login');
     let data: Object = params;
 
     return this.http.post(api, data, this.requestOptions)
@@ -66,7 +66,7 @@ export class UserService {
   //
   // get verification code
   getVerificationCode(params) {
-    let api: string = this.helper.getAPI('user/get-verification-code');
+    let api: string = this.helper.getAPP('login/getVerifyCode');
     let data: Object = params;
 
     return this.http.post(api, data, this.requestOptions)
