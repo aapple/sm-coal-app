@@ -22,7 +22,7 @@ export class UserService {
     private helper: Helper
   ) {
     this.headers = new Headers({'X-Requested-With': 'XMLHttpRequest'});
-    this.requestOptions = new RequestOptions({headers: this.headers});
+    this.requestOptions = new RequestOptions({headers: this.headers, withCredentials: true});
   }
 
 
@@ -109,7 +109,7 @@ export class UserService {
   //
   // log out
   logOut(): Promise<User> {
-    let api: string = this.helper.getAPI('user/log-out');
+    let api: string = this.helper.getAPP('login/testCookie');
 
     return this.http.post(api, null, this.requestOptions)
     .toPromise()

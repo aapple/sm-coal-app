@@ -24,7 +24,7 @@ export class ManageService {
     private helper: Helper
   ) {
     this.headers = new Headers({'X-Requested-With': 'XMLHttpRequest'});
-    this.requestOptions = new RequestOptions({headers: this.headers});
+    this.requestOptions = new RequestOptions({headers: this.headers, withCredentials: true});
   }
 
 
