@@ -65,6 +65,8 @@ export class AuthenticatePage {
       this.getVerificationCodeBtnText = '60s';
       this.getVerificationCodeBtnDisabled = true;
 
+      this.heyApp.utilityComp.presentToast('验证码： ' + res.data);
+
       let verificationCodeInterval = setInterval(() => {
         let t = this.getVerificationCodeBtnText.substr(0, this.getVerificationCodeBtnText.indexOf('s'));
 

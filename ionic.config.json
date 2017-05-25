@@ -14,7 +14,7 @@
     },
     {
       "path": "/app",
-      "proxyUrl": "http://localhost:8888/app"
+      "proxyUrl": "http://localhost:8900/app"
     }
   ]
 }
