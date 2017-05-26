@@ -11,7 +11,7 @@
   <!-- sign up -->
   <div>
       <div padding-bottom></div>
-      <h3 class="text-center">注册</h3>
+      <h3 class="text-center">登录</h3>
 
       <form #signUpForm="ngForm" (ngSubmit)="signUpHandler(signUpForm)">
         <ion-list>
@@ -33,12 +33,12 @@
 
         <div class="session-bottom text-center">
           <button (click)="openTermsPage()" color="grey" ion-button clear small type="button">
-              注册即表示同意用户协议
+              我已阅读，并同意《用户注册协议》
           </button>
         </div>
 
         <div padding-left padding-right>
-          <button color="grey" ion-button block [disabled]="!signUpForm.valid" type="submit">登录</button>
+          <button color="grey" ion-button block [disabled]="!signUpForm.valid" type="submit">验证手机</button>
         </div>
 
       </form>

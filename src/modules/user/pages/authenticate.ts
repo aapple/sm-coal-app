@@ -51,8 +51,7 @@ export class AuthenticatePage {
         });
       }, (data) => {
         this.heyApp.utilityComp.dismissLoading().then(() => {
-          let body = JSON.parse(data._body);
-          this.heyApp.utilityComp.presentAlter({title: '验证失败', subTitle: body[Object.keys(body)[0]]});
+          this.heyApp.utilityComp.presentToast(data._body);
         });
       });
     }

@@ -35,14 +35,16 @@ export class MeSettingPage {
   //
   // goto log out
   gotoLogOut() {
-    this.heyApp.utilityComp.presentLoading();
 
-    this.userService.logOut()
-    .then(ret => {
-      // this.heyApp.utilityComp.dismissLoading();
-      // this.heyApp.authService.logOut();
-      // this.navCtrl.pop();
-    });
+    this.heyApp.authService.logOut();
+    this.navCtrl.pop();
+
+    // this.userService.logOut()
+    // .then(ret => {
+    //   this.heyApp.utilityComp.dismissLoading();
+    //   this.heyApp.authService.logOut();
+    //   this.navCtrl.pop();
+    // });
   }
 
 

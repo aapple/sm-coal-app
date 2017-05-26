@@ -55,7 +55,13 @@ export class Helper {
   //
   // get img
   getImg(uri): string {
-    return this.getAssetUri(uri);
+
+    if(uri){
+      return this.getAssetUri(uri);
+    } else {
+      return './assets/images/userAvatar-default.png';
+    }
+
   }
 
 

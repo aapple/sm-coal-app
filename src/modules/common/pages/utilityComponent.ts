@@ -107,7 +107,7 @@ export class UtilityComponent {
 
   //
   // present toast
-  presentToast(message: string, duration: number = 3000, position: string = 'top') {
+  presentToast(message: string, duration: number = 3000, position: string = 'middle') {
     let toast = this.toastCtrl.create({
       message: message,
       duration: duration,

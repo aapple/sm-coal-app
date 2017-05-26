@@ -29,7 +29,7 @@ export class UserService {
   //
   // get user
   getUser(): Promise<User> {
-    let api: string = this.helper.getAPI('user/my-info');
+    let api: string = this.helper.getAPP('user/my-info');
 
     return this.http.get(api, this.requestOptions)
     .toPromise()
@@ -41,7 +41,7 @@ export class UserService {
   //
   // update
   update(params): Promise<User> {
-    let api: string = this.helper.getAPI('user/update');
+    let api: string = this.helper.getAPP('user/update');
 
     return this.http.post(api, params, this.requestOptions)
     .toPromise()
