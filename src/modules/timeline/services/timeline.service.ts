@@ -44,7 +44,7 @@ export class TimelineService {
   //
   // refresh
   refresh(params): Promise<Timeline[]> {
-    let api: string = this.helper.getAPI('timeline?type=refresh&id=' + params.id);
+    let api: string = this.helper.getAPP('timeline?type=refresh&id=' + params.id);
 
     return this.http.get(api, this.requestOptions)
     .toPromise()
@@ -61,7 +61,7 @@ export class TimelineService {
   //
   // infinite
   infinite(params): Promise<Timeline[]> {
-    let api: string = this.helper.getAPI('timeline?type=infinite&id=' + params.id);
+    let api: string = this.helper.getAPP('timeline?type=infinite&id=' + params.id);
 
     return this.http.get(api, this.requestOptions)
     .toPromise()
@@ -78,7 +78,7 @@ export class TimelineService {
   //
   // set like
   setLike(timeline): Promise<Timeline> {
-    let api: string = this.helper.getAPI('timeline/set-like');
+    let api: string = this.helper.getAPP('timeline/set-like');
     let data: any = {id: timeline.id};
 
     return this.http.post(api, data, this.requestOptions)
@@ -92,7 +92,7 @@ export class TimelineService {
   // index
   index(): Promise<Timeline[]> {
     //
-    let api: string = this.helper.getAPI('timeline');
+    let api: string = this.helper.getAPP('timeline');
 
     return this.http.get(api, this.requestOptions)
     .toPromise()
@@ -109,7 +109,7 @@ export class TimelineService {
   //
   // store
   store(params): Promise<Timeline> {
-    let api: string = this.helper.getAPI('timeline/store');
+    let api: string = this.helper.getAPP('timeline/store');
 
     return this.http.post(api, params, this.requestOptions)
     .toPromise()
@@ -121,7 +121,7 @@ export class TimelineService {
   //
   // update
   update(params): Promise<Timeline> {
-    let api: string = this.helper.getAPI('timeline/update');
+    let api: string = this.helper.getAPP('timeline/update');
     let data: any = {content: params.content};
 
     return this.http.post(api, data, this.requestOptions)
@@ -134,7 +134,7 @@ export class TimelineService {
   //
   // destroy
   destroy(params): Promise<Timeline> {
-    let api: string = this.helper.getAPI('timeline/destroy');
+    let api: string = this.helper.getAPP('timeline/destroy');
     let data: any = {id: params.id};
 
     return this.http.post(api, data, this.requestOptions)
@@ -147,7 +147,7 @@ export class TimelineService {
   //
   // store comment
   storeComment(params): Promise<Timeline> {
-    let api: string = this.helper.getAPI('timeline/store-comment');
+    let api: string = this.helper.getAPP('timeline/store-comment');
     let data: any = {
       timeline_id: params.timeline_id,
       content: params.content,
