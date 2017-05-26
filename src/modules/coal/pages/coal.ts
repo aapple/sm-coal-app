@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { CoalPriceDetailPage } from './coal-price-detail';
+import { CoalService} from '../services/coal.service';
 
 
 @Component({
@@ -15,29 +16,40 @@ export class CoalPage {
   priceType: string = "coal";
   queryText: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public coalService: CoalService) {
 
-    let coal = {
-      store : "海湾煤矿",
-      hot: "5600",
-      coalPrice : "200",
-      salePrice : "500",
-      salerName : "张小花",
-      salerPhone : "13366633333"
-    }
-    this.coalList = [coal, coal, coal];
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CoalPricePage');
+
+    this.loadProdcutList();
   }
 
   onCoalTypeChange() {
-    console.log(this.coalType);
+    this.loadProdcutList();
   }
 
   changePriceType() {
 
+  }
+
+  loadProdcutList() {
+
+    let data: Object = {
+      productType: 1,
+      productCode: this.coalType
+    };
+
+    this.coalService.getProductList(data)
+    .then(ret => {
+      this.coalList = ret;
+    }, (data) => {
+
+    });
   }
 
   doRefresh(refresher) {

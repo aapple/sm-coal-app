@@ -31,12 +31,6 @@ export class CoalModule {
     public coalService: CoalService
   ) {
 
-    //coalService.getIndex();
-
-    // setInterval(() => {
-    //   coalService.testCokkie();
-    // }, 5000);
-
     this.subscribeEvents();
   }
 

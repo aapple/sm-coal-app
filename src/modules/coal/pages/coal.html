@@ -21,8 +21,8 @@
     <ion-item>
       <ion-label>煤种</ion-label>
       <ion-select [(ngModel)]="coalType" interface="popover" (ionChange)="onCoalTypeChange()">
-        <ion-option value="mm">面煤</ion-option>
-        <ion-option value="25z">2-5籽</ion-option>
+        <ion-option value="1001">面煤</ion-option>
+        <ion-option value="1002">2-5籽</ion-option>
         <ion-option value="ym">原煤</ion-option>
         <ion-option value="38k">3-8块</ion-option>
         <ion-option value="49k">4-9块</ion-option>
@@ -41,13 +41,13 @@
 
   <button ion-item (click)="goCoalPriceDetail(coal)" *ngFor="let coal of coalList" style="font-size: 12px;">
     <div>
-      <span style="color: blue">{{coal.store}}</span>
-      <span style="float: right">发热量：{{coal.hot}}大卡</span>
+      <span style="color: blue">{{coal.factoryCode}}</span>
+      <span style="float: right">发热量：{{coal.heatQuantity}}大卡</span>
     </div>
     <div>
       <span [ngSwitch]="priceType">
-        <span style="color: red;" *ngSwitchCase="'coal'">￥{{coal.coalPrice}}</span>
-        <span style="color: red;" *ngSwitchCase="'saler'">￥{{coal.salePrice}}</span>
+        <span style="color: red;" *ngSwitchCase="'coal'">￥{{coal.prodPrice}}</span>
+        <span style="color: red;" *ngSwitchCase="'saler'">￥{{coal.prodPrice2}}</span>
       </span>
       <span  style="float: right">代发人：{{coal.salerName}} {{coal.salerPhone}}</span>
     </div>
