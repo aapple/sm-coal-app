@@ -61,22 +61,22 @@
       煤友圈
     </button>
 
-    <button ion-item (click)="gotoCoalOrignPriceMangePage()">
+    <button ion-item (click)="gotoCoalOrignPriceMangePage()" *ngIf="heyApp.authService.userInfo?.isCoalManager == 1">
       <ion-icon name="quote" item-left></ion-icon>
       煤炭矿方价维护
     </button>
 
-    <button ion-item (click)="gotoCoalSalePriceManagePage()">
+    <button ion-item (click)="gotoCoalSalePriceManagePage()" *ngIf="heyApp.authService.userInfo?.isCoalSaler == 1">
       <ion-icon name="quote" item-left></ion-icon>
       煤炭代发价维护
     </button>
 
-    <button ion-item (click)="gotoLantanPriceManagePage()">
+    <button ion-item (click)="gotoLantanPriceManagePage()" *ngIf="heyApp.authService.userInfo?.isCokeManager == 1">
       <ion-icon name="quote" item-left></ion-icon>
       兰炭价维护
     </button>
 
-    <button ion-item (click)="gotoLogisticseManagePage()">
+    <button ion-item (click)="gotoLogisticseManagePage()" *ngIf="heyApp.authService.userInfo?.isInfoStoreManager == 1">
       <ion-icon name="quote" item-left></ion-icon>
       信息部物流维护
     </button>

@@ -33,8 +33,7 @@ export class UserService {
 
     return this.http.get(api, this.requestOptions)
     .toPromise()
-    .then(response => response.json())
-    .catch(this.handleError);
+    .then(response => response.json());
   }
 
 
