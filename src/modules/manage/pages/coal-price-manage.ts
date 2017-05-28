@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AppService } from '../../common/services/app.service';
+import { ManageService } from '../services/manage.service';
 
 /**
  * Generated class for the CoalPriceManage page.
@@ -14,30 +15,55 @@ import { AppService } from '../../common/services/app.service';
 })
 export class CoalPriceManagePage {
 
-  bure: string = "";
-  coalType: string = "";
+  factory: string = "";
+  productType: string = "";
+  factoryList: any = [];
+  productTypeList: any = [];
+  price: string = "";
+  heatQuantity: string = "";
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public heyApp: AppService) {
+    public heyApp: AppService,
+    public manageService: ManageService) {
 
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad CoalPriceManage');
+    let data: Object = {
+      factoryType: 1
+    };
+
+    this.manageService.getFactoryList(data)
+      .then(ret => {
+        this.factoryList = ret.factoryList;
+        this.productTypeList = ret.productTypeList;
+    });
   }
 
-  onBureChange() {
+  onFactoryChange() {
 
   }
 
-  onCoalTypeChange() {
+  onProductTypeChange() {
 
   }
 
-  onsubmit() {
-    this.heyApp.utilityComp.presentToast("提交成功");
+  onSubmit() {
+    let data: Object = {
+      factoryId: this.factory,
+      factoryType: 1,
+      productTypeId: this.productType.split("_")[0],
+      productTypeName: this.productType.split("_")[1],
+      price: this.price,
+      heatQuantity: this.heatQuantity
+    };
+
+    this.manageService.saveOrUpdateProductPrice(data)
+      .then(ret => {
+        this.heyApp.utilityComp.presentToast("提交成功");
+      });
   }
 
 }

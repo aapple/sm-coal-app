@@ -10,11 +10,7 @@ import { Helper } from '../../common/services/helper.service';
 @Injectable()
 export class ManageService {
   headers: Headers;
-  lantanPrices: CoalPrice[] = [];
   requestOptions: RequestOptions;
-
-  userUpdateAvatarAPI: string = this.helper.getAPI('user/update-avatar');
-
 
   //
   // constructor
@@ -27,23 +23,26 @@ export class ManageService {
     this.requestOptions = new RequestOptions({headers: this.headers, withCredentials: true});
   }
 
+  getFactoryList(data) {
+    let api: string = this.helper.getAPP('product/getFactoryList');
 
-  //
-  // get index
-  getIndex(): Promise<CoalPrice> {
-    let api: string = this.helper.getAPI('notice');
-
-    return this.http.get(api, this.requestOptions)
+    return this.http.post(api, data, this.requestOptions)
     .toPromise()
     .then((response) => {
-      this.lantanPrices = response.json();
-      // this.noCheckNotices = this.notices.filter((notice) => {
-      //   return !Boolean(notice.is_checked);
-      // })
-      // this.events.publish('notice:getIndex', {num: this.noCheckNotices.length});
       return response.json();
     })
     .catch(this.handleError);
+  }
+
+  saveOrUpdateProductPrice(data) {
+    let api: string = this.helper.getAPP('product/saveOrUpdateProductPrice');
+
+    return this.http.post(api, data, this.requestOptions)
+      .toPromise()
+      .then((response) => {
+        return response;
+      })
+      .catch(this.handleError);
   }
 
 

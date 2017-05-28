@@ -17,23 +17,15 @@
 
   <ion-item>
     <ion-label>煤矿</ion-label>
-    <ion-select [(ngModel)]="bure" interface="popover" (ionChange)="onBureChange()">
-      <ion-option value="mm">面煤</ion-option>
-      <ion-option value="25z">益东煤矿</ion-option>
-      <ion-option value="ym">聚龙煤矿</ion-option>
-      <ion-option value="38k">海湾煤矿</ion-option>
-      <ion-option value="49k">大保当煤矿</ion-option>
+    <ion-select [(ngModel)]="factory" interface="popover" (ionChange)="onFactoryChange()">
+      <ion-option value="{{fa.id}}" *ngFor="let fa of factoryList">{{fa.name}}</ion-option>
     </ion-select>
   </ion-item>
 
   <ion-item>
     <ion-label>煤种</ion-label>
-    <ion-select [(ngModel)]="coalType" interface="popover" (ionChange)="onCoalTypeChange()">
-      <ion-option value="mm">面煤</ion-option>
-      <ion-option value="25z">2-5籽</ion-option>
-      <ion-option value="ym">原煤</ion-option>
-      <ion-option value="38k">3-8块</ion-option>
-      <ion-option value="49k">4-9块</ion-option>
+    <ion-select [(ngModel)]="productType" interface="popover" (ionChange)="onProductTypeChange()">
+      <ion-option value="{{prod.id}}_{{prod.name}}" *ngFor="let prod of productTypeList">{{prod.name}}</ion-option>
     </ion-select>
   </ion-item>
 
@@ -41,38 +33,38 @@
 
     <ion-item>
       <ion-label fixed>煤炭价格：</ion-label>
-      <ion-input type="text" value=""></ion-input>
+      <ion-input type="text" [(ngModel)]="price"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label fixed>发热量：</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" [(ngModel)]="heatQuantity"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label fixed>全水分：</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" [(ngModel)]="productType"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label fixed>硫份：</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" [(ngModel)]="productType"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label fixed>挥发份：</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" [(ngModel)]="productType"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label fixed>灰分：</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" [(ngModel)]="productType"></ion-input>
     </ion-item>
 
   </ion-list>
 
   <div padding>
-    <button ion-button color="primary" block (click)="onsubmit()">提交</button>
+    <button ion-button color="primary" block (click)="onSubmit()">提交</button>
   </div>
 
 </ion-content>
