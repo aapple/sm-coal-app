@@ -17,14 +17,13 @@
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
 
-  <ion-list style="margin-bottom: 0;">
-    <ion-item>
-      <ion-label>煤种</ion-label>
-      <ion-select [(ngModel)]="productType" interface="popover" (ionChange)="onProductTypeChange()">
-        <ion-option value="{{prodType.id}}" *ngFor="let prodType of productTypeList">{{prodType.name}}</ion-option>
-      </ion-select>
-    </ion-item>
-  </ion-list>
+  <ion-slides class="slide-title" class="slide-title" [slidesPerView]="pageNumber" [pager]="false">
+    <ion-slide *ngFor="let slide of productTypeList; let i = pageIndex;">
+      <div (click)="onSlideClick(slide.id)">
+        <span class="slide-title-unit" [ngClass]="{'slide-title-active': productType == slide.id}">{{slide.name}}</span>
+      </div>
+    </ion-slide>
+  </ion-slides>
 
   <ion-segment [(ngModel)]="priceType" (ionChange)="changePriceType()" padding >
     <ion-segment-button value="coal">

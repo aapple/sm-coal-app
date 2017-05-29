@@ -1,5 +1,4 @@
-page-coal {
-
+my-slide {
   $slide-height-small: 40px;
   $slide-height-large: 50px;
 
@@ -21,5 +20,4 @@ page-coal {
     color: map_get($colors, primary);
     border-bottom: 3px solid map_get($colors, primary);
   }
-
 }

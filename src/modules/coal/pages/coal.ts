@@ -4,10 +4,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CoalPriceDetailPage } from './coal-price-detail';
 import { CoalService} from '../services/coal.service';
 
-
 @Component({
   selector: 'page-coal',
   templateUrl: 'coal.html',
+
 })
 export class CoalPage {
 
@@ -17,11 +17,22 @@ export class CoalPage {
   priceType: string = "coal";
   queryText: string;
 
+  pageIndex: number = 0;
+  pageNumber: number = 5;
+  slides: any = [];
+
+  selectedIndex: number = 0;
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     public coalService: CoalService) {
 
+  }
+
+  onSlideClick(id) {
+    this.productType = id;
+    this.loadProductPriceList();
   }
 
   ionViewDidLoad() {
@@ -31,7 +42,7 @@ export class CoalPage {
   }
 
   onProductTypeChange() {
-    this.loadProductPriceList();
+
   }
 
   changePriceType() {
@@ -65,10 +76,8 @@ export class CoalPage {
 
   doRefresh(refresher) {
 
-    setTimeout(() => {
-      console.log('Async operation has ended');
-      refresher.complete();
-    }, 4000);
+    this.loadProductPriceList();
+    refresher.complete();
   }
 
   doQuery(){
