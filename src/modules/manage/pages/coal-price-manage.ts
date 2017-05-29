@@ -52,10 +52,8 @@ export class CoalPriceManagePage {
 
   onSubmit() {
     let data: Object = {
-      factoryId: this.factory,
-      factoryType: 1,
-      productTypeId: this.productType.split("_")[0],
-      productTypeName: this.productType.split("_")[1],
+      factory: {id: this.factory},
+      productType: {id: this.productType},
       price: this.price,
       heatQuantity: this.heatQuantity
     };
@@ -63,6 +61,10 @@ export class CoalPriceManagePage {
     this.manageService.saveOrUpdateProductPrice(data)
       .then(ret => {
         this.heyApp.utilityComp.presentToast("提交成功");
+        this.factory = "";
+        this.productType = "";
+        this.price = "";
+        this.heatQuantity = "";
       });
   }
 

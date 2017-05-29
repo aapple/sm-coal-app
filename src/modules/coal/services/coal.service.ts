@@ -28,9 +28,20 @@ export class CoalService {
   }
 
 
+  getProductTypeList(data) {
+    let api: string = this.helper.getAPP('product/getProductTypeList');
+
+    return this.http.post(api, data, this.requestOptions)
+      .toPromise()
+      .then((response) => {
+        return response.json();
+      })
+      .catch(this.handleError);
+  }
+
   //
-  getProductList(params): Promise<CoalPrice> {
-    let api: string = this.helper.getAPP('coalIndustry/getCurrentProds');
+  loadProductPriceList(params): Promise<CoalPrice> {
+    let api: string = this.helper.getAPP('product/getProductPriceList');
     let data: Object = params;
 
     return this.http.post(api, data, this.requestOptions)

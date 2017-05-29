@@ -11,8 +11,9 @@ import { CoalService} from '../services/coal.service';
 })
 export class CoalPage {
 
-  coalType: string = "mm";
-  coalList: any = [];
+  productTypeList: any = [];
+  productType: string;
+  productPriceList: any = [];
   priceType: string = "coal";
   queryText: string;
 
@@ -24,29 +25,39 @@ export class CoalPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad CoalPricePage');
 
-    this.loadProdcutList();
+    this.loadProductTypeList();
+    //this.loadProductPriceList();
   }
 
-  onCoalTypeChange() {
-    this.loadProdcutList();
+  onProductTypeChange() {
+    this.loadProductPriceList();
   }
 
   changePriceType() {
 
   }
 
-  loadProdcutList() {
-
+  loadProductTypeList() {
     let data: Object = {
-      productType: 1,
-      productCode: this.coalType
+      factoryType: 1
     };
 
-    this.coalService.getProductList(data)
+    this.coalService.getProductTypeList(data)
+      .then(ret => {
+        this.productTypeList = ret;
+      });
+  }
+
+  loadProductPriceList() {
+
+    let data: Object = {
+      productType: {id: this.productType}
+    };
+
+    this.coalService.loadProductPriceList(data)
     .then(ret => {
-      this.coalList = ret;
+      this.productPriceList = ret;
     }, (data) => {
 
     });
@@ -64,7 +75,7 @@ export class CoalPage {
     console.log(this.queryText);
   }
 
-  goCoalPriceDetail() {
+  goProductPriceDetail() {
     this.navCtrl.push(CoalPriceDetailPage)
   }
 

@@ -9,7 +9,7 @@ import Moment from 'moment'
 export class MomentPipe implements PipeTransform {
   transform(d: Date | Moment.Moment | string, args?: any[]):string {
     // utc add 8 hours into beijing
-    let rv = Moment(d).add(8, 'hours').format(args[0]);
+    let rv = Moment(d).format(args[0]);
     return rv;
   }
 }
@@ -22,7 +22,7 @@ export class MomentPipe implements PipeTransform {
 export class TimeagoPipe implements PipeTransform {
   transform(d: Date | Moment.Moment | string):string {
     // utc add 8 hours into beijing
-    let rv = Moment(d).add(8, 'hours').fromNow();
+    let rv = Moment(d).fromNow();
     return rv;
   }
 }

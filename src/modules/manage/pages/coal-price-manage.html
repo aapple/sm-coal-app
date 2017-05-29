@@ -25,7 +25,7 @@
   <ion-item>
     <ion-label>煤种</ion-label>
     <ion-select [(ngModel)]="productType" interface="popover" (ionChange)="onProductTypeChange()">
-      <ion-option value="{{prod.id}}_{{prod.name}}" *ngFor="let prod of productTypeList">{{prod.name}}</ion-option>
+      <ion-option value="{{prodType.id}}" *ngFor="let prodType of productTypeList">{{prodType.name}}</ion-option>
     </ion-select>
   </ion-item>
 

@@ -21,7 +21,7 @@
       <ion-col></ion-col>
 
       <ion-col padding-top>
-        <img tappable (click)="gotoMeProfilePage()" *ngIf="heyApp.authService.isAuth" class="avatar" src="{{ heyApp.helper.getImg(heyApp.authService.userInfo.avatar) }}">
+        <img tappable (click)="gotoMeProfilePage()" *ngIf="heyApp.authService.isAuth" class="avatar" src="{{ heyApp.helper.getImg(heyApp.authService.userInfo?.avatar) }}">
         <img *ngIf="!heyApp.authService.isAuth" class="avatar" src="./assets/images/userAvatar-default.png">
       </ion-col>
 
