@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '../common/common.module';
 
 import { AppService } from '../common/services/app.service';
-import { LantanService } from './services/lantan.service';
+import { HomeService } from './services/home.service';
 
-import { LantanPage } from './pages/lantan';
+import { HomePage } from './pages/home';
 
 
 @NgModule({
@@ -12,18 +12,18 @@ import { LantanPage } from './pages/lantan';
     CommonModule,
   ],
   declarations: [
-    LantanPage
+    HomePage
   ],
   entryComponents: [
-    LantanPage
+    HomePage
   ],
   providers: [
-    LantanService,
+    HomeService,
   ],
   exports: [
   ],
 })
-export class LantanModule {
+export class HomeModule {
   constructor(
     public heyApp: AppService
   ) {

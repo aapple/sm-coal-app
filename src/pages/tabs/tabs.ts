@@ -1,15 +1,10 @@
 import { Component } from '@angular/core';
 import { Events, Platform, NavController } from 'ionic-angular';
-import { HomePage } from '../home/home';
-import {PersonPage} from "../person-page/person-page";
-import {CoalPricePage} from "../coal-price-page/coal-price-page";
 
-import { TimelinePage } from '../../modules/timeline/pages/timeline';
-import { TopicPage } from '../../modules/topic/pages/topic';
 import { MePage } from '../../modules/user/pages/me';
 import { CoalPage } from '../../modules/coal/pages/coal';
-import { LantanPage } from '../../modules/lantan/pages/lantan';
 import { InfostorePage } from '../../modules/infostore/pages/infostore';
+import {HomePage} from "../../modules/home/pages/home";
 
 
 @Component({
@@ -17,10 +12,11 @@ import { InfostorePage } from '../../modules/infostore/pages/infostore';
 })
 export class TabsPage {
 
-  tab1Root = CoalPage;
-  tab2Root = LantanPage;
-  tab3Root = InfostorePage;
-  tab4Root = MePage;
+  tab1Root = HomePage;
+  tab2Root = CoalPage;
+  tab3Root = CoalPage;
+  tab4Root = InfostorePage;
+  tab5Root = MePage;
 
   constructor(
     public events: Events,

@@ -11,6 +11,8 @@ log.txt
 *.sublime-workspace
 .vscode/
 npm-debug.log*
+*sm-coal-app.iml
+*.js
 
 .idea/
 .sass-cache/
@@ -32,4 +34,3 @@ $RECYCLE.BIN/
 .DS_Store
 Thumbs.db
 UserInterfaceState.xcuserstate
-sm-coal-app.iml

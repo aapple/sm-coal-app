@@ -15,22 +15,20 @@ import { NoticeModule } from '../modules/notice/notice.module';
 import { TimelineModule } from '../modules/timeline/timeline.module';
 import { TopicModule } from '../modules/topic/topic.module';
 
-import {PersonPage} from "../pages/person-page/person-page";
-import {LoginPage} from "../pages/login-page/login-page";
+
 import {LocalStorageService} from "../providers/local-storage-service";
 import {SessionStorageService} from "../providers/session-storage-service";
 import {StorageService} from "../providers/storage-service";
 
-import { LantanModule } from '../modules/lantan/lantan.module';
 import { InfostoreModule } from '../modules/infostore/infostore.module';
 import { CoalModule } from '../modules/coal/coal.module';
 import { ManageModule } from '../modules/manage/manage.module';
+import {HomeModule} from "../modules/home/home.module";
+
 
 @NgModule({
   declarations: [
     MyApp,
-    PersonPage,
-    LoginPage,
     TabsPage
   ],
   imports: [
@@ -50,7 +48,7 @@ import { ManageModule } from '../modules/manage/manage.module';
     UserModule,
     NoticeModule,
     TimelineModule,
-    LantanModule,
+    HomeModule,
     InfostoreModule,
     ManageModule,
     CoalModule
@@ -58,8 +56,6 @@ import { ManageModule } from '../modules/manage/manage.module';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    PersonPage,
-    LoginPage,
     TabsPage
   ],
   providers: [
