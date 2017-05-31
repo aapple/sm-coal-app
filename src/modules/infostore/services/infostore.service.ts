@@ -10,7 +10,6 @@ import { Helper } from '../../common/services/helper.service';
 @Injectable()
 export class InfostoreService {
   headers: Headers;
-  infostores: Infostore[] = [];
   requestOptions: RequestOptions;
 
   userUpdateAvatarAPI: string = this.helper.getAPI('user/update-avatar');
@@ -30,17 +29,13 @@ export class InfostoreService {
 
   //
   // get index
-  getIndex(): Promise<Infostore> {
-    let api: string = this.helper.getAPI('notice');
+  getInfoDepartmentList() {
+    let api: string = this.helper.getAPP('infoDepart/getInfoDepartmentList');
 
     return this.http.get(api, this.requestOptions)
     .toPromise()
     .then((response) => {
-      this.infostores = response.json();
-      // this.noCheckNotices = this.notices.filter((notice) => {
-      //   return !Boolean(notice.is_checked);
-      // })
-      // this.events.publish('notice:getIndex', {num: this.noCheckNotices.length});
+
       return response.json();
     })
     .catch(this.handleError);

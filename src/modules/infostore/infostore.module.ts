@@ -21,7 +21,7 @@ import { InfostoreDetailPage } from './pages/infostore-detail';
     InfostoreDetailPage
   ],
   providers: [
-    InfostorePage,
+    InfostoreService
   ],
   exports: [
   ],

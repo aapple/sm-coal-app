@@ -10,14 +10,18 @@
 
 <ion-content>
 
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
   <ion-list>
     <ion-item *ngFor="let infostore of infostoreList" (click)="gotoInfoStoreDetail()">
-      <ion-thumbnail item-left>
-        <img src="./assets/images/thumbnail-totoro.png">
-      </ion-thumbnail>
+      <img item-left src="./assets/images/thumbnail-totoro.png" />
       <h2>山东宏源物流</h2>
-      <p>主营：山东及代发煤炭</p>
-      <button ion-button clear item-right >进入</button>
+      <div>信用等级</div>
+      <div>联系方式</div>
+      <div>地址</div>
+      <ion-icon name="arrow-forward" item-right=""></ion-icon>
     </ion-item>
   </ion-list>
 
