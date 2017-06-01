@@ -57,28 +57,38 @@
     </button>
 
     <button ion-item (click)="gotoMyTimelinePage()">
-      <ion-icon name="flower" item-left></ion-icon>
+      <ion-icon name="md-aperture" item-left></ion-icon>
       煤友圈
     </button>
 
     <button ion-item (click)="gotoCoalOrignPriceMangePage()" *ngIf="heyApp.authService.userInfo?.isCoalManager == 1">
-      <ion-icon name="quote" item-left></ion-icon>
+      <ion-icon name="list" item-left></ion-icon>
       煤炭矿方价维护
     </button>
 
     <button ion-item (click)="gotoCoalSalePriceManagePage()" *ngIf="heyApp.authService.userInfo?.isCoalSaler == 1">
-      <ion-icon name="quote" item-left></ion-icon>
+      <ion-icon name="list" item-left></ion-icon>
       煤炭代发价维护
     </button>
 
     <button ion-item (click)="gotoLantanPriceManagePage()" *ngIf="heyApp.authService.userInfo?.isCokeManager == 1">
-      <ion-icon name="quote" item-left></ion-icon>
+      <ion-icon name="list" item-left></ion-icon>
       兰炭价维护
     </button>
 
     <button ion-item (click)="gotoLogisticseManagePage()" *ngIf="heyApp.authService.userInfo?.isInfoStoreManager == 1">
-      <ion-icon name="quote" item-left></ion-icon>
+      <ion-icon name="list" item-left></ion-icon>
       信息部物流维护
+    </button>
+
+    <button ion-item (click)="gotoFactoryManagePage()" *ngIf="heyApp.authService.userInfo?.isSuperManager == 1">
+      <ion-icon name="list" item-left></ion-icon>
+      煤矿焦化厂管理
+    </button>
+
+    <button ion-item (click)="gotoInfoStoreManagePage()" *ngIf="heyApp.authService.userInfo?.isSuperManager == 1">
+      <ion-icon name="list" item-left></ion-icon>
+      信息部管理
     </button>
   </ion-list>
 

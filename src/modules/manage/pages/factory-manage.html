@@ -1,0 +1,47 @@
+<!--
+  Generated template for the FactoryManage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>煤矿焦化厂管理</ion-title>
+    <ion-buttons right>
+      <button ion-button (click)="gotoAddPage()">
+        <ion-icon name="md-add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+  <ion-toolbar no-border-top>
+    <ion-searchbar color="primary"
+                   [(ngModel)]="queryText"
+                   (ionInput)="getItems($event)"
+                   placeholder="根据名字查询">
+    </ion-searchbar>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-list>
+    <ion-item-sliding *ngFor="let factory of factoryList">
+      <ion-item (click)="gotoUpdatePage(factory)">
+        {{factory.name}}
+        <button ion-button item-right clear>
+          <ion-icon name="arrow-forward"></ion-icon>
+        </button>
+      </ion-item>
+      <ion-item-options side="right">
+      <button ion-button color="red" (click)="deleteFactory(factory)">
+        删除
+      </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+</ion-content>

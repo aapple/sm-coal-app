@@ -32,7 +32,7 @@ export class InfostoreService {
   getInfoDepartmentList() {
     let api: string = this.helper.getAPP('infoDepart/getInfoDepartmentList');
 
-    return this.http.get(api, this.requestOptions)
+    return this.http.post(api, {}, this.requestOptions)
     .toPromise()
     .then((response) => {
 

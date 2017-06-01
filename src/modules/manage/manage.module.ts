@@ -4,9 +4,12 @@ import { CommonModule } from '../common/common.module';
 import { AppService } from '../common/services/app.service';
 import { ManageService } from './services/manage.service';
 
-import { CoalPriceManagePage } from './pages/coal-price-manage';
-import { LantanPriceManagePage } from './pages/lantan-price-manage';
+import { ProductPriceManagePage } from './pages/product-price-manage';
 import { LogisticsManagePage } from './pages/logistics-manage';
+import {FactoryManage} from "./pages/factory-manage";
+import {InfostoreManage} from "./pages/infostore-manage";
+import {FactoryAddUpdate} from "./pages/factory-add-update";
+import {InfostoreAddUpdate} from "./pages/infostore-add-update";
 
 
 @NgModule({
@@ -14,13 +17,19 @@ import { LogisticsManagePage } from './pages/logistics-manage';
     CommonModule,
   ],
   declarations: [
-    CoalPriceManagePage,
-    LantanPriceManagePage,
+    ProductPriceManagePage,
+    FactoryManage,
+    InfostoreManage,
+    FactoryAddUpdate,
+    InfostoreAddUpdate,
     LogisticsManagePage
   ],
   entryComponents: [
-    CoalPriceManagePage,
-    LantanPriceManagePage,
+    ProductPriceManagePage,
+    FactoryManage,
+    InfostoreManage,
+    FactoryAddUpdate,
+    InfostoreAddUpdate,
     LogisticsManagePage
   ],
   providers: [

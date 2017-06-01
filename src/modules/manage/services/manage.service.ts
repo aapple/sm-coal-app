@@ -45,6 +45,39 @@ export class ManageService {
       .catch(this.handleError);
   }
 
+  deleteFactory(data) {
+    let api: string = this.helper.getAPP('product/deleteFactory');
+
+    return this.http.post(api, data, this.requestOptions)
+      .toPromise()
+      .then((response) => {
+        return response;
+      })
+      .catch(this.handleError);
+  }
+
+  saveOrUpdateFactory(data) {
+    let api: string = this.helper.getAPP('product/saveOrUpdateFactory');
+
+    return this.http.post(api, data, this.requestOptions)
+      .toPromise()
+      .then((response) => {
+        return response;
+      })
+      .catch(this.handleError);
+  }
+
+  getUserList() {
+    let api: string = this.helper.getAPP('user/getUserList');
+
+    return this.http.post(api, null, this.requestOptions)
+      .toPromise()
+      .then((response) => {
+        return response.json();
+      })
+      .catch(this.handleError);
+  }
+
 
   //
   // handle error

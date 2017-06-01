@@ -10,10 +10,10 @@ import { ManageService } from '../services/manage.service';
  * on Ionic pages and navigation.
  */
 @Component({
-  selector: 'page-coal-price-manage',
-  templateUrl: 'coal-price-manage.html',
+  selector: 'page-product-price-manage',
+  templateUrl: 'product-price-manage.html',
 })
-export class CoalPriceManagePage {
+export class ProductPriceManagePage {
 
   factory: string = "";
   productType: string = "";
