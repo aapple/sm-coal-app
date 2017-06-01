@@ -11,6 +11,9 @@ import {InfostoreManage} from "./pages/infostore-manage";
 import {FactoryAddUpdate} from "./pages/factory-add-update";
 import {InfostoreAddUpdate} from "./pages/infostore-add-update";
 import {LogisticsAddUpdate} from "./pages/logistics-add-update";
+import {ColaSalerPriceManage} from "./pages/cola-saler-price-manage";
+import {LogisticsList} from "./pages/logistics-list";
+import {CokePriceManage} from "./pages/coke-price-manage";
 
 
 @NgModule({
@@ -23,6 +26,9 @@ import {LogisticsAddUpdate} from "./pages/logistics-add-update";
     InfostoreManage,
     FactoryAddUpdate,
     InfostoreAddUpdate,
+    LogisticsList,
+    CokePriceManage,
+    ColaSalerPriceManage,
     LogisticsAddUpdate,
     LogisticsManagePage
   ],
@@ -32,6 +38,9 @@ import {LogisticsAddUpdate} from "./pages/logistics-add-update";
     InfostoreManage,
     FactoryAddUpdate,
     InfostoreAddUpdate,
+    LogisticsList,
+    CokePriceManage,
+    ColaSalerPriceManage,
     LogisticsAddUpdate,
     LogisticsManagePage
   ],

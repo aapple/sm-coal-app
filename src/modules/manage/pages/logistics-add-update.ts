@@ -16,40 +16,27 @@ import {ManageService} from "../services/manage.service";
 export class LogisticsAddUpdate {
 
   logistics: any = {};
-  infostoreList: any = [];
+  infostore: any = {};
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public manageService: ManageService,
               public heyApp: AppService,) {
 
-    this.logistics = navParams.data;
-    if(this.logistics && !this.logistics.infoDepartment){
-      this.logistics.infoDepartment = {};
-    }
+    this.infostore = navParams.data;
+
   }
 
   ionViewDidLoad() {
-    this.loadInfostoreList();
     console.log('ionViewDidLoad FactoryAddUpdate');
   }
 
   onSubmit() {
+
+    this.logistics.infoDepartment = this.infostore;
     this.manageService.saveOrUpdateLogistics(this.logistics)
       .then(ret => {
         this.heyApp.utilityComp.presentToast("保存成功");
         this.navCtrl.pop();
-      });
-  }
-
-
-  loadInfostoreList() {
-
-    let data = {
-      user :{id: this.heyApp.authService.userInfo.id}
-    };
-    this.manageService.getInfostoreList(data)
-      .then(ret => {
-        this.infostoreList = ret;
       });
   }
 

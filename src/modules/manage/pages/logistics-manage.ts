@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AppService } from '../../common/services/app.service';
 import {LogisticsAddUpdate} from "./logistics-add-update";
 import {ManageService} from "../services/manage.service";
+import {LogisticsList} from "./logistics-list";
 
 /**
  * Generated class for the CoalPriceManage page.
@@ -16,53 +17,26 @@ import {ManageService} from "../services/manage.service";
 })
 export class LogisticsManagePage {
 
-  logisticsList: any = [];
-  logisticsListShow: any = [];
+  infostoreList: any = [];
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
-              public heyApp: AppService,
-              public manageService: ManageService) {
+              public manageService: ManageService,
+              public heyApp: AppService) {
+
   }
 
-  ionViewWillEnter() {
-
-    this.manageService.getLogisticsList({})
+  ionViewDidLoad() {
+    let data = {
+      user :{id: this.heyApp.authService.userInfo.id}
+    };
+    this.manageService.getInfostoreList(data)
       .then(ret => {
-        this.logisticsList = ret;
-        this.logisticsListShow = ret;
+        this.infostoreList = ret;
       });
   }
 
-  deleteLogistics(logistics) {
-    this.manageService.deleteLogistics(logistics)
-      .then(ret => {
-        this.heyApp.utilityComp.presentToast('删除成功');
-        this.ionViewWillEnter();
-      });
+  gotoInfoStoreDetail(infostore){
+    this.navCtrl.push(LogisticsList, infostore);
   }
-
-  gotoAddPage() {
-    this.navCtrl.push(LogisticsAddUpdate);
-  }
-
-  gotoUpdatePage(logistics) {
-    this.navCtrl.push(LogisticsAddUpdate, logistics);
-  }
-
-  getItems(ev) {
-    // Reset items back to all of the items
-    this.logisticsListShow = this.logisticsList;
-
-    // set val to the value of the ev target
-    var val = ev.target.value;
-
-    // if the value is an empty string don't filter the items
-    if (val && val.trim() != '') {
-      this.logisticsListShow = this.logisticsListShow.filter((item) => {
-        return (item.departure.toLowerCase().indexOf(val.toLowerCase()) > -1);
-      })
-    }
-  }
-
 }

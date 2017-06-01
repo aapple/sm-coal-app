@@ -13,6 +13,21 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>煤矿名称</ion-col>
+      <ion-col>{{productPrice.factory.name}}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>煤种</ion-col>
+      <ion-col>{{productPrice.productType.name}}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>价格</ion-col>
+      <ion-col>{{productPrice.price}}</ion-col>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>

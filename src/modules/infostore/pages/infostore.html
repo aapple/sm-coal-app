@@ -1,9 +1,13 @@
 
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>信息部</ion-title>
-  </ion-navbar>
+  <ion-toolbar no-border-top>
+    <ion-searchbar color="primary"
+                   [(ngModel)]="queryText"
+                   (ionInput)="getItems($event)"
+                   placeholder="根据名字查询">
+    </ion-searchbar>
+  </ion-toolbar>
 
 </ion-header>
 
@@ -15,7 +19,7 @@
   </ion-refresher>
 
   <ion-list>
-    <ion-item *ngFor="let infostore of infostoreList" (click)="gotoInfoStoreDetail(infostore)">
+    <ion-item *ngFor="let infostore of infostoreListShow" (click)="gotoInfoStoreDetail(infostore)">
 
       <ion-thumbnail item-left>
         <img src="./assets/images/thumbnail-totoro.png">

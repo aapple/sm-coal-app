@@ -8,10 +8,13 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class CoalPriceDetailPage {
 
+  productPrice: any = null;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+    this.productPrice = navParams.data;
   }
 
-  ionViewDidLoad() { 
+  ionViewDidLoad() {
     console.log('ionViewDidLoad CoalPriceDetail');
   }
 

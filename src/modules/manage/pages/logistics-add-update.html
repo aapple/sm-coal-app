@@ -28,10 +28,8 @@
     </ion-item>
 
     <ion-item>
-      <ion-label>管理员</ion-label>
-      <ion-select [(ngModel)]="logistics.infoDepartment.id" interface="popover" >
-        <ion-option value="{{infostore.id}}" *ngFor="let infostore of infostoreList">{{infostoreList.name}}</ion-option>
-      </ion-select>
+      <ion-label fixed>装车价格：</ion-label>
+      <ion-input type="text" [(ngModel)]="logistics.loadingCharge"></ion-input>
     </ion-item>
 
   </ion-list>

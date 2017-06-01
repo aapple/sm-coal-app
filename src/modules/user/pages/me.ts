@@ -13,6 +13,8 @@ import { ProductPriceManagePage } from '../../manage/pages/product-price-manage'
 import { LogisticsManagePage } from '../../manage/pages/logistics-manage';
 import {FactoryManage} from "../../manage/pages/factory-manage";
 import {InfostoreManage} from "../../manage/pages/infostore-manage";
+import {CokePriceManage} from "../../manage/pages/coke-price-manage";
+import {ColaSalerPriceManage} from "../../manage/pages/cola-saler-price-manage";
 
 @Component({
   selector: 'page-me',
@@ -56,13 +58,13 @@ export class MePage {
 
   gotoCoalSalePriceManagePage() {
     if (this.heyApp.authService.authOrLogin()) {
-      this.navCtrl.push(ProductPriceManagePage);
+      this.navCtrl.push(ColaSalerPriceManage);
     }
   }
 
   gotoLantanPriceManagePage() {
     if (this.heyApp.authService.authOrLogin()) {
-      this.navCtrl.push(ProductPriceManagePage);
+      this.navCtrl.push(CokePriceManage);
     }
   }
 

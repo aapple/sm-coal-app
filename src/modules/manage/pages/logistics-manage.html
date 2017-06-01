@@ -7,40 +7,26 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>物流信息管理</ion-title>
-    <ion-buttons right>
-      <button ion-button (click)="gotoAddPage()">
-        <ion-icon name="md-add"></ion-icon>
-      </button>
-    </ion-buttons>
+    <ion-title>信息部列表</ion-title>
   </ion-navbar>
-
-  <ion-toolbar no-border-top>
-    <ion-searchbar color="primary"
-                   [(ngModel)]="queryText"
-                   (ionInput)="getItems($event)"
-                   placeholder="根据名字查询">
-    </ion-searchbar>
-  </ion-toolbar>
 
 </ion-header>
 
 <ion-content>
 
+
   <ion-list>
-    <ion-item-sliding *ngFor="let logistics of logisticsListShow">
-      <ion-item (click)="gotoUpdatePage(logistics)">
-        出发地：{{logistics.departure}}，到达地：{{logistics.destination}}
-        <button ion-button item-right clear>
-          <ion-icon name="arrow-forward"></ion-icon>
-        </button>
-      </ion-item>
-      <ion-item-options side="right">
-        <button ion-button color="red" (click)="deleteLogistics(logistics)">
-          删除
-        </button>
-      </ion-item-options>
-    </ion-item-sliding>
+    <ion-item *ngFor="let infostore of infostoreList" (click)="gotoInfoStoreDetail(infostore)">
+
+      <ion-thumbnail item-left>
+        <img src="./assets/images/thumbnail-totoro.png">
+      </ion-thumbnail>
+
+      <h2>{{infostore.title}}</h2>
+      <p style="font-size: 10px;">信用等级：5星</p>
+      <p style="font-size: 10px;">联系方式：{{infostore.callNumber}}</p>
+      <p style="font-size: 10px;">地址：{{infostore.address}}</p>
+    </ion-item>
   </ion-list>
 
 </ion-content>
