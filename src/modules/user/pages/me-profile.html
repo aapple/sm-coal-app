@@ -22,11 +22,28 @@
       </ion-note>
     </button>
 
+
+    <button ion-item [navPush]="MeProfileUpdatePage" [navParams]="{item: 'userName'}">
+      <ion-label>姓名</ion-label>
+      <ion-note item-right>
+        {{ heyApp.authService.userInfo.userName }}
+      </ion-note>
+    </button>
+
     <button ion-item [navPush]="MeProfileUpdatePage" [navParams]="{item: 'gender'}">
       <ion-label>性别</ion-label>
       <ion-note item-right>
         <span [hidden]="heyApp.authService.userInfo.gender != 1">男</span>
         <span [hidden]="heyApp.authService.userInfo.gender != 2">女</span>
+      </ion-note>
+    </button>
+
+    <button ion-item [navPush]="MeProfileUpdatePage" [navParams]="{item: 'role'}">
+      <ion-label>角色</ion-label>
+      <ion-note item-right>
+        <span [hidden]="heyApp.authService.userInfo.role != 1">买煤者</span>
+        <span [hidden]="heyApp.authService.userInfo.role != 2">卖煤者</span>
+        <span [hidden]="heyApp.authService.userInfo.role != 3">火车司机</span>
       </ion-note>
     </button>
 

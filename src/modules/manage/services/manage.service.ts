@@ -78,6 +78,38 @@ export class ManageService {
       .catch(this.handleError);
   }
 
+  getInfostoreList(data) {
+    let api: string = this.helper.getAPP('infoDepart/getInfoDepartmentList');
+
+    return this.http.post(api, data, this.requestOptions)
+      .toPromise()
+      .then((response) => {
+        return response.json();
+      })
+      .catch(this.handleError);
+  }
+
+  saveOrUpdateInfostore(data) {
+    let api: string = this.helper.getAPP('infoDepart/addOrUpdateInfoDepart');
+
+    return this.http.post(api, data, this.requestOptions)
+      .toPromise()
+      .then((response) => {
+        return response;
+      })
+      .catch(this.handleError);
+  }
+
+  deleteInfostore(data) {
+    let api: string = this.helper.getAPP('infoDepart/deleteInfoDepartment');
+
+    return this.http.post(api, data, this.requestOptions)
+      .toPromise()
+      .then((response) => {
+        return response;
+      })
+      .catch(this.handleError);
+  }
 
   //
   // handle error

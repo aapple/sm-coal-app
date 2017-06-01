@@ -1,5 +1,5 @@
 <!--
-  Generated template for the InfostoreAddUpdate page.
+  Generated template for the FactoryAddUpdate page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
@@ -7,12 +7,47 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>infostore-add-update</ion-title>
+    <ion-title>信息部添加更新</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label fixed>名称：</ion-label>
+      <ion-input type="text" [(ngModel)]="infostore.title"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>简介：</ion-label>
+      <ion-input type="text" [(ngModel)]="infostore.introduction"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>联系电话：</ion-label>
+      <ion-input type="text" [(ngModel)]="infostore.callNumber"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>地址：</ion-label>
+      <ion-input type="text" [(ngModel)]="infostore.address"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>管理员</ion-label>
+      <ion-select [(ngModel)]="infostore.user.id" interface="popover" >
+        <ion-option value="{{user.id}}" *ngFor="let user of userList">{{user.phoneNum}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+  </ion-list>
+
+  <div padding>
+    <button ion-button color="primary" block (click)="onSubmit()">保存</button>
+  </div>
 
 </ion-content>

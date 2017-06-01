@@ -19,6 +19,31 @@
     </ion-item>
   </ion-list>
 
+  <ion-list padding-top [hidden]="item !== 'userName'">
+    <ion-item>
+      <ion-textarea [(ngModel)]="userInfo.userName" (ngModelChange)="isUpdated = 'userName'" name="userName" placeholder="姓名">
+      </ion-textarea>
+    </ion-item>
+  </ion-list>
+
+  <ion-list padding-top radio-group [(ngModel)]="userInfo.role" (ngModelChange)="isUpdated = 'role'" [hidden]="item !== 'role'">
+    <ion-item>
+      <ion-label>买煤者</ion-label>
+      <ion-radio name="role" checked="true" value="1"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>卖煤者</ion-label>
+      <ion-radio name="role" value="2"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>货车司机</ion-label>
+      <ion-radio name="role" value="3"></ion-radio>
+    </ion-item>
+  </ion-list>
+
+
   <ion-list padding-top [hidden]="item !== 'bio'">
     <ion-item>
       <ion-textarea [(ngModel)]="userInfo.bio" (ngModelChange)="isUpdated = 'bio'" name="bio" placeholder="个性签名">

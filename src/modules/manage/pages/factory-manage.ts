@@ -29,6 +29,7 @@ export class FactoryManage {
     this.manageService.getFactoryList({})
       .then(ret => {
         this.factoryList = ret.factoryList;
+        this.factoryListShow = ret.factoryList;
       });
   }
 
@@ -50,15 +51,15 @@ export class FactoryManage {
 
   getItems(ev) {
     // Reset items back to all of the items
-    this.initializeItems();
+    this.factoryListShow = this.factoryList;
 
     // set val to the value of the ev target
     var val = ev.target.value;
 
     // if the value is an empty string don't filter the items
     if (val && val.trim() != '') {
-      this.items = this.items.filter((item) => {
-        return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      this.factoryListShow = this.factoryListShow.filter((item) => {
+        return (item.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
     }
   }

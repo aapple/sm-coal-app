@@ -1,5 +1,5 @@
 <!--
-  Generated template for the InfostoreManage page.
+  Generated template for the FactoryManage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
@@ -8,11 +8,39 @@
 
   <ion-navbar>
     <ion-title>信息部管理</ion-title>
+    <ion-buttons right>
+      <button ion-button (click)="gotoAddPage()">
+        <ion-icon name="md-add"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
+
+  <ion-toolbar no-border-top>
+    <ion-searchbar color="primary"
+                   [(ngModel)]="queryText"
+                   (ionInput)="getItems($event)"
+                   placeholder="根据名字查询">
+    </ion-searchbar>
+  </ion-toolbar>
 
 </ion-header>
 
+<ion-content>
 
-<ion-content padding>
+  <ion-list>
+    <ion-item-sliding *ngFor="let infostore of infostoreListShow">
+      <ion-item (click)="gotoUpdatePage(infostore)">
+        {{infostore.title}}
+        <button ion-button item-right clear>
+          <ion-icon name="arrow-forward"></ion-icon>
+        </button>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="red" (click)="deleteInfostore(infostore)">
+          删除
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
 
 </ion-content>
