@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {InfostoreService} from "../services/infostore.service";
 
 
 @Component({
@@ -9,12 +10,26 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class InfostoreDetailPage {
 
   logisticsList: any = [];
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.logisticsList = [1,2,3,4];
+  infostore: any = null;
+
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              public infostoreService: InfostoreService) {
+
+    this.infostore = navParams.data;
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CoalPriceDetail');
+
+    let data = {
+      infoDepartment: {id : this.infostore.id}
+    }
+
+    this.infostoreService.getLogisticsList(data)
+      .then( ret => {
+        this.logisticsList = ret;
+      });
   }
 
 }

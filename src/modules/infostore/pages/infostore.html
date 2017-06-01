@@ -15,13 +15,16 @@
   </ion-refresher>
 
   <ion-list>
-    <ion-item *ngFor="let infostore of infostoreList" (click)="gotoInfoStoreDetail()">
-      <img item-left src="./assets/images/thumbnail-totoro.png" />
-      <h2>山东宏源物流</h2>
-      <div>信用等级</div>
-      <div>联系方式</div>
-      <div>地址</div>
-      <ion-icon name="arrow-forward" item-right=""></ion-icon>
+    <ion-item *ngFor="let infostore of infostoreList" (click)="gotoInfoStoreDetail(infostore)">
+
+      <ion-thumbnail item-left>
+        <img src="./assets/images/thumbnail-totoro.png">
+      </ion-thumbnail>
+
+      <h2>{{infostore.title}}</h2>
+      <p style="font-size: 10px;">信用等级：5星</p>
+      <p style="font-size: 10px;">联系方式：{{infostore.callNumber}}</p>
+      <p style="font-size: 10px;">地址：{{infostore.address}}</p>
     </ion-item>
   </ion-list>
 

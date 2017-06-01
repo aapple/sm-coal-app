@@ -35,10 +35,20 @@ export class InfostoreService {
     return this.http.post(api, {}, this.requestOptions)
     .toPromise()
     .then((response) => {
-
       return response.json();
     })
     .catch(this.handleError);
+  }
+
+  getLogisticsList(data) {
+    let api: string = this.helper.getAPP('infoDepart/getLogisticsList');
+
+    return this.http.post(api, data, this.requestOptions)
+      .toPromise()
+      .then((response) => {
+        return response.json();
+      })
+      .catch(this.handleError);
   }
 
 

@@ -34,8 +34,8 @@ export class InfostorePage {
       });
   }
 
-  gotoInfoStoreDetail(){
-    this.navCtrl.push(InfostoreDetailPage);
+  gotoInfoStoreDetail(infostore){
+    this.navCtrl.push(InfostoreDetailPage, infostore);
   }
 
 }

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AppService } from '../../common/services/app.service';
+import {LogisticsAddUpdate} from "./logistics-add-update";
+import {ManageService} from "../services/manage.service";
 
 /**
  * Generated class for the CoalPriceManage page.
@@ -14,31 +16,53 @@ import { AppService } from '../../common/services/app.service';
 })
 export class LogisticsManagePage {
 
-  bure: string = "";
-  coalType: string = "";
+  logisticsList: any = [];
+  logisticsListShow: any = [];
 
-  constructor(
-    public navCtrl: NavController,
-    public navParams: NavParams,
-    public heyApp: AppService) {
-
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              public heyApp: AppService,
+              public manageService: ManageService) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CoalPriceManage');
+  ionViewWillEnter() {
+
+    this.manageService.getLogisticsList({})
+      .then(ret => {
+        this.logisticsList = ret;
+        this.logisticsListShow = ret;
+      });
   }
 
-
-  onBureChange() {
-
+  deleteLogistics(logistics) {
+    this.manageService.deleteLogistics(logistics)
+      .then(ret => {
+        this.heyApp.utilityComp.presentToast('删除成功');
+        this.ionViewWillEnter();
+      });
   }
 
-  onCoalTypeChange() {
-
+  gotoAddPage() {
+    this.navCtrl.push(LogisticsAddUpdate);
   }
 
-  onsubmit() {
-    this.heyApp.utilityComp.presentToast("提交成功");
+  gotoUpdatePage(logistics) {
+    this.navCtrl.push(LogisticsAddUpdate, logistics);
+  }
+
+  getItems(ev) {
+    // Reset items back to all of the items
+    this.logisticsListShow = this.logisticsList;
+
+    // set val to the value of the ev target
+    var val = ev.target.value;
+
+    // if the value is an empty string don't filter the items
+    if (val && val.trim() != '') {
+      this.logisticsListShow = this.logisticsListShow.filter((item) => {
+        return (item.departure.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      })
+    }
   }
 
 }

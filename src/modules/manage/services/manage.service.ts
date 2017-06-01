@@ -111,6 +111,39 @@ export class ManageService {
       .catch(this.handleError);
   }
 
+  getLogisticsList(data) {
+    let api: string = this.helper.getAPP('infoDepart/getLogisticsList');
+
+    return this.http.post(api, data, this.requestOptions)
+      .toPromise()
+      .then((response) => {
+        return response.json();
+      })
+      .catch(this.handleError);
+  }
+
+  saveOrUpdateLogistics(data) {
+    let api: string = this.helper.getAPP('infoDepart/addOrUpdateLogisticsInfo');
+
+    return this.http.post(api, data, this.requestOptions)
+      .toPromise()
+      .then((response) => {
+        return response;
+      })
+      .catch(this.handleError);
+  }
+
+  deleteLogistics(data) {
+    let api: string = this.helper.getAPP('infoDepart/deleteLogistics');
+
+    return this.http.post(api, data, this.requestOptions)
+      .toPromise()
+      .then((response) => {
+        return response;
+      })
+      .catch(this.handleError);
+  }
+
   //
   // handle error
   private handleError(error: any) {

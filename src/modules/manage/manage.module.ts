@@ -10,6 +10,7 @@ import {FactoryManage} from "./pages/factory-manage";
 import {InfostoreManage} from "./pages/infostore-manage";
 import {FactoryAddUpdate} from "./pages/factory-add-update";
 import {InfostoreAddUpdate} from "./pages/infostore-add-update";
+import {LogisticsAddUpdate} from "./pages/logistics-add-update";
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import {InfostoreAddUpdate} from "./pages/infostore-add-update";
     InfostoreManage,
     FactoryAddUpdate,
     InfostoreAddUpdate,
+    LogisticsAddUpdate,
     LogisticsManagePage
   ],
   entryComponents: [
@@ -30,6 +32,7 @@ import {InfostoreAddUpdate} from "./pages/infostore-add-update";
     InfostoreManage,
     FactoryAddUpdate,
     InfostoreAddUpdate,
+    LogisticsAddUpdate,
     LogisticsManagePage
   ],
   providers: [

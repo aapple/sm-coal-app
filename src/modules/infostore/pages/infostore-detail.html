@@ -16,35 +16,16 @@
 <ion-content class="cards-bg">
 
 
-  <ion-card class="adv-map" *ngFor="let logistics of logisticsList">
+  <ion-list>
+    <ion-item *ngFor="let logistics of logisticsList">
 
-    <div style="position: relative">
-      <img src="./assets/images/advance-card-map-madison.png">
-      <ion-fab right top>
-        <button ion-fab class="fab-map">
-          <ion-icon name="pin"></ion-icon>
-        </button>
-      </ion-fab>
-    </div>
+      <ion-thumbnail item-left>
+        <img src="./assets/images/thumbnail-totoro.png">
+      </ion-thumbnail>
 
-    <ion-item>
-      <ion-icon color="subtle" large item-start name='football'></ion-icon>
-      <h2>出发地：神木</h2>
+      <h2>出发地：{{logistics.departure}}</h2>
+      <h2>目的地：{{logistics.destination}}</h2>
     </ion-item>
+  </ion-list>
 
-    <ion-item>
-      <ion-icon color="subtle" large item-start name='wine' ></ion-icon>
-      <h2>目的地：阳泉市</h2>
-    </ion-item>
-
-    <ion-item actions>
-      <span ion-text item-start color="secondary" class="item-bold">货主电话</span>
-      <a ion-text item-start color="subtle" href="tel:18888888888">18888888888</a>
-      <button ion-button color="primary" clear item-end icon-left>
-        <ion-icon name="navigate"></ion-icon>
-        <a href="tel:18888888888">立即联系</a>
-      </button>
-    </ion-item>
-
-  </ion-card>
 </ion-content>

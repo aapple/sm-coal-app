@@ -1,5 +1,5 @@
 <!--
-  Generated template for the CoalPriceManage page.
+  Generated template for the FactoryManage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
@@ -7,85 +7,40 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>信息部物流信息管理</ion-title>
+    <ion-title>物流信息管理</ion-title>
+    <ion-buttons right>
+      <button ion-button (click)="gotoAddPage()">
+        <ion-icon name="md-add"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
+
+  <ion-toolbar no-border-top>
+    <ion-searchbar color="primary"
+                   [(ngModel)]="queryText"
+                   (ionInput)="getItems($event)"
+                   placeholder="根据名字查询">
+    </ion-searchbar>
+  </ion-toolbar>
 
 </ion-header>
 
-
 <ion-content>
 
-  <ion-item>
-    <ion-label>信息部名称</ion-label>
-    <ion-select [(ngModel)]="bure" interface="popover" (ionChange)="onBureChange()">
-      <ion-option value="mm">面煤</ion-option>
-      <ion-option value="25z">益东煤矿</ion-option>
-      <ion-option value="ym">聚龙煤矿</ion-option>
-      <ion-option value="38k">海湾煤矿</ion-option>
-      <ion-option value="49k">大保当煤矿</ion-option>
-    </ion-select>
-  </ion-item>
-
-  <ion-item>
-    <ion-label>专线类型</ion-label>
-    <ion-select [(ngModel)]="coalType" interface="popover" (ionChange)="onCoalTypeChange()">
-      <ion-option value="mm">河南专线</ion-option>
-      <ion-option value="25z">辽宁专线</ion-option>
-      <ion-option value="ym">陕西专线</ion-option>
-      <ion-option value="38k">河北专线</ion-option>
-    </ion-select>
-  </ion-item>
-
   <ion-list>
-
-    <ion-item>
-      <ion-label fixed>出发地：</ion-label>
-      <ion-input type="text" value=""></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label fixed>目的地：</ion-label>
-      <ion-input type="text"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label fixed>运费：</ion-label>
-      <ion-input type="text"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label fixed>装车费：</ion-label>
-      <ion-input type="text"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label fixed>卸车费：</ion-label>
-      <ion-input type="text"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label fixed>煤种：</ion-label>
-      <ion-input type="text"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label fixed>车数：</ion-label>
-      <ion-input type="text"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label fixed>装车时间：</ion-label>
-      <ion-input type="text"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label fixed>卸车时间：</ion-label>
-      <ion-input type="text"></ion-input>
-    </ion-item>
+    <ion-item-sliding *ngFor="let logistics of logisticsListShow">
+      <ion-item (click)="gotoUpdatePage(logistics)">
+        出发地：{{logistics.departure}}，到达地：{{logistics.destination}}
+        <button ion-button item-right clear>
+          <ion-icon name="arrow-forward"></ion-icon>
+        </button>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="red" (click)="deleteLogistics(logistics)">
+          删除
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
   </ion-list>
-
-  <div padding>
-    <button ion-button color="primary" block (click)="onsubmit()">提交</button>
-  </div>
 
 </ion-content>
