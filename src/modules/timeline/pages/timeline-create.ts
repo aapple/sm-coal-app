@@ -59,7 +59,7 @@ export class TimelineCreatePage {
 
         let data: any = {
           content: ngForm.value.content,
-          imgs: JSON.stringify(this.imgIdArr),
+          imgs: this.imgIdArr,
           video: this.video ? this.video.id : null,
         };
 

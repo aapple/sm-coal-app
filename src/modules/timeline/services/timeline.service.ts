@@ -78,10 +78,10 @@ export class TimelineService {
   //
   // set like
   setLike(timeline): Promise<Timeline> {
-    let api: string = this.helper.getAPP('timeline/set-like');
-    let data: any = {id: timeline.id};
+    let api: string = this.helper.getAPP('timeline/setLike');
+    //let data: any = {id: timeline.id};
 
-    return this.http.post(api, data, this.requestOptions)
+    return this.http.post(api, timeline, this.requestOptions)
     .toPromise()
     .then(response => response.json())
     .catch(this.handleError);

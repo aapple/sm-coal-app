@@ -79,7 +79,7 @@
           <div class="item-comment" *ngIf="i < 3">
             <span class="author">{{ comment.author?.nickname }}</span>:
             <span *ngIf="comment.parent_id">
-              @{{ comment.parent.author.nickname }}:
+              @{{ comment.parents.author.nickname }}:
             </span>
             {{ comment.content }}
           </div>
