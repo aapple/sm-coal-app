@@ -9,8 +9,8 @@ import { Helper } from '../../common/services/helper.service';
 
 @Injectable()
 export class TimelineService {
-  timelineStoreImgAPI: string = this.helper.getAPI('timeline/store-img');
-  timelineStoreVideoAPI: string = this.helper.getAPI('timeline/store-video');
+  timelineStoreImgAPI: string = this.helper.getAPP('timeline/store-img');
+  timelineStoreVideoAPI: string = this.helper.getAPP('timeline/store-video');
 
   timelines: Timeline[] = [];
   CACHE_TIMELINES: string = 'cache_timelines';
