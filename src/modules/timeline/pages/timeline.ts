@@ -57,10 +57,12 @@ export class TimelinePage {
   //
   // present timeline create modal
   presentTimelineCreateModal() {
+    let me = this;
     if (this.heyApp.authService.authOrLogin()) {
       let page = TimelineCreatePage;
       let params = {}
       let callback = function() {
+        me.timelineService.index();
       }
 
       this.heyApp.utilityComp.presentModal(page, params, callback);

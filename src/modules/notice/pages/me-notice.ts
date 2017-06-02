@@ -31,14 +31,14 @@ export class MeNoticePage {
   //
   // ionic view did enter
   ionViewDidEnter() {
-    this.noticeService.getIndex();
-
-    let ids = this.getNoticesIds();
-    if (ids.length > 0) {
-      setTimeout(() => {
-        this.check(ids);
-      }, 3000);
-    }
+    // this.noticeService.getIndex();
+    //
+    // let ids = this.getNoticesIds();
+    // if (ids.length > 0) {
+    //   setTimeout(() => {
+    //     this.check(ids);
+    //   }, 3000);
+    // }
   }
 
 
