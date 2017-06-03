@@ -23,8 +23,12 @@ export class FactoryAddUpdate {
               public heyApp: AppService,) {
 
     this.factory = navParams.data;
-    if(this.factory && !this.factory.user){
-      this.factory.user = {};
+    if(this.factory && !this.factory.onwer){
+      this.factory.onwer = {};
+    }
+
+    if(this.factory && !this.factory.saler){
+      this.factory.saler = {};
     }
   }
 

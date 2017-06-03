@@ -20,7 +20,11 @@ export class CokePriceManage {
   factoryList: any = [];
   productTypeList: any = [];
   price: string = "";
-  heatQuantity: string = "";
+  coke_hantan: string = "";
+  coke_hanliu: string = "";
+  coke_shuifen: string = "";
+  coke_huifafen: string = "";
+  coke_huifen: string = "";
 
   constructor(
     public navCtrl: NavController,
@@ -55,7 +59,11 @@ export class CokePriceManage {
       factory: {id: this.factory},
       productType: {id: this.productType},
       price: this.price,
-      heatQuantity: this.heatQuantity
+      coke_hantan: this.coke_hantan,
+      coke_hanliu: this.coke_hanliu,
+      coke_shuifen: this.coke_shuifen,
+      coke_huifafen: this.coke_huifafen,
+      coke_huifen: this.coke_huifen
     };
 
     this.manageService.saveOrUpdateProductPrice(data)
@@ -64,7 +72,11 @@ export class CokePriceManage {
         this.factory = "";
         this.productType = "";
         this.price = "";
-        this.heatQuantity = "";
+        this.coke_hantan = "";
+        this.coke_hanliu = "";
+        this.coke_shuifen = "";
+        this.coke_huifafen = "";
+        this.coke_huifen = "";
       });
   }
 

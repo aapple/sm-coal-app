@@ -20,7 +20,12 @@ export class ProductPriceManagePage {
   factoryList: any = [];
   productTypeList: any = [];
   price: string = "";
-  heatQuantity: string = "";
+  coal_fareliang: string = "";
+  coal_quanshuifen: string = "";
+  coal_liufen: string = "";
+  coal_huifafen: string = "";
+  coal_huifen: string = "";
+  coal_gudingtan: string = "";
 
   constructor(
     public navCtrl: NavController,
@@ -32,7 +37,8 @@ export class ProductPriceManagePage {
 
   ionViewDidLoad() {
     let data: Object = {
-      factoryType: 1
+      factoryType: 1,
+      onwer: {id: 1}
     };
 
     this.manageService.getFactoryList(data)
@@ -55,7 +61,12 @@ export class ProductPriceManagePage {
       factory: {id: this.factory},
       productType: {id: this.productType},
       price: this.price,
-      heatQuantity: this.heatQuantity
+      coal_fareliang: this.coal_fareliang,
+      coal_quanshuifen: this.coal_quanshuifen,
+      coal_liufen: this.coal_liufen,
+      coal_huifafen: this.coal_huifafen,
+      coal_huifen: this.coal_huifen,
+      coal_gudingtan: this.coal_gudingtan
     };
 
     this.manageService.saveOrUpdateProductPrice(data)
@@ -64,7 +75,12 @@ export class ProductPriceManagePage {
         this.factory = "";
         this.productType = "";
         this.price = "";
-        this.heatQuantity = "";
+        this.coal_fareliang= "";
+        this.coal_quanshuifen = "";
+        this.coal_liufen = "";
+        this.coal_huifafen = "";
+        this.coal_huifen = "";
+        this.coal_gudingtan = "";
       });
   }
 

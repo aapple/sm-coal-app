@@ -37,7 +37,14 @@
 
     <ion-item>
       <ion-label>管理员</ion-label>
-      <ion-select [(ngModel)]="factory.user.id" interface="popover" >
+      <ion-select [(ngModel)]="factory.onwer.id" interface="popover" >
+        <ion-option value="{{user.id}}" *ngFor="let user of userList">{{user.phoneNum}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item *ngIf="factory.factoryType == 1">
+      <ion-label>代发人</ion-label>
+      <ion-select [(ngModel)]="factory.saler.id" interface="popover" >
         <ion-option value="{{user.id}}" *ngFor="let user of userList">{{user.phoneNum}}</ion-option>
       </ion-select>
     </ion-item>

@@ -21,7 +21,6 @@ export class ColaSalerPriceManage {
   productTypeList: any = [];
   price: string = "";
   price2: string = "";
-  heatQuantity: string = "";
 
   constructor(
     public navCtrl: NavController,
@@ -33,7 +32,8 @@ export class ColaSalerPriceManage {
 
   ionViewDidLoad() {
     let data: Object = {
-      factoryType: 1
+      factoryType: 1,
+      saler: {id: 1}
     };
 
     this.manageService.getFactoryList(data)
@@ -64,7 +64,6 @@ export class ColaSalerPriceManage {
         this.factory = "";
         this.productType = "";
         this.price2 = "";
-        this.heatQuantity = "";
       });
   }
 }
