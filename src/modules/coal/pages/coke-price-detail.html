@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>煤炭价格详细</ion-title>
+    <ion-title>兰炭价格详细</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -18,7 +18,7 @@
   <ion-grid>
     <ion-row>
       <ion-col>
-        <span>煤矿名称</span>
+        <span>焦化厂名称</span>
       </ion-col>
       <ion-col>
         <div>{{productPrice.factory.name}}</div>
@@ -26,7 +26,7 @@
     </ion-row>
     <ion-row>
       <ion-col>
-        <span>煤种</span>
+        <span>兰炭种类</span>
       </ion-col>
       <ion-col>
         <div>{{productPrice.productType.name}}</div>
@@ -42,26 +42,26 @@
     </ion-row>
     <ion-row>
       <ion-col>
-        <span>发热量</span>
+        <span>含碳</span>
       </ion-col>
       <ion-col>
-        <div>{{productPrice.coal_fareliang}}</div>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <span>全水分</span>
-      </ion-col>
-      <ion-col>
-        <div>{{productPrice.coal_quanshuifen}}</div>
+        <div>{{productPrice.coke_hantan}}</div>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
-        <span>硫份</span>
+        <span>含硫</span>
       </ion-col>
       <ion-col>
-        <div>{{productPrice.coal_liufen}}</div>
+        <div>{{productPrice.coke_hanliu}}</div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <span>水份</span>
+      </ion-col>
+      <ion-col>
+        <div>{{productPrice.coke_shuifen}}</div>
       </ion-col>
     </ion-row>
     <ion-row>
@@ -69,7 +69,7 @@
         <span>挥发份</span>
       </ion-col>
       <ion-col>
-        <div>{{productPrice.coal_huifafen}}</div>
+        <div>{{productPrice.coke_huifafen}}</div>
       </ion-col>
     </ion-row>
     <ion-row>
@@ -77,15 +77,7 @@
         <span>灰分</span>
       </ion-col>
       <ion-col>
-        <div>{{productPrice.coal_huifen}}</div>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <span>固定碳</span>
-      </ion-col>
-      <ion-col>
-        <div>{{productPrice.coal_gudingtan}}</div>
+        <div>{{productPrice.coke_huifen}}</div>
       </ion-col>
     </ion-row>
   </ion-grid>

@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { CoalPriceDetailPage } from './coal-price-detail';
 import { CoalService} from '../services/coal.service';
+import {CokePriceDetailPage} from "./coke-price-detail";
 
 @Component({
   selector: 'page-coal',
@@ -89,7 +90,12 @@ export class CoalPage {
   }
 
   goProductPriceDetail(productPrice) {
-    this.navCtrl.push(CoalPriceDetailPage, productPrice)
+
+    if(productPrice.factory.factoryType == 1){
+      this.navCtrl.push(CoalPriceDetailPage, productPrice)
+    } else {
+      this.navCtrl.push(CokePriceDetailPage, productPrice)
+    }
   }
 
 }

@@ -25,7 +25,7 @@
     </ion-slide>
   </ion-slides>
 
-  <ion-segment [(ngModel)]="priceType" (ionChange)="changePriceType()" padding >
+  <ion-segment [(ngModel)]="priceType" (ionChange)="changePriceType()" padding *ngIf="factoryType == 1">
     <ion-segment-button value="coal">
       矿方价
     </ion-segment-button>
