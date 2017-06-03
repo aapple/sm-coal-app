@@ -24,6 +24,7 @@ import { InfostoreModule } from '../modules/infostore/infostore.module';
 import { CoalModule } from '../modules/coal/coal.module';
 import { ManageModule } from '../modules/manage/manage.module';
 import {HomeModule} from "../modules/home/home.module";
+import {MyErrorHandler} from "../modules/common/services/my-error-handler";
 
 
 @NgModule({
@@ -64,7 +65,7 @@ import {HomeModule} from "../modules/home/home.module";
     LocalStorageService,
     SessionStorageService,
     StorageService,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: MyErrorHandler}
   ]
 })
 export class AppModule {}
