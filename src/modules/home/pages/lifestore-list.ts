@@ -9,7 +9,6 @@ import {HomeService} from "../services/home.service";
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
-@IonicPage()
 @Component({
   selector: 'page-lifestore-list',
   templateUrl: 'lifestore-list.html',
@@ -36,6 +35,10 @@ export class LifestoreList {
         }
     );
     console.log('ionViewDidLoad LifestoreList');
+  }
+
+  gotoDetail(data){
+   this.navCtrl.push(LifestoreDetail, data);
   }
 
 }

@@ -32,42 +32,42 @@
             <span>宾馆</span>
           </div>
           <div class="swipe-page-item open-win">
-            <img src="./assets/images/swipe/children.png" (click)="gotoLifeStore('修理厂')">
+            <img src="./assets/images/swipe/decorate.png" (click)="gotoLifeStore('修理厂')">
             <span>修理厂</span>
           </div>
           <div class="swipe-page-item open-win">
-            <img src="./assets/images/swipe/decorate.png" (click)="gotoLifeStore('加油站')">
+            <img src="./assets/images/swipe/rank.png" (click)="gotoLifeStore('加油站')">
             <span>加油站</span>
           </div>
         </div>
-        <div class="swipe-page-row">
-          <div class="swipe-page-item open-win" (click)="">
-            <img src="./assets/images/swipe/dessert.png">
-            <span>煤价</span>
-          </div>
-          <div class="swipe-page-item open-win" (click)="">
-            <img src="./assets/images/swipe/discount.png">
-            <span>兰炭价</span>
-          </div>
-          <div class="swipe-page-item open-win" (click)="">
-            <img src="./assets/images/swipe/food.png">
-            <span>信息部</span>
-          </div>
-          <div class="swipe-page-item open-win" (click)="">
-            <img src="./assets/images/swipe/hotel.png">
-            <span>煤友圈</span>
-          </div>
-        </div>
+        <!--<div class="swipe-page-row">-->
+          <!--<div class="swipe-page-item open-win" (click)="gotoLifeStore('加油站')">-->
+            <!--<img src="./assets/images/swipe/dessert.png">-->
+            <!--<span>煤价</span>-->
+          <!--</div>-->
+          <!--<div class="swipe-page-item open-win" (click)="gotoLifeStore('加油站')">-->
+            <!--<img src="./assets/images/swipe/discount.png">-->
+            <!--<span>兰炭价</span>-->
+          <!--</div>-->
+          <!--<div class="swipe-page-item open-win" (click)="gotoLifeStore('加油站')">-->
+            <!--<img src="./assets/images/swipe/food.png">-->
+            <!--<span>信息部</span>-->
+          <!--</div>-->
+          <!--<div class="swipe-page-item open-win" (click)="gotoLifeStore('加油站')">-->
+            <!--<img src="./assets/images/swipe/hotel.png">-->
+            <!--<span>煤友圈</span>-->
+          <!--</div>-->
+        <!--</div>-->
       </div>
     </div>
   </section>
   <div class="h20 info">信息列表</div>
-  <div class="snapup hightitem section02 open-win" *ngFor="let item of [1,2,3,4,5]">
-    <img src="./assets/images/flash_sale.png" class="fl infologo">
+  <div class="snapup hightitem section02 open-win" *ngFor="let lifestore of lifestoreList" (click)="gotoDetail(lifestore)">
+    <img src="./assets/images/swipe/food.png" class="fl infologo">
     <div class="shelf2 fl">
       <div class="shelfcell">
-        <div class="title">龙湖大饭店(西沟)<span>￥35</span></div>
-        <span class="subtitel">每天十点开抢</span>
+        <div class="title">{{lifestore.name}}</div>
+        <span class="subtitel">{{lifestore.address}}</span>
       </div>
     </div>
     <img src="./assets/images/arrow.png" class="arrow fr">

@@ -1,5 +1,39 @@
 page-lifestore-list {
 
+  .h80 {
+    height: 80px;
+  }
+
+  .h40 {
+    height: 40px;
+  }
+
+  .h20 {
+    height: 20px;
+  }
+
+  .h10 {
+    height: 10px;
+    background: #f0f0f0;
+  }
+
+  .h1 {
+    height: 1px;
+    margin-left: 15px;
+    background: #f0f0f0;
+  }
+
+  .fr {
+    float: right;
+  }
+
+  .fl {
+    float: left;
+  }
+
+  .hightitem {
+    background-color: #fff;
+  }
   /* 抢购样式 */
 
   .snapup {
@@ -40,5 +74,6 @@ page-lifestore-list {
     font-weight: bold;
     background: #f0f0f0;
   }
+
 
 }

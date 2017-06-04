@@ -1,6 +1,8 @@
 import {Component, ViewChild} from '@angular/core';
 import { IonicPage, NavController, NavParams, Slides } from 'ionic-angular';
 import {LifestoreList} from "./lifestore-list";
+import {LifestoreDetail} from "./lifestore-detail";
+import {HomeService} from "../services/home.service";
 
 @Component({
   selector: 'page-home',
@@ -10,9 +12,13 @@ export class HomePage {
 
   @ViewChild('mySlider') slider:Slides;
 
+  lifestoreList: any = [];
+
   ionViewWillEnter(){
     console.log('ionViewWillEnter Home');
     this.slider.startAutoplay();
+
+    this.loadLifestoreList();
   }
   ionViewWillLeave(){
     console.log('ionViewWillLeave Home');
@@ -20,8 +26,18 @@ export class HomePage {
   }
 
   constructor(public navCtrl: NavController,
-              public navParams: NavParams) {
+              public navParams: NavParams,
+              public homeService: HomeService) {
 
+  }
+
+  loadLifestoreList() {
+
+    this.homeService.loadLifestoreList({})
+      .then(ret => {
+          this.lifestoreList = ret;
+        }
+      );
   }
 
   ngOnInit(){//页面加载完成后自己调用
@@ -36,6 +52,10 @@ export class HomePage {
 
   gotoLifeStore(data) {
     this.navCtrl.push(LifestoreList, data)
+  }
+
+  gotoDetail(data){
+    this.navCtrl.push(LifestoreDetail, data);
   }
 
 }
