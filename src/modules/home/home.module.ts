@@ -7,6 +7,7 @@ import { HomeService } from './services/home.service';
 import { HomePage } from './pages/home';
 import {LifestoreDetail} from "./pages/lifestore-detail";
 import {LifestoreList} from "./pages/lifestore-list";
+import {AreaList} from "./pages/area-list";
 
 
 @NgModule({
@@ -16,12 +17,14 @@ import {LifestoreList} from "./pages/lifestore-list";
   declarations: [
     HomePage,
     LifestoreDetail,
-    LifestoreList
+    LifestoreList,
+    AreaList
   ],
   entryComponents: [
     HomePage,
     LifestoreDetail,
-    LifestoreList
+    LifestoreList,
+    AreaList
   ],
   providers: [
     HomeService,

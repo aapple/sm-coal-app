@@ -11,7 +11,7 @@ export class UserService {
   headers: Headers;
   requestOptions: RequestOptions;
 
-  userUpdateAvatarAPI: string = this.helper.getAPI('user/update-avatar');
+  userUpdateAvatarAPI: string = this.helper.getAPP('imageUtil/uploadImage');
 
 
   //

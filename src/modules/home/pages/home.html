@@ -1,5 +1,13 @@
 <ion-header >
   <ion-navbar>
+
+    <ion-buttons start>
+      <button color="grey" ion-button icon-only (click)="gotoAreaList()">
+        {{areaName}}
+        <ion-icon name="arrow-down"></ion-icon>
+      </button>
+    </ion-buttons>
+
     <ion-title>首页</ion-title>
   </ion-navbar>
 </ion-header>

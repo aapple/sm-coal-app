@@ -43,13 +43,13 @@ public upload (url: string, files: File[]): Promise<any> {
             xhr: XMLHttpRequest = new XMLHttpRequest();
 
         for (let i = 0; i < files.length; i++) {
-            formData.append("uploads[]", files[i], files[i].name);
+            formData.append("file", files[i], files[i].name);
         }
 
         xhr.onreadystatechange = () => {
             if (xhr.readyState === 4) {
                 if (xhr.status === 200) {
-                    resolve(JSON.parse(xhr.response));
+                    resolve(xhr.response);
                 } else {
                     reject(xhr.response);
                 }

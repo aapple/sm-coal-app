@@ -37,10 +37,8 @@ export class MeProfileUpdatePage {
   //
   ngOnDestroy() {
     if (this.isUpdated) {
-      let params = {};
-      params[this.isUpdated] = this.userInfo[this.isUpdated];
 
-      this.userService.update(params)
+      this.userService.update(this.userInfo)
       .then((response) => {
         this.heyApp.authService.reset(response);
       });
@@ -76,14 +74,19 @@ export class MeProfileUpdatePage {
     this.heyApp.utilityComp.presentLoading();
     let files = event.srcElement.files;
 
-    this.heyApp.fileUploadService.upload(this.userService.userUpdateAvatarAPI, files).then(data => {
-      this.heyApp.authService.reset(data);
-      this.userInfo = data;
-      this.heyApp.utilityComp.dismissLoading();
-      this.heyApp.utilityComp.presentToast('user.Update Avatar Success');
+    this.heyApp.fileUploadService.upload(this.userService.userUpdateAvatarAPI, files)
+      .then(data => {
+        this.userInfo.avatar = data;
+        this.heyApp.authService.reset(this.userInfo);
+        this.userService.update(this.userInfo)
+          .then((response) => {
+            this.heyApp.authService.reset(response);
+          });
+        this.heyApp.utilityComp.dismissLoading();
+        this.heyApp.utilityComp.presentToast('头像上传成功！');
     }, () => {
-      this.heyApp.utilityComp.dismissLoading();
-      this.heyApp.utilityComp.presentToast('user.Update Avatar Failed');
+        this.heyApp.utilityComp.dismissLoading();
+        this.heyApp.utilityComp.presentToast('头像上传失败！');
     });
   }
 }
