@@ -15,6 +15,10 @@
     </ion-buttons>
   </ion-navbar>
 
+</ion-header>
+
+<ion-content>
+
   <ion-toolbar no-border-top>
     <ion-searchbar color="primary"
                    [(ngModel)]="queryText"
@@ -22,10 +26,6 @@
                    placeholder="根据名字查询">
     </ion-searchbar>
   </ion-toolbar>
-
-</ion-header>
-
-<ion-content>
 
   <ion-list>
     <ion-item-sliding *ngFor="let logistics of logisticsListShow">

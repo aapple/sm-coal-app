@@ -7,7 +7,7 @@
 </ion-header>
 
 <ion-content>
-    <ion-toolbar>
+    <ion-toolbar *ngIf="false">
       <ion-buttons end>
         <button ion-button clear icon-only color="{{ noticeService.noCheckNotices.length ? 'danger' : 'dark' }}" (click)="gotoMeNoticePage()">
           <ion-icon name="notifications"></ion-icon>

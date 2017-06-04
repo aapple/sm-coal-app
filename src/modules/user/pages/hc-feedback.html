@@ -6,15 +6,12 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content id="me" class="page-notice">
-  <div id="section-brand" class="text-center">
-    <h2>神木煤炭<sup><small class="hide">beta</small></sup></h2>
-    <h3>意见反馈</h3>
+<ion-content >
+  <div class="desp">
+    <textarea [(ngModel)]="feedbackText" placeholder="问题详细描述......"></textarea>
   </div>
 
   <div padding>
-    <p>
-        如果你有什么好的意见或者建议，请通过邮箱发送给我们<a href="mailto:rod@protobia.tech">feedback@smcoal.com</a>
-    </p>
+    <button ion-button color="primary" block (click)="onSubmit()">提 交</button>
   </div>
 </ion-content>

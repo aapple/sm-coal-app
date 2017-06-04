@@ -116,6 +116,15 @@ export class UserService {
     .catch(this.handleError);
   }
 
+  feedback(params) {
+    let api: string = this.helper.getAPP('user/feedback');
+
+    return this.http.post(api, params, this.requestOptions)
+      .toPromise()
+      .then(response => response)
+      .catch(this.handleError);
+  }
+
 
   //
   // handle error
