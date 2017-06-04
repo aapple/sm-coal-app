@@ -5,6 +5,8 @@ import { AppService } from '../common/services/app.service';
 import { HomeService } from './services/home.service';
 
 import { HomePage } from './pages/home';
+import {LifestoreDetail} from "./pages/lifestore-detail";
+import {LifestoreList} from "./pages/lifestore-list";
 
 
 @NgModule({
@@ -12,10 +14,14 @@ import { HomePage } from './pages/home';
     CommonModule,
   ],
   declarations: [
-    HomePage
+    HomePage,
+    LifestoreDetail,
+    LifestoreList
   ],
   entryComponents: [
-    HomePage
+    HomePage,
+    LifestoreDetail,
+    LifestoreList
   ],
   providers: [
     HomeService,

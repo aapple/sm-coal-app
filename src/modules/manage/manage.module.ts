@@ -14,6 +14,8 @@ import {LogisticsAddUpdate} from "./pages/logistics-add-update";
 import {ColaSalerPriceManage} from "./pages/cola-saler-price-manage";
 import {LogisticsList} from "./pages/logistics-list";
 import {CokePriceManage} from "./pages/coke-price-manage";
+import {LifestoreAddUpdate} from "./pages/lifestore-add-update";
+import {LifestoreManage} from "./pages/lifestore-manage";
 
 
 @NgModule({
@@ -30,7 +32,9 @@ import {CokePriceManage} from "./pages/coke-price-manage";
     CokePriceManage,
     ColaSalerPriceManage,
     LogisticsAddUpdate,
-    LogisticsManagePage
+    LogisticsManagePage,
+    LifestoreManage,
+    LifestoreAddUpdate
   ],
   entryComponents: [
     ProductPriceManagePage,
@@ -42,7 +46,9 @@ import {CokePriceManage} from "./pages/coke-price-manage";
     CokePriceManage,
     ColaSalerPriceManage,
     LogisticsAddUpdate,
-    LogisticsManagePage
+    LogisticsManagePage,
+    LifestoreManage,
+    LifestoreAddUpdate
   ],
   providers: [
     ManageService,

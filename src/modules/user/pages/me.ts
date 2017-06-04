@@ -15,6 +15,8 @@ import {FactoryManage} from "../../manage/pages/factory-manage";
 import {InfostoreManage} from "../../manage/pages/infostore-manage";
 import {CokePriceManage} from "../../manage/pages/coke-price-manage";
 import {ColaSalerPriceManage} from "../../manage/pages/cola-saler-price-manage";
+import {LifestoreAddUpdate} from "../../manage/pages/lifestore-add-update";
+import {LifestoreManage} from "../../manage/pages/lifestore-manage";
 
 @Component({
   selector: 'page-me',
@@ -83,6 +85,12 @@ export class MePage {
   gotoInfoStoreManagePage() {
     if (this.heyApp.authService.authOrLogin()) {
       this.navCtrl.push(InfostoreManage);
+    }
+  }
+
+  gotoLifeStoreManagePage() {
+    if (this.heyApp.authService.authOrLogin()) {
+      this.navCtrl.push(LifestoreManage);
     }
   }
 

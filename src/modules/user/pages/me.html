@@ -90,6 +90,12 @@
       <ion-icon name="list" item-left></ion-icon>
       信息部管理
     </button>
+
+    <button ion-item (click)="gotoLifeStoreManagePage()" *ngIf="heyApp.authService.userInfo?.isSuperManager == 1">
+      <ion-icon name="list" item-left></ion-icon>
+      生活服务类数据管理
+    </button>
+
   </ion-list>
 
   <ion-list>

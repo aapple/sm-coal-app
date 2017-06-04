@@ -144,6 +144,40 @@ export class ManageService {
       .catch(this.handleError);
   }
 
+
+  getLifestoreList(data) {
+    let api: string = this.helper.getAPP('life/getLifeStoreList');
+
+    return this.http.post(api, data, this.requestOptions)
+      .toPromise()
+      .then((response) => {
+        return response.json();
+      })
+      .catch(this.handleError);
+  }
+
+  saveOrUpdateLifestore(data) {
+    let api: string = this.helper.getAPP('life/addOrUpdateLifeStore');
+
+    return this.http.post(api, data, this.requestOptions)
+      .toPromise()
+      .then((response) => {
+        return response;
+      })
+      .catch(this.handleError);
+  }
+
+  deleteLifestore(data) {
+    let api: string = this.helper.getAPP('life/deleteLifeStore');
+
+    return this.http.post(api, data, this.requestOptions)
+      .toPromise()
+      .then((response) => {
+        return response;
+      })
+      .catch(this.handleError);
+  }
+
   //
   // handle error
   private handleError(error: any) {

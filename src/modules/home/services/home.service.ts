@@ -22,6 +22,17 @@ export class HomeService {
     this.requestOptions = new RequestOptions({headers: this.headers, withCredentials: true});
   }
 
+
+  loadLifestoreList(params) {
+    let api: string = this.helper.getAPP('life/getLifeStoreList');
+    let data: Object = params;
+
+    return this.http.post(api, data, this.requestOptions)
+      .toPromise()
+      .then(response => response.json())
+      .catch(this.handleError);
+  }
+
   //
   // handle error
   private handleError(error: any) {

@@ -1,5 +1,6 @@
 import {Component, ViewChild} from '@angular/core';
 import { IonicPage, NavController, NavParams, Slides } from 'ionic-angular';
+import {LifestoreList} from "./lifestore-list";
 
 @Component({
   selector: 'page-home',
@@ -18,7 +19,8 @@ export class HomePage {
     this.slider.stopAutoplay();
   }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams) {
 
   }
 
@@ -30,6 +32,10 @@ export class HomePage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad Home');
+  }
+
+  gotoLifeStore(data) {
+    this.navCtrl.push(LifestoreList, data)
   }
 
 }

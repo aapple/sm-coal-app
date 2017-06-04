@@ -1,0 +1,44 @@
+page-lifestore-list {
+
+  /* 抢购样式 */
+
+  .snapup {
+    height: 80px;
+  }
+
+  .snapup .infologo {
+    height: 60px;
+    margin: 10px;
+  }
+
+  .snapup .shelf2 {
+    display: table;
+    height: inherit;
+    margin-left: 10px;
+  }
+
+  .snapup .shelfcell {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .snapup .shelfcell .title {
+    margin-bottom: 10px;
+  }
+
+  .snapup .arrow {
+    width: 20px;
+    padding-top: 30px;
+    padding-right: 10px;
+  }
+
+  .info {
+    padding-left: 20px;
+    padding-top: 13px;
+    font-size: 15px;
+    padding-bottom: 30px;
+    font-weight: bold;
+    background: #f0f0f0;
+  }
+
+}
