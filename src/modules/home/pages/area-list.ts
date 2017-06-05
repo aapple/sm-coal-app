@@ -15,13 +15,14 @@ import {AppGlobal} from "../../../app/app.global";
 })
 export class AreaList {
 
-  items: any = ["锦界","大柳塔","店塔","西沟","孙家岔"];
+  items: any = [];
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     public viewCtrl: ViewController,
     public storage: Storage) {
 
+    this.items = AppGlobal.areaList;
   }
 
   ionViewDidLoad() {

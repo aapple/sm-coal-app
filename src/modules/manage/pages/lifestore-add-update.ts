@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {ManageService} from "../services/manage.service";
 import {AppService} from "../../common/services/app.service";
+import {AppGlobal} from "../../../app/app.global";
 
 /**
  * Generated class for the FactoryAddUpdate page.
@@ -16,13 +17,14 @@ import {AppService} from "../../common/services/app.service";
 export class LifestoreAddUpdate {
 
   lifestore: any = {};
+  areaList: any = [];
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public manageService: ManageService,
               public heyApp: AppService,) {
 
     this.lifestore = navParams.data;
-
+    this.areaList = AppGlobal.areaList;
   }
 
   ionViewDidLoad() {

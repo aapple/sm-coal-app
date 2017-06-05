@@ -30,11 +30,7 @@
     <ion-item>
       <ion-label>区域</ion-label>
       <ion-select [(ngModel)]="lifestore.area" interface="popover">
-        <ion-option value="西沟">西沟</ion-option>
-        <ion-option value="锦界">锦界</ion-option>
-        <ion-option value="店塔">店塔</ion-option>
-        <ion-option value="大柳塔">大柳塔</ion-option>
-        <ion-option value="孙家岔">孙家岔</ion-option>
+        <ion-option value="{{area}}" *ngFor="let area of areaList">{{area}}</ion-option>
       </ion-select>
     </ion-item>
 
