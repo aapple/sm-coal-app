@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=no">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+  <!-- 启用360浏览器的极速模式(webkit) -->
+  <meta name="renderer" content="webkit">
+  <!-- 避免IE使用兼容模式 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+  <meta name="HandheldFriendly" content="true">
+  <!-- 微软的老式浏览器 -->
+  <meta name="MobileOptimized" content="320">
+  <!-- uc强制竖屏 -->
+  <meta name="screen-orientation" content="portrait">
+  <!-- QQ强制竖屏 -->
+  <meta name="x5-orientation" content="portrait">
+  <!-- UC强制全屏 -->
+  <meta name="full-screen" content="yes">
+  <!-- QQ强制全屏 -->
+  <meta name="x5-fullscreen" content="true">
+  <!-- UC应用模式 -->
+  <meta name="browsermode" content="application">
+  <!-- QQ应用模式 -->
+  <meta name="x5-page-mode" content="app">
+  <!-- windows phone 点击无高光 -->
+  <meta name="msapplication-tap-highlight" content="no">
+  <!-- 适应移动端end -->
+	<title>水果拼团网站</title>
+	<link rel="stylesheet" href="css/frameui.css"/>
+    <link rel="stylesheet" href="css/widget/slider.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+</head>
+<body>
+	<!--html5 nav-->
+	<nav class="j-nav navbar index-nav">
+        <div class="logo fl">
+			<a href="javascript:void(0);"></a>
+		</div>
+		<div class="city">
+			<a id="showSiteBtn" href="javascript:;" target="_self">广州</a>
+			<input id="switchGPS" name="switchGPS" type="hidden">
+		</div>
+    </nav>
+	<!--a1轮播图-->
+    <div data-am-widget="slider" class="am-slider am-slider-a1" data-am-slider='{"directionNav":false}' >
+	    <ul class="am-slides cl">
+	        <li>
+	        	<img src="images/j-banner02.jpg">
+	        </li>
+	        <li>
+	        	<img src="images/j-banner04.jpg">
+	        </li>
+	    </ul>
+	</div>
+	<div class="j-hint">仅20元起送，24小时内极速达</div>
+	<!--导航-->
+	<div class="j-component-func" id="m-banner">
+        <ul class="list-unstyled" id="categoryMenu">
+            <li class="route1 "><a href="register.html"><span class="glyphicon fdayicon fdayicon-all"></span>新用户</a></li>
+            <li class="route2 "><a href="meal.html"><span class="glyphicon fdayicon fdayicon-order"></span>套餐</a></li>
+            <li class="route3 "><a href="invite.html"><span class="glyphicon fdayicon fdayicon-contact"></span>邀请红包</a></li>
+            <li class="route4 "><a href="#"><span class="glyphicon fdayicon fdayicon-client"></span>企业团购</a></li>
+        </ul>
+    </div>
+    <!--内容-->
+	<div class="j-component-bestsell">
+	    <ul class="list-unstyled">
+            <li><a href="javascript:void(0);"><img class="lazy" src="images/j-c03.jpg"></a></li>
+        </ul>
+	</div>
+
+	<div id="tuan" class="tuan">
+        <div class="tuan_g" data-vtuan="0" data-cat="1" data-num="12058">
+            <i></i>
+            <a href="detail.html">
+                <div class="tuan_g_img">
+                    <div class="tally_box">
+                        <p>3人团</p>
+                        <p>2.5折</p>
+                    </div>
+                    <img src="images/j-c01.jpg">
+                </div>
+                <div class="tuan_g_info">
+                    <p class="tuan_g_name">越南进口火龙果（2粒）【直降2.80元】 </p>
+                    <p style="display: black;" class="tuan_g_cx">
+                        外皮红艳张扬，果肉绵软白嫩，汁液丰富，富含维生素C，丰富的水溶性膳食纤维，前者美白皮肤，后者有助减肥，降血糖，润肠，预防肠癌，美容瘦身。
+                    </p>
+                </div>
+                
+                <div class="tuan_g_core">
+                    <div id="triangle-right"></div>
+                    <div class="tuan_g_price">
+                        <span>3人团只需</span>
+                        <b>¥14.00</b>
+                    </div>
+                    <div class="tuan_g_btn">我要拼</div>
+                </div>
+                <div class="tuan_g_yj"><s>原价:￥16.80</s></div>
+            </a>
+        </div>
+    </div>
+	<!--footer begin-->
+	<footer class="footer">
+        <nav>
+            <ul>
+                <li><a href="javascript:void(0);" class="nav-controller active"><div class="fb-home"></div>首页</a></li>
+                <li><a href="groups.html" class="nav-controller"><div class="fb-group"></div>我的拼团</a></li>
+                <li><a href="myorder.html" class="nav-controller"><div class="fb-list"></div>我的订单</a></li>
+                <li><a href="user.html" class="nav-controller"><div class="fb-user"></div>个人中心</a></li>
+            </ul>
+        </nav>
+    </footer>
+    <!--footer end-->
+
+	<!--引入js资源-->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/amazeui.js"></script>
+	<script src="js/handlebars.min.js"></script>
+	<script src="js/amazeui.widgets.helper.js"></script>
+	<script type="text/javascript">
+	window.onload=function(){
+		$("#categoryMenu li").addClass("route")
+	}
+	</script> 	
+</body>
+</html>

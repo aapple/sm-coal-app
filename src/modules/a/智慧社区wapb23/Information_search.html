@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta content="telephone=no" name="format-detection" />
+    <title>搜索</title>
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/shake.css" rel="stylesheet" type="text/css">
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="css/animate.min.css" rel="stylesheet" type="text/css">
+    <link href="css/idangerous.swiper.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="js/wo.js"></script>
+</head>
+<body style="background-color: #fff !important;">
+<div class="warpe">
+    <div class="head head2">
+        <a href="#" class="return" style="color: #5f5e5e;"><i class="icon-chevron-left"></i></a>
+        <a href="#" class="search" style="color: #5f5e5e;"><i class="icon-search"></i> </a>
+        <input type="text" placeholder="搜索标题" class="animated bounceIn zz_search">
+    </div>
+    <div class="main">
+        <div class="search_txt">
+            <div class="search_t clear_border">
+                所有标签
+            </div>
+            <div class="search_list">
+                <ul>
+                    <li class="animated rotateIn">
+                        <a href="#">标签1</a>
+                    </li>
+                    <li class="animated fadeInRight">
+                        <a href="#">标签2</a>
+                    </li>
+                    <li class="animated bounceIn">
+                        <a href="#">标签3</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="finance">
+            <ul>
+                <li class="animated fadeInRight">
+                    <a href="#">
+                        <p>【必看】这些钱可以省了！总理力督，国务院开出减税降费清单</p>
+                        <p><span class="puff_left">来自凤凰社区街道办</span><span class="puff_right">08-05 23:58</span> </p>
+                        <p><label> <i class="icon-bookmark-empty"></i> 标签1</label><label> <i class="icon-bookmark-empty"></i> 标签2</label></p>
+                    </a>
+                </li>
+                <li class="animated fadeInLeft">
+                    <a href="#">
+                        <p>"空中巴士"巴铁试验车北戴河测试 可载300人</p>
+                        <p><span class="puff_left">来自凤凰社区街道办</span><span class="puff_right">08-03 18:55</span> </p>
+                        <p><label> <i class="icon-bookmark-empty"></i> 标签1</label><label> <i class="icon-bookmark-empty"></i> 标签2</label></p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="js/idangerous.swiper.min.js"></script>
+<script type="text/javascript">
+    var tabsSwiper = new Swiper('.swiper-container',{
+        speed:500,
+        onSlideChangeStart: function(){
+            $(".tabs .active").removeClass('active');
+            $(".tabs a").eq(tabsSwiper.activeIndex).addClass('active');
+        }
+    });
+    $(".tabs a").on('touchstart mousedown',function(e){
+        e.preventDefault()
+        $(".tabs .active").removeClass('active')
+        $(this).addClass('active')
+        tabsSwiper.slideTo( $(this).index() )
+    })
+    $(".tabs a").click(function(e){
+        e.preventDefault()
+    })
+</script>
+</body>
+</html>

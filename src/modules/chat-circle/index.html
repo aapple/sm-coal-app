@@ -1,0 +1,741 @@
+<!DOCTYPE HTML> 
+
+<html>
+
+<head>
+
+    <title>我的朋友圈</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <link href="css/1_style.css" rel="stylesheet">
+    <script src="css/jquery-1.8.3.min.js"></script>
+</head>
+
+<body>
+
+    <header>
+
+        <img id="bg" src="picture/1_bg.png">
+
+        <p id="user-name" class="data-name"></p>
+
+        <img id="avt" class="data-avt" src="">
+
+    </header>
+
+    <div id="main">
+        <!--<div id="share_show">
+            <img src="images/share.png" style="width:90%;" />
+        </div>-->
+        <div id="list">
+			 <ul>
+
+            <li>
+
+                <div class="po-avt-wrap">
+
+                    <img class="po-avt data-avt" src="">
+
+                </div>
+
+                <div class="po-cmt">
+
+                    <div class="po-hd">
+
+                        <p class="po-name"><span class="data-name"></span></p>
+
+                        <p class="post">过两天开party，都有谁来咧？</p>
+
+                        <p class="time">刚刚</p><img class="c-icon" src="picture/2_c.png">
+
+                    </div>
+
+                    <div class="r"></div>
+
+                    <div class="cmt-wrap">
+
+                        <div class="like"><img src="picture/3_l.png">苍井空，陈冠希，杨幂，王思聪...</div>
+
+                        <div class="cmt-list">
+
+                        <p><span>杨幂：</span>好哇我参加~</p>
+
+                        <p><span>苍井空：</span>我带几个姐妹一起去。</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </li>
+
+            <li>
+
+                <div class="po-avt-wrap">
+
+                    <img class="po-avt" src="picture/4_a1.jpg">
+
+                </div>
+
+                <div class="po-cmt">
+
+                    <div class="po-hd">
+
+                        <p class="po-name">苍井空</p>
+
+                        <p class="post">早上好，还是好困~<img src="picture/5_c1.jpg"></p>
+
+                        <p class="time">2分钟前</p><img class="c-icon" src="picture/6_c.png">
+
+                    </div>
+
+                    <div class="r"></div>
+
+                    <div class="cmt-wrap">
+
+                        <div class="like"><img src="picture/3_l.png">陈赫，叫兽易小星，王思聪，陈冠希，余文乐...</div>
+
+                        <div class="cmt-list">
+
+                        <p><span>陈赫：</span>怪我咯~</p>
+
+                        <p><span>陈冠希：</span>怪我咯~</p>
+
+                        <p><span class="data-name"></span><span>：</span>怪我咯~</p>
+
+                        <p><span>苍井空</span>回复<span class="data-name"></span><span>：</span>知道就好！</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </li>
+
+            <li>
+
+                <div class="po-avt-wrap">
+
+                    <img class="po-avt" src="picture/8_a2.jpg">
+
+                </div>
+
+                <div class="po-cmt">
+
+                    <div class="po-hd">
+
+                        <p class="po-name">柳岩</p>
+
+                        <div class="post"><p><b class="data-name"></b>，今晚约会不要迟到哦</p></div>
+
+                        <p class="time">10分钟前</p><img class="c-icon" src="picture/2_c.png">
+
+                    </div>
+
+                    <div class="r"></div>
+
+                    <div class="cmt-wrap">
+
+                        <div class="like"><img src="picture/3_l.png"><span class="data-name"></span>，大鹏</div>
+
+                        <div class="cmt-list">
+
+                        <p><span class="data-name"></span><span>：</span>乖乖等我~</p>
+
+                        <p><span>柳岩</span>回复<span class="data-name"></span><span>：</span>好的呢</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </li>
+
+            <li>
+				
+                <div class="po-avt-wrap">
+
+                    <img class="po-avt" src="picture/12_a5.png">
+
+                </div>
+				<a href="http://zhushou.360.cn/detail/index/soft_id/3174049">
+                    <div class="po-cmt clearfix">
+    
+                        <div class="po-hd">
+                            <p class="ads">推广<img src="picture/13_ads.png"></p>
+    
+                            <p class="po-name">口令红包神器</p>
+    
+                            <div class="post clearfix">红包不停惊喜不断，随时随地领红包就在口令红包神器！
+                                <img src="picture/15_c6.png">
+                            </div>
+                            <p class="time">45分钟前</p><img class="c-icon" src="picture/2_c.png">
+    
+                        </div>
+					
+                        <div class="r"></div>
+    
+                        <div class="cmt-wrap">
+    
+                            <div class="like"><img src="picture/3_l.png">王思聪，李晨，刘强东，...</div>
+    
+                            <div class="cmt-list">
+    
+                                <p><span>王思聪：</span>新玩意？可以洽谈一下。</p>
+                                <p><span>刘强东：</span>玩起来还不错...</p>
+                                <p><span>口令红包神器APP：</span>安卓各大应用商店搜索“口令红包神器”即可下载！IOS正在审核中...</p>
+    
+                            </div>
+                        </div>
+                </div>
+				</a>
+            </li>          
+            
+            <li>
+
+                <div class="po-avt-wrap">
+
+                    <img class="po-avt" src="picture/58_n5.jpg">
+
+                </div>
+
+                <div class="po-cmt">
+
+                    <div class="po-hd">
+
+                        <p class="po-name">王思聪</p>
+
+                        <div class="post">
+							
+                            <p>红包口令太多，已经发在口令红包神器APP了</p>
+
+                            <p><img src="picture/14.png"></p>
+                         </div>
+
+                        <p class="time">4分钟前</p><img class="c-icon" src="picture/2_c.png">
+
+                    </div>
+
+                    <div class="r"></div>
+
+                    <div class="cmt-wrap">
+
+                        <div class="like"><img src="picture/3_l.png"><b class="data-name"></b>，舒淇，张馨予，林更新，周杰伦</div>
+
+                        <div class="cmt-list">
+						
+                        <p><span>苍井空：</span>老公你真好</p>
+                        <p><span class="data-name"></span><span>：</span>老公你真好</p>
+
+                        <p><span>王思聪</span>回复<span class="data-name"></span><span>：</span>兄弟不说这么多，给你单独包了一个大的</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </li>
+
+            <li>
+
+                <div class="po-avt-wrap">
+
+                    <img class="po-avt" src="picture/23_a4.jpg">
+
+                </div>
+
+                <div class="po-cmt">
+
+                    <div class="po-hd">
+
+                        <p class="po-name">范冰冰</p>
+
+                        <p class="post">我的生日趴，你为什么不来<img class="data-avt" src=""></p>
+
+                        <p class="time">30分钟前</p><img class="c-icon" src="picture/2_c.png">
+
+                    </div>
+
+                    <div class="r"></div>
+
+                    <div class="cmt-wrap">
+
+                        <div class="like"><img src="picture/3_l.png"><b class="data-name"></b>，李晨，李治廷，黎明...</div>
+
+                        <div class="cmt-list">
+
+                        <p><span>李晨：</span>呵呵。</p>
+
+                        <p><span class="data-name"></span><span>：</span>最近忙，就酱。</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </li>
+
+            <li>
+
+                <div class="po-avt-wrap">
+
+                    <img class="po-avt" src="picture/a1.jpg">
+
+                </div>
+
+                <div class="po-cmt">
+
+                    <div class="po-hd">
+
+                        <p class="po-name">刘亦菲</p>
+
+                        <p class="post"><span class="data-name"></span>，你愿意做我的逍遥哥哥吗？<img src="picture/a2.jpg"></p>
+
+                        <p class="time">50分钟前</p><img class="c-icon" src="picture/2_c.png">
+
+                    </div>
+
+                    <div class="r"></div>
+
+                    <div class="cmt-wrap">
+
+                        <div class="like"><img src="picture/3_l.png"><span class="data-name"></span>，范冰冰，柳岩</div>
+
+                        <div class="cmt-list">
+
+                        <p><span>宋承宪：</span>难道你不要我了?</p>
+
+                        <p><span>刘亦菲</span>回复<span>宋承宪：</span>：我对<span class="data-name"></span>才是真爱。</p>
+                        <p><span>柳岩：</span>不要脸，<span class="data-name"></span>是我的！</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </li>
+
+            <li>
+
+                <div class="po-avt-wrap">
+
+                    <img class="po-avt" src="picture/30_a7.jpg">
+
+                </div>
+
+                <div class="po-cmt">
+
+                    <div class="po-hd">
+
+                        <p class="po-name">金星</p>
+
+                        <p class="post">完美！<img src="picture/31_c8.png"></p>
+
+                        <p class="time">55分钟前</p><img class="c-icon" src="picture/2_c.png">
+
+                    </div>
+
+                    <div class="r"></div>
+
+                    <div class="cmt-wrap">
+
+                        <div class="cmt-list">
+
+                        <p><span class="data-name"></span><span>：</span>星姐，求虐！</p>
+
+                        <p><span>金星</span>回复<span class="data-name"></span><span>：</span>你呢，人长的挺好看，就是偏偏要靠才华。</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </li>
+
+        </ul>  
+        </div>
+
+        <div id="share">
+
+            <a>生成朋友圈</a><a>惊呆小伙伴</a>
+
+            <p>（此朋友圈纯属虚构）</p>
+
+        </div>
+
+        <div id="guide" class="hide"></div>
+
+    </div>
+
+    <script id="man" type="text/template">
+
+    </script>
+
+    <script id="woman" type="text/template">
+
+        <ul>
+
+            <li>
+
+                <div class="po-avt-wrap">
+
+                    <img class="po-avt" src="picture/33_n1.png">
+
+                </div>
+
+                <div class="po-cmt">
+
+                    <div class="po-hd">
+
+                        <p class="po-name">靳东</p>
+
+                        <p class="post"><span class="data-name"></span>，邀请你参加我的生日宴会为什么你不来？<img class="data-avt" src=""></p>
+
+                        <p class="time">刚刚</p><img class="c-icon" src="picture/2_c.png">
+
+                    </div>
+
+                    <div class="r"></div>
+
+                    <div class="cmt-wrap">
+
+                        <div class="like"><img src="picture/3_l.png">王凯，胡歌，霍建华<span class="data-name"></span></div>
+
+                        <div class="cmt-list">
+
+                        <p><span class="data-name"></span><span>：</span>为了社会主义建设~</p>
+
+
+                        <p><span>靳东</span>回复<span class="data-name"></span><span>：</span>你又抛弃我••••</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </li>
+
+            <li>
+
+                <div class="po-avt-wrap">
+
+                    <img class="po-avt" src="picture/36_n2.png">
+
+                </div>
+
+                <div class="po-cmt">
+
+                    <div class="po-hd">
+
+                        <p class="po-name">王凯</p>
+
+                        <p class="post"><span class="data-name"></span>，元旦跟我一起过好不好？<img src="picture/37_g1.jpg"></p>
+
+                        <p class="time">2分钟前</p><img class="c-icon" src="picture/2_c.png">
+
+                    </div>
+
+                    <div class="r"></div>
+
+                    <div class="cmt-wrap">
+
+                        <div class="like"><img src="picture/3_l.png">王凯</div>
+
+                        <div class="cmt-list">
+
+                        <p><span>胡歌</span><span>：</span><span class="data-name"></span>，元旦跟我一起过好不好？</p>
+                        <p><span>靳东</span><span>：</span><span class="data-name"></span>，元旦跟我一起过好不好？</p>
+                        <p><span class="data-name"></span><span>：</span>不要，我要在家抢红包</p>
+                        <p><span>靳东</span>回复<span>：</span><span class="data-name"></span>我们可以一起在家抢（害羞）</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </li>
+
+            <li>
+				
+                <div class="po-avt-wrap">
+
+                    <img class="po-avt" src="picture/12_a5.png">
+
+                </div>
+				<a href="http://zhushou.360.cn/detail/index/soft_id/3174049">
+                    <div class="po-cmt clearfix">
+    
+                        <div class="po-hd">
+                            <p class="ads">推广<img src="picture/13_ads.png"></p>
+    
+                            <p class="po-name">口令红包神器</p>
+    
+                            <div class="post clearfix">红包不停惊喜不断，随时随地领红包就在口令红包神器！
+                                <img src="picture/15_c6.png">
+                            </div>
+                            <p class="time">45分钟前</p><img class="c-icon" src="picture/2_c.png">
+    
+                        </div>
+					
+                        <div class="r"></div>
+    
+                        <div class="cmt-wrap">
+    
+                            <div class="like"><img src="picture/3_l.png">王思聪，李晨，刘强东，...</div>
+    
+                            <div class="cmt-list">
+    
+                                <p><span>王思聪：</span>新玩意？可以洽谈一下。</p>
+                                <p><span>刘强东：</span>玩起来还不错...</p>
+                                <p><span>口令红包神器APP：</span>安卓各大应用商店搜索“口令红包神器”即可下载！IOS正在审核中...</p>
+    
+                            </div>
+                        </div>
+                </div>
+				</a>
+            </li>       
+
+            <li>
+
+                <div class="po-avt-wrap">
+
+                    <img class="po-avt" src="picture/46_n3.png">
+
+                </div>
+
+                <div class="po-cmt">
+
+                    <div class="po-hd">
+
+                        <p class="po-name">胡歌</p>
+
+                        <div class="post"><p><span class="data-name"></span>，我在口令红包神器给你包了一个现金红包，记得去领取哦</p><img src="picture/47_g2.jpg"></div>
+
+                        <p class="time">2分钟前</p><img class="c-icon" src="picture/2_c.png">
+
+                    </div>
+
+                    <div class="r"></div>
+
+                    <div class="cmt-wrap">
+
+                        <div class="like"><img src="picture/3_l.png">TFBOYS-王俊凯 ，鹿晗，TFBOYS-易烊千玺，TFBOYS-王源，...</div>
+
+                        <div class="cmt-list">
+
+                        <p><span>刘亦菲：</span>逍遥哥哥，你居然不给我包红包！</p>
+
+                        <p><span>霍建华：</span>老胡我的呢</p>
+
+                        <p><span>刘涛：</span>我的呢?</p>
+                        <p><span class="data-name"></span><span>：</span>欧巴，么么哒~</p>
+                        <p><span>胡歌</span>回复<span>：</span><span class="data-name"></span>你开心就好</p>
+                        
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </li>
+
+            <li>
+
+                <div class="po-avt-wrap">
+
+                    <img class="po-avt" src="picture/50_n4.jpg">
+
+                </div>
+
+                <div class="po-cmt">
+
+                    <div class="po-hd">
+
+                        <p class="po-name">霍建华</p>
+
+                        <div class="post">
+
+                            <p>我决定跟<b class="data-name"></b>在一起了，请祝福我们</p>
+
+                            <p><img class="list-img" src="picture/9_c2.jpg"><img class="data-avt list-img" src=""></p></div>
+
+                        <p class="time">4分钟前</p><img class="c-icon" src="picture/2_c.png">
+
+                    </div>
+
+                    <div class="r"></div>
+
+                    <div class="cmt-wrap">
+
+                        <div class="like"><img src="picture/3_l.png">胡歌，王凯，靳东，<span class="data-name"></span></div>
+
+                        <div class="cmt-list">
+						<p><span>赵丽颖：</span>狮虎，我怎么办？</p>
+                        <p><span>霍建华</span>回复<span>赵丽颖:</span>不好意思，小骨，我们是不可能的</p>
+                        <p><span class="data-name"></span><span>：</span>狮虎，是真的吗？</p>
+                        <p><span>霍建华</span>回复<span class="data-name"></span><span>：</span>不要叫我师傅，叫我爱人。</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </li>
+
+            <li>
+
+                <div class="po-avt-wrap">
+
+                    <img class="po-avt" src="picture/26_a6.jpg">
+
+                </div>
+
+                <div class="po-cmt">
+
+                    <div class="po-hd">
+
+                        <p class="po-name">鹿晗</p>
+
+                        <p class="post">耶，开心，我终于登到土豪排行榜第一名了！</p>
+                        <p><img class="list-img" src="picture/27_c7.jpg"><img class="list-img" src="picture/ph.jpg"></p>
+
+                        <p class="time">50分钟前</p><img class="c-icon" src="picture/2_c.png">
+
+                    </div>
+
+                    <div class="r"></div>
+
+                    <div class="cmt-wrap">
+
+                        <div class="like"><img src="picture/3_l.png"><span class="data-name"></span>，吴亦凡，TFBOYS-王俊凯，TFBOYS-王源，TFBOYS-易烊千玺</div>
+
+                        <div class="cmt-list">
+
+                        <p><span>郑恺：</span>居然比我多，你等着，我马上去发</p>
+                        <p><span>吴亦凡：</span>超过我了哦~</p>
+
+                        <p><span class="data-name"></span><span>：</span>真厉害</p>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </li>
+
+            <li>
+
+                <div class="po-avt-wrap">
+
+                    <img class="po-avt" src="picture/58_n5.jpg">
+
+                </div>
+
+                <div class="po-cmt">
+
+                    <div class="po-hd">
+
+                        <p class="po-name">王思聪</p>
+
+                        <p class="post">我宣布，我和 <span class="data-name"></span> 结婚了！<img class="data-avt" src=""></p>
+
+                        <p class="time">30分钟前</p><img class="c-icon" src="picture/2_c.png">
+
+                    </div>
+
+                    <div class="r"></div>
+
+                    <div class="cmt-wrap">
+
+                        <div class="like"><img src="picture/3_l.png">林更新，杨幂，anglebaby，范冰冰...</div>
+
+                        <div class="cmt-list">
+
+                        <p><span>林更新：</span>呵呵。</p>
+
+                        <p><span class="data-name"></span><span>：</span>希望大家祝福我们！</p>
+
+                        <p><span>王思聪</span>回复<span class="data-name"></span><span>：</span>我从此退出娱乐圈。</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </li>                
+
+            <li>
+
+                <div class="po-avt-wrap">
+
+                    <img class="po-avt" src="picture/30_a7.jpg">
+
+                </div>
+
+                <div class="po-cmt">
+
+                    <div class="po-hd">
+
+                        <p class="po-name">金星</p>
+
+                        <p class="post">完美！<img src="picture/31_c8.png"></p>
+
+                        <p class="time">55分钟前</p><img class="c-icon" src="picture/2_c.png">
+
+                    </div>
+
+                    <div class="r"></div>
+
+                    <div class="cmt-wrap">
+
+                        <div class="cmt-list">
+
+                        <p><span class="data-name"></span><span>：</span>星姐，求虐！</p>
+
+                        <p><span>金星</span>回复<span class="data-name"></span><span>：</span>你呢，人长的挺好看，就是偏偏要靠才华。</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </li>
+
+        </ul>
+
+    </script>
+
+  
+<style>body > span{display:none;}</style>
+
+<script>
+        $(function(){
+
+           $("#share a").click(function(){
+				$("#guide").show();
+			}); 
+
+			$("#guide").click(function(){
+				$(this).hide();
+			});
+
+        });
+    </script>
+
+</body>
+
+</html>

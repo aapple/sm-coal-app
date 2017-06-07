@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=no">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+  <!-- 启用360浏览器的极速模式(webkit) -->
+  <meta name="renderer" content="webkit">
+  <!-- 避免IE使用兼容模式 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+  <meta name="HandheldFriendly" content="true">
+  <!-- 微软的老式浏览器 -->
+  <meta name="MobileOptimized" content="320">
+  <!-- uc强制竖屏 -->
+  <meta name="screen-orientation" content="portrait">
+  <!-- QQ强制竖屏 -->
+  <meta name="x5-orientation" content="portrait">
+  <!-- UC强制全屏 -->
+  <meta name="full-screen" content="yes">
+  <!-- QQ强制全屏 -->
+  <meta name="x5-fullscreen" content="true">
+  <!-- UC应用模式 -->
+  <meta name="browsermode" content="application">
+  <!-- QQ应用模式 -->
+  <meta name="x5-page-mode" content="app">
+  <!-- windows phone 点击无高光 -->
+  <meta name="msapplication-tap-highlight" content="no">
+  <!-- 适应移动端end -->
+	<title>水果拼团网站</title>
+	<link rel="stylesheet" href="css/frameui.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+</head>
+<body>
+	<div id="register-b">
+		<!--html5 nav-->
+		<nav class="j-nav navbar">
+	        <div class="logo fl">
+				<a href="user.html"></a>
+			</div>
+			<span class="user-title">注册会员</span>
+	    </nav>
+
+		<div class="register-box">
+			<form action="" class="am-form" id="doc-vld-msg">
+				<fieldset>
+				    <div class="am-form-group">
+				      	<label for="doc-ipt-3" class="am-u-sm-2 j-form-label">
+					    	<span class="registericon registericon-user"></span>
+					  	</label>
+				      	<input type="number" id="doc-vld-name-2-1" style="float: left;width: 56%;" data-validation-message="请输入手机号码" placeholder="手机号码" required/>
+				      	<span class="input-group-btn">
+		                    <button class="btn btn-default" type="button" id="TestGetCode"><span>点击获取</span><span class="hide">还剩<b id="timeout">60</b>秒</span></button>
+		                </span>
+				    </div>
+				    <div class="am-form-group">
+				      	<label for="doc-vld-pwd-1" class="am-u-sm-2 j-form-label">
+			    	  		<span class="registericon registericon-password"></span>
+			    	  	</label>
+				      	<input type="password" id="doc-vld-pwd-1" data-validation-message="请输入手机收到的短信验证码" placeholder="验证码" required/>
+				    </div>
+				    <button class="btn am-btn am-btn-secondary" type="submit">注 册</button>
+				</fieldset>
+			</form>
+		</div>	
+	</div>
+	<!--引入js资源-->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/amazeui.js"></script>
+	<script src="js/handlebars.min.js"></script>
+	<script src="js/amazeui.widgets.helper.js"></script>
+	<script>
+		$(function() {
+		  $('#doc-vld-msg').validator({
+		    onValid: function(validity) {
+		      $(validity.field).closest('.am-form-group').find('.am-alert').hide();
+		    },
+
+		    onInValid: function(validity) {
+		      var $field = $(validity.field);
+		      var $group = $field.closest('.am-form-group');
+		      var $alert = $group.find('.am-alert');
+		      // 使用自定义的提示信息 或 插件内置的提示信息
+		      var msg = $field.data('validationMessage') || this.getValidationMessage(validity);
+
+		      if (!$alert.length) {
+		        $alert = $('<div class="am-alert am-alert-danger"></div>').hide().
+		          appendTo($group);
+		      }
+		      $alert.html(msg).show();
+		    }
+		  });
+		});
+	</script>
+</body>
+</html>

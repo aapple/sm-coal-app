@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>确认订单</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <!--库-->
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="js/amazeui.js"></script>
+    <!--核心样式-->
+    <link rel="stylesheet" type="text/css" href="css/amazeui.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+<body>
+<!-----------头部----------->
+<div id="header">
+    <a class="return" href="user_center.html"><i class="am-icon-chevron-left"></i></a>
+    <span>确认订单</span>
+</div>
+<!----------------收货人------------------>
+<div id="sure_order">
+    <ul class="consignee">
+        <a href="offen_user.html">
+        <li class="consignee_name">
+            <p>联系人：燕子</p>
+            <span>13213526789</span>
+            <div class="clear"></div>
+        </li>
+        </a>
+    </ul>
+
+    <!----------------商品清单------------------>
+    <div class="my_goods_list">
+        <div class="commodity_list">旅游订单</div>
+        <ul>
+            <li class="commodity_list_nav">
+                <a href="project_basic.html">
+                    <img src="images/my_order01.jpg"/>
+                    <div class="project_cont">
+                        <p>法国正品男士香水清新持久淡香诱惑古龙水香奈...</p>
+                        <span>颜色分类：深蓝色；纯棉</span>
+                        <span>规格：500g</span>
+                    </div>
+                    <div class="money">
+                            <label class="VIP-price">￥500</label><span>x1</span>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!----------------合计------------------>
+    <div id="total_money">
+        <div class="choose_all">
+            <ul>
+                <li class="total">合计：<span>￥500</span></li>
+                <li class="no_freight">可获得500积分</li>
+            </ul>
+        </div>
+        <a class="settlement" href="#">提交订单</a>
+    </div>
+</div>
+</body>
+</html>
+

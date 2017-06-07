@@ -1,0 +1,331 @@
+/**
+  * Web Components:slider;
+  * slider.css
+  */
+
+/**
+  * Slider Theme: a1
+  * 描述:标准版,含有指示图片滚动进度的小圆点;
+  * 原点在幻灯片内层底部
+  */
+.am-slider-a1 {
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  /* Control Nav */
+}
+.am-slider-a1 .am-viewport {
+  max-height: 2000px;
+  -webkit-transition: all 1s ease;
+          transition: all 1s ease;
+}
+.loading .am-slider-a1 .am-viewport {
+  max-height: 300px;
+}
+.am-slider-a1 .am-control-nav {
+  width: 100%;
+  position: absolute;
+  bottom: 5px;
+  text-align: center;
+  line-height: 0;
+}
+.am-slider-a1 .am-control-nav li {
+  margin: 0 6px;
+  display: inline-block;
+}
+.am-slider-a1 .am-control-nav li a {
+  width: 8px;
+  height: 8px;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  text-indent: -9999px;
+  border-radius: 50%;
+  -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+          box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+}
+.am-slider-a1 .am-control-nav li a:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.am-slider-a1 .am-control-nav li a.am-active {
+  background-color: #0e90d2;
+  cursor: default;
+}
+.am-slider-a1 .am-direction-nav,
+.am-slider-a1 .am-pauseplay {
+  display: none;
+}
+
+/**
+  * Slider Theme: a2
+  * 描述:标准版,含有指示图片滚动进度的小圆点;
+  * 圆点在幻灯片外侧,底部
+  */
+.am-slider-a2 {
+  margin-bottom: 30px;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  /* Control Nav */
+}
+.am-slider-a2 .am-viewport {
+  max-height: 2000px;
+  -webkit-transition: all 1s ease;
+          transition: all 1s ease;
+}
+.loading .am-slider-a2 .am-viewport {
+  max-height: 300px;
+}
+.am-slider-a2 .am-control-nav {
+  width: 100%;
+  position: absolute;
+  bottom: -15px;
+  text-align: center;
+  line-height: 0;
+}
+.am-slider-a2 .am-control-nav li {
+  margin: 0 6px;
+  display: inline-block;
+}
+.am-slider-a2 .am-control-nav li a {
+  width: 8px;
+  height: 8px;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  text-indent: -9999px;
+  border-radius: 50%;
+  -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+          box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+}
+.am-slider-a2 .am-control-nav li a:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.am-slider-a2 .am-control-nav li a.am-active {
+  background-color: #0e90d2;
+  cursor: default;
+}
+.am-slider-a2 .am-direction-nav,
+.am-slider-a2 .am-pauseplay {
+  display: none;
+}
+/**
+  * Slider Theme: a3
+  * 描述：含有显示图片滚动进度的横条状(--)进度条
+  */
+.am-slider-a3 {
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  /* Control Nav */
+}
+.am-slider-a3 .am-viewport {
+  max-height: 2000px;
+  -webkit-transition: all 1s ease;
+          transition: all 1s ease;
+}
+.loading .am-slider-a3 .am-viewport {
+  max-height: 300px;
+}
+.am-slider-a3 .am-control-nav {
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  height: 6px;
+  display: table;
+  bottom: 0;
+  font-size: 0;
+  line-height: 0;
+}
+.am-slider-a3 .am-control-nav li {
+  display: table-cell;
+}
+.am-slider-a3 .am-control-nav li a {
+  width: 100%;
+  height: 6px;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  text-indent: -9999px;
+}
+.am-slider-a3 .am-control-nav li a:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.am-slider-a3 .am-control-nav li a.am-active {
+  background-color: #0e90d2;
+  cursor: default;
+}
+.am-slider-a3 .am-direction-nav,
+.am-slider-a3 .am-pauseplay {
+  display: none;
+}
+
+/**
+  * Slider Theme: a4
+  * 描述:幻灯片具有圆角的前进/后退指示键;
+  */
+.am-slider-a4 {
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  /* Direction Nav */
+}
+.am-slider-a4 .am-viewport {
+  max-height: 2000px;
+  -webkit-transition: all 1s ease;
+          transition: all 1s ease;
+}
+.loading .am-slider-a4 .am-viewport {
+  max-height: 300px;
+}
+.am-slider-a4 .am-direction-nav a {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  display: block;
+  width: 24px;
+  height: 24px;
+  padding: 4px;
+  margin: -16px 0 0;
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  overflow: hidden;
+  opacity: 0.45;
+  cursor: pointer;
+  color: #ffffff;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+  background-color: rgba(0, 0, 0, 0.5);
+  font-size: 0;
+  text-align: center;
+  border-radius: 50%;
+  -webkit-transition: all .3s ease;
+          transition: all .3s ease;
+}
+.am-slider-a4 .am-direction-nav a:before {
+  display: inline-block;
+  font: normal normal normal 1.6rem/1 "FontAwesome", sans-serif;
+  /*font-weight: normal; // 2
+  font-style: normal; // 2
+  vertical-align: baseline; // 3
+  line-height: 1; // 4*/
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+          transform: translate(0, 0);
+  content: "\f053";
+  font-size: 16px;
+  line-height: 24px;
+}
+.am-slider-a4 .am-direction-nav a.am-prev {
+  left: 5px;
+}
+.am-slider-a4 .am-direction-nav a.am-next {
+  right: 5px;
+}
+.am-slider-a4 .am-direction-nav a.am-next:before {
+  content: "\f054";
+}
+.am-slider-a4 .am-direction-nav .am-disabled {
+  opacity: 0!important;
+  cursor: default;
+}
+.am-slider-a4:hover .am-prev {
+  opacity: 0.7;
+}
+.am-slider-a4:hover .am-prev:hover {
+  opacity: 1;
+}
+.am-slider-a4:hover .am-next {
+  opacity: 0.7;
+}
+.am-slider-a4:hover .am-next:hover {
+  opacity: 1;
+}
+.am-slider-a4 .am-control-nav,
+.am-slider-a4 .am-pauseplay {
+  display: none;
+}
+/**
+  * Slider Theme: a5
+  * 描述：幻灯片前进/后退指示键 分居幻灯片左右两侧,不包含在幻灯片范围内;
+  */
+.am-slider-a5 {
+  margin: 15px 30px;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  /* Direction Nav */
+}
+.am-slider-a5 .am-viewport {
+  max-height: 2000px;
+  -webkit-transition: all 1s ease;
+          transition: all 1s ease;
+}
+.loading .am-slider-a5 .am-viewport {
+  max-height: 300px;
+}
+.am-slider-a5 .am-direction-nav a {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  display: block;
+  width: 24px;
+  height: 24px;
+  padding: 4px;
+  margin: -16px 0 0;
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  overflow: hidden;
+  opacity: 0.45;
+  cursor: pointer;
+  color: #333333;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+  font-size: 0;
+  -webkit-transition: all .3s ease;
+          transition: all .3s ease;
+}
+.am-slider-a5 .am-direction-nav a:before {
+  display: inline-block;
+  font: normal normal normal 1.6rem/1 "FontAwesome", sans-serif;
+  /*font-weight: normal; // 2
+  font-style: normal; // 2
+  vertical-align: baseline; // 3
+  line-height: 1; // 4*/
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+          transform: translate(0, 0);
+  content: "\f053";
+  font-size: 24px;
+}
+.am-slider-a5 .am-direction-nav a.am-prev {
+  left: -25px;
+}
+.am-slider-a5 .am-direction-nav a.am-next {
+  right: -25px;
+  text-align: right;
+}
+.am-slider-a5 .am-direction-nav a.am-next:before {
+  content: "\f054";
+}
+.am-slider-a5 .am-direction-nav .am-disabled {
+  opacity: 0!important;
+  cursor: default;
+}
+.am-slider-a5:hover .am-prev {
+  opacity: 0.7;
+}
+.am-slider-a5:hover .am-prev:hover {
+  opacity: 1;
+}
+.am-slider-a5:hover .am-next {
+  opacity: 0.7;
+}
+.am-slider-a5:hover .am-next:hover {
+  opacity: 1;
+}
+.am-slider-a5 .am-control-nav,
+.am-slider-a5 .am-pauseplay {
+  display: none;
+}

@@ -1,0 +1,187 @@
+.am-accordion-item {
+  margin: 0;
+}
+.am-accordion-title {
+  font-weight: normal;
+  cursor: pointer;
+}
+.am-accordion-item.am-disabled .am-accordion-title {
+  cursor: default;
+  pointer-events: none;
+}
+.am-accordion-bd {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+}
+.am-accordion-content {
+  margin-top: 0;
+  padding: 0.8rem 1rem 1.2rem;
+  font-size: 1.4rem;
+}
+
+/**
+  * Accordion Theme: default
+  * Author: Minwe (minwe@yunshipei.com)
+  */
+.am-accordion-default {
+  margin: 1rem;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+}
+.am-accordion-default .am-accordion-item {
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+.am-accordion-default .am-accordion-item:first-child {
+  border-top: none;
+}
+.am-accordion-default .am-accordion-title {
+  color: rgba(0, 0, 0, 0.6);
+  -webkit-transition: background-color 0.2s ease-out;
+          transition: background-color 0.2s ease-out;
+  padding: .8rem 1rem;
+}
+.am-accordion-default .am-accordion-title:before {
+  content: "\f0da";
+  display: inline-block;
+  font: normal normal normal 1.6rem/1 "FontAwesome", sans-serif;
+  /*font-weight: normal; // 2
+  font-style: normal; // 2
+  vertical-align: baseline; // 3
+  line-height: 1; // 4*/
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+          transform: translate(0, 0);
+  -webkit-transition: -webkit-transform .2s ease;
+          transition: transform .2s ease;
+  -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+          transform: rotate(0deg);
+  margin-right: 5px;
+}
+.am-accordion-default .am-accordion-title:hover {
+  color: #0e90d2;
+}
+.am-accordion-default .am-accordion-content {
+  color: #666666;
+}
+.am-accordion-default .am-active .am-accordion-title {
+  background-color: #eeeeee;
+  color: #0e90d2;
+}
+.am-accordion-default .am-active .am-accordion-title:before {
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+/**
+  * Accordion Theme: basic
+  * Author: Minwe (minwe@yunshipei.com)
+  */
+.am-accordion-basic {
+  margin: 1rem;
+}
+.am-accordion-basic .am-accordion-title {
+  color: #333333;
+  -webkit-transition: background-color 0.2s ease-out;
+          transition: background-color 0.2s ease-out;
+  padding: .8rem 0 0;
+}
+.am-accordion-basic .am-accordion-title:before {
+  display: inline-block;
+  font: normal normal normal 1.6rem/1 "FontAwesome", sans-serif;
+  /*font-weight: normal; // 2
+  font-style: normal; // 2
+  vertical-align: baseline; // 3
+  line-height: 1; // 4*/
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+          transform: translate(0, 0);
+  content: "\f0da";
+  -webkit-transition: -webkit-transform .2s ease;
+          transition: transform .2s ease;
+  -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+          transform: rotate(0deg);
+  margin-right: .5rem;
+}
+.am-accordion-basic .am-accordion-content {
+  color: #666666;
+}
+.am-accordion-basic .am-active .am-accordion-title {
+  color: #0e90d2;
+}
+.am-accordion-basic .am-active .am-accordion-title:before {
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+/**
+  * Accordion Theme: gapped
+  * Author: Minwe (minwe@yunshipei.com)
+  */
+.am-accordion-gapped {
+  margin: .5rem 1rem;
+}
+.am-accordion-gapped .am-accordion-item {
+  border: 1px solid #dedede;
+  border-bottom: none;
+  margin: .5rem 0;
+}
+.am-accordion-gapped .am-accordion-item.am-active {
+  border-bottom: 1px solid #dedede;
+}
+.am-accordion-gapped .am-accordion-title {
+  color: rgba(0, 0, 0, 0.6);
+  -webkit-transition: background-color 0.15s ease-out;
+          transition: background-color 0.15s ease-out;
+  border-bottom: 1px solid #dedede;
+  padding: 0.8rem 2rem 0.8rem 1rem;
+  position: relative;
+}
+.am-accordion-gapped .am-accordion-title:after {
+  display: inline-block;
+  font: normal normal normal 1.6rem/1 "FontAwesome", sans-serif;
+  /*font-weight: normal; // 2
+  font-style: normal; // 2
+  vertical-align: baseline; // 3
+  line-height: 1; // 4*/
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+          transform: translate(0, 0);
+  content: "\f105";
+  -webkit-transition: -webkit-transform .2s linear;
+          transition: transform .2s linear;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  margin-top: -0.8rem;
+}
+.am-accordion-gapped .am-accordion-title:hover {
+  color: rgba(0, 0, 0, 0.8);
+}
+.am-accordion-gapped .am-accordion-content {
+  color: #666666;
+}
+.am-accordion-gapped .am-active .am-accordion-title {
+  background-color: #f5f5f5;
+  color: rgba(0, 0, 0, 0.8);
+}
+.am-accordion-gapped .am-active .am-accordion-title:after {
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+}

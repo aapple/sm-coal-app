@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta content="telephone=no" name="format-detection" />
+    <title>服务列表</title>
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/shake.css" rel="stylesheet" type="text/css">
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="css/animate.min.css" rel="stylesheet" type="text/css">
+    <link href="css/idangerous.swiper.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="js/wo.js"></script>
+    <style>
+        .search{font-size: 1.4rem;}
+    </style>
+    <script>
+        $(document).ready(function(){
+            //添加场景
+            $("#scene_bth").click(function(){
+                $(".reveal-modal-bg").fadeIn(500);
+                $(".scene_modal").fadeIn(500);
+            });
+            $(".reveal-modal-bg,.closed").click(function(){
+                $(".modal_img,.reveal-modal-bg").fadeOut(500);
+                $(".scene_modal").fadeOut(500);
+            });
+            //展开悬浮菜单
+            $("#side_bth",this).toggle(function(){
+                $(".bottomnav").animate({bottom:'0rem'},800);
+            },function(){
+                $(".bottomnav").animate({bottom:'-100%'},800);
+            });
+
+        });
+    </script>
+</head>
+<body>
+<div class="warpe">
+    <div class="reveal-modal-bg dis_none"></div>
+    <div class="head">
+        <a href="#" class="return"><i class="icon-chevron-left"></i> 返回</a>
+        控制中心
+    </div>
+    <div class="M_no">
+        <p><img src="img/icon_bq.png">我们正在努力，请稍等一会~</p>
+    </div>
+</div>
+</body>
+</html>

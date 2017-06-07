@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
+<title>name</title>
+
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="css/home.css" rel="stylesheet" type="text/css" />
+
+<link href="http://at.alicdn.com/t/font_jvc3xp5ob1uac3di.css" rel="stylesheet" type="text/css" />
+
+
+</head>
+
+<body>
+
+<!--top-->
+<div class="top_c">
+	<div class="container">
+    	<div class="ss_c">
+            <input type="text" name="address" size="60" maxlength="60" style="color:#ccc" value="请输入您需要的服务" onfocus="if(this.value=='请输入您需要的服务'){this.value=''};this.style.color='black';" onblur="if(this.value==''||this.value=='请输入您需要的服务'){this.value='请输入您需要的服务';this.style.color='#ccc';}">
+            <a href="#">
+                <i class="iconfont icon-sousuo01"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!--列表-->
+<div class="lie">
+	<div class="left_c" id="left">
+    	<ul>
+        	<li style="background:#fff;"><a href="#" style="color:#246fc0;">个人服务</a></li>
+            <li><a href="#">市政服务</a></li>
+            <li><a href="#">公益服务</a></li>
+        </ul>
+    </div>
+    <div class="right_c" id="right">
+        <ul>
+            <li>
+                <p>开锁<span>15458796365<em>李继东</em></span></p>
+                <span class="jian">简介：山东省济南市天桥区历山北路黄台电子商务产业园，家居开锁问问二</span>
+            </li>
+            <li>
+                <p>开锁<span>15458796365<em>李继东</em></span></p>
+                <span class="jian">简介：山东省济南市天桥区历山北路黄台电子商务产业园，家居开锁问问二</span>
+            </li>
+            <li>
+                <p>开锁<span>15458796365<em>李继东</em></span></p>
+                <span class="jian">简介：山东省济南市天桥区历山北路黄台电子商务产业园，家居开锁问问二</span>
+            </li>
+            <li>
+                <p>开锁<span>15458796365<em>李继东</em></span></p>
+                <span class="jian">简介：山东省济南市天桥区历山北路黄台电子商务产业园，家居开锁问问二</span>
+            </li>
+            <li>
+                <p>开锁<span>15458796365<em>李继东</em></span></p>
+                <span class="jian">简介：山东省济南市天桥区历山北路黄台电子商务产业园，家居开锁问问二</span>
+            </li>
+            <li>
+                <p>开锁<span>15458796365<em>李继东</em></span></p>
+                <span class="jian">简介：山东省济南市天桥区历山北路黄台电子商务产业园，家居开锁问问二</span>
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+
+<!--footer-->
+<div class="footer">
+	<div class="container">
+        <div class="row">
+            <div class="col-xs-3">
+                <a href="index.html" class="dao">
+                    <i class="iconfont icon-shouye-copy-copy-copy"></i>
+                    <span class="nav_ti">首页</span>
+                </a>
+            </div>
+            <div class="col-xs-3">
+                <a href="convenience.html" class="dao">
+                    <i class="iconfont icon-quanbu" style="color:#246fc0;"></i>
+                    <span class="nav_ti" style="color:#246fc0;">便民</span>
+                </a>
+            </div>
+            <div class="col-xs-3">
+                <a href="wallet.html" class="dao">
+                    <i class="iconfont icon-qianbao-"></i>
+                    <span class="nav_ti">钱包</span>
+                </a>
+            </div>
+            <div class="col-xs-3">
+                <a href="personal.html" class="dao">
+                    <i class="iconfont icon-information"></i>
+                    <span class="nav_ti">个人中心</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/iscroll.js"></script>
+<script>
+	$(function(){
+		var w_he= $(window).height();
+		var t_he=$(".top_c").height();
+		var f_he=$(".footer").height();
+		var l_he=w_he-t_he-f_he;
+		$(".left_c,.right_c").css({height:l_he});
+		var Scroll = new iScroll('left',{hScrollbar:false, vScrollbar:true,hScroll:false,vScroll:true,useTransform: false});
+		var Scroll = new iScroll('right',{hScrollbar:false, vScrollbar:true,hScroll:false,vScroll:true,useTransform: false});
+	})
+</script>
+<script src="js/bootstrap.min.js" type="text/javascript"></script>
+<script src="js/index.js" type="text/javascript"></script>
+
+
+
+
+</body>
+</html>

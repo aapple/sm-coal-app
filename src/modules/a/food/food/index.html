@@ -1,0 +1,289 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0;"/>
+<title>美食首页</title>
+<link type="text/css" href="layer_mobile/need/layer.css" rel="stylesheet" />
+<link type="text/css" href="css/cityPicker.css" rel="stylesheet" />
+<link type="text/css" href="css/index.css" rel="stylesheet" />
+<script type="text/javascript" src="js/Jquery/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/Phone/phone.js"></script>
+<script type="text/javascript" src="js/Menu_x/menu_x.js"></script>
+<script type="text/javascript" src="js/TouchSlide/TouchSlide.1.1.js"></script>
+<script type="text/javascript" src="js/City/cityPicker.js"></script>
+<script type="text/javascript" src="layer_mobile/layer.js"></script>
+<script type="text/javascript" src="js/Food/food.js"></script>
+</head>
+
+<body>
+	<header class="header">
+    	<div class="head">
+        	<div class="city">
+            	<input type="text" value="北京市" name="city" class="cities" onfocus="this.blur()" />
+                <i class="fa fa-angle-down"></i>
+            </div>
+            <script type="text/javascript">
+				$(".cities").CityPicker();
+			</script>
+            <div class="search">
+            	<div class="icon-sear">
+                	<img src="image/search.png" />
+                </div>
+                <input type="text" name="search" value="" placeholder="请输入您要搜索的内容" />
+            </div>
+            <div class="menu-icon">
+            	<img src="image/icon-1.png" />
+            </div>
+        </div>
+		<div class="tab">
+            <!---tab标签滑动--->
+            <div id="J_MenuX">
+                <div class="xs-container">
+                    <ul class="xs-content nav nav-pills nav-justified" id="menus_xx" _xx="0">
+                        <li>鲁菜</li>
+                        <li>湘菜</li>
+                        <li>粤菜</li>
+                        <li>东北菜</li>
+                        <li>桂菜</li>
+                        <li>火锅</li>
+                        <li>海鲜</li>
+                        <li>烧烤</li>
+                        <li>赣菜</li>
+                    </ul>
+                </div>
+            </div>
+            <!---tab标签滑动END--->
+		</div>
+    </header>
+    <!--头部轮播-->
+    <div id="carousel" class="carousel">
+	  	<div class="hd">
+			<ul></ul>
+      	</div>
+      <div class="bd">
+            <ul>
+                <li><a href="#"><img _src="image/lunbo.jpg" src="image/blank.png" /></a></li>
+                <li><a href="#"><img _src="image/lunbo.jpg" src="image/blank.png"/></a></li>
+            </ul>
+      </div>
+    </div>
+    <!--头部轮播END-->
+    
+    <!-- 主内容 Start -->
+    <div id="tabBox1" class="tabBox">
+        <div class="hd">
+            <ul>
+                <li><span><img src="image/hot.png" /></span><a href="javascript:void(0)">附近热门</a></li>
+                <li><span><img src="image/news.png" /></span><a href="javascript:void(0)">今日新品</a></li>
+                <li><span><img src="image/dining.png" /></span><a href="javascript:void(0)">精品餐厅</a></li>
+                <li><span><img src="image/card.png" /></span><a href="javascript:void(0)">电子卡券</a></li>
+            </ul>
+        </div>
+        <div class="bd" id="tabBox1-bd">
+        	<div class="con"><!-- 高度自适应需添加外层 -->
+                <ul>
+                    <li>
+                    	<div class="content-head">
+                        	<span class="con-head">
+                            	<img src="image/head.jpg" />
+                            </span>
+                            <span class="head-name">爱吃的猫</span>
+                            <span class="zan">
+                            	<img class="zans" src="image/zans.png" />
+                            	<i></i>
+                                <a>25</a>
+                            </span>
+                        </div>
+                        <div class="con-detail">
+                        	<a href="shops-detail.html">
+                            	<img src="image/img-1.jpg" />
+                                <span>周末，情人们最喜欢去的地方</span>
+                            </a>
+                        </div>
+                        <div class="con-foot">
+                        	<span>爱琴海</span>
+                            <span>|</span>
+                            <span class="mileage">18.2km</span>
+                            <span>|</span>
+                            <span>法国西餐</span>
+                            <a href="shops-detail.html">进店逛逛>></a>
+                        </div>
+                    </li>
+                    <li>
+                    	<div class="content-head">
+                        	<span class="con-head">
+                            	<img src="image/head-1.jpg" />
+                            </span>
+                            <span class="head-name">馋嘴胖子</span>
+                            <span class="zan act">
+                            	<img class="zans" src="image/zans.png" />
+                            	<i></i>
+                                <a>66</a>
+                            </span>
+                        </div>
+                        <div class="con-detail">
+                        	<a href="shops-detail.html">
+                            	<img src="image/img-2.jpg" />
+                                <span>牛排世家 Morton's Steakhouse</span>
+                            </a>
+                        </div>
+                        <div class="con-foot">
+                        	<span>后海</span>
+                            <span>|</span>
+                            <span class="mileage">25.2km</span>
+                            <span>|</span>
+                            <span>西餐</span>
+                            <a href="shops-detail.html">进店逛逛>></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="con"><!-- 高度自适应需添加外层 -->
+                <ul>
+                    <li>
+                    	<div class="content-head">
+                        	<span class="con-head">
+                            	<img src="image/sanpang.png" />
+                            </span>
+                            <span class="head-name">三胖食府</span>
+                            <span class="zan">
+                            	<img class="zans" src="image/zans.png" />
+                            	<i></i>
+                                <a>25</a>
+                            </span>
+                        </div>
+                        <div class="con-detail">
+                        	<a href="shops-detail.html">
+                            	<img src="image/img-1-1.jpg" />
+                                <span>《养生里脊圈》</span>
+                            </a>
+                        </div>
+                	</li>
+                    <li>
+                    	<div class="content-head">
+                        	<span class="con-head">
+                            	<img src="image/yunmeishi.png" />
+                            </span>
+                            <span class="head-name">萝卜美食坊</span>
+                            <span class="zan">
+                            	<img class="zans" src="image/zans.png" />
+                            	<i></i>
+                                <a>66</a>
+                            </span>
+                        </div>
+                        <div class="con-detail">
+                        	<a href="shops-detail.html">
+                            	<img src="image/img-1-2.png" />
+                                <span>《野味养生果》</span>
+                            </a>
+                        </div>
+                	</li>
+                </ul>
+             </div>
+             <div class="con"><!-- 高度自适应需添加外层 -->
+                <ul class="rest">
+                    <li>
+                        <div class="con-detail">
+                        	<a href="shops-detail.html">
+                            	<img src="image/img-1.jpg" />
+                            </a>
+                        </div>
+                        <div class="con-foot">
+                        	<span>爱琴海</span>
+                            <span>|</span>
+                            <span class="mileage">18.2km</span>
+                            <span>|</span>
+                            <span>法国西餐</span>
+                            <a href="shops-detail.html">进店逛逛>></a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="con-detail">
+                        	<a href="shops-detail.html">
+                            	<img src="image/img-1.jpg" />
+                            </a>
+                        </div>
+                        <div class="con-foot">
+                        	<span>爱琴海</span>
+                            <span>|</span>
+                            <span class="mileage">18.2km</span>
+                            <span>|</span>
+                            <span>法国西餐</span>
+                            <a href="shops-detail.html">进店逛逛>></a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="con-detail">
+                        	<a href="shops-detail.html">
+                            	<img src="image/img-1.jpg" />
+                            </a>
+                        </div>
+                        <div class="con-foot">
+                        	<span>爱琴海</span>
+                            <span>|</span>
+                            <span class="mileage">18.2km</span>
+                            <span>|</span>
+                            <span>法国西餐</span>
+                            <a href="shops-detail.html">进店逛逛>></a>
+                        </div>
+                    </li>
+                </ul>
+             </div>
+             <div class="con"><!-- 高度自适应需添加外层 -->
+                <ul>
+                    <li>电子卡券暂无内容</li>
+                </ul>
+             </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+			TouchSlide( { slideCell:"#tabBox1",
+
+				endFun:function(i){ //高度自适应
+					var bd = document.getElementById("tabBox1-bd");
+					bd.parentNode.style.height = bd.children[i].children[0].offsetHeight+"px";
+					if(i>0)bd.parentNode.style.transition="200ms";//添加动画效果
+				}
+
+			} );
+    </script>
+    <!-- 主内容代码 End -->
+    
+    <!--footer-->
+    <div class="footer">
+    	<a class="active" href="#">
+        	<span><img src="image/my.png" /></span>
+            <span>我的</span>
+        </a>
+        <a href="#">
+        	<span><img src="image/shop.png" /></span>
+            <span>商城</span>
+        </a>
+        <a href="#">
+        	<span><img src="image/map.png" /></span>
+            <span>美食地图</span>
+        </a>
+        <a href="#">
+        	<span><img src="image/raise.png" /></span>
+            <span>舌尖众筹</span>
+        </a>
+    </div>
+    <!--footer end-->
+
+<script type="text/javascript">
+	var menux = new menuX("#J_MenuX",3);
+</script>
+<script type="text/javascript">
+	TouchSlide({ 
+		slideCell:"#carousel",
+		titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+		mainCell:".bd ul", 
+		effect:"left", 
+		autoPlay:true,//自动播放
+		autoPage:true, //自动分页
+		switchLoad:"_src" //切换加载，真实图片路径为"_src" 
+	});
+</script>
+</body>
+</html>

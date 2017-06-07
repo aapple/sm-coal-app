@@ -1,0 +1,71 @@
+.am-footer {
+  text-align: center;
+  padding: 1em 0;
+  font-size: 1.6rem;
+}
+.am-footer .am-switch-mode-ysp {
+  cursor: pointer;
+}
+.am-footer .am-footer-text {
+  margin-top: 10px;
+  font-size: 14px;
+}
+.am-footer .am-footer-text-left {
+  text-align: left;
+  padding-left: 10px;
+}
+.am-modal-footer-hd {
+  padding-bottom: 10px;
+}
+
+/**
+  * Footer Theme: default
+  */
+.am-footer-default a {
+  color: #15afef;
+  font-weight: bold;
+}
+.am-footer-default .am-footer-switch {
+  margin-bottom: 10px;
+}
+.am-footer-default .am-footer-ysp {
+  color: #15afef;
+  cursor: pointer;
+}
+.am-footer-default .am-footer-divider {
+  color: #999999;
+}
+.am-footer-default .am-footer-desktop {
+  font-weight: normal;
+  color: #555555;
+}
+.am-footer-default .am-footer-miscs {
+  color: #7c7c7c;
+  overflow: hidden;
+  padding: 0 10px;
+  font-size: 14px;
+}
+.am-footer-default .am-footer-miscs ul,
+.am-footer-default .am-footer-miscs li {
+  padding-left: 0;
+  list-style: ndefault;
+}
+.am-footer-default .am-footer-miscs p {
+  margin: 4px 0;
+}
+.am-footer-default .am-footer-miscs a {
+  font-weight: normal;
+  color: #555555;
+  margin: 0 1px;
+}
+.am-footer-default .am-footer-miscs img {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto 2px auto;
+}
+@media only screen and (min-width:641px) {
+  .am-footer-default .am-footer-miscs p {
+    display: inline-block;
+    margin: 5px;
+  }
+}

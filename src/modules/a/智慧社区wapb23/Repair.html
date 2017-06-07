@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta content="telephone=no" name="format-detection" />
+    <title>报事报修</title>
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/shake.css" rel="stylesheet" type="text/css">
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="css/animate.min.css" rel="stylesheet" type="text/css">
+    <link href="css/idangerous.swiper.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="js/wo.js"></script>
+    <!--星星评分-->
+    <link href="css/application.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/jquery.raty.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $.fn.raty.defaults.path = 'lib/img';
+            $('#star').raty({ readOnly: true, score: 3 });
+        });
+    </script>
+</head>
+<body>
+<div class="warpe">
+    <div class="head">
+        <a href="#" class="return"><i class="icon-chevron-left"></i> 返回</a>
+        报事报修
+        <a href="Repair03.html" class="search animated fadeInRight" style="font-size: 1.4rem;">我要报事</a>
+    </div>
+    <div class="repall">
+        <ul>
+            <li class="animated fadeInLeft">
+                <p><span>2016-11-02 09:02:08</span><a href="#" class="puff_right">完成</a> </p>
+                <p>我家主卧洗手间下水道堵塞</p>
+                <p><a href="Repair02.html">服务评价</a></p>
+            </li>
+            <li class="animated fadeInRight">
+                <p><span>2016-11-02 09:02:08</span><a href="#" class="puff_right color_g2">受理</a> </p>
+                <p>我家主卧洗手间下水道堵塞</p>
+            </li>
+            <li class="animated fadeInLeft">
+                <p><span>2016-11-02 09:02:08</span><a href="#" class="puff_right">完成</a> </p>
+                <p>我家主卧洗手间下水道堵塞</p>
+                <p><a href="Repair02.html">服务评价</a></p>
+            </li>
+            <li class="animated fadeInRight">
+                <p><span>2016-11-02 09:02:08</span><a href="#" class="puff_right color_y">派单</a> </p>
+                <p>我家主卧洗手间下水道堵塞</p>
+                <p><span>评价：</span><span id="star"></span></p>
+                <p><span>意见：啥玩意啊，处理得这么慢</span></p>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

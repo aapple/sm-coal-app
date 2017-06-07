@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta content="telephone=no" name="format-detection" />
+    <title>组织详情</title>
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/shake.css" rel="stylesheet" type="text/css">
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="css/animate.min.css" rel="stylesheet" type="text/css">
+    <link href="css/idangerous.swiper.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="js/wo.js"></script>
+</head>
+<body style="background-color: #fff !important;">
+<div class="warpe">
+    <div class="head head2">
+        <a href="#" class="return" style="color: #5f5e5e;"><i class="icon-chevron-left"></i></a>
+        <a href="Information_search.html" class="search" style="color: #5f5e5e;"><i class="icon-search"></i> </a>
+    </div>
+    <div class="tabs my_tab sqh_tab zz_tab">
+        <a href="#" hidefocus="true" class="active">介绍</a>
+        <a href="#" hidefocus="true">服务</a>
+        <a href="#" hidefocus="true">活动</a>
+    </div>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="content-slide">
+                    <div class="main">
+                        <div class="zz_txt">
+                            <p>社会组织名称：</p>
+                            <p><span>广东金鹏只会社区义工组织</span></p>
+                        </div>
+                        <div class="zz_txt">
+                            <p>社会组织类型：</p>
+                            <p><span>民办非企业单位</span></p>
+                        </div>
+                        <div class="zz_txt">
+                            <p>住所：</p>
+                            <p><span>广州市科学城神舟路9号</span></p>
+                        </div>
+                        <div class="zz_txt">
+                            <p>评估等级：</p>
+                            <p><span>3A</span></p>
+                        </div>
+                        <div class="zz_txt">
+                            <p>联系电话：</p>
+                            <p><span>020-88561691</span></p>
+                        </div>
+                        <div class="zz_txt">
+                            <p>官网地址：</p>
+                            <p><span>www.sina.com</span></p>
+                        </div>
+                        <div class="zz_txt">
+                            <p>业务范围：</p>
+                            <p><span>软件开发;信息电子技术服务;计算机零配件零售;信息技术咨询服务;软件服务;计算机零配件批发;软件零售;软件批发;计算机技术开发、技术服务;</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="content-slide">
+                        <div class="main">
+                            <div class="zz_txt">
+                                <p>服务区域：</p>
+                                <p><span>广东省广州市</span></p>
+                            </div>
+                            <div class="zz_txt">
+                                <p>服务类型：</p>
+                                <p><span><i class="icon-ok-circle"></i> 服务类别名称</span></p>
+                                <p><span><i class="icon-ok-circle"></i> 服务类别名称</span></p>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="content-slide">
+                    <div class="main">
+                        <div class="finance">
+                            <ul>
+                                <li class="animated fadeInRight">
+                                    <a href="#">
+                                        <p>【必看】这些钱可以省了！总理力督，国务院开出减税降费清单</p>
+                                        <p><span class="puff_left">来自凤凰社区街道办</span><span class="puff_right">08-05 23:58</span> </p>
+                                        <p><label> <i class="icon-bookmark-empty"></i> 标签1</label><label> <i class="icon-bookmark-empty"></i> 标签2</label></p>
+                                    </a>
+                                </li>
+                                <li class="animated fadeInLeft">
+                                    <a href="#">
+                                        <p>"空中巴士"巴铁试验车北戴河测试 可载300人</p>
+                                        <p><span class="puff_left">来自凤凰社区街道办</span><span class="puff_right">08-03 18:55</span> </p>
+                                        <p><label> <i class="icon-bookmark-empty"></i> 标签1</label><label> <i class="icon-bookmark-empty"></i> 标签2</label></p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="js/idangerous.swiper.min.js"></script>
+<script type="text/javascript">
+    var tabsSwiper = new Swiper('.swiper-container',{
+        speed:500,
+        onSlideChangeStart: function(){
+            $(".tabs .active").removeClass('active');
+            $(".tabs a").eq(tabsSwiper.activeIndex).addClass('active');
+        }
+    });
+    $(".tabs a").on('touchstart mousedown',function(e){
+        e.preventDefault()
+        $(".tabs .active").removeClass('active')
+        $(this).addClass('active')
+        tabsSwiper.slideTo( $(this).index() )
+    })
+    $(".tabs a").click(function(e){
+        e.preventDefault()
+    })
+</script>
+</body>
+</html>

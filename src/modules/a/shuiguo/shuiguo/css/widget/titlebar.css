@@ -1,0 +1,213 @@
+.doc-example [data-am-widget] {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 320px;
+}
+.am-titlebar {
+  margin-top: 20px;
+  height: 45px;
+  font-size: 100%;
+}
+.am-titlebar h2 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.6rem;
+}
+.am-titlebar .am-titlebar-title img {
+  height: 24px;
+  width: auto;
+}
+
+/**
+  * Titlebar Theme: default
+  * 描述：默认主题;
+  * 左侧：栏目标题支持使用文字，或者图片；
+  * 右侧：右侧：more>>
+  */
+
+.am-titlebar-default {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: transparent;
+  border-bottom: 1px solid #dedede;
+  line-height: 44px;
+}
+.am-titlebar-default a { color: #0e90d2;}
+.am-titlebar-default .am-titlebar-title {
+  position: relative;
+  padding-left: 12px;
+  color: #0e90d2;
+  font-size: 1.8rem;
+  text-align: left;
+  font-weight: bold;
+}
+.am-titlebar-default .am-titlebar-title:before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 8px;
+  bottom: 8px;
+  border-left: 3px solid #0e90d2;
+}
+.am-titlebar-default .am-titlebar-nav {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: right;
+}
+.am-titlebar-default .am-titlebar-nav a { margin-right: 10px;}
+
+/*
+ *具有选中效果的标题栏
+ */
+
+.am-titlebar-cols {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 10px;
+  background-color: #f5f5f5;
+  color: #555555;
+  font-size: 18px;
+  border-top: 2px solid #e1e1e1;
+  line-height: 41px;
+}
+.am-titlebar-cols a { color: #555555;}
+.am-titlebar-cols .am-titlebar-title {
+  color: #0e90d2;
+  margin-right: 15px;
+  border-bottom: 2px solid #0e90d2;
+  font-weight: bold;
+}
+.am-titlebar-cols .am-titlebar-title a { color: #0e90d2;}
+.am-titlebar-cols .am-titlebar-nav {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.am-titlebar-cols .am-titlebar-nav a {
+  display: inline-block;
+  margin-right: 15px;
+  line-height: 41px;
+  border-bottom: 2px solid transparent;
+}
+.am-titlebar-cols .am-titlebar-nav a:hover {
+  color: #3c3c3c;
+  border-bottom-color: #0e90d2;
+}
+.am-titlebar-cols .am-titlebar-nav a:last-child { margin-right: 10px;}
+
+/**
+  * Titlebar Theme: multi
+  * 说明：带背景及上边界，含有更多子栏目
+  */
+.am-titlebar-multi {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #f5f5f5;
+  border-top: 2px solid #3bb4f2;
+  border-bottom: 1px solid #e8e8e8;
+}
+.am-titlebar-multi a { color: #0e90d2;}
+.am-titlebar-multi .am-titlebar-nav a { margin-right: 10px;}
+.am-titlebar-multi .am-titlebar-title {
+  padding-left: 10px;
+  color: #0e90d2;
+  font-size: 1.8rem;
+  text-align: left;
+  font-weight: bold;
+  line-height: 42px;
+}
+.am-titlebar-multi .am-titlebar-nav {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: right;
+  line-height: 42px;
+}
+
+/**
+  * Titlebar Theme: one
+  * 描述：默认风格，包含更多子栏目（标题栏右侧）
+  */
+.am-titlebar-one {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 45px;
+  line-height: 44px;
+  background-color: #ffffff;
+  overflow: hidden;
+  border-bottom: 1px solid #15afef;
+}
+.am-titlebar-one .am-titlebar-title {
+  padding-left: 12px;
+  position: relative;
+  color: #222222;
+  display: block;
+  word-wrap: normal;
+  /* for IE */
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.am-titlebar-one .am-titlebar-title:before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 8px;
+  bottom: 8px;
+  border-left: 3px solid #15afef;
+}
+.am-titlebar-one .am-titlebar-title a {
+  color: #222222;
+}
+.am-titlebar-one .am-titlebar-title img {
+  height: 24px;
+  vertical-align: top;
+  margin-top: 10px;
+}
+.am-titlebar-one .am-titlebar-title h1,
+.am-titlebar-one .am-titlebar-title h2,
+.am-titlebar-one .am-titlebar-title h3,
+.am-titlebar-one .am-titlebar-title h4,
+.am-titlebar-one .am-titlebar-title h5,
+.am-titlebar-one .am-titlebar-title h6,
+.am-titlebar-one .am-titlebar-title strong,
+.am-titlebar-one .am-titlebar-title em {
+  font-style: normal;
+  font-weight: normal;
+  margin-bottom: 0;
+}
+.am-titlebar-one .am-titlebar-title ul,
+.am-titlebar-one .am-titlebar-title li {
+  list-style: none;
+  padding-left: 0;
+}
+.am-titlebar-one .am-titlebar-nav {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: right;
+  padding-right: 5px;
+  color: #999999;
+  font-size: 1.4rem;
+}
+.am-titlebar-one .am-titlebar-nav a {
+  color: #999999;
+}

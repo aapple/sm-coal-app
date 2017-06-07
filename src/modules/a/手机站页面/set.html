@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
+<title>name</title>
+
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="css/home.css" rel="stylesheet" type="text/css" />
+
+<link href="http://at.alicdn.com/t/font_6688xdquixljif6r.css" rel="stylesheet" type="text/css" />
+
+
+</head>
+
+<body style="background:#fff;">
+
+<!--top-->
+<div class="top_c">
+    <a href="information.html" class="iconfont icon-jiantou-copy-copy" ></a>
+    <p class="titi">设置密码</p>
+</div>
+
+<div class="login">
+	<div class="container">
+    	<div class="zhu">
+        	<div class="ru">
+                <input type="text" name="address" size="60" maxlength="60" style="color:#666"  placeholder="请输入您的手机号码">
+            </div>
+            
+            <div class="ru">
+                <input type="text" name="address" size="60" maxlength="60" style="color:#666"  placeholder="请输入验证码">
+            	<div class="yan">
+                    <input type="button" id="btn" class="btn_mfyzm" value="获取验证码" />
+<script type="text/javascript">
+var wait=60;
+document.getElementById("btn").disabled = false;   
+function time(o) {
+		if (wait == 0) {
+			o.removeAttribute("disabled");           
+			o.value="获取验证码";
+			wait = 60;
+		} else {
+			o.setAttribute("disabled", true);
+			o.value="重新发送(" + wait + ")";
+			wait--;
+			setTimeout(function() {
+				time(o)
+			},
+			1000)
+		}
+	}
+document.getElementById("btn").onclick=function(){time(this);}
+</script> 
+                </div>    
+            </div>
+        </div>
+        
+
+        <a href="set1.html" class="deng" style="margin-top:3em;">下一步</a>
+        
+	</div>
+</div>
+
+
+<script src="js/jquery.min.js" type="text/javascript"></script>
+
+<script src="js/index.js" type="text/javascript"></script>
+
+
+
+
+</body>
+</html>

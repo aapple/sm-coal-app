@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta content="telephone=no" name="format-detection" />
+    <title>登记车辆</title>
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/shake.css" rel="stylesheet" type="text/css">
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="css/animate.min.css" rel="stylesheet" type="text/css">
+    <link href="css/idangerous.swiper.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="js/wo.js"></script>
+    <style>
+        .search{font-size: 1.4rem;}
+    </style>
+    <script>
+        $(document).ready(function(){
+            //开关按钮
+            $('.Push_bth').toggle(function(){
+                $(".pushall").animate({left:'2rem'},400);
+                $(".Push").animate({width:'4rem'},400);
+            },function(){
+                $(".pushall").animate({left:'.5rem'},300);
+                $(".Push").animate({width:'0px'},300);
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="warpe">
+    <div class="reveal-modal-bg dis_none"></div>
+    <div class="head">
+        <a href="#" class="return"><i class="icon-chevron-left"></i> 返回</a>
+        登记车辆
+        <a href="#" class="search">登记</a>
+    </div>
+    <div class="I_div">
+        <div class="car_t">选择车牌归属地并输入号码即可登记</div>
+        <div class="inter_add2">
+            <ul>
+                <li class="animated bounceInLeft">
+                    <a href="#">
+                        <span class="puff_left"><select><option>粤</option></select></span>
+                        <span class="puff_left"><input type="text" placeholder="请输入您的车牌号码"></span>
+                        <i class="icon-angle-right"></i>
+                    </a>
+                </li>
+                <li class="animated bounceInRight clear_border">
+                    <div href="#">
+                        <span class="puff_left"><font>默认车辆</font></span>
+                        <div href="#" class="Push_bth">
+                            <div class="Push"></div>
+                            <div class="pushall"></div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>

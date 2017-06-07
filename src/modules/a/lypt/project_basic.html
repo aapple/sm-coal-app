@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>商品详情</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <!--库-->
+    <link rel="stylesheet" type="text/css" href="css/amazeui.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.Spinner.js"></script>
+    <script type="text/javascript" src="js/amazeui.js"></script>
+    <!--核心样式-->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+<body>
+
+<body>
+
+<!-----------轮播banner----------->
+<div id="project_basic">
+	<a title="" class="return" href="specialty_mall.html"><i class="am-icon-angle-left"></i></a>
+	<a title="" class="g_car" href="my_project_cart.html"><i class="am-icon-cart-plus"></i></a>
+    <div class="sail">
+        <div class="am-slider am-slider-default" >
+            <ul class="am-slides">
+                <li><img src="images/project_banner.jpg" /></li>
+                <li><img src="images/project_banner.jpg" /></li>
+            </ul>
+        </div>
+        <p>孟津黑豆好得很啊真是好好的很啊孟津黑豆好得很啊真...</p>
+        <span>￥200 </span>
+        <label>销量：88件</label>
+        <font>运费：￥5.00</font>
+    </div>
+	<!-----------点评----------->
+	<div class="all_comment">
+		 <div class="item">
+			 <span>点评（57）</span>
+		 </div>
+		<ul>
+			<li>
+				<div class="comment_list">
+					<div class="message">
+						<span class="writer">心诚则灵July</span>
+						<span class="date">2015/01/25</span>
+						<div class="clear"></div>
+					</div>
+					<p>中国三大石窟之一，历史悠久，开凿经历了多个朝代断续营造达500余年之中国三大石窟之一，历史悠久</p>
+				</div>
+			</li>
+		</ul>
+		<div class="more">
+			<a href="project_comment.html">查看全部评价</a>
+		</div>
+    </div>
+    <!-----------商品详情----------->
+    <div class="hot_sail">
+        <p class="words">商品详情</p>
+        <img src="images/project_detail01.jpg"/>
+    </div>
+    <!-----------加入购物车/购买----------->
+    <div id="buy_cart">
+        <!-- <div class="collection"><a href="#"> <img src="images/collection_01.png"/><p>收藏</p></a></div> -->
+        <ul class="am-avg-sm-3">
+			<li><a class="call" href="#"> <img src="images/call.png"><p>电话咨询</p></a></li>
+            <li><a class="cart" href="#" data-am-modal="{target: '#my-popup1'}">加入购物车</a></li>
+            <li><a  class="cur" href="sure_order.html" >立即购买</a></li>
+        </ul>
+        <div class="clear"></div>
+    </div>
+
+    <!------弹出层------>
+    <div class="am-popup" id="my-popup1">
+        <div class="white_bg_box">
+            <span data-am-modal-close class="am-close">&times;</span>
+            <div class="am-popup-bd am1">
+                <!-------------商品属性（价位数量）---------------->
+                <div class="p_number">
+                    <!------------商品规格-------------->
+					<script type="text/javascript">
+						$(function(){
+						$(".yListr ul li em").click(function(){
+							$(this).addClass("yListrclickem").siblings().removeClass("yListrclickem");
+						})
+						})
+					</script>
+                    <div class="yListr">
+                        <ul>
+                            <li>
+                                <span>颜色</span>
+                                <em class="yListrclickem">深灰色<i></i></em>
+                                <em>金色<i></i></em>
+                                <em>银色<i></i></em>
+                            </li>
+                            <li>
+                                <span>尺寸</span>
+                                <em class="yListrclickem">港版（二网）<i></i></em>
+                                <em>类型<i></i></em>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-----------门票数量----------->
+                    <div class="number">
+                        <p>购买数量</p>
+                        <div id="d" class="Spinner"></div>
+                        <div class="clear"></div>
+                    </div>
+                    <a class="sure" href="#">确定</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-----------轮播----------->
+<script>
+    $(function() {
+        $('.am-slider').flexslider({
+            controlNav: true,               // Boolean: 是否创建控制点
+            directionNav: false,             // Boolean: 是否创建上/下一个按钮（previous/next）
+            touch: true,                    // Boolean: 允许触摸屏触摸滑动滑块
+        });
+    });
+</script>
+<!-----------门票数量----------->
+<script type="text/javascript">
+    $(function(){
+
+        $("#a").Spinner({value:868, min:10, len:3, max:1000});
+
+        $("#b").Spinner({value:99});
+
+        $("#c").Spinner({value:66});
+
+        $("#d").Spinner();
+
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,130 @@
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img{
+    margin:0;
+    padding:0;
+}
+body {
+    font-family: 'microsoft yahei',Verdana,Arial,Helvetica,sans-serif;
+    font-size: 14px;
+    background-color: #fff;
+    height: 100%;
+}
+li, ul {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+li, ul { list-style-type: none;}
+img {
+    border: 0;
+    border: none;
+    width: 100%;
+}
+a, a:hover, a:visited { text-decoration: none;}
+.cl{ clear:both;}
+.fl{ float: left;}
+.fr{ float: right;}
+section {
+    display: block;
+}
+
+/*---------nav----------*/
+.navbar {
+    margin-bottom: 0px;
+    min-height: 42px;
+    padding-top: 0px;
+    border-color: #fe6464;
+    background: #fe6464 none repeat scroll 0% 0%;
+}
+.j-nav{    
+    right: 0px;
+    left: 0px;
+    z-index: 1030;
+    position: fixed;
+    transform: translate3d(0px, 0px, 0px);
+}
+.none-box{ 
+    width: 100%;
+    height: 42px;
+}
+.j-nav .logo {
+    float: left;
+    padding: 3px 0;
+}
+.j-nav .logo a {
+    background: transparent url("../images/home.png") no-repeat scroll 10px -293px / 125px auto;
+    width: 100px;
+    height: 35px;
+    display: block;
+}
+.j-nav .city {
+    float: right;
+    padding: 6px 0 0 0;
+}
+.j-hint,.j-nav .city a{background: transparent url("../images/home.png") no-repeat scroll 0% 0% / 110px auto;}
+.j-nav .city a {
+    width: 62px;
+    height: 30px;
+    padding: 2px 0px 0px 22px; 
+    display: block;
+    font-size: 1.4rem;
+    color: #fff;
+    background-position: 0 -139px;
+}
+.j-hint{
+    height: 30px;
+    width: 260px;
+    margin: 5px auto;
+    text-align: center;
+    background-position: 5px -172px;
+    line-height: 30px;
+    padding-left: 36px;
+    font-size: 1.6rem;
+}
+
+/*----------导航----------*/
+.j-component-func{
+    width: 100%;
+    padding: 5px 10px;
+}
+.j-component-func > ul {
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+.list-unstyled {
+    padding-left: 0px;
+    list-style: outside none none;
+}
+.j-component-func{width:100%; padding:10px;}
+.j-component-func>ul{margin-bottom:0px; margin-top:0px;overflow: hidden;}
+.j-component-func>ul>li{float:left; width:25%; text-align:center; padding:2px 0;}
+.j-component-func>ul>li>a{display:block; width:100%; font:.85em/25px 'microsoft yahei'; color:#898989; text-decoration:none;}
+.j-component-func .fdayicon{display:block; width:50px; height:50px; line-height:50px; border-radius:50%; margin:0 auto;
+ background: transparent url("../images/home.png") no-repeat scroll 0% 0% / 117px auto;}
+.j-component-func .fdayicon-all{
+    background-position: 13px 12px;
+    background-color: #FFAD33;
+}
+.j-component-func .fdayicon-order{
+    background-position: 12px -25px;
+    background-color:#FE7064;
+}
+.j-component-func .fdayicon-contact{
+    background-position: 12px -64px;
+    background-color:#1BBB71;
+}
+.j-component-func .fdayicon-client{
+    background-position: 12px -103px;
+    background-color:#8ec2ff;
+}
+.route1,.route2,.route3,.route4{-webkit-transform:rotateY(90deg);   transform:rotateY(90deg);}
+.route1{-webkit-transition:-webkit-transform .3s ease-out 0s; transition:transform .3s ease-out 0s;}
+.route2{-webkit-transition:-webkit-transform .3s ease-out 1.2s; transition:transform .3s ease-out .2s;}
+.route3{-webkit-transition:-webkit-transform .3s ease-out .4s; transition:transform .3s ease-out .4s;}
+.route4{-webkit-transition:-webkit-transform .3s ease-out .6s; transition: transform .3s ease-out .6s;}
+.route{-webkit-transform:rotateY(0deg); transform:rotateY(0deg);}
+/*------内容------*/
+.j-component-bestsell>ul{margin-bottom:0;}
+.j-component-bestsell>ul>li{margin:0 10px 5px; padding-bottom:5px;}
+.j-component-bestsell>ul>li>a{display:block; width:100%; padding:3px; background:#f1f1f1;}
+.j-component-bestsell>ul>li>a>img{width:100%;}
+.j-component-bestsell>ul>li:last-child{border-bottom:none;}

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta content="telephone=no" name="format-detection" />
+    <title>发布拼车</title>
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/shake.css" rel="stylesheet" type="text/css">
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="css/animate.min.css" rel="stylesheet" type="text/css">
+    <link href="css/idangerous.swiper.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="js/wo.js"></script>
+    <script>
+        $(document).ready(function(){
+            //拼车地点
+            $(".addbth").click(function(){
+                /*$(".car_b ul li span").fadeIn();
+                $(".ddTxt").attr("value","");*/
+                $(".car_b ul").append("<li><input type='text' placeholder='新增地名'></li>");
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="warpe">
+    <div class="head">
+        <a href="#" class="return">取消</a>
+        <a href="#" class="search animated fadeInRight" style="font-size: 1.4rem;">发送</a>
+        <div class="tabs car_tab">
+            <a href="#" hidefocus="true" class="active">我是车主</a>
+            <a href="#" hidefocus="true" class="clear_border">我是乘客</a>
+        </div>
+    </div>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="content-slide">
+                    <div class="cardiv">
+                        <div class="car_t">小区出发</div>
+                        <div class="car_b">
+                            <ul>
+                                <li>
+                                    <input type="text" placeholder="描述一下您出发大概时间吧">
+                                </li>
+                                <li class="">
+                                    <input type="text" placeholder="" value="添加途径地点" class="ddTxt">
+                                    <span class="animated fadeInRight dis_none">骏景花园小区</span>
+                                    <span class="animated fadeInRight dis_none">媒体村</span>
+                                    <span class="animated fadeInRight dis_none">天誉5号</span>
+                                    <a href="#" class="color_y addbth">+</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="cardiv">
+                        <div class="car_t">小区回程</div>
+                        <div class="car_b">
+                            <ul>
+                                <li>
+                                    <input type="text" placeholder="描述一下您出发大概时间吧">
+                                </li>
+                                <li class="clear_border">
+                                    <input type="text" placeholder="途径可拼车地点">
+                                    <a href="#" class="color_y">+</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="cardiv">
+                        <div class="car_t">联系方式</div>
+                        <div class="part part2 margin_top" style="margin-bottom: 0rem;">
+                            <ul>
+                                <li>
+                                    <input type="text" placeholder="">
+                                    <label class="puff_left">团购价格：</label>
+                                </li>
+                                <li>
+                                    <input type="text" placeholder="">
+                                    <label class="puff_left">联系QQ：</label>
+                                </li>
+                                <li class="clear_border">
+                                    <input type="text" placeholder="">
+                                    <label class="puff_left">联系人：</label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="cardiv">
+                        <div class="car_t">备注信息</div>
+                        <div class="edit_t">
+                            <textarea rows="8" placeholder="您有什么要求，可以在这里描述一下"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="content-slide">
+                    <div class="cardiv">
+                        <div class="car_t">小区出发</div>
+                        <div class="car_b">
+                            <ul>
+                                <li>
+                                    <input type="text" placeholder="描述一下您出发大概时间吧">
+                                </li>
+                                <li class="clear_border">
+                                    <input type="text" placeholder="您的下车地点">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="cardiv">
+                        <div class="car_t">小区回程</div>
+                        <div class="car_b">
+                            <ul>
+                                <li>
+                                    <input type="text" placeholder="描述一下您出发大概时间吧">
+                                </li>
+                                <li class="clear_border">
+                                    <input type="text" placeholder="您的上车地点">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="cardiv">
+                        <div class="car_t">联系方式</div>
+                        <div class="part part2 margin_top" style="margin-bottom: 0rem;">
+                            <ul>
+                                <li>
+                                    <input type="text" placeholder="">
+                                    <label class="puff_left">团购价格：</label>
+                                </li>
+                                <li>
+                                    <input type="text" placeholder="">
+                                    <label class="puff_left">联系QQ：</label>
+                                </li>
+                                <li class="clear_border">
+                                    <input type="text" placeholder="">
+                                    <label class="puff_left">联系人：</label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="cardiv">
+                        <div class="car_t">备注信息</div>
+                        <div class="edit_t">
+                            <textarea rows="8" placeholder="您有什么要求，可以在这里描述一下"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="js/idangerous.swiper.min.js"></script>
+<script type="text/javascript">
+    var tabsSwiper = new Swiper('.swiper-container',{
+        speed:500,
+        onSlideChangeStart: function(){
+            $(".tabs .active").removeClass('active');
+            $(".tabs a").eq(tabsSwiper.activeIndex).addClass('active');
+        }
+    });
+    $(".tabs a").on('touchstart mousedown',function(e){
+        e.preventDefault()
+        $(".tabs .active").removeClass('active')
+        $(this).addClass('active')
+        tabsSwiper.slideTo( $(this).index() )
+    })
+    $(".tabs a").click(function(e){
+        e.preventDefault()
+    })
+</script>
+</body>
+</html>

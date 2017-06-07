@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>参加活动</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <!--库-->
+    <link rel="stylesheet" type="text/css" href="css/amazeui.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.Spinner.js"></script>
+    <script type="text/javascript" src="js/amazeui.js"></script>
+    <!--核心样式-->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <style type="text/css"></style>
+
+<body>
+
+<!----------------用户头部------------------->
+<div id="user_reserve">
+    <!-----------公共版头----------->
+    <div id="header">
+        <a class="return" href="activity_detail.html"><i class="am-icon-angle-left"></i></a>
+        <span>门票预定</span>
+    </div>
+    <!-----------门票名称价格----------->
+    <div class="name">
+        <div class="con">
+            <p>洛阳关林风景区三日游</p>
+            <span>请确定购买，订单提交后不能取消哦</span>
+        </div>
+        <div class="space">
+            <p><span>￥36</span>/位</p>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <!-----------门票数量----------->
+    <div class="number">
+        <p>参加人数</p>
+        <div id="d" class="Spinner"></div>
+        <div class="clear"></div>
+    </div>
+    <!-----------联系人电话----------->
+    <div class="phone">
+        <p>手机号</p>
+        <div class="am-form-group">
+            <input type="text/css" placeholder="用于接收确认短信"/>
+        </div>
+        <a class="user_number" href="offen_user.html">
+            <img src="images/user_number.png">
+        </a>
+        <div class="clear"></div>
+    </div>
+    <!-----------加入购物车/购买----------->
+    <div id="book">
+        <div >
+            <div class="money">
+                <p>总价<span>￥36</span></p>
+            </div>
+            <div class="cur">
+                <a  href="sure_order2.html">提交订单</a>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    $(function(){
+
+        $("#a").Spinner({value:868, min:10, len:3, max:1000});
+
+        $("#b").Spinner({value:99});
+
+        $("#c").Spinner({value:66});
+
+        $("#d").Spinner();
+
+    });
+</script>
+</html>
+

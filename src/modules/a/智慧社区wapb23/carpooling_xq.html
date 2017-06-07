@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta content="telephone=no" name="format-detection" />
+    <title>拼车详情</title>
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/shake.css" rel="stylesheet" type="text/css">
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="css/animate.min.css" rel="stylesheet" type="text/css">
+    <link href="css/idangerous.swiper.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="js/wo.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            //评论
+            $(".sec_bth").click(function(){
+                $("#post_modal").fadeIn(300)
+                $("#secone_modal").fadeOut(300)
+            });
+            //返回评论列表
+            $("#icon_return").click(function(){
+                $("#post_modal").fadeOut(300)
+                $("#secone_modal").fadeIn(300)
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="warpe">
+    <div class="head">
+        <a href="#" class="return"><i class="icon-chevron-left"></i> 返回</a>
+        拼车详情
+        <a href="#" class="search"><i class="icon-edit"></i> </a>
+    </div>
+    <div class="carpooling">
+        <div class="postall margin_top clear_border">
+            <a href="carpooling_xq.html">
+                <div class="post_t">
+                    <img src="img/banner.jpg">
+                    <span>龙五</span>
+                    <label class="puff_right color_y"><i class="icon-user"></i> 我是车主</label>
+                </div>
+                <div class="second">
+                    <p>小区出发</p>
+                </div>
+                <div class="second">
+                    <span class="puff_left">出发时间：<font>每天七点半到八点</font></span>
+                </div>
+                <div class="second">
+                    <span class="puff_left">途径拼车点：<font>天河路，火车东站附近</font></span>
+                </div>
+                <div class="second">
+                    <p>小区回程</p>
+                </div>
+                <div class="second">
+                    <span class="puff_left">出发时间：<font>每天七点半到八点</font></span>
+                </div>
+                <div class="second">
+                    <span class="puff_left">途径拼车点：<font>天河路，火车东站附近</font></span>
+                </div>
+                <div class="post_b">
+                    <span class="puff_left">昨天05:28</span>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="main" style="margin-top: 1rem;">
+        <div class="postall">
+                <div class="post_t">
+                    <img src="img/banner.jpg">
+                    <span>椰风海韵</span>
+                    <label class="puff_right">刚刚</label>
+                </div>
+                <div class="post_m">
+                    <p class="animated fadeInRight">天河区房房管局，听保安说有人深夜2点来排队等候办理手续，……早上七点来排名的请回，今天的号已取完。</p>
+                    <span class="span_delete animated fadeInDown"><a href="#">删除</a> </span>
+                </div>
+        </div>
+        <div class="postall">
+                <div class="post_t">
+                    <img src="img/banner.jpg">
+                    <span>椰风海韵</span>
+                    <label class="puff_right">昨天08:30</label>
+                </div>
+                <div class="post_m">
+                    <p class="animated fadeInRight"><font class="color_g"> 回复 </font>潮哥：你好犀利啊，配服你，你啥时候来小区看看？</p>
+                    <span class="span_delete animated fadeInDown"><a href="#">删除</a> </span>
+                </div>
+        </div>
+        <div class="postall">
+                <div class="post_t">
+                    <img src="img/banner.jpg">
+                    <span>椰风海韵</span>
+                    <label class="puff_right">昨天23:45</label>
+                </div>
+                <div class="post_m">
+                    <p class="animated fadeInRight">有四五天没有回小区了，刚才回来发现门口经常被送报纸的人放在门口边的南方都市报不见了</p>
+                    <span class="span_delete animated fadeInDown"><a href="#">删除</a> </span>
+                </div>
+        </div>
+        <div class="postall">
+                <div class="post_t">
+                    <img src="img/banner.jpg">
+                    <span>椰风海韵</span>
+                    <label class="puff_right">2015-02-18 21：30</label>
+                </div>
+                <div class="post_m">
+                    <p class="animated fadeInRight"><font class="color_g"> 回复 </font>潮哥：你好犀利啊，配服你，你啥时候来小区看看？</p>
+                </div>
+        </div>
+    </div>
+
+</div>
+<div class="secondnav" id="secone_modal">
+    <ul>
+        <li class="animated fadeInLeft">
+            <a class="sec_bth">
+                <i class="icon-comment-alt"> 评论</i>
+            </a>
+        </li>
+        <li class="animated fadeInRight">
+            <a class="sec_bth">
+                <i class=" icon-envelope"> 私信</i>
+            </a>
+        </li>
+        <li class="animated fadeInLeft">
+            <a class="sec_bth">
+                <i class="icon-user-md"> QQ</i>
+            </a>
+        </li>
+        <li class="clear_border animated fadeInLeft">
+            <a href="#">
+                <i class="icon-phone color_g2" style="font-size: 2rem;"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="postinput animated bounceIn dis_none"  id="post_modal">
+    <a id="icon_return"><i class="icon-reply"></i> </a>
+    <input type="text" placeholder="说些什么">
+    <a href="#"><i class="icon-circle-arrow-right"></i> </a>
+</div>
+<script type="text/javascript" src="js/slide_wap.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+</body>
+</html>

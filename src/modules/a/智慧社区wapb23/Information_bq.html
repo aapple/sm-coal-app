@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta content="telephone=no" name="format-detection" />
+    <title>编辑标签</title>
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/shake.css" rel="stylesheet" type="text/css">
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="css/animate.min.css" rel="stylesheet" type="text/css">
+    <link href="css/idangerous.swiper.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="js/wo.js"></script>
+    <script>
+        $(document).ready(function(){
+            //删除自定义吧标签
+            $("#bqbtn_01").click(function(){
+                $("#bq_01").fadeOut();
+            });
+            $("#bqbtn_02").click(function(){
+                $("#bq_02").fadeOut();
+            });
+            $("#bqbtn_03").click(function(){
+                $("#bq_03").fadeOut();
+            });
+            //添加标签
+            $(".bq_add a").click(function(){
+                $("#bq_span").append("<span class='bg_03 color_w clear_border'>标签N<a href='#' class='icon-remove'></a> </span>");
+            });
+        });
+    </script>
+    <style>
+        .bq_add{
+            position: relative;
+            height: auto;
+            overflow: hidden;
+            clear: both;
+        }
+        .bq_add a{
+            position: absolute;
+            top: 1rem;
+            right: 0rem;
+            font-size: .7rem;
+            width: 5rem;
+            height: 2.5rem;
+            line-height: 2.5rem;
+            background-color: #32A9E9;
+            text-align: center;
+            border-radius: 1rem;
+            color: #fff;
+        }
+    </style>
+</head>
+<body style="background-color: #fff !important;">
+<div class="warpe">
+    <div class="head">
+        <a href="#" class="return"><i class="icon-chevron-left"></i> 返回</a>
+        编辑标签
+        <a href="#" class="search animated fadeInRight" style="font-size: 1.4rem;">完成</a>
+    </div>
+    <div class="main">
+        <div class="zz_txt">
+            <p>自定义标签</p>
+            <div class="bq_span" id="bq_span">
+                <span class="bg_03 color_w clear_border" id="bq_01">标签一<a href="#" class="icon-remove" id="bqbtn_01"></a> </span>
+                <span class="bg_03 color_w clear_border" id="bq_02">标签二<a href="#" class="icon-remove" id="bqbtn_02"></a> </span>
+                <span class="bg_03 color_w clear_border" id="bq_03">标签三<a href="#" class="icon-remove" id="bqbtn_03"></a> </span>
+            </div>
+            <div class="bq_add">
+                <input type="text" placeholder="请输入标签">
+                <a href="#">确 定</a>
+            </div>
+        </div>
+        <div class="zz_txt">
+            <p>推荐标签</p>
+            <div class="bq_span">
+                <span>标签一</span>
+                <span>标签二</span>
+                <span>标签三</span>
+            </div>
+        </div>
+        <div class="zz_txt">
+            <p>历史标签</p>
+            <div class="bq_span">
+                <span>标签一</span>
+                <span>标签二</span>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

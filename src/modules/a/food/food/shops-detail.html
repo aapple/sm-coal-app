@@ -1,0 +1,172 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0;"/>
+<title>店铺详情</title>
+<link type="text/css" href="layer_mobile/need/layer.css" rel="stylesheet" />
+<link rel="stylesheet" href="touchTouch/touchTouch.css" type="text/css" />
+<link rel="stylesheet" href="css/shop-detail.css" type="text/css" />
+<script type="text/javascript" src="js/Jquery/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/Phone/phone.js"></script>
+<script type="text/javascript" src="touchTouch/touchTouch.jquery.js" ></script>
+<script type="text/javascript" src="layer_mobile/layer.js"></script>
+</head>
+
+<body>
+<div class="whole">
+    <div class="detail-pic">
+        <div class="headPic" id="thumbs">
+            <a href="image/img-1.jpg" style="background-image: url(image/img-1.jpg);"></a>
+            <a href="image/img-1.jpg" style="background-image: url(image/img-1.jpg);"></a>
+            <a href="image/img-1.jpg" style="background-image: url(image/img-1.jpg);"></a>
+        </div>
+        <a class="back" href="javascript:history.go(-1);"><img src="image/back.png" width="100%" /></a>
+        <div class="share"><img src="image/share.png" width="100%" /></div>
+        <div class="number">1/3</div>
+        <script>
+            $(function(){
+                $('#thumbs a').touchTouch();
+            });
+        </script>
+    </div>
+    
+    <div class="detail-content">
+        <div class="detail-head">
+            <img src="image/head.jpg" width="100%" />
+        </div>
+        <div class="detail-con">
+            <h3>爱琴海酒屋</h3>
+            <p>人均:<span>255元</span><a>日本料理</a><a>酒仙桥</a><a>9.7KM</a></p>
+            <p><span class="collect"></span><span><a class="num-people">1668</a>人收藏</span></p>
+            <p><span>芳华西路6号1号楼（爱琴海沙滩）</span><a href="maps.html" class="maps"><img src="image/map-icon.png" width="100%" /></a></p>
+        </div>
+        <div class="detail-res">
+            <h3>推荐理由</h3>
+            <p>明星最爱去的日料店 撞星率颇高</p>
+            <p>室外花园草坪宽敞开阔 最适合赏景闲聊</p>
+            <p>价格不贵却道道菜都精致 食材十分考究</p>
+            <a href="#">查看详情 ></a>
+        </div>
+    </div>
+    
+    <div class="overhead">
+        <h3>附加信息</h3>
+        <div class="overhead_list">
+            <div class="over-common wifi">
+                <p><img src="image/wifi.png" width="100%" /></p>
+                <p>wi-fi</p>
+                <p>每天10:30-11:00</p>
+                <p><a href="#">在线客服></a></p>
+            </div>
+            <div class="over-common party">
+                <p><img src="image/party.png" width="100%" /></p>
+                <p>适合小聚</p>
+                <p>12:00-23:00</p>
+                <p><a href="tel:123456789">电话客服></a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+	<a class="foot_list collect_foot">
+    	<p></p>
+        <p>收藏</p>
+    </a>
+    <a class="foot_list edit">
+    	<p><img src="image/pinglun.png" width="100%" /></p>
+        <p>写评论</p>
+    </a>
+    <a class="order" href="#">立即预约</a>
+</div>
+<script type="text/javascript">
+$(function(){
+	$('.collect_foot').on('click',function(){
+		$(this).toggleClass('colle');
+		if($(this).hasClass('colle')){
+			$(this).children('p:last-child').text('已收藏');
+		}else{
+			$(this).children('p:last-child').text('收藏');
+		}
+	});	
+	$('.edit').on('click',function(){
+		$('.order-content').addClass('order_active');
+	});
+	$('.pl').on('click',function(){
+		var textcon = $(this).parent().find('.order-con').val().length;
+		if(textcon==0){
+			tipshow('亲爱的，您还没有添加评论哦！');
+		}else{
+			$('.order-content').removeClass('order_active');
+			tipshow('亲爱的，您的评论已成功提交！');
+		}
+	});
+	
+	function tipshow(content){
+		layer.open({
+			content: content
+			,skin: 'msg'
+			,time: 2 //2秒后自动关闭
+		  });	
+	}
+})
+</script>
+
+<div class="order-content">
+	<div class="order-cc">
+    	<textarea class="order-con" placeholder="请在此输入您的评论！"></textarea>
+        <div class="pl">提交</div>
+    </div>
+</div>
+
+<div class="shaer-menu">
+	<ul class="share-list">
+    	<li>
+        	<p><img src="image/weixin.png" width="100%" /></p>
+            <p>微信好友</p>
+        </li>
+        <li>
+        	<p><img src="image/pengyouquan.png" width="100%" /></p>
+            <p>朋友圈</p>
+        </li>
+        <li>
+        	<p><img src="image/qqhaoyou.png" width="100%" /></p>
+            <p>QQ好友</p>
+        </li>
+        <li>
+        	<p><img src="image/qqkongjian.png" width="100%" /></p>
+            <p>QQ空间</p>
+        </li>
+        <li>
+        	<p><img src="image/xinlangweibo.png" width="100%" /></p>
+            <p>新浪微博</p>
+        </li>
+        <li>
+        	<p><img src="image/tengxunweibo.png" width="100%" /></p>
+            <p>腾讯微博</p>
+        </li>
+        <li>
+        	<p><img src="image/renrenwang.png" width="100%" /></p>
+            <p>人人网</p>
+        </li>
+        <li>
+        	<p><img src="image/doubanwang.png" width="100%" /></p>
+            <p>豆瓣网</p>
+        </li>
+        <div class="close"><img src="image/downs.png" width="100%" /></div>
+    </ul>
+</div>
+<script type="text/javascript">
+$(function(){
+	$('.share').on('click',function(){
+		$('.shaer-menu').addClass('activ');
+	});
+	
+	$('.close').on('click',function(){
+		$('.shaer-menu').removeClass('activ');
+	});
+})
+</script>
+</body>
+</html>

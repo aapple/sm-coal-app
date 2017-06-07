@@ -1,0 +1,116 @@
+/**
+  * Tabs Theme: default
+  * 默认样式：标准的Tabs切换
+  */
+.doc-example [data-am-widget] {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 320px;
+}
+.am-tabs-default .am-tabs-nav {
+  line-height: 40px;
+  background-color: #eeeeee;
+}
+.am-tabs-default .am-tabs-nav a {
+  color: #222222;
+  line-height: 42px;
+}
+.am-tabs-default .am-tabs-nav > .am-active a {
+  background-color: #0e90d2;
+  color: #ffffff;
+}
+[data-am-widget="tabs"] .am-tabs-nav {
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    list-style: outside none none;
+    text-align: center;
+    display: flex;
+}
+[data-am-widget="tabs"] .am-tabs-nav li {
+    flex: 1 1 0%;
+}
+[data-am-widget="tabs"] .am-tabs-nav a {
+    display: block;
+    word-wrap: normal;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+/**
+  * Tabs Theme: d2
+  * 优化了条目选中样式,对应类名：am-tabs-d2
+  */
+.am-tabs-d2 .am-tabs-nav {
+  background-color: #eeeeee;
+}
+.am-tabs-d2 .am-tabs-nav li {
+  height: 42px;
+}
+.am-tabs-d2 .am-tabs-nav a {
+  color: #222222;
+  line-height: 42px;
+}
+.am-tabs-d2 .am-tabs-nav > .am-active {
+  position: relative;
+  background-color: #fcfcfc;
+  border-bottom: 2px solid #0e90d2;
+}
+.am-tabs-d2 .am-tabs-nav > .am-active a {
+  line-height: 40px;
+  color: #0e90d2;
+}
+.am-tabs-d2 .am-tabs-nav > .am-active:after {
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: 0px;
+  left: 50%;
+  margin-left: -5px;
+  border: 6px rgba(0, 0, 0, 0) solid;
+  content: "";
+  z-index: 1;
+  border-bottom-color: #0e90d2;
+}
+
+/**
+  * Tabs Theme: one
+  * 优化了条目,以及条目选中样式,对应类名：m-tabs-one
+  */
+.am-tabs-one {
+  background: #ffffff;
+}
+.am-tabs-one .am-tabs-nav {
+  height: 36px;
+  background-color: #ffffff;
+  font-size: 14px;
+  border-radius: 0;
+}
+.am-tabs-one .am-tabs-nav a {
+  line-height: 34px;
+  color: #15afef;
+}
+.am-tabs-one .am-tabs-nav li {
+  border: 1px solid #15afef;
+}
+.am-tabs-one .am-tabs-nav li:first-child {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+.am-tabs-one .am-tabs-nav li:last-child {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+.am-tabs-one .am-tabs-nav li + li {
+  border-left: none;
+}
+.am-tabs-one .am-tabs-nav .am-active a {
+  background-color: #15afef;
+  color: #ffffff;
+}
+.am-tabs-one .am-tabs-bd {
+  border: none;
+}
+.am-tabs-one .am-tab-panel {
+  padding: 15px 5px 20px;
+}

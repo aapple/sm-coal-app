@@ -1,0 +1,87 @@
+/**
+  * Gotop Theme: default
+  */
+.am-gotop-default {
+  text-align: center;
+  margin: 10px 0;
+}
+.am-gotop-default a {
+  background-color: #0e90d2;
+  padding: .5em 1.5em;
+  border-radius: 0;
+  color: #ffffff;
+}
+.am-gotop-default a img {
+  display: none;
+}
+/**
+  * Gotop Theme: fixed
+  */
+.am-gotop-fixed {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  z-index: 1010;
+  opacity: 1;
+  width: 32px;
+  min-height: 32px;
+  overflow: hidden;
+  border-radius: 0;
+  text-align: center;
+}
+.am-gotop-fixed.am-active {
+  opacity: .9;
+}
+.am-gotop-fixed.am-active:hover {
+  opacity: 1;
+}
+.am-gotop-fixed a {
+  display: block;
+}
+.am-gotop-fixed .am-gotop-title {
+  display: none;
+}
+.am-gotop-fixed .am-gotop-icon-custom {
+  display: inline-block;
+  max-width: 30px;
+  vertical-align: middle;
+}
+.am-gotop-fixed .am-gotop-icon {
+  width: 100%;
+  line-height: 32px;
+  background-color: #555555;
+  vertical-align: middle;
+  color: #dddddd;
+}
+.am-gotop-fixed .am-gotop-icon:hover {
+  color: #ffffff;
+}
+.am-with-fixed-navbar .am-gotop-fixed {
+  bottom: 60px;
+}
+/**
+  * Gotop Theme: one
+  */
+.am-gotop-one {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  z-index: 1005;
+  width: 32px;
+  height: 32px;
+  background-color: #ffffff;
+  border-radius: 0;
+  border: 1px solid #15afef;
+  text-align: center;
+}
+.am-gotop-one .am-gotop-title {
+  display: none;
+}
+.am-gotop-one .am-gotop-icon {
+  vertical-align: middle;
+  display: inline-block;
+  color: #15afef;
+}
+.am-with-fixed-navbar .am-gotop-one {
+  bottom: 60px;
+}

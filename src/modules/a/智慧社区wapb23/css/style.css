@@ -1,0 +1,163 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    background: transparent;
+}
+body {
+    line-height: 1;	
+}
+ol, ul {
+    list-style: none;
+}
+a{
+	text-decoration:none;
+	}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+/* remember to define focus styles! */
+:focus {
+    outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+    text-decoration: none;
+}
+del {
+    text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.clear_border{
+	border:none !important;
+	}
+.clear_bg{
+	background:none !important;
+}
+.margin_left{
+	margin-left:0px !important;
+	}	
+.color_r{
+	color:#f7350a !important;
+	}
+.color_r2{
+	color:#f7350a !important;
+	font-weight: bold;
+}
+.color_w{
+	color:#fff !important;
+	}
+.color_d{
+	color:#000 !important;
+	}	
+.color_g{
+	color:#b0b0b0 !important;
+	}
+.color_g2{
+	color:#378001 !important;
+	}	
+.color_y{
+	color:#ff5400 !important;
+	}		
+.reveal-modal-bg {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	background: #000;
+	z-index:1;
+	top: 0;
+	left: 0;
+	opacity: 0.5;
+	filter: alpha(opacity:50);
+}
+.reveal-modal-bg2 {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	background: #fff;
+	z-index:100;
+	top: 0;
+	left: 0;
+	opacity: 0.7;
+	filter: alpha(opacity:70);
+}
+.margin{
+	margin:0;
+	}
+.puff_left{
+	float:left !important;
+	}	
+.puff_right{
+	float:right !important;
+	}		
+.margin_top{
+	margin-top:0px !important;
+	}
+.color_border{
+	border:1px #ff6600 solid !important;
+	}	
+.text_c{
+	text-align:center !important;
+	}
+.text_r{
+	text-align:right !important;
+}
+.dis_none{
+	display:none;
+	}	
+/*橙色*/
+.bg_01{
+	background-color:#ca0b0b !important;
+	}
+.bg_02{
+	background-color:#ffe79d !important;
+	}
+.bg_03{
+	background-color:#ff8712 !important;
+	}
+.bg_04{
+	background:#666 !important;
+	color: #fff !important;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

@@ -1,0 +1,180 @@
+.am-gallery {
+  padding: 5px 5px 0 5px;
+  list-style: none;
+}
+.am-gallery h3 {
+  margin: 0;
+}
+[data-am-gallery*='pureview'] img {
+  cursor: pointer;
+}
+/**
+  * Gallery Theme: default
+  * Author: Minwe (minwe@yunshipei.com)
+  */
+.am-gallery-default > li {
+  padding: 5px;
+}
+.am-gallery-default .am-gallery-item img {
+  width: 100%;
+  height: auto;
+}
+.am-gallery-default .am-gallery-title {
+  margin-top: 10px;
+  font-weight: normal;
+  font-size: 1.4rem;
+  display: block;
+  word-wrap: normal;
+  /* for IE */
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #555555;
+}
+.am-gallery-default .am-gallery-desc {
+  color: #999999;
+  font-size: 1.2rem;
+}
+/**
+  * Gallery Theme: overlay
+  * Author: Minwe (minwe@yunshipei.com)
+  */
+.am-gallery-overlay > li {
+  padding: 5px;
+}
+.am-gallery-overlay .am-gallery-item {
+  position: relative;
+}
+.am-gallery-overlay .am-gallery-item img {
+  width: 100%;
+  height: auto;
+}
+.am-gallery-overlay .am-gallery-title {
+  font-weight: normal;
+  font-size: 1.4rem;
+  color: #ffffff;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-indent: 5px;
+  height: 30px;
+  line-height: 30px;
+  display: block;
+  word-wrap: normal;
+  /* for IE */
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.am-gallery-overlay .am-gallery-desc {
+  display: none;
+}
+/**
+  * Accordion Theme: bordered
+  * Author: Minwe (minwe@yunshipei.com)
+  */
+.am-gallery-bordered > li {
+  padding: 5px;
+}
+.am-gallery-bordered .am-gallery-item {
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.35);
+          box-shadow: 0 0 3px rgba(0, 0, 0, 0.35);
+  padding: 5px;
+}
+.am-gallery-bordered .am-gallery-item img {
+  width: 100%;
+  height: auto;
+}
+.am-gallery-bordered .am-gallery-title {
+  margin-top: 10px;
+  font-weight: normal;
+  font-size: 1.4rem;
+  color: #555555;
+  display: block;
+  word-wrap: normal;
+  /* for IE */
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.am-gallery-bordered .am-gallery-desc {
+  color: #999999;
+  font-size: 1.2rem;
+}
+/**
+  * Gallery Theme: imgbordered
+  * Author: Minwe (minwe@yunshipei.com)
+  */
+.am-gallery-imgbordered > li {
+  padding: 5px;
+}
+.am-gallery-imgbordered .am-gallery-item img {
+  width: 100%;
+  height: auto;
+  border: 3px solid #FFF;
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.35);
+          box-shadow: 0 0 3px rgba(0, 0, 0, 0.35);
+}
+.am-gallery-imgbordered .am-gallery-title {
+  margin-top: 10px;
+  font-weight: normal;
+  font-size: 1.4rem;
+  color: #555555;
+  display: block;
+  word-wrap: normal;
+  /* for IE */
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.am-gallery-imgbordered .am-gallery-desc {
+  color: #999999;
+  font-size: 1.2rem;
+}
+/**
+  * Gallery Theme: one
+  * Author: hzp (hzp@yunshipei.com)
+  */
+.am-gallery-one {
+  padding: 0 5px;
+  background-color: #ffffff;
+}
+.am-gallery-one > li {
+  padding: 5px;
+}
+.am-gallery-one .am-gallery-item {
+  padding: 5px;
+}
+.am-gallery-one .am-gallery-item img {
+  width: 100%;
+  height: auto;
+}
+.am-gallery-one .am-gallery-title {
+  line-height: 34px;
+  font-weight: normal;
+  font-size: 1.4rem;
+  display: block;
+  word-wrap: normal;
+  /* for IE */
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #555555;
+}
+.am-gallery-one .am-gallery-desc {
+  color: #999999;
+  font-size: 1.2rem;
+}
+.am-gallery-one .am-gallery-more {
+  width: 100%;
+}
+.am-gallery-one .am-gallery-more a {
+  background-color: #dfdfdf;
+  color: #555555;
+  height: 35px;
+  line-height: 35px;
+  font-size: 1.4rem;
+  display: block;
+  text-align: center;
+}

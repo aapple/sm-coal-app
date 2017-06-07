@@ -1,0 +1,98 @@
+.am-intro {
+  position: relative;
+}
+.am-intro img {
+  max-width: 100%;
+}
+.am-intro-hd {
+  position: relative;
+  height: 45px;
+  line-height: 45px;
+}
+.am-intro-title {
+  font-size: 18px;
+  margin: 0;
+  font-weight: bold;
+}
+.am-intro-more-top {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  font-size: 1.4rem;
+}
+.am-intro-bd {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 1.4rem;
+}
+.am-intro-bd p:last-child {
+  margin-bottom: 0;
+}
+.am-intro-more-bottom {
+  clear: both;
+  text-align: center;
+}
+.am-intro-more-bottom .am-btn {
+  font-size: 14px;
+}
+/**
+  * Intro Theme: default
+  */
+.am-intro-default .am-intro-hd {
+  background-color: #0e90d2;
+  color: #ffffff;
+  padding: 0 10px;
+}
+.am-intro-default .am-intro-hd a {
+  color: #eeeeee;
+}
+.am-intro-default .am-intro-right {
+  padding-left: 0;
+}
+/**
+  * Intro Theme: one
+  */
+.am-intro-one {
+  padding-bottom: 10px;
+  background-color: #ffffff;
+}
+.am-intro-one a {
+  color: #15afef;
+}
+.am-intro-one .am-intro-hd {
+  border-bottom: 1px solid #15afef;
+  margin-left: 10px;
+  margin-right: 10px;
+  line-height: 44px;
+}
+.am-intro-one .am-intro-title {
+  color: #333333;
+  padding-left: 10px;
+}
+.am-intro-one .am-intro-title:before {
+  position: absolute;
+  left: 1px;
+  top: 10px;
+  bottom: 10px;
+  content: '';
+  width: 3px;
+  background-color: #15afef;
+  display: block;
+}
+.am-intro-one .am-intro-bd {
+  color: #555555;
+}
+.am-intro-one .am-intro-left {
+  float: left;
+  display: inline;
+}
+.am-intro-one .am-intro-right {
+  display: inline;
+  padding-left: 0;
+  font-size: 1.4rem;
+}
+.am-intro-one .am-intro-right p {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}

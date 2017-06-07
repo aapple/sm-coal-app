@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta content="telephone=no" name="format-detection" />
+    <title>举报帖子</title>
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/shake.css" rel="stylesheet" type="text/css">
+    <link href="css/animate.min.css" rel="stylesheet" type="text/css">
+    <link href="css/idangerous.swiper.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="js/wo.js"></script>
+    <script>
+        $(document).ready(function(){
+            //举报
+            $('.report ul li',this).toggle(function(){
+                $('.report ul li span',this).fadeIn(300);
+            },function(){
+                $(".report ul li span").fadeOut(300);
+            });
+
+        });
+    </script>
+</head>
+<body>
+<div class="warpe">
+    <div class="head">
+        <a href="#" class="return">取消</a>
+        举报帖子
+        <a href="#" class="search animated fadeInRight" style="font-size: 1.4rem;">发送</a>
+    </div>
+    <div class="cardiv">
+        <div class="car_t">请选择举报理由</div>
+        <div class="report">
+            <ul>
+                <li>
+                   <label>色情低俗</label>
+                    <span class="icon-ok puff_right"></span>
+                </li>
+                <li>
+                    <label>广告骚扰</label>
+                    <span class="icon-ok puff_right dis_none"></span>
+                </li>
+                <li>
+                    <label>政治敏感</label>
+                    <span class="icon-ok puff_right dis_none"></span>
+                </li>
+                <li>
+                    <label>谣言</label>
+                    <span class="icon-ok puff_right dis_none"></span>
+                </li>
+                <li>
+                    <label>营销诈骗</label>
+                    <span class="icon-ok puff_right dis_none"></span>
+                </li>
+            </ul>
+        </div>
+        <div class="edit_t">
+            <textarea rows="8" placeholder="您可以输入举报的其他理由"></textarea>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="js/idangerous.swiper.min.js"></script>
+<script type="text/javascript">
+    var tabsSwiper = new Swiper('.swiper-container',{
+        speed:500,
+        onSlideChangeStart: function(){
+            $(".tabs .active").removeClass('active');
+            $(".tabs a").eq(tabsSwiper.activeIndex).addClass('active');
+        }
+    });
+    $(".tabs a").on('touchstart mousedown',function(e){
+        e.preventDefault()
+        $(".tabs .active").removeClass('active')
+        $(this).addClass('active')
+        tabsSwiper.slideTo( $(this).index() )
+    })
+    $(".tabs a").click(function(e){
+        e.preventDefault()
+    })
+</script>
+</body>
+</html>

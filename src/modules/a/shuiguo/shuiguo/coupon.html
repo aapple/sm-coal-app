@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=no">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+  <!-- 启用360浏览器的极速模式(webkit) -->
+  <meta name="renderer" content="webkit">
+  <!-- 避免IE使用兼容模式 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+  <meta name="HandheldFriendly" content="true">
+  <!-- 微软的老式浏览器 -->
+  <meta name="MobileOptimized" content="320">
+  <!-- uc强制竖屏 -->
+  <meta name="screen-orientation" content="portrait">
+  <!-- QQ强制竖屏 -->
+  <meta name="x5-orientation" content="portrait">
+  <!-- UC强制全屏 -->
+  <meta name="full-screen" content="yes">
+  <!-- QQ强制全屏 -->
+  <meta name="x5-fullscreen" content="true">
+  <!-- UC应用模式 -->
+  <meta name="browsermode" content="application">
+  <!-- QQ应用模式 -->
+  <meta name="x5-page-mode" content="app">
+  <!-- windows phone 点击无高光 -->
+  <meta name="msapplication-tap-highlight" content="no">
+  <!-- 适应移动端end -->
+	<title>水果拼团网站</title>
+    <link rel="stylesheet" href="css/index.css"/>
+</head>
+<body>
+	<div id="user-b">
+		<!--html5 nav-->
+		<nav class="j-nav navbar">
+	        <div class="logo fl">
+				<a href="user.html"></a>
+			</div>
+			<span class="user-title">优惠卷</span>
+			<div class="shopping-cart fr">
+				<a href="index.html"></a>
+			</div>
+	    </nav>
+	    <div class="coupon-tab">
+	    	<div class="coupon-nav">
+		    	<ul id="tab_btn" class="coupon-list">
+		    		<li class="pick">未使用</li>
+		    		<li><span class="bar"></span>已使用</li>
+		    		<li><span class="bar"></span>已过期</li>
+		    	</ul>
+		    	<div class="cl"></div>
+		    </div>
+		    <div class="coupon-content">
+		    	<ul>
+		    		<li class="cc-all cc-one tab_content show">
+		    			<ul>
+		    				<li>
+		    					<div class="coupon-sum fl"><img src="images/cou-five.jpg"></div>
+		    					<div class="coupon-text">满20即可使用<br><span>有效期至：2017-1-1</span></div>
+		    				</li>
+		    				<li>
+		    					<div class="coupon-sum fl"><img src="images/cou-ten.jpg"></div>
+		    					<div class="coupon-text">满40即可使用<br><span>有效期至：2017-1-1</span></div>
+		    				</li>
+		    			</ul>
+		    		</li>
+		    		<li class="cc-all cc-two tab_content">
+		    			<ul>
+		    				<li>
+		    					<div class="coupon-sum fl">
+		    						<div class="cc-mask"></div>
+		    						<img src="images/cou-ten.jpg">
+		    					</div>
+		    					<div class="coupon-text">购买50元苹果<br><span>已使用</span></div>
+		    				</li>
+		    			</ul>
+		    		</li>
+		    		<li class="cc-all cc-three tab_content">
+		    			<ul>
+		    				<li>
+		    					<div class="coupon-sum fl"><img src="images/cou-ten.jpg" class="gray"></div>
+		    					<div class="coupon-text">满40即可使用【已过期】<br><span>有效期至：2015-11-11</span></div>
+		    				</li>
+		    			</ul>
+		    		</li>
+		    	</ul>
+		    </div>
+	    </div>
+	</div>
+	<script type="text/javascript">
+    //TAB切换
+    var tab_Btns_box=document.getElementById('tab_btn');
+    var tab_Btns=tab_Btns_box.getElementsByTagName('li');
+    var tab_contents=document.getElementsByClassName('tab_content');
+    for(var i=0;i<tab_Btns.length;i++){
+    tab_Btns[i].index=i;
+
+    tab_Btns[i].onclick=function(){
+     for(var i=0;i<tab_Btns.length;i++){
+     if(i!==this.index){
+     tab_Btns[i].classList.remove('pick')
+     }
+     }
+     tab_Btns[this.index].className="pick";
+
+     for(var j=0;j<tab_contents.length;j++){
+     if(j!==this.index){
+         tab_contents[j].classList.remove('show');
+     }
+         tab_contents[this.index].classList.add('show');
+     }
+    }
+    }
+    </script>
+</body>
+</html>

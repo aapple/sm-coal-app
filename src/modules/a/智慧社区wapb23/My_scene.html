@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta content="telephone=no" name="format-detection" />
+    <title>我的场景</title>
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/shake.css" rel="stylesheet" type="text/css">
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="css/animate.min.css" rel="stylesheet" type="text/css">
+    <link href="css/idangerous.swiper.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="js/wo.js"></script>
+    <style>
+        .search{font-size: 1.4rem;}
+    </style>
+    <script>
+        $(document).ready(function(){
+            //添加场景
+            $("#scene_bth").click(function(){
+                $(".reveal-modal-bg").fadeIn(500);
+                $(".scene_modal").fadeIn(500);
+            });
+            $(".reveal-modal-bg,.closed").click(function(){
+                $(".modal_img,.reveal-modal-bg").fadeOut(500);
+                $(".scene_modal").fadeOut(500);
+            });
+            //展开悬浮菜单
+            $("#side_bth",this).toggle(function(){
+                $(".bottomnav").animate({bottom:'0rem'},800);
+            },function(){
+                $(".bottomnav").animate({bottom:'-100%'},800);
+            });
+
+        });
+    </script>
+</head>
+<body>
+<div class="warpe">
+    <div class="reveal-modal-bg dis_none"></div>
+    <div class="scene_modal dis_none">
+        <div class="scene_t">
+            <p class="color_y">添加场景</p>
+            <p><input type="text" placeholder="请输入自定义场景名称"></p>
+        </div>
+        <div class="scene_m">
+            <div class="scene">
+                <ul>
+                    <li class="animated fadeInLeft">
+                        <a href="">
+                            <img src="img/icon_sm2.png">
+                            <p>睡眠</p>
+                        </a>
+                    </li>
+                    <li class="animated fadeInRight">
+                        <a href="">
+                            <img src="img/icon_yd.png">
+                            <p>运动</p>
+                        </a>
+                    </li>
+                    <li class="animated fadeInLeft">
+                        <a href="">
+                            <img src="img/icon_jc.png">
+                            <p>就餐</p>
+                        </a>
+                    </li>
+                    <li class="animated fadeInRight">
+                        <a href="">
+                            <img src="img/icon_wc2.png">
+                            <p>外出</p>
+                        </a>
+                    </li>
+                    <li class="animated fadeInLeft">
+                        <a href="">
+                            <img src="img/icon_sm2.png">
+                            <p>外出</p>
+                        </a>
+                    </li>
+                    <li class="animated fadeInLeft">
+                        <a href="">
+                            <img src="img/icon_jc.png">
+                            <p>就餐</p>
+                        </a>
+                    </li>
+                    <li class="animated fadeInRight">
+                        <a href="">
+                            <img src="img/icon_wc2.png">
+                            <p>外出</p>
+                        </a>
+                    </li>
+                    <li class="animated fadeInLeft">
+                        <a href="">
+                            <img src="img/icon_sm2.png">
+                            <p>外出</p>
+                        </a>
+                    </li>`
+                </ul>
+            </div>
+        </div>
+        <div class="scene_b">
+            <div class="er_btn">
+                <a href="#" class="bg_03 closed">确定</a>
+                <a href="#" class="closed">取消</a>
+            </div>
+        </div>
+    </div>
+    <div class="head">
+        <a href="#" class="return"><i class="icon-chevron-left"></i> 返回</a>
+        我的场景
+        <a href="#" class="search" id="side_bth"><i class="icon-plus"></i> </a>
+    </div>
+    <div class="scene">
+        <ul>
+            <li class="animated fadeInLeft">
+                <a href="">
+                    <img src="img/icon_sm2.png">
+                    <p>睡眠</p>
+                </a>
+            </li>
+            <li class="animated fadeInRight">
+                <a href="">
+                    <img src="img/icon_yd.png">
+                    <p>运动</p>
+                </a>
+            </li>
+            <li class="animated fadeInLeft">
+                <a href="">
+                    <img src="img/icon_jc.png">
+                    <p>就餐</p>
+                </a>
+            </li>
+            <li class="animated fadeInRight">
+                <a href="">
+                    <img src="img/icon_wc2.png">
+                    <p>外出</p>
+                </a>
+            </li>
+            <li class="animated fadeInLeft">
+                <a id="scene_bth">
+                    <img src="img/icon_sm2.png">
+                    <p>自定义名称</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="bottomnav animated fadeInUp">
+    <ul>
+        <li class="animated fadeInUp">
+            <a href="My_scene2.html">
+                设置场景任务
+            </a>
+        </li>
+        <li class="animated fadeInUp">
+            <a href="#">
+                定时场景
+            </a>
+        </li>
+        <li class="animated fadeInUp">
+            <a href="#">
+                重命名
+            </a>
+        </li>
+        <li class="animated fadeInUp">
+            <a href="#">
+                删除
+            </a>
+        </li>
+        <li class="animated fadeInUp">
+            <a href="#">
+                取消
+            </a>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

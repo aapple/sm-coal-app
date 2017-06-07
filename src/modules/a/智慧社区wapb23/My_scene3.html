@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta content="telephone=no" name="format-detection" />
+    <title>定时场景</title>
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/shake.css" rel="stylesheet" type="text/css">
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="css/animate.min.css" rel="stylesheet" type="text/css">
+    <link href="css/idangerous.swiper.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="js/wo.js"></script>
+    <style>
+        .search{font-size: 1.4rem;}
+    </style><!-- 日期插件js -->
+    <script src="js/datetime/jquery-1.11.1.min.js"></script>
+    <script src="js/datetime/mobiscroll.core.js"></script>
+    <script src="js/datetime/mobiscroll.widget.js"></script>
+    <script src="js/datetime/mobiscroll.scroller.js"></script>
+    <script src="js/datetime/mobiscroll.util.datetime.js"></script>
+    <script src="js/datetime/mobiscroll.datetimebase.js"></script>
+    <script src="js/datetime/mobiscroll.widget.ios.js"></script>
+    <script src="js/datetime/mobiscroll.i18n.zh.js"></script>
+    <link href="css/datetime/mobiscroll.animation.css" rel="stylesheet" type="text/css" />
+    <link href="css/datetime/mobiscroll.widget.css" rel="stylesheet" type="text/css" />
+    <link href="css/datetime/mobiscroll.widget.ios.css" rel="stylesheet" type="text/css" />
+    <link href="css/datetime/mobiscroll.scroller.css" rel="stylesheet" type="text/css" />
+    <link href="css/datetime/mobiscroll.scroller.ios.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+        $(function () {
+            var nowData=new Date();
+            var opt= {
+                theme:'ios', //设置显示主题
+                mode:'scroller', //设置日期选择方式，这里用滚动
+                display:'bottom', //设置控件出现方式及样式
+                preset : 'datetime', //日期:年 月 日 时 分
+                minDate: nowData,
+                // maxDate:new Date(nowData.getFullYear(),nowData.getMonth(),nowData.getDate()+7,22,00),
+                dateFormat: 'yy-mm-dd', // 日期格式,显示小时分钟加上dd
+                dateOrder: 'yymmdd', //面板中日期排列格式,显示小时分钟加上dd
+                stepMinute: 5, //设置分钟步长
+                yearText:'年',
+                monthText:'月',
+                dayText:'日',
+                hourText:'时',
+                minuteText:'分',
+                lang:'zh' //设置控件语言};
+            };
+            $('#dateinput').mobiscroll(opt);
+            $('#dateinput2').mobiscroll(opt);
+            $('#dateinput3').mobiscroll(opt);
+        });
+    </script>
+</head>
+<body>
+<div class="warpe">
+    <div class="reveal-modal-bg dis_none"></div>
+    <div class="head">
+        <a href="#" class="return"><i class="icon-chevron-left"></i> 返回</a>
+        定时场景
+        <a href="#" class="search" id="dateinput3"><i class="icon-plus"></i> </a>
+    </div>
+    <div class="I_div">
+        <div class="inter_add">
+            <ul>
+                <li class="animated bounceInLeft">
+                    <a href="#">
+                        <span class="puff_left">定时</span>
+                        <span class="puff_right"><input type="text" placeholder="周一9:30" id="dateinput"></span>
+                    </a>
+                </li>
+                <li class="animated bounceInRight">
+                    <a href="#">
+                        <span class="puff_left">定时</span>
+                        <span class="puff_right"><input type="text" placeholder="周二11:28" id="dateinput2"></span>
+                    </a>
+                </li>
+                <li class="animated bounceInRight">
+                    <a href="#">
+                        <span class="puff_left">定时</span>
+                        <span class="puff_right"><input type="text" placeholder="周一9:30" id=""></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="M_no">
+        <p><img src="img/icon_bq.png">您还没有为场景设置定时</p>
+    </div>
+</div>
+</body>
+</html>

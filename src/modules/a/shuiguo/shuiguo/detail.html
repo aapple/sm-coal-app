@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=no">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+  <!-- 启用360浏览器的极速模式(webkit) -->
+  <meta name="renderer" content="webkit">
+  <!-- 避免IE使用兼容模式 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+  <meta name="HandheldFriendly" content="true">
+  <!-- 微软的老式浏览器 -->
+  <meta name="MobileOptimized" content="320">
+  <!-- uc强制竖屏 -->
+  <meta name="screen-orientation" content="portrait">
+  <!-- QQ强制竖屏 -->
+  <meta name="x5-orientation" content="portrait">
+  <!-- UC强制全屏 -->
+  <meta name="full-screen" content="yes">
+  <!-- QQ强制全屏 -->
+  <meta name="x5-fullscreen" content="true">
+  <!-- UC应用模式 -->
+  <meta name="browsermode" content="application">
+  <!-- QQ应用模式 -->
+  <meta name="x5-page-mode" content="app">
+  <!-- windows phone 点击无高光 -->
+  <meta name="msapplication-tap-highlight" content="no">
+  <!-- 适应移动端end -->
+	<title>水果拼团网站</title>
+	<link rel="stylesheet" href="css/frameui.css"/>
+    <link rel="stylesheet" href="css/widget/slider.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+</head>
+<body>
+	<!--a1轮播图-->
+    <div data-am-widget="slider" class="am-slider am-slider-a1" data-am-slider='{"directionNav":false}' >
+	    <ul class="am-slides cl">
+	        <li>
+	        	<img src="images/j-d01.jpg">
+	        </li>
+	        <li>
+	        	<img src="images/j-d02.jpg">
+	        </li>
+	    </ul>
+	</div>
+	<!--介绍-->
+    <div class="details-body-box">
+        <div class="tm">
+            <div class="td2">
+                <div class="td2_price"><span>已售：<b>948</b>件</span></div>
+                <div class="cl"></div>
+                <div class="td2_name"> 越南进口白肉火龙果 </div>
+                <div class="td2_cx">外皮红艳，果肉绵软白嫩，汁液丰富，富含维生素C.</div>
+            </div>
+        </div>
+        <div class="tm2">
+            <div class="td2_info">
+                <div class="td2_num">支付开团并邀请<span id="tuan_more_need_number">2</span>人参团，人数不足自动退款</div>
+            </div>
+            <div style="visibility: visible;" class="kt">
+                <div class="pin"> 
+                    <div class="pin_btn_box">
+                        <div class="pin_btn">
+                            3人团
+                        </div>
+                    </div>
+                    <div class="pin_btn_box">
+                        <div class="pin_btn pin_btn_bg2">
+                            原价
+                        </div>
+                    </div>
+                    <div class="cl"></div>
+                </div>
+                <div>
+                    <a href="javascript:void(0);" class="kt_item kt_item_buy ">
+                        <div class="kt_price"><b>￥16.80</b>&nbsp;/&nbsp;700g~800g</div>
+                        <div class="kt_btn" id="tuan_one_number">原价购买</div>
+                    </a>
+                    <a href="pay.html" class="kt_item">
+                        <div class="kt_price"><b>￥14.00</b>&nbsp;/&nbsp;700g~800g</div>
+                        <div class="kt_btn">立即拼团<br></div>
+                    </a>   
+                </div>
+                
+            </div> 
+        </div>        
+        <!--拼团玩法-->
+        <div class="step">
+            <div class="step_hd">
+                拼团玩法<a class="step_more" href="tuan_rule.html">查看详情</a>
+            </div>
+            <div id="footItem" class="step_list">
+                <div class="step_item step_item_on">
+                    <div class="step_num">1</div>
+                    <div class="step_detail">
+                        <p class="step_tit">选择
+                            <br>心仪商品</p>
+                    </div>
+                </div>
+                <div class="step_item ">
+                    <div class="step_num">2</div>
+                    <div class="step_detail">
+                        <p class="step_tit">支付开团
+                            <br>或参团</p>
+                    </div>
+                </div>
+                <div class="step_item ">
+                    <div class="step_num">3</div>
+                    <div class="step_detail">
+                        <p class="step_tit">等待好友
+                            <br>参团支付</p>
+                    </div>
+                </div>
+                <div class="step_item">
+                    <div class="step_num">4</div>
+                    <div class="step_detail">
+                        <p class="step_tit">达到人数
+                            <br>团购成功</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="outs-box">
+            <h1>商品详情</h1>
+            <img src="images/d1.jpg">
+            <img src="images/d2.jpg">
+            <img src="images/d3.jpg">
+            <img src="images/d4.jpg">
+        </div>
+    </div>
+
+    <!--detail_footer begin-->
+	<footer class="detail_footer">
+        <div class="return_left_box">
+            <a href="index.html"><div class="return_home fl"></div></a>
+            <a href="javascript:void(0);"><div class="return_home share_tuan fl"></div></a>    
+        </div>  
+        <a href="pay.html"><div class="promptly_tuan fl">立即去拼团</div></a>
+        
+        <div class="cl"></div>
+
+    </footer>
+    <!--detail_footer end-->
+
+	<!--引入js资源-->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/amazeui.js"></script>
+	<script src="js/handlebars.min.js"></script>
+	<script src="js/amazeui.widgets.helper.js"></script>
+</body>
+</html>
