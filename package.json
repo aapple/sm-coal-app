@@ -47,8 +47,7 @@
     "cordova-plugin-camera",
     "cordova-plugin-inappbrowser",
     "cordova-plugin-file-transfer",
-    "cordova-plugin-ios-microphone-permissions",
-    "jpush-phonegap-plugin"
+    "cordova-plugin-ios-microphone-permissions"
   ],
   "cordovaPlatforms": [
     "android@6.2.2",
