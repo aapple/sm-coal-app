@@ -1,111 +1,62 @@
-<ion-header class="hide">
-  <ion-navbar>
-    <ion-title>
-      我的
-    </ion-title>
-  </ion-navbar>
-</ion-header>
 
 <ion-content>
-    <ion-toolbar *ngIf="false">
-      <ion-buttons end>
-        <button ion-button clear icon-only color="{{ noticeService.noCheckNotices.length ? 'danger' : 'dark' }}" (click)="gotoMeNoticePage()">
-          <ion-icon name="notifications"></ion-icon>
-        </button>
-      </ion-buttons>
-    </ion-toolbar>
+  <div style="background-color: #06c1ae;padding: 11% 5% 11% 15%;height: 125px;" tappable (click)="gotoMeProfilePage()" *ngIf="heyApp.authService.isAuth">
+    <div style="width: 20%;float: left;">
+      <img style="border: 0;vertical-align: middle;width: 100%;" src="{{ heyApp.helper.getImg(heyApp.authService.userInfo?.avatar)}}"/>
+    </div>
+    <div style="width: 40%;margin-left: 5%;float: left;">
+      <p style="font-size: 15px;color: #fff;line-height: 30px;">{{ heyApp.authService.userInfo?.nickname }}</p>
+      <p style="font-size: 14px;color: #fff;line-height: 15px;">{{ heyApp.authService.userInfo?.bio || '' }}<ion-icon name="arrow-forward" style="font-size: 14px;padding-left: 10px;"></ion-icon></p>
+    </div>
+  </div>
 
-  <ion-grid id="section-avatar">
-
-    <ion-row>
-      <ion-col></ion-col>
-
-      <ion-col padding-top>
-        <img tappable (click)="gotoMeProfilePage()" *ngIf="heyApp.authService.isAuth" class="avatar" src="{{ heyApp.helper.getImg(heyApp.authService.userInfo?.avatar) }}">
-        <img *ngIf="!heyApp.authService.isAuth" class="avatar" src="./assets/images/userAvatar-default.png">
-      </ion-col>
-
-      <ion-col id="section-btns" text-right>
-      </ion-col>
-    </ion-row>
-
-    <ion-row>
-      <ion-col width-10></ion-col>
-
-      <ion-col id="section-info" *ngIf="heyApp.authService.isAuth" center class="text-center" tappable (click)="gotoMeProfilePage()">
-        <div class="nickname">{{ heyApp.authService.userInfo?.nickname }}</div>
-        <div class="bio">{{ heyApp.authService.userInfo?.bio || '' }}</div>
-      </ion-col>
-
-      <ion-col id="section-info" *ngIf="!heyApp.authService.isAuth" center class="text-center" tappable (click)="gotoMeProfilePage()">
-        <div class="nickname">您好</div>
-        <div class="bio">立即登录</div>
-      </ion-col>
-
-      <ion-col width-10></ion-col>
-    </ion-row>
-  </ion-grid>
+  <div style="background-color: #06c1ae;padding: 11% 5% 11% 15%;height: 125px;" tappable (click)="gotoMeProfilePage()" *ngIf="!heyApp.authService.isAuth">
+    <div style="width: 20%;float: left;">
+      <img style="border: 0;vertical-align: middle;width: 100%;" src="./assets/images/userAvatar-default.png"/>
+    </div>
+    <div style="width: 40%;margin-left: 5%;float: left;">
+      <p style="font-size: 15px;color: #fff;line-height: 30px;">您好</p>
+      <p style="font-size: 14px;color: #fff;line-height: 15px;">立即登录<ion-icon name="arrow-forward" style="font-size: 14px;padding-left: 10px;"></ion-icon></p>
+    </div>
+  </div>
 
   <ion-list>
-    <ion-list-header>
-      我的
-    </ion-list-header>
-
     <button ion-item (click)="gotoMeProfilePage()">
-      <ion-icon name="person" item-left></ion-icon>
       我的资料
     </button>
-
     <button ion-item (click)="gotoMyTimelinePage()">
-      <ion-icon name="md-aperture" item-left></ion-icon>
       煤友圈
     </button>
-
-    <button ion-item (click)="gotoCoalOrignPriceMangePage()" *ngIf="heyApp.authService.userInfo?.isCoalManager == 1">
-      <ion-icon name="list" item-left></ion-icon>
-      煤炭矿方价维护
-    </button>
-
-    <button ion-item (click)="gotoCoalSalePriceManagePage()" *ngIf="heyApp.authService.userInfo?.isCoalSaler == 1">
-      <ion-icon name="list" item-left></ion-icon>
-      煤炭代发价维护
-    </button>
-
-    <button ion-item (click)="gotoLantanPriceManagePage()" *ngIf="heyApp.authService.userInfo?.isCokeManager == 1">
-      <ion-icon name="list" item-left></ion-icon>
-      兰炭价维护
-    </button>
-
-    <button ion-item (click)="gotoLogisticseManagePage()" *ngIf="heyApp.authService.userInfo?.isInfoStoreManager == 1">
-      <ion-icon name="list" item-left></ion-icon>
-      信息部物流维护
-    </button>
-
-    <button ion-item (click)="gotoFactoryManagePage()" *ngIf="heyApp.authService.userInfo?.isSuperManager == 1">
-      <ion-icon name="list" item-left></ion-icon>
-      煤矿焦化厂管理
-    </button>
-
-    <button ion-item (click)="gotoInfoStoreManagePage()" *ngIf="heyApp.authService.userInfo?.isSuperManager == 1">
-      <ion-icon name="list" item-left></ion-icon>
-      信息部管理
-    </button>
-
-    <button ion-item (click)="gotoLifeStoreManagePage()" *ngIf="heyApp.authService.userInfo?.isSuperManager == 1">
-      <ion-icon name="list" item-left></ion-icon>
-      生活服务类数据管理
-    </button>
-
   </ion-list>
 
   <ion-list>
-    <ion-list-header>
-      设置
-    </ion-list-header>
+    <button ion-item (click)="gotoCoalOrignPriceMangePage()" *ngIf="heyApp.authService.userInfo?.isCoalManager == 1">
+      煤炭矿方价维护
+    </button>
+    <button ion-item (click)="gotoCoalSalePriceManagePage()" *ngIf="heyApp.authService.userInfo?.isCoalSaler == 1">
+      煤炭代发价维护
+    </button>
+    <button ion-item (click)="gotoLantanPriceManagePage()" *ngIf="heyApp.authService.userInfo?.isCokeManager == 1">
+      兰炭价维护
+    </button>
+    <button ion-item (click)="gotoLogisticseManagePage()" *ngIf="heyApp.authService.userInfo?.isInfoStoreManager == 1">
+      信息部物流维护
+    </button>
+    <button ion-item (click)="gotoInfoStoreManagePage()" *ngIf="heyApp.authService.userInfo?.isSuperManager == 1">
+      煤矿焦化厂管理
+    </button>
+    <button ion-item (click)="gotoInfoStoreManagePage()" *ngIf="heyApp.authService.userInfo?.isSuperManager == 1">
+      信息部管理
+    </button>
+    <button ion-item (click)="gotoLifeStoreManagePage()" *ngIf="heyApp.authService.userInfo?.isSuperManager == 1">
+      生活服务类数据管理
+    </button>
+  </ion-list>
 
+  <ion-list>
     <button ion-item [navPush]="MeSettingPage">
-      <ion-icon name="cog" item-left></ion-icon>
       设置
     </button>
   </ion-list>
+
 </ion-content>

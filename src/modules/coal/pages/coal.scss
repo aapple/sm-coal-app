@@ -15,6 +15,12 @@ page-coal {
     font-size: 14px;
     height: $slide-height-small;
     line-height: $slide-height-small;
+    color: #000;
+  }
+
+  .slide-title-active{
+    color: #06c1ae !important;
+    border-bottom: 3px solid #06c1ae !important;
   }
 
   .slide-title-active {
@@ -27,4 +33,11 @@ page-coal {
     background: #f8f8f8;
   }
 
+  .swiper-wrapper{
+    background: #fff;
+  }
+
+  ion-segment{
+    background: #fff;
+  }
 }

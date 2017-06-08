@@ -6,6 +6,9 @@ import {HomeService} from "../services/home.service";
 import {AreaList} from "./area-list";
 import {AppGlobal} from "../../../app/app.global";
 import { Storage } from '@ionic/storage';
+import {CoalPage} from "../../coal/pages/coal";
+import {TimelinePage} from "../../timeline/pages/timeline";
+import {InfostorePage} from "../../infostore/pages/infostore";
 
 
 @Component({
@@ -84,6 +87,24 @@ export class HomePage {
         });
     });
   }
+
+  gotoCoalPrice(data){
+    this.navCtrl.parent.select(1);
+  }
+
+  gotoCokePrice(data){
+    this.navCtrl.parent.select(2);
+  }
+
+
+  gotoInfoStore(data){
+    this.navCtrl.push(InfostorePage);
+  }
+
+  gotoTimeline(data){
+    this.navCtrl.push(TimelinePage);
+  }
+
 
 }
 

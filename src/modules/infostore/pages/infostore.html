@@ -22,18 +22,20 @@
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
 
-  <ion-list>
-    <ion-item *ngFor="let infostore of infostoreListShow" (click)="gotoInfoStoreDetail(infostore)">
+  <div class="interest_list">
+    <ul>
+      <li *ngFor="let infostore of infostoreListShow" (click)="gotoInfoStoreDetail(infostore)">
+        <a>
+          <img src="./assets/images/banner2.jpg" >
+          <div class="list_r">
+            <p><span style="font-size: 14px;">{{infostore.title}}</span><span class="color_y">物流信息：20条</span></p>
+            <p>主营山东、上海专线，代发煤矿</p>
+            <ion-icon name="arrow-forward"></ion-icon>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
 
-      <ion-thumbnail item-left>
-        <img src="./assets/images/thumbnail-totoro.png">
-      </ion-thumbnail>
-
-      <h2>{{infostore.title}}</h2>
-      <p style="font-size: 10px;">信用等级：5星</p>
-      <p style="font-size: 10px;">联系方式：{{infostore.callNumber}}</p>
-      <p style="font-size: 10px;">地址：{{infostore.address}}</p>
-    </ion-item>
-  </ion-list>
 
 </ion-content>

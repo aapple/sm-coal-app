@@ -78,3 +78,63 @@ $colors: (
 @import "noto-sans";
 
 @import "global.hc";
+
+@import "animate.min";
+@import "main";
+@import "style";
+
+$theme-color: #06c1ae;
+$background-color: #f3f3f3;
+$text-color: #333;
+$background-color: #fff;
+$text-font-size: 1.4rem;
+
+
+$tabs-ios-tab-text-color-active: $theme-color;
+$tabs-ios-tab-icon-color-active: $theme-color;
+$tabs-ios-tab-text-color: #666;
+$tabs-ios-tab-icon-color: #666;
+$toolbar-ios-button-color: $theme-color;
+
+
+$segment-button-ios-background-color-activated: #06c1ae;
+$segment-button-ios-height: 35px;
+$segment-button-ios-line-height: 35px;
+.ion-title {
+  text-align: center;
+}
+
+//.tabbar.show-tabbar {
+//  opacity: 0.95;
+//}
+
+.button-ios-primary{
+  background-color: #06c1ae !important;
+}
+
+.tabbar{
+  border-top: 1px #CCC solid !important;
+  background-color: #fff !important;
+  line-height: 13px;
+}
+
+.toolbar-title-ios {
+  font-weight: 300 !important;
+}
+
+ion-content {
+  font-family: "Microsoft YaHei", Arial, "Helvetica";
+  color: #333;
+  font-size: 1.4rem;
+  line-height: 1;
+  background-color: #f3f3f3 !important;
+}
+
+.list-ios{
+  margin-bottom: 20px;
+}
+.label-ios {
+  margin: 11px 8px 11px 0;
+  color: #333 !important;
+  font-size: 1.5rem;
+}

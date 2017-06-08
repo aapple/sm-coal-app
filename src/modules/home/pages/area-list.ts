@@ -15,6 +15,7 @@ import {AppGlobal} from "../../../app/app.global";
 })
 export class AreaList {
 
+  currentArea: string = "";
   items: any = [];
   constructor(
     public navCtrl: NavController,
@@ -26,6 +27,12 @@ export class AreaList {
   }
 
   ionViewDidLoad() {
+    this.storage.get(AppGlobal.areaName)
+      .then(value => {
+        if(value){
+          this.currentArea = value + "";
+        }
+      });
     console.log('ionViewDidLoad AreaList');
   }
 

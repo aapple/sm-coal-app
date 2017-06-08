@@ -14,9 +14,7 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.s
-.ion-title {
-  text-align: center;
-}
+
 
 //.toolbar-background-ios{
 //  background: black;
@@ -116,17 +114,7 @@ q:before, q:after {
 }
 
 
-$theme-color: #e22319;
-$background-color: #f3f3f3;
-$text-color: #333;
-$background-color: #fff;
-$text-font-size: 1.4rem;
 
-ion-content {
-  font-family: "Microsoft YaHei", Arial, "Helvetica";
-  color: #333;
-  font-size: 1.4rem;
-  line-height: 1;
-  background-color: #f3f3f3 !important;
-}
+
+
 

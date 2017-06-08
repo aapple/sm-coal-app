@@ -2,7 +2,7 @@
 
 <ion-content>
 
-  <ion-slides #mySlider style="width:100%;height:119px" pager>
+  <ion-slides #mySlider style="width:100%;height:135px" pager>
     <ion-slide>
       <img src="./assets/images/banner2.jpg" >
     </ion-slide>
@@ -12,51 +12,51 @@
   <div class="nav">
     <ul>
       <li>
-        <a href="#">
+        <a (click)="gotoLifeStore('饭店')">
           <p><img src="./assets/img/icon_fk.png"></p>
-          <span>访客管理</span>
+          <span>饭店</span>
         </a>
       </li>
       <li>
-        <a href="#">
+        <a (click)="gotoLifeStore('宾馆')">
           <p><img src="./assets/img/icon_et.png" class="animated rotateIn"></p>
-          <span>儿童安全</span>
+          <span>宾馆</span>
         </a>
       </li>
       <li>
-        <a href="#">
+        <a (click)="gotoLifeStore('修理厂')">
           <p><img src="./assets/img/icon_jk.png" class="animated bounceIn"></p>
-          <span>健康服务</span>
+          <span>修理厂</span>
         </a>
       </li>
       <li>
-        <a href="#">
+        <a (click)="gotoLifeStore('加油站')">
           <p><img src="./assets/img/icon_zn.png" class="animated rotateIn"></p>
-          <span>智能监控</span>
+          <span>加油站</span>
         </a>
       </li>
       <li>
-        <a href="#">
+        <a (click)="gotoCoalPrice()">
           <p><img src="./assets/img/icon_wifi.png" class="animated bounceIn"></p>
-          <span>免费wifi</span>
+          <span>煤价</span>
         </a>
       </li>
       <li>
-        <a href="#">
+        <a (click)="gotoCokePrice()">
           <p><img src="./assets/img/icon_cy.png" class="animated rotateIn"></p>
-          <span>餐饮外卖</span>
+          <span>兰炭价</span>
         </a>
       </li>
       <li>
-        <a href="#">
+        <a (click)="gotoInfoStore()">
           <p><img src="./assets/img/icon_jz.png" class="animated bounceIn"></p>
-          <span>家政服务</span>
+          <span>信息部</span>
         </a>
       </li>
       <li>
-        <a href="community.html">
+        <a (click)="gotoTimeline()">
           <p><img src="./assets/img/icon_sq.png" class="animated rotateIn"></p>
-          <span>社区互动</span>
+          <span>煤友圈</span>
         </a>
       </li>
     </ul>
@@ -65,7 +65,7 @@
   <div class="center">
     <div class="pictitle">
       <span class="picbg"></span>
-      <span>社区商圈</span>
+      <span>附近商家</span>
       <a href="#" class="puff_right">更多 ></a>
     </div>
     <div class="bannerside">
@@ -77,7 +77,17 @@
     <div class="bannerside">
       <a href="#"><img src="./assets/img/pic3.jpg"></a>
     </div>
-
   </div>
+
+  <!--<div class="snapup hightitem section02 open-win" *ngFor="let lifestore of lifestoreList" (click)="gotoDetail(lifestore)">-->
+    <!--<img src="./assets/images/swipe/food.png" class="fl infologo">-->
+    <!--<div class="shelf2 fl">-->
+      <!--<div class="shelfcell">-->
+        <!--<div class="title">{{lifestore.name}}</div>-->
+        <!--<span class="subtitel">{{lifestore.address}}</span>-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<img src="./assets/images/arrow.png" class="arrow fr">-->
+  <!--</div>-->
 
 </ion-content>

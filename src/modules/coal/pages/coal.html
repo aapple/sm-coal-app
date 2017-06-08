@@ -29,7 +29,7 @@
     </ion-slide>
   </ion-slides>
 
-  <ion-segment [(ngModel)]="priceType" (ionChange)="changePriceType()" padding *ngIf="factoryType == 1">
+  <ion-segment style="padding: 10px 16px;" [(ngModel)]="priceType" (ionChange)="changePriceType()" padding *ngIf="factoryType == 1">
     <ion-segment-button value="coal">
       矿方价
     </ion-segment-button>
@@ -38,19 +38,22 @@
     </ion-segment-button>
   </ion-segment>
 
-  <button ion-item (click)="goProductPriceDetail(productPrice)" *ngFor="let productPrice of productPriceList" style="font-size: 12px;">
-    <div>
-      <span style="color: blue">{{productPrice.factory.name}}</span>
-      <span style="float: right">发热量：{{productPrice.heatQuantity}}大卡</span>
-    </div>
-    <div>
-      <span [ngSwitch]="priceType">
-        <span style="color: red;" *ngSwitchCase="'coal'">￥{{productPrice.price}}</span>
-        <span style="color: red;" *ngSwitchCase="'saler'">￥{{productPrice.price2}}</span>
-      </span>
-      <span  style="float: right">更新时间：{{ productPrice.createdTime | moment: ['MM-DD HH:mm'] }}</span>
-    </div>
-  </button>
+  <div class="I_list">
+    <ul>
+      <li class="animated fadeInLeft" (click)="goProductPriceDetail(productPrice)" *ngFor="let productPrice of productPriceList">
+        <a href="#">
+          <p style="font-weight: bold;">{{productPrice.factory.name}}</p>
+          <span class="color_green" style="top: 14px;">{{ productPrice.createdTime | moment: ['MM-DD HH:mm'] }}</span>
+          <p [ngSwitch]="priceType">价格：
+            <b class="color_y" *ngSwitchCase="'coal'">￥{{productPrice.price}}</b>
+            <b class="color_y" *ngSwitchCase="'saler'">￥{{productPrice.price2}}</b>
+          </p>
+          <span  style="top: 36px;color: red;">涨10元</span>
+          <p style="font-size: 10px;">挥:8.00% | 水:8.00% | 灰:8.00% | 硫:8.00% | 热:5300K/kg</p>
+        </a>
+      </li>
+    </ul>
+  </div>
 
   <ion-list-header [hidden]="productPriceList.length > 0">
     没有查询的数据
