@@ -13,8 +13,7 @@
 //
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
-// automatically applied to the <body> element in the app.
-
+// automatically applied to the <body> element in the app.s
 .ion-title {
   text-align: center;
 }
@@ -36,3 +35,98 @@
 //.tabs-ios .tab-button-icon{
 //  color: white;
 //}
+
+
+//ion-header {
+//  ion-navbar {
+//    .back-button {
+//      // color: color($colors, grey);
+//    }
+//  }
+//}
+//
+//ion-content .scroll-content {
+//  background-color: $background-color;
+//  color: $text-color;
+//}
+//
+//ion-footer {
+//  color: $text-color;
+//}
+//
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: baseline;
+  background: transparent;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+a{
+  text-decoration:none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+.margin{
+  margin:0;
+}
+.puff_left{
+  float:left !important;
+}
+.puff_right{
+  float:right !important;
+}
+.margin_top{
+  margin-top:0px !important;
+}
+.color_border{
+  border:1px #ff6600 solid !important;
+}
+.text_c{
+  text-align:center !important;
+}
+.text_r{
+  text-align:right !important;
+}
+.dis_none{
+  display:none;
+}
+
+
+$theme-color: #e22319;
+$background-color: #f3f3f3;
+$text-color: #333;
+$background-color: #fff;
+$text-font-size: 1.4rem;
+
+ion-content {
+  font-family: "Microsoft YaHei", Arial, "Helvetica";
+  color: #333;
+  font-size: 1.4rem;
+  line-height: 1;
+  background-color: #f3f3f3 !important;
+}
+

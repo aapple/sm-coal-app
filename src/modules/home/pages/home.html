@@ -1,78 +1,83 @@
-<ion-header >
-  <ion-navbar>
 
-    <ion-buttons start>
-      <button color="grey" ion-button icon-only (click)="gotoAreaList()">
-        {{areaName}}
-        <ion-icon name="arrow-down"></ion-icon>
-      </button>
-    </ion-buttons>
-
-    <ion-title>首页</ion-title>
-  </ion-navbar>
-</ion-header>
 
 <ion-content>
 
-  <ion-slides #mySlider style="width:100%;height:150px" pager>
+  <ion-slides #mySlider style="width:100%;height:119px" pager>
     <ion-slide>
-      <img src="./assets/images/banner.jpg" >
+      <img src="./assets/images/banner2.jpg" >
     </ion-slide>
   </ion-slides>
+  <div class="title_name" (click)="gotoAreaList()"><a> {{areaName}} <ion-icon name="arrow-down"></ion-icon> </a></div>
 
-  <div class="h1"></div>
-  <section id="swipe" class="section01">
-    <div class="swipe-wrap">
-      <div class="swipe-page">
-        <div class="swipe-page-row">
-          <div class="swipe-page-item open-win" (click)="gotoLifeStore('饭店')">
-            <img src="./assets/images/swipe/food.png">
-            <span>饭店</span>
-          </div>
-          <div class="swipe-page-item open-win" (click)="gotoLifeStore('宾馆')">
-            <img src="./assets/images/swipe/hotel.png">
-            <span>宾馆</span>
-          </div>
-          <div class="swipe-page-item open-win">
-            <img src="./assets/images/swipe/decorate.png" (click)="gotoLifeStore('修理厂')">
-            <span>修理厂</span>
-          </div>
-          <div class="swipe-page-item open-win">
-            <img src="./assets/images/swipe/rank.png" (click)="gotoLifeStore('加油站')">
-            <span>加油站</span>
-          </div>
-        </div>
-        <!--<div class="swipe-page-row">-->
-          <!--<div class="swipe-page-item open-win" (click)="gotoLifeStore('加油站')">-->
-            <!--<img src="./assets/images/swipe/dessert.png">-->
-            <!--<span>煤价</span>-->
-          <!--</div>-->
-          <!--<div class="swipe-page-item open-win" (click)="gotoLifeStore('加油站')">-->
-            <!--<img src="./assets/images/swipe/discount.png">-->
-            <!--<span>兰炭价</span>-->
-          <!--</div>-->
-          <!--<div class="swipe-page-item open-win" (click)="gotoLifeStore('加油站')">-->
-            <!--<img src="./assets/images/swipe/food.png">-->
-            <!--<span>信息部</span>-->
-          <!--</div>-->
-          <!--<div class="swipe-page-item open-win" (click)="gotoLifeStore('加油站')">-->
-            <!--<img src="./assets/images/swipe/hotel.png">-->
-            <!--<span>煤友圈</span>-->
-          <!--</div>-->
-        <!--</div>-->
-      </div>
+  <div class="nav">
+    <ul>
+      <li>
+        <a href="#">
+          <p><img src="./assets/img/icon_fk.png"></p>
+          <span>访客管理</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <p><img src="./assets/img/icon_et.png" class="animated rotateIn"></p>
+          <span>儿童安全</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <p><img src="./assets/img/icon_jk.png" class="animated bounceIn"></p>
+          <span>健康服务</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <p><img src="./assets/img/icon_zn.png" class="animated rotateIn"></p>
+          <span>智能监控</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <p><img src="./assets/img/icon_wifi.png" class="animated bounceIn"></p>
+          <span>免费wifi</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <p><img src="./assets/img/icon_cy.png" class="animated rotateIn"></p>
+          <span>餐饮外卖</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <p><img src="./assets/img/icon_jz.png" class="animated bounceIn"></p>
+          <span>家政服务</span>
+        </a>
+      </li>
+      <li>
+        <a href="community.html">
+          <p><img src="./assets/img/icon_sq.png" class="animated rotateIn"></p>
+          <span>社区互动</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="center">
+    <div class="pictitle">
+      <span class="picbg"></span>
+      <span>社区商圈</span>
+      <a href="#" class="puff_right">更多 ></a>
     </div>
-  </section>
-  <div class="h20 info">信息列表</div>
-  <div class="snapup hightitem section02 open-win" *ngFor="let lifestore of lifestoreList" (click)="gotoDetail(lifestore)">
-    <img src="./assets/images/swipe/food.png" class="fl infologo">
-    <div class="shelf2 fl">
-      <div class="shelfcell">
-        <div class="title">{{lifestore.name}}</div>
-        <span class="subtitel">{{lifestore.address}}</span>
-      </div>
+    <div class="bannerside">
+      <a href="#"><img src="./assets/img/pic1.jpg"></a>
     </div>
-    <img src="./assets/images/arrow.png" class="arrow fr">
+    <div class="bannerside">
+      <a href="#"><img src="./assets/img/pic2.jpg"></a>
+    </div>
+    <div class="bannerside">
+      <a href="#"><img src="./assets/img/pic3.jpg"></a>
+    </div>
+
   </div>
 
 </ion-content>
