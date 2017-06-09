@@ -18,7 +18,7 @@
 
           <ion-item>
             <ion-label primary>手机号</ion-label>
-            <ion-input [(ngModel)]="signUpModel.phone" #phoneInput="ngModel" name="phone" type="number" required ngModel pattern="[0-9]{11}"></ion-input>
+            <ion-input placeholder="请输入手机号" [(ngModel)]="signUpModel.phone" #phoneInput="ngModel" name="phone" type="number" required ngModel pattern="[0-9]{11}"></ion-input>
           </ion-item>
 
           <button (click)="getVerificationCode()" [disabled]="getVerificationCodeBtnDisabled || !phoneInput.valid" class="btn-getcode" color="light" ion-button small type="button">
@@ -26,7 +26,7 @@
           </button>
           <ion-item>
             <ion-label primary>验证码</ion-label>
-            <ion-input [(ngModel)]="signUpModel.verificationCode" name="verificationCode" type="number" required ngModel pattern="[0-9]{6}"></ion-input>
+            <ion-input placeholder="请输入验证码" [(ngModel)]="signUpModel.verificationCode" name="verificationCode" type="number" required ngModel pattern="[0-9]{6}"></ion-input>
           </ion-item>
 
         </ion-list>

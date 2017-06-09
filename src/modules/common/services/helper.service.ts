@@ -59,7 +59,7 @@ export class Helper {
     if(uri){
       return this.getAssetUri(uri);
     } else {
-      return './assets/images/userAvatar-default.png';
+      return './assets/images/touxiang.png';
     }
 
   }
