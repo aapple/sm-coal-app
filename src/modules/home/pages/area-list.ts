@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {IonicPage, NavController, NavParams, ViewController} from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import {AppGlobal} from "../../../app/app.global";
+import {LocalStorageService} from "../../common/services/localStorage.service";
 
 /**
  * Generated class for the AreaList page.
@@ -21,23 +22,18 @@ export class AreaList {
     public navCtrl: NavController,
     public navParams: NavParams,
     public viewCtrl: ViewController,
-    public storage: Storage) {
+    public localStorageService: LocalStorageService) {
 
     this.items = AppGlobal.areaList;
   }
 
   ionViewDidLoad() {
-    this.storage.get(AppGlobal.areaName)
-      .then(value => {
-        if(value){
-          this.currentArea = value + "";
-        }
-      });
+    this.currentArea = this.localStorageService.get(AppGlobal.areaName);
     console.log('ionViewDidLoad AreaList');
   }
 
   itemSelected(item) {
-    this.storage.set(AppGlobal.areaName, item);
+    this.localStorageService.set(AppGlobal.areaName, item);
     this.viewCtrl.dismiss();
   }
 

@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {LifestoreDetail} from "./lifestore-detail";
 import {HomeService} from "../services/home.service";
+import {LocalStorageService} from "../../common/services/localStorage.service";
+import {AppGlobal} from "../../../app/app.global";
 
 /**
  * Generated class for the LifestoreList page.
@@ -19,7 +21,8 @@ export class LifestoreList {
   lifestoreList: any = [];
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
-              public homeService: HomeService) {
+              public homeService: HomeService,
+              public localStorageService: LocalStorageService) {
 
     this.serviceType = navParams.data;
   }
@@ -27,8 +30,10 @@ export class LifestoreList {
   ionViewDidLoad() {
 
     let data = {
-      serviceType: this.serviceType
+      serviceType: this.serviceType,
+      area: this.localStorageService.get(AppGlobal.areaName)
     };
+
     this.homeService.loadLifestoreList(data)
       .then(ret => {
           this.lifestoreList = ret;

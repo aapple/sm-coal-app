@@ -13,6 +13,8 @@ import { SystemService } from './services/system.service';
 import { FileUploadService } from './services/fileUpload.service';
 
 import { UtilityComponent } from './pages/utilityComponent';
+import {SessionStorageService} from "./services/sessionStorage.service";
+import {LocalStorageService} from "./services/localStorage.service";
 
 
 @NgModule({
@@ -29,7 +31,6 @@ import { UtilityComponent } from './pages/utilityComponent';
   entryComponents: [
   ],
   providers: [
-    Storage,
     Helper,
     AppService,
     AuthService,
@@ -37,6 +38,8 @@ import { UtilityComponent } from './pages/utilityComponent';
     SystemService,
     FileUploadService,
     UtilityComponent,
+    LocalStorageService,
+    SessionStorageService
   ],
   exports: [
     IonicModule,

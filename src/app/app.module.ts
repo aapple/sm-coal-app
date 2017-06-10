@@ -15,11 +15,6 @@ import { NoticeModule } from '../modules/notice/notice.module';
 import { TimelineModule } from '../modules/timeline/timeline.module';
 import { TopicModule } from '../modules/topic/topic.module';
 
-
-import {LocalStorageService} from "../providers/local-storage-service";
-import {SessionStorageService} from "../providers/session-storage-service";
-import {StorageService} from "../providers/storage-service";
-
 import { InfostoreModule } from '../modules/infostore/infostore.module';
 import { CoalModule } from '../modules/coal/coal.module';
 import { ManageModule } from '../modules/manage/manage.module';
@@ -62,9 +57,6 @@ import {MyErrorHandler} from "../modules/common/services/my-error-handler";
   providers: [
     StatusBar,
     SplashScreen,
-    LocalStorageService,
-    SessionStorageService,
-    StorageService,
     {provide: ErrorHandler, useClass: MyErrorHandler}
   ]
 })

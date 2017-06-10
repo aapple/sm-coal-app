@@ -9,6 +9,7 @@ import { Storage } from '@ionic/storage';
 import {CoalPage} from "../../coal/pages/coal";
 import {TimelinePage} from "../../timeline/pages/timeline";
 import {InfostorePage} from "../../infostore/pages/infostore";
+import {LocalStorageService} from "../../common/services/localStorage.service";
 
 
 @Component({
@@ -23,14 +24,12 @@ export class HomePage {
               public navParams: NavParams,
               public homeService: HomeService,
               public modalCtrl: ModalController,
-              public storage: Storage) {
+              public localStorageService: LocalStorageService) {
 
-    this.storage.get(AppGlobal.areaName)
-      .then(value => {
-        if(value){
-          this.areaName = value + "";
-        }
-      });
+    let areaNameStr = this.localStorageService.get(AppGlobal.areaName)
+    if(areaNameStr){
+      this.areaName = areaNameStr;
+    }
   }
 
   lifestoreList: any = [];
@@ -79,12 +78,10 @@ export class HomePage {
     let modal = this.modalCtrl.create(AreaList)
     modal.present();
     modal.onDidDismiss(data=>{
-      this.storage.get(AppGlobal.areaName)
-        .then(value => {
-          if(value){
-            this.areaName = value + "";
-          }
-        });
+      let areaNameStr = this.localStorageService.get(AppGlobal.areaName)
+      if(areaNameStr){
+        this.areaName = areaNameStr;
+      }
     });
   }
 

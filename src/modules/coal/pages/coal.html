@@ -42,7 +42,7 @@
 
   <div class="I_list">
     <ul>
-      <li class="animated fadeInLeft" (click)="goProductPriceDetail(productPrice)" *ngFor="let productPrice of productPriceList">
+      <li (click)="goProductPriceDetail(productPrice)" *ngFor="let productPrice of productPriceList">
         <a href="#">
           <p style="font-weight: bold;">{{productPrice.factory.name}}</p>
           <span class="color_green" style="top: 14px;">{{ productPrice.createdTime | moment: ['MM-DD HH:mm'] }}</span>

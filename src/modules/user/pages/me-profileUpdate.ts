@@ -41,10 +41,12 @@ export class MeProfileUpdatePage {
       this.userService.update(this.userInfo)
       .then((response) => {
         this.heyApp.authService.reset(response);
+        this.heyApp.utilityComp.presentToast('更新成功！');
       });
     }
 
     this.navCtrl.pop();
+
   }
 
   selectAvatar() {
