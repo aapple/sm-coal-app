@@ -98,7 +98,7 @@ export class HomePage {
 
 
   gotoInfoStore(data){
-    this.navCtrl.push(InfostorePage);
+    this.navCtrl.parent.select(3);
   }
 
   gotoTimeline(data){

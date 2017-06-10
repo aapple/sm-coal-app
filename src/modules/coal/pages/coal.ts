@@ -111,7 +111,8 @@ export class CoalPage {
     if(productPrice.factory.factoryType == 1){
       this.navCtrl.push(CoalPriceDetailPage, productPrice)
     } else {
-      this.navCtrl.push(CokePriceDetailPage, productPrice)
+      this.navCtrl.push(CoalPriceDetailPage, productPrice)
+      //this.navCtrl.push(CokePriceDetailPage, productPrice)
     }
   }
 

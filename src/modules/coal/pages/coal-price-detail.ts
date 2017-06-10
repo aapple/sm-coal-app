@@ -18,4 +18,8 @@ export class CoalPriceDetailPage {
     console.log('ionViewDidLoad CoalPriceDetail');
   }
 
+
+  gotoBuy(){
+    window.location.href = "tel:" + this.productPrice.factory.saler.phoneNum;
+  }
 }

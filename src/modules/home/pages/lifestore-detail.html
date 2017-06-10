@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>生活服务详细</ion-title>
+    <ion-title>{{lifestore.name}}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,31 +15,33 @@
 
 <ion-content>
 
-  <ion-grid>
-    <ion-row>
-      <ion-col>
-        <span>名称</span>
-      </ion-col>
-      <ion-col>
-        <div>{{lifestore.name}}</div>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <span>地址</span>
-      </ion-col>
-      <ion-col>
-        <div>{{lifestore.address}}</div>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <span>联系电话</span>
-      </ion-col>
-      <ion-col>
-        <div>{{lifestore.callNumber}}</div>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+  <div>
+    <img src="./assets/images/banner2.jpg" style="height: 150px;width: 100%;">
+  </div>
 
+  <div class="interest_list">
+    <ul>
+      <li>
+        <div class="list_r">
+          <p><span style="font-size: 16px;">{{lifestore.name}}</span></p>
+          <p>地址：{{lifestore.address}}</p>
+          <p>
+            <a href="tel:{{lifestore.callNumber}}" style="color: #666 !important;">
+              联系电话：{{lifestore.callNumber}}
+              <ion-icon name="call" class="icon_phone"></ion-icon>
+            </a>
+          </p>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="intro">
+    <span style="font-weight: bold;">饭店简介：</span>{{lifestore.introduction}}
+  </div>
 </ion-content>
+
+<ion-footer>
+  <button ion-button full color="primary" (click)="gotoBuy()">立即联系</button>
+</ion-footer>
+

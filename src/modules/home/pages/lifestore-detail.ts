@@ -22,4 +22,8 @@ export class LifestoreDetail {
     console.log('ionViewDidLoad LifestoreDetail');
   }
 
+  gotoBuy(){
+    window.location.href = "tel:" + this.lifestore.callNumber;
+  }
+
 }

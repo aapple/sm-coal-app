@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>生活服务列表</ion-title>
+    <ion-title>{{serviceType}}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,15 +15,25 @@
 
 <ion-content>
 
-  <div class="snapup hightitem section02 open-win" *ngFor="let lifestore of lifestoreList" (click)="gotoDetail(lifestore)">
-    <img src="./assets/images/flash_sale.png" class="fl infologo">
-    <div class="shelf2 fl">
-      <div class="shelfcell">
-        <div class="title">{{lifestore.name}}</div>
-        <span class="subtitel">{{lifestore.address}}</span>
-      </div>
-    </div>
-    <img src="./assets/images/arrow.png" class="arrow fr">
+  <div class="interest_list">
+    <ul>
+      <li *ngFor="let lifestore of lifestoreList" (click)="gotoDetail(lifestore)">
+        <a>
+          <img src="./assets/images/banner2.jpg" >
+          <div class="list_r">
+            <p><span style="font-size: 16px;">{{lifestore.name}}</span></p>
+            <p>地址：{{lifestore.address}}</p>
+            <p>
+              联系电话：{{lifestore.callNumber}}
+            </p>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div [hidden]="lifestoreList.length > 0" class="empty_tips">
+    抱歉，该地区暂无{{serviceType}}
   </div>
 
 </ion-content>

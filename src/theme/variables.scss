@@ -160,6 +160,10 @@ ion-content {
   border-radius: 6px !important;
 }
 
+.button-full-ios {
+  border-radius: 0 !important;
+}
+
 
 
 
@@ -167,4 +171,24 @@ ion-content {
 .empty_tips{
   text-align: center;
   padding-top: 40%;
+}
+.icon_phone{
+  position: relative !important;
+  color: #06c1ae !important;
+  padding: 0 5px !important;
+  font-size: 20px !important;
+  top: 4px !important;
+}
+.interest_list {
+  margin-top: 10px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.intro{
+  margin: 10px 0;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  background: #fff;
 }
