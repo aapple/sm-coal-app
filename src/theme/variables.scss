@@ -88,6 +88,7 @@ $background-color: #f3f3f3;
 $text-color: #333;
 $background-color: #fff;
 $text-font-size: 1.4rem;
+$refresher-icon-color: #06c1ae;
 
 
 $tabs-ios-tab-text-color-active: $theme-color;
@@ -137,4 +138,33 @@ ion-content {
   margin: 11px 8px 11px 0;
   color: #333 !important;
   font-size: 1.5rem;
+}
+
+.label-ios + ion-input .text-input{
+  font-size: 1.5rem;
+}
+
+.label-ios + ion-textarea .text-input{
+  font-size: 1.5rem;
+}
+
+.back-button.show-back-button{
+  padding-left: 10px;
+}
+
+.bar-buttons-ios{
+  padding-left: 10px;
+}
+
+.button-ios{
+  border-radius: 6px !important;
+}
+
+
+
+
+//custom
+.empty_tips{
+  text-align: center;
+  padding-top: 40%;
 }

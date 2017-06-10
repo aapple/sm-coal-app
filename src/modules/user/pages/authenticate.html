@@ -32,13 +32,13 @@
         </ion-list>
 
         <div class="session-bottom text-center">
-          <button (click)="openTermsPage()" color="grey" ion-button clear small type="button">
+          <button (click)="openTermsPage()" color="primary" ion-button clear small type="button" style="color: #06c1ae;">
               我已阅读，并同意《用户注册协议》
           </button>
         </div>
 
         <div padding-left padding-right>
-          <button color="grey" ion-button block [disabled]="!signUpForm.valid" type="submit">验证手机</button>
+          <button color="primary" ion-button block [disabled]="!signUpForm.valid" type="submit">验证手机</button>
         </div>
 
       </form>

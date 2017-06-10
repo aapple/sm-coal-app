@@ -25,6 +25,9 @@ export class CoalPage {
 
   selectedIndex: number = 0;
 
+  showCancelButton: boolean=true;
+  cancelButtonText: string="搜索";
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -41,14 +44,6 @@ export class CoalPage {
   ionViewDidLoad() {
 
     this.loadProductTypeList();
-  }
-
-  onProductTypeChange() {
-
-  }
-
-  changePriceType() {
-
   }
 
   loadProductTypeList() {
@@ -85,8 +80,30 @@ export class CoalPage {
     refresher.complete();
   }
 
-  doQuery(){
-    console.log(this.queryText);
+  doQuery(ev){
+
+    if(!this.queryText){
+      return;
+    }
+    let text = this.queryText;
+    let me = this;
+    this.loadProductPriceList();
+    setTimeout(function () {
+      me.queryText = text;
+    }, 100);
+
+    let data: Object = {
+      productType: {id: this.productType},
+      factory:{name: text}
+    };
+
+    this.coalService.loadProductPriceList(data)
+      .then(ret => {
+        this.productPriceList = ret;
+      }, (data) => {
+
+      });
+
   }
 
   goProductPriceDetail(productPrice) {

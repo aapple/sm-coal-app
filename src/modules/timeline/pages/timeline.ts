@@ -13,6 +13,8 @@ import { TimelineCreatePage } from './timeline-create';
   templateUrl: 'timeline.html',
 })
 export class TimelinePage {
+
+  currentShowOptionIndex: -1;
   //
   // constructor
   constructor(
@@ -53,6 +55,13 @@ export class TimelinePage {
     }
   }
 
+  changeOpent(index){
+    this.currentShowOptionIndex = index;
+  }
+
+  backdropclick(e){
+    this.currentShowOptionIndex = -1;
+  }
 
   //
   // present timeline create modal

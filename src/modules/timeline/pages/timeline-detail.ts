@@ -67,11 +67,6 @@ export class TimelineDetailPage {
     }
 
     let buttons = [{
-      text: '报告',
-      handler: () => {
-        this.heyApp.utilityComp.presentAlter({title: '报告', subTitle: '感谢你的报告'});
-      }
-    }, {
       text: '取消',
       role: 'cancel',
       handler: () => {

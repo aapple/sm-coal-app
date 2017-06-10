@@ -35,7 +35,7 @@ export class MeProfileUpdatePage {
 
   //
   //
-  ngOnDestroy() {
+  onsubmit() {
     if (this.isUpdated) {
 
       this.userService.update(this.userInfo)
@@ -43,26 +43,10 @@ export class MeProfileUpdatePage {
         this.heyApp.authService.reset(response);
       });
     }
+
+    this.navCtrl.pop();
   }
 
-
-  //
-  // show action sheet
-  showActionSheet() {
-    /*
-    let btns = [{
-      text: 'Update Avatar',
-      handler: () => {
-        this.selectAvatar();
-      },
-    }];
-    */
-    // this.common.openActionSheet(null, btns);
-  }
-
-
-  //
-  //
   selectAvatar() {
     this.inputAvatarEl.nativeElement.click();
   }

@@ -13,8 +13,10 @@
   <ion-toolbar no-border-top>
     <ion-searchbar color="primary"
                    [(ngModel)]="queryText"
-                   (ionInput)="getItems($event)"
-                   placeholder="根据名字查询">
+                   [showCancelButton]="showCancelButton"
+                   [cancelButtonText]="cancelButtonText"
+                   (ionCancel)="ionViewDidLoad()"
+                   placeholder="根据信息部名字查询">
     </ion-searchbar>
   </ion-toolbar>
 
@@ -37,5 +39,7 @@
     </ul>
   </div>
 
-
+  <div [hidden]="infostoreListShow.length > 0" class="empty_tips">
+    没有查询到数据
+  </div>
 </ion-content>

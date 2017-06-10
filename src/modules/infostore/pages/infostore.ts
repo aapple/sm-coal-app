@@ -13,6 +13,9 @@ export class InfostorePage {
   infostoreList: any = [];
   infostoreListShow: any = [];
 
+  showCancelButton: boolean=true;
+  cancelButtonText: string="搜索";
+
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public infostoreService: InfostoreService) {

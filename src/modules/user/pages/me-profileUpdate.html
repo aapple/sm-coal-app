@@ -74,4 +74,8 @@
       </button>
     </div>
   </div>
+
+  <div [hidden]="item == 'avatar'">
+    <button full  color="primary" ion-button block [disabled]="!isUpdated" (click)="onsubmit()">保 存</button>
+  </div>
 </ion-content>

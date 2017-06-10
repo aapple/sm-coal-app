@@ -26,8 +26,7 @@ export class MeSettingPage {
     public heyApp: AppService,
     public timelineService: TimelineService,
     public navCtrl: NavController,
-    public userService: UserService,
-    // public iab : InAppBrowser
+    public userService: UserService
   ) {
   }
 
@@ -38,13 +37,6 @@ export class MeSettingPage {
 
     this.heyApp.authService.logOut();
     this.navCtrl.pop();
-
-    // this.userService.logOut()
-    // .then(ret => {
-    //   this.heyApp.utilityComp.dismissLoading();
-    //   this.heyApp.authService.logOut();
-    //   this.navCtrl.pop();
-    // });
   }
 
 

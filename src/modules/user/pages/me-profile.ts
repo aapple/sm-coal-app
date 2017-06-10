@@ -23,4 +23,9 @@ export class MeProfilePage {
     public navCtrl: NavController
   ) {
   }
+
+  ionViewDidEnter() {
+
+    this.heyApp.authService.getUser();
+  }
 }
