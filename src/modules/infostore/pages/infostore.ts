@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {  NavController, NavParams } from 'ionic-angular';
 
 import { InfostoreDetailPage } from './infostore-detail';
 import { InfostoreService} from '../services/infostore.service';
@@ -11,10 +11,10 @@ import { InfostoreService} from '../services/infostore.service';
 export class InfostorePage {
 
   infostoreList: any = [];
-  infostoreListShow: any = [];
 
   showCancelButton: boolean=true;
   cancelButtonText: string="搜索";
+  queryText: string="";
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -23,19 +23,17 @@ export class InfostorePage {
   }
 
   ionViewDidLoad() {
-    this.infostoreService.getInfoDepartmentList()
+    this.infostoreService.getInfoDepartmentList({})
       .then( ret => {
         this.infostoreList = ret;
-        this.infostoreListShow = ret;
       });
   }
 
   doRefresh(refresher) {
 
-    this.infostoreService.getInfoDepartmentList()
+    this.infostoreService.getInfoDepartmentList({})
       .then( ret => {
         this.infostoreList = ret;
-        this.infostoreListShow = ret;
         refresher.complete();
       });
   }
@@ -44,19 +42,26 @@ export class InfostorePage {
     this.navCtrl.push(InfostoreDetailPage, infostore);
   }
 
-  getItems(ev) {
-    // Reset items back to all of the items
-    this.infostoreListShow = this.infostoreList;
+  doQuery(){
 
-    // set val to the value of the ev target
-    var val = ev.target.value;
-
-    // if the value is an empty string don't filter the items
-    if (val && val.trim() != '') {
-      this.infostoreListShow = this.infostoreListShow.filter((item) => {
-        return (item.title.toLowerCase().indexOf(val.toLowerCase()) > -1);
-      })
+    if(!this.queryText){
+      this.queryText = null;
     }
+    let text = this.queryText;
+    let me = this;
+    setTimeout(function () {
+      me.queryText = text;
+    }, 100);
+
+    let data: Object = {
+      title: text,
+    };
+
+    this.infostoreService.getInfoDepartmentList(data)
+      .then( ret => {
+        this.infostoreList = ret;
+      });
+
   }
 
 }

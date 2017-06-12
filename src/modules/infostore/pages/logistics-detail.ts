@@ -13,11 +13,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class LogisticsDetailPage {
 
+  logistics: any = null;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.logistics = navParams.data;
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LogisticsDetail');
   }
+
+  gotoBuy(){
+    window.location.href = "tel:" + this.logistics.infoDepartment.callNumber;
+  }
+
 
 }

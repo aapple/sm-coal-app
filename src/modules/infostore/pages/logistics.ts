@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {InfostoreService} from "../services/infostore.service";
+import {LogisticsDetailPage} from "./logistics-detail";
 
 /**
  * Generated class for the Logistics page.
@@ -13,11 +15,25 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class LogisticsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  logisticsList: any = [];
+
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              public infostoreService: InfostoreService) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad Logistics');
+
+    this.infostoreService.getLogisticsList({})
+      .then( ret => {
+        this.logisticsList = ret;
+      });
+  }
+
+  goLogisticsDetail(logistics) {
+
+    this.navCtrl.push(LogisticsDetailPage, logistics)
   }
 
 }

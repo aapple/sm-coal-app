@@ -9,7 +9,6 @@ import {InfostoreService} from "../services/infostore.service";
 })
 export class InfostoreDetailPage {
 
-  logisticsList: any = [];
   infostore: any = null;
 
   constructor(public navCtrl: NavController,
@@ -20,16 +19,11 @@ export class InfostoreDetailPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad CoalPriceDetail');
 
-    let data = {
-      infoDepartment: {id : this.infostore.id}
-    }
+  }
 
-    this.infostoreService.getLogisticsList(data)
-      .then( ret => {
-        this.logisticsList = ret;
-      });
+  gotoBuy(){
+    window.location.href = "tel:" + this.infostore.callNumber;
   }
 
 }

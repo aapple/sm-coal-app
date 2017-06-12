@@ -18,6 +18,7 @@ export class CoalPage {
   productPriceList: any = [];
   priceType: string = "coal";
   queryText: string;
+  pageTitle: string = "";
 
   pageIndex: number = 0;
   pageNumber: number = 5;
@@ -34,6 +35,12 @@ export class CoalPage {
     public coalService: CoalService) {
 
     this.factoryType = navParams.data;
+
+    if(this.factoryType == 1+''){
+      this.pageTitle = "煤价";
+    } else {
+      this.pageTitle = "兰炭价";
+    }
   }
 
   onSlideClick(id) {
@@ -87,7 +94,6 @@ export class CoalPage {
     }
     let text = this.queryText;
     let me = this;
-    this.loadProductPriceList();
     setTimeout(function () {
       me.queryText = text;
     }, 100);

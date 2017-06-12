@@ -15,7 +15,7 @@
                    [(ngModel)]="queryText"
                    [showCancelButton]="showCancelButton"
                    [cancelButtonText]="cancelButtonText"
-                   (ionCancel)="ionViewDidLoad()"
+                   (ionCancel)="doQuery()"
                    placeholder="根据信息部名字查询">
     </ion-searchbar>
   </ion-toolbar>
@@ -26,7 +26,7 @@
 
   <div class="interest_list">
     <ul>
-      <li *ngFor="let infostore of infostoreListShow" (click)="gotoInfoStoreDetail(infostore)">
+      <li *ngFor="let infostore of infostoreList" (click)="gotoInfoStoreDetail(infostore)">
         <a>
           <img src="./assets/images/banner2.jpg" >
           <div class="list_r">
@@ -39,7 +39,7 @@
     </ul>
   </div>
 
-  <div [hidden]="infostoreListShow.length > 0" class="empty_tips">
+  <div [hidden]="infostoreList.length > 0" class="empty_tips">
     没有查询到数据
   </div>
 </ion-content>

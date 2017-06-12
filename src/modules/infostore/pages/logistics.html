@@ -10,9 +10,45 @@
     <ion-title>物流</ion-title>
   </ion-navbar>
 
+
+
 </ion-header>
 
 
 <ion-content>
+
+  <ion-toolbar no-border-top>
+    <ion-searchbar color="primary"
+                   [(ngModel)]="queryText"
+                   [showCancelButton]="showCancelButton"
+                   [cancelButtonText]="cancelButtonText"
+                   (ionCancel)="doQuery()"
+                   placeholder="根据出发地和目的地进行查询">
+    </ion-searchbar>
+  </ion-toolbar>
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <div class="I_list">
+    <ul>
+      <li (click)="goLogisticsDetail(logistics)" *ngFor="let logistics of logisticsList">
+        <a href="#">
+          <p style="font-weight: bold;">{{logistics.departure}}</p>
+          <span class="color_green" style="top: 14px;">{{ logistics.createdTime | moment: ['MM-DD HH:mm'] }}</span>
+          <p [ngSwitch]="priceType">
+            <b class="color_y" *ngSwitchCase="'coal'">价格：￥{{logistics.loadingCharge}}</b>
+            <b class="color_y" *ngSwitchCase="'saler'">价格：￥{{logistics.price2}}</b>
+          </p>
+
+          </a>
+      </li>
+    </ul>
+  </div>
+
+  <div [hidden]="logisticsList.length > 0" class="empty_tips">
+    没有查询到数据
+  </div>
 
 </ion-content>
