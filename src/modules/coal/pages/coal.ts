@@ -83,7 +83,7 @@ export class CoalPage {
   doQuery(ev){
 
     if(!this.queryText){
-      return;
+      this.queryText = null;
     }
     let text = this.queryText;
     let me = this;

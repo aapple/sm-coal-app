@@ -5,6 +5,7 @@ import { MePage } from '../../modules/user/pages/me';
 import { CoalPage } from '../../modules/coal/pages/coal';
 import { InfostorePage } from '../../modules/infostore/pages/infostore';
 import {HomePage} from "../../modules/home/pages/home";
+import {LogisticsPage} from "../../modules/infostore/pages/logistics";
 
 
 @Component({
@@ -17,6 +18,7 @@ export class TabsPage {
   tab3Root = CoalPage;
   tab4Root = InfostorePage;
   tab5Root = MePage;
+  tab6Root = LogisticsPage;
 
   constructor(
     public events: Events,
