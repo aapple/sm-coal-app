@@ -33,19 +33,18 @@
 
   <div class="I_list">
     <ul>
-      <li (click)="goLogisticsDetail(logistics)" *ngFor="let logistics of logisticsList">
+      <li (click)="goLogisticsDetail(logistics)" *ngFor="let logistics of logisticsList" style="font-size: 14px;">
         <a href="#">
+          <p>出发地</p>
+          <span style="top: 14px;">目的地</span>
           <p style="font-weight: bold;">{{logistics.departure}}</p>
-          <span class="color_green" style="top: 14px;">{{ logistics.createdTime | moment: ['MM-DD HH:mm'] }}</span>
-          <p [ngSwitch]="priceType">
-            <b class="color_y" *ngSwitchCase="'coal'">价格：￥{{logistics.loadingCharge}}</b>
-            <b class="color_y" *ngSwitchCase="'saler'">价格：￥{{logistics.price2}}</b>
-          </p>
-
-          </a>
+          <span style="top: 36px;" >{{logistics.destination}}</span>
+          <p style="border-top: 1px solid #fff;padding-top: 5px;margin-top: 5px;">联系电话：18888888888</p>
+        </a>
       </li>
     </ul>
   </div>
+
 
   <div [hidden]="logisticsList.length > 0" class="empty_tips">
     没有查询到数据

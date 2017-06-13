@@ -83,8 +83,18 @@ export class CoalPage {
 
   doRefresh(refresher) {
 
-    this.loadProductPriceList();
-    refresher.complete();
+    let data: Object = {
+      productType: {id: this.productType}
+    };
+
+    this.coalService.loadProductPriceList(data)
+      .then(ret => {
+        this.productPriceList = ret;
+        refresher.complete();
+      }, (data) => {
+
+      });
+
   }
 
   doQuery(ev){

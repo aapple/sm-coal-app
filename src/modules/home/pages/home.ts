@@ -102,6 +102,13 @@ export class HomePage {
     this.navCtrl.push(TimelinePage);
   }
 
+  doRefresh(refresher) {
+
+    setTimeout(function(){
+      refresher.complete();
+    }, 1000)
+  }
+
 
 }
 

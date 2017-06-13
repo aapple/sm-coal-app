@@ -94,4 +94,11 @@ export class MePage {
     }
   }
 
+  doRefresh(refresher) {
+
+    setTimeout(function(){
+      refresher.complete();
+    }, 1000)
+  }
+
 }

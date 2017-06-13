@@ -31,6 +31,15 @@ export class LogisticsPage {
       });
   }
 
+  doRefresh(refresher) {
+
+    this.infostoreService.getLogisticsList({})
+      .then( ret => {
+        this.logisticsList = ret;
+        refresher.complete();
+      });
+  }
+
   goLogisticsDetail(logistics) {
 
     this.navCtrl.push(LogisticsDetailPage, logistics)
