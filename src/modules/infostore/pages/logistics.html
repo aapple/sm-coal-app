@@ -34,13 +34,13 @@
   <div class="I_list">
     <ul>
       <li (click)="goLogisticsDetail(logistics)" *ngFor="let logistics of logisticsList" style="font-size: 14px;">
-        <a href="#">
-          <p>出发地</p>
-          <span style="top: 14px;">目的地</span>
-          <p style="font-weight: bold;">{{logistics.departure}}</p>
-          <span style="top: 36px;" >{{logistics.destination}}</span>
-          <p style="border-top: 1px solid #fff;padding-top: 5px;margin-top: 5px;">联系电话：18888888888</p>
-        </a>
+        <p>出发地</p>
+        <span style="right: 50%;top: 13px;">￥{{logistics.loadingCharge}}</span>
+        <span style="top: 14px;">目的地</span>
+        <p style="font-weight: bold;">{{logistics.departure}}</p>
+        <span style="right: 52%;top: 33px;"><ion-icon name="fastforward"></ion-icon></span>
+        <span style="top: 36px;font-weight: bold;" >{{logistics.destination}}</span>
+        <p style="border-top: 1px solid #fff;padding-top: 5px;margin-top: 5px;">联系电话：18888888888</p>
       </li>
     </ul>
   </div>
