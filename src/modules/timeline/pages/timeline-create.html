@@ -42,21 +42,21 @@
       <input class="input-imgs" #inputImgs type="file" (click)="inputImgs.value = null" (change)="uploadImgs($event)" multiple accept="image/*" value="Select multiple images">
     </button>
 
-    <button *ngIf="!waiting" color="dark" ion-button icon-only outline clear>
-      <ion-icon name="videocam"></ion-icon>
-      <input class="input-video" #inputVideo type="file" (click)="inputVideo.value = null"  (change)="uploadVideo($event)" accept="video/*" value="Select a video">
-    </button>
+    <!--<button *ngIf="!waiting" color="dark" ion-button icon-only outline clear>-->
+      <!--<ion-icon name="videocam"></ion-icon>-->
+      <!--<input class="input-video" #inputVideo type="file" (click)="inputVideo.value = null"  (change)="uploadVideo($event)" accept="video/*" value="Select a video">-->
+    <!--</button>-->
 
-    <button *ngIf="waiting" color="dark" ion-button icon-only disabled outline clear>
-        <ion-spinner style="margin:0 0.5em 0 0.7em;"></ion-spinner>
-    </button>
+    <!--<button *ngIf="waiting" color="dark" ion-button icon-only disabled outline clear>-->
+        <!--<ion-spinner style="margin:0 0.5em 0 0.7em;"></ion-spinner>-->
+    <!--</button>-->
 
-    <button color="dark" ion-button icon-only disabled outline clear>
-      <ion-icon name="at"></ion-icon>
-    </button>
-    <button color="dark" ion-button icon-only disabled outline clear>
-      <ion-icon name="locate"></ion-icon>
-    </button>
+    <!--<button color="dark" ion-button icon-only disabled outline clear>-->
+      <!--<ion-icon name="at"></ion-icon>-->
+    <!--</button>-->
+    <!--<button color="dark" ion-button icon-only disabled outline clear>-->
+      <!--<ion-icon name="locate"></ion-icon>-->
+    <!--</button>-->
   </div>
 
   <hr>

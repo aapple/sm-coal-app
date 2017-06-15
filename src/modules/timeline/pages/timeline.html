@@ -34,8 +34,8 @@
 
           <div class="po-cmt">
             <div class="po-hd">
-              <p class="po-name">{{ timeline.author?.nickname }}</p>
-              <p class="post">
+              <p class="po-name" (click)="gotoTimelineDetailPage(timeline, i)">{{ timeline.author?.nickname }}</p>
+              <p class="post" (click)="gotoTimelineDetailPage(timeline, i)">
                 {{timeline.content | nl2br}}
                 <!--<div *ngIf="timeline.imgs.length === 1">-->
                   <!--<img src="{{ heyApp.helper.getImg(timeline.imgs[0].uri) }}?imageView/2/w/800">-->
@@ -47,29 +47,18 @@
                 <!--</div>-->
               </p>
               <p class="time">{{ timeline.created_at | timeago }}</p>
-              <!--<div class="like" *ngIf="timeline.like_num > 0" setLikeForTimeline(timeline)>-->
-                <!--<img src="./assets/picture/3_l.png">timeline.like_num-->
-              <!--</div>-->
-              <img class="c-icon" src="./assets/picture/2_c.png" (click)="gotoTimelineDetailPage(timeline, i)">
+              <span style="position: absolute;right: 70px;font-size: 14px;">
+                <ion-icon *ngIf="!timeline.is_like" name="ios-heart-outline" (click)="setLikeForTimeline(timeline)"></ion-icon>
+                <ion-icon style="color: red;" *ngIf="timeline.is_like" name="ios-heart" (click)="setLikeForTimeline(timeline)"></ion-icon>
+                {{timeline.like_num}}
+              </span>
+              <span style="position: absolute;right: 18px;font-size: 14px;">
+                <ion-icon name="ios-chatbubbles-outline" (click)="gotoTimelineDetailPage(timeline, i)"></ion-icon>
+                {{timeline.comment_num}}
+              </span>
+
             </div>
 
-            <div class="r" *ngIf="timeline.comment_num > 0"></div>
-
-            <div class="cmt-wrap" *ngIf="timeline.comment_num > 0">
-
-              <div class="cmt-list" *ngIf="timeline.comment_num > 0">
-                <p *ngFor="let comment of timeline.comments; let i=index;">
-
-                  <font *ngIf="!comment.parent_id"><span>{{ comment.author?.nickname }}</span>：{{ comment.content }}</font>
-
-                  <font *ngIf="comment.parent_id">
-                    <span>{{ comment.author?.nickname }}</span>：回复
-                    <span>{{ comment.parents.author.nickname }}:</span>{{ comment.content }}
-                  </font>
-
-                </p>
-              </div>
-            </div>
           </div>
 
         </li>
