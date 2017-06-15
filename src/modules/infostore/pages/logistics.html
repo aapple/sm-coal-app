@@ -10,22 +10,17 @@
     <ion-title>物流</ion-title>
   </ion-navbar>
 
-
-
 </ion-header>
 
 
 <ion-content>
 
-  <ion-toolbar no-border-top>
-    <ion-searchbar color="primary"
-                   [(ngModel)]="queryText"
-                   [showCancelButton]="showCancelButton"
-                   [cancelButtonText]="cancelButtonText"
-                   (ionCancel)="doQuery()"
-                   placeholder="根据出发地和目的地进行查询">
-    </ion-searchbar>
-  </ion-toolbar>
+  <div class="search_sec">
+    <input type="text" placeholder="出发地" class="search_input" [(ngModel)]="departure">
+    <ion-icon name="md-send" class="search_icon"></ion-icon>
+    <input type="text" placeholder="到达地" class="search_input" [(ngModel)]="destination">
+    <button ion-button clear (click)="doQuery(logistics)">搜索</button>
+  </div>
 
   <ion-refresher (ionRefresh)="doRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
@@ -35,12 +30,12 @@
     <ul>
       <li (click)="goLogisticsDetail(logistics)" *ngFor="let logistics of logisticsList" style="font-size: 14px;">
         <p>出发地</p>
-        <span style="right: 50%;top: 13px;">￥{{logistics.loadingCharge}}</span>
+        <span style="right: 50%;top: 13px;" class="color_y">￥{{logistics.loadingCharge}}</span>
         <span style="top: 14px;">目的地</span>
         <p style="font-weight: bold;">{{logistics.departure}}</p>
-        <span style="right: 52%;top: 33px;"><ion-icon name="fastforward"></ion-icon></span>
+        <span style="right: 52%;top: 33px;"><ion-icon name="md-send" style="color: #06c1ae;font-size: 25px;"></ion-icon></span>
         <span style="top: 36px;font-weight: bold;" >{{logistics.destination}}</span>
-        <p style="border-top: 1px solid #fff;padding-top: 5px;margin-top: 5px;">联系电话：18888888888</p>
+        <p style="border-top: 1px solid #fff;padding-top: 5px;margin-top: 5px;">联系电话：{{logistics.infoDepartment.callNumber}}</p>
       </li>
     </ul>
   </div>

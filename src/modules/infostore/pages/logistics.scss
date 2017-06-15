@@ -30,5 +30,35 @@ page-logistics {
     position: relative;
   }
 
+  .I_list ul li span {
+    font-size: 1.4rem;
+  }
 
+  .search_input{
+    width: 39%;
+    padding: 6px;
+  }
+
+  .search_icon{
+    width: 5%;
+    padding: 0 16px 0 10px;
+    font-size: 20px;
+    color: #06c1ae !important;
+  }
+
+  .button-ios {
+    margin: 0px;
+    padding: 10px;
+    height: 33px;
+    font-size: 1.6rem;
+    position: absolute;
+    color: #06c1ae !important;
+  }
+
+  .search_sec{
+    border-top: 0.55px solid transparent;
+    border-bottom: 0.55px solid rgba(0, 0, 0, 0.05);
+    height: 60px;
+    padding: 10px 10px;
+  }
 }

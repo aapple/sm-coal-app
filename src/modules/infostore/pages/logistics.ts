@@ -15,6 +15,9 @@ import {LogisticsDetailPage} from "./logistics-detail";
 })
 export class LogisticsPage {
 
+  departure: string="";
+  destination: string="";
+
   logisticsList: any = [];
 
   constructor(public navCtrl: NavController,
@@ -43,6 +46,22 @@ export class LogisticsPage {
   goLogisticsDetail(logistics) {
 
     this.navCtrl.push(LogisticsDetailPage, logistics)
+  }
+
+  doQuery() {
+
+    let data : any = {};
+    if(this.departure){
+      data.departure = this.departure;
+    }
+    if(this.destination){
+      data.destination = this.destination;
+    }
+
+    this.infostoreService.getLogisticsList(data)
+      .then( ret => {
+        this.logisticsList = ret;
+      });
   }
 
 }
