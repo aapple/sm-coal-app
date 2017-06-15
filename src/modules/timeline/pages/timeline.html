@@ -37,14 +37,13 @@
               <p class="po-name" (click)="gotoTimelineDetailPage(timeline, i)">{{ timeline.author?.nickname }}</p>
               <p class="post" (click)="gotoTimelineDetailPage(timeline, i)">
                 {{timeline.content | nl2br}}
-                <!--<div *ngIf="timeline.imgs.length === 1">-->
-                  <!--<img src="{{ heyApp.helper.getImg(timeline.imgs[0].uri) }}?imageView/2/w/800">-->
-                <!--</div>-->
 
-                <!--<div class="img-muilt" [ngClass]="{'img-odd': (timeline.imgs.length % 2)}" *ngIf="timeline.imgs.length > 1">-->
-                  <!--<div *ngFor="let img of timeline.imgs; let i = index" [ngStyle]="{'background-image': 'url(' + heyApp.helper.getImg(img.uri) + ')'}"></div>-->
-                  <!--<span class="clear-float"></span>-->
-                <!--</div>-->
+                <img *ngIf="timeline.imgs.length === 1" src="{{ heyApp.helper.getImg(timeline.imgs[0].uri) }}?imageView/2/w/800">
+
+                <span class="img-muilt" [ngClass]="{'img-odd': (timeline.imgs.length % 2)}" *ngIf="timeline.imgs.length > 1">
+                  <span *ngFor="let img of timeline.imgs; let i = index" [ngStyle]="{'background-image': 'url(' + heyApp.helper.getImg(img.uri) + ')'}"></span>
+                  <span class="clear-float"></span>
+                </span>
               </p>
               <p class="time">{{ timeline.created_at | timeago }}</p>
               <span style="position: absolute;right: 70px;font-size: 14px;">

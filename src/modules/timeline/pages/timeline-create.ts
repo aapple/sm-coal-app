@@ -170,8 +170,9 @@ export class TimelineCreatePage {
     this.heyApp.fileUploadService.upload(this.timelineService.timelineStoreImgAPI, files).then(data => {
       this.waiting = false;
 
+      let result = [data];
       // merge imgs
-      this.mergeImgs(data.imgs);
+      this.mergeImgs(result);
     }, () => {
       this.waiting = false;
     });
