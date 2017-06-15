@@ -17,44 +17,44 @@
     <ul>
       <li>
         <a (click)="gotoLifeStore('饭店')">
-          <p><img src="./assets/img/icon_fk.png"></p>
+          <p><img src="./assets/img/icon_cy.png"></p>
           <span>饭店</span>
         </a>
       </li>
       <li>
         <a (click)="gotoLifeStore('宾馆')">
-          <p><img src="./assets/img/icon_et.png"></p>
+          <p><img src="./assets/img/icon_zs.png"></p>
           <span>宾馆</span>
         </a>
       </li>
       <li>
         <a (click)="gotoLifeStore('修理厂')">
-          <p><img src="./assets/img/icon_jk.png"></p>
+          <p><img src="./assets/img/icon_ts.png"></p>
           <span>修理厂</span>
         </a>
       </li>
       <li>
         <a (click)="gotoLifeStore('加油站')">
-          <p><img src="./assets/img/icon_zn.png"></p>
+          <p><img src="./assets/img/icon_sy.png"></p>
           <span>加油站</span>
         </a>
       </li>
       <li>
         <a (click)="gotoCoalPrice()">
-          <p><img src="./assets/img/icon_wifi.png"></p>
+          <p><img src="./assets/img/icon_zd.png"></p>
           <span>煤价</span>
         </a>
       </li>
       <li>
         <a (click)="gotoCokePrice()">
-          <p><img src="./assets/img/icon_cy.png"></p>
+          <p><img src="./assets/img/icon_sq06.png"></p>
           <span>兰炭价</span>
         </a>
       </li>
       <li>
         <a (click)="gotoInfoStore()">
-          <p><img src="./assets/img/icon_jz.png"></p>
-          <span>信息部</span>
+          <p><img src="./assets/img/icon_jz2.png"></p>
+          <span>物流</span>
         </a>
       </li>
       <li>
@@ -70,17 +70,35 @@
     <div class="pictitle">
       <span class="picbg"></span>
       <span>附近商家</span>
-      <a href="#" class="puff_right">更多 ></a>
+      <a (click)="gotoLifeStore('')" class="puff_right">更多 ></a>
     </div>
-    <div class="bannerside">
-      <a href="#"><img src="./assets/img/pic1.jpg"></a>
+
+    <div class="interest_list">
+      <ul>
+        <li *ngFor="let lifestore of lifestoreList" (click)="gotoDetail(lifestore)">
+          <a>
+            <img src="./assets/images/banner2.jpg" >
+            <div class="list_r">
+              <p><span style="font-size: 16px;">{{lifestore.name}}</span></p>
+              <p>地址：{{lifestore.address}}</p>
+              <p>
+                联系电话：{{lifestore.callNumber}}
+              </p>
+            </div>
+          </a>
+        </li>
+      </ul>
     </div>
-    <div class="bannerside">
-      <a href="#"><img src="./assets/img/pic2.jpg"></a>
-    </div>
-    <div class="bannerside">
-      <a href="#"><img src="./assets/img/pic3.jpg"></a>
-    </div>
+
+    <!--<div class="bannerside">-->
+      <!--<a href="#"><img src="./assets/img/pic1.jpg"></a>-->
+    <!--</div>-->
+    <!--<div class="bannerside">-->
+      <!--<a href="#"><img src="./assets/img/pic2.jpg"></a>-->
+    <!--</div>-->
+    <!--<div class="bannerside">-->
+      <!--<a href="#"><img src="./assets/img/pic3.jpg"></a>-->
+    <!--</div>-->
   </div>
 
   <!--<div class="snapup hightitem section02 open-win" *ngFor="let lifestore of lifestoreList" (click)="gotoDetail(lifestore)">-->

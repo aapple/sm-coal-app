@@ -30,9 +30,13 @@ export class LifestoreList {
   ionViewDidLoad() {
 
     let data = {
-      serviceType: this.serviceType,
+      serviceType: null,
       area: this.localStorageService.get(AppGlobal.areaName)
     };
+
+    if(this.serviceType){
+      data.serviceType = this.serviceType;
+    }
 
     this.homeService.loadLifestoreList(data)
       .then(ret => {

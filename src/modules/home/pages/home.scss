@@ -1,125 +1,5 @@
 page-home {
 
-  .swiper-slide img {
-    width: 100%;
-    height: auto;
-    max-width: 100%;
-    max-height: 100%;
-  }
-
-  #swipe {
-    position: relative;
-    overflow: hidden;
-    background-color: #fff;
-  }
-
-  .swipe-wrap {
-    overflow: hidden;
-    padding-bottom: 14px;
-  }
-
-  .swipe-page {
-    float: left;
-    width: 100%;
-    position: relative;
-  }
-
-  .swipe-page-item {
-    float: left;
-    width: 25%;
-    text-align: center;
-  }
-
-  .swipe-page-item>img {
-    width: 60%;
-    margin-top: 10px;
-  }
-
-  .swipe-page-item>span {
-    display: block;
-    font-size: 13px;
-    margin-top: 5px;
-  }
-  /* swipe end. */
-
-  /* swipe end. */
-
-  .h80 {
-    height: 80px;
-  }
-
-  .h40 {
-    height: 40px;
-  }
-
-  .h20 {
-    height: 20px;
-  }
-
-  .h10 {
-    height: 10px;
-    background: #f0f0f0;
-  }
-
-  .h1 {
-    height: 1px;
-    margin-left: 15px;
-    background: #f0f0f0;
-  }
-
-  .fr {
-    float: right;
-  }
-
-  .fl {
-    float: left;
-  }
-
-  .hightitem {
-    background-color: #fff;
-  }
-  /* 抢购样式 */
-
-  .snapup {
-    height: 80px;
-  }
-
-  .snapup .infologo {
-    height: 50px;
-    margin: 10px;
-  }
-
-  .snapup .shelf2 {
-    display: table;
-    height: inherit;
-    margin-left: 10px;
-  }
-
-  .snapup .shelfcell {
-    display: table-cell;
-    vertical-align: middle;
-  }
-
-  .snapup .shelfcell .title {
-    margin-bottom: 10px;
-  }
-
-  .snapup .arrow {
-    width: 20px;
-    padding-top: 30px;
-    padding-right: 10px;
-  }
-
-  .info {
-    padding-left: 20px;
-    padding-top: 13px;
-    font-size: 15px;
-    padding-bottom: 30px;
-    font-weight: bold;
-    background: #f0f0f0;
-  }
-
-
   /////////////////////////////?
   .title_name {
     width: 100%;
@@ -190,6 +70,19 @@ page-home {
   }
   .bannerside img{
     width: 100%;
+  }
+
+  .interest_list a img{
+    border-radius: 0;
+  }
+
+  .interest_list a img {
+    width: 8rem;
+    height: 6rem;
+  }
+
+  .interest_list a img {
+    margin-right: 15px;
   }
 
 }
