@@ -16,7 +16,7 @@ export class TabsPage {
   tab1Root = HomePage;
   tab2Root = CoalPage;
   tab3Root = CoalPage;
-  tab4Root = InfostorePage;
+  // tab4Root = InfostorePage;
   tab5Root = MePage;
   tab6Root = LogisticsPage;
 
