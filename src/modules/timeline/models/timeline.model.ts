@@ -19,6 +19,7 @@ export class Timeline {
     public is_like: boolean,
     public created_at: string,
     public updated_at: string,
-    public deleted_at: string
+    public deleted_at: string,
+    public isAll: boolean
   ) {  }
 }

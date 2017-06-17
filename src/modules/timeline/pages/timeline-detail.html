@@ -12,16 +12,36 @@
 
 
 <ion-content>
-  <div padding class="section-comment items-comment">
-    <div class="item-comment" [hidden]="!timeline.content">
-      <img class="avatar" src="{{ heyApp.helper.getImg(timeline.author.avatar) }}?imageView/2/w/100">
-      <div #contentBox class="comment-content">
-        <div class="header">
-          <a color="dark">{{ timeline.author.nickname }}</a>
-          <span class="pull-right">{{ timeline.created_at | moment: ['MM-DD HH:mm'] }}</span>
-        </div>
-        {{ timeline.content }}
-      </div>
+  <div class="section-comment items-comment">
+
+    <div id="list">
+      <ul>
+        <li>
+
+          <div class="po-avt-wrap">
+            <img class="po-avt" src="{{ heyApp.helper.getImg(timeline.author?.avatar) }}?imageView/2/w/100">
+          </div>
+
+          <div class="po-cmt">
+            <div class="po-hd">
+              <p class="po-name">{{ timeline.author?.nickname }}</p>
+              <p class="post">
+                <span>{{timeline.content| nl2br}}</span>
+                <img *ngIf="timeline.imgs.length === 1" src="{{ timeline.imgs[0].uri}}">
+
+                <span class="img-muilt" [ngClass]="{'img-odd': (timeline.imgs.length % 2)}" *ngIf="timeline.imgs.length > 1">
+                  <span *ngFor="let img of timeline.imgs; let i = index" [ngStyle]="{'background-image': 'url(' + heyApp.helper.getImg(img.uri) + ')'}"></span>
+                  <font class="clear-float"></font>
+                </span>
+              </p>
+              <p class="time">{{ timeline.created_at | timeago }}</p>
+
+            </div>
+
+          </div>
+
+        </li>
+      </ul>
     </div>
 
     <div class="item-comment" *ngFor="let comment of timeline.comments">

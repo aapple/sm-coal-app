@@ -42,6 +42,17 @@ export class TimelinePage {
     this.navCtrl.push(TimelineDetailPage, {timeline: timeline, timelineIndex: index});
   }
 
+  showTimelineAll(index){
+    this.timelineService.timelines[index].isAll = !this.timelineService.timelines[index].isAll;
+  }
+
+  formatContent(content, isAll){
+    if(!isAll && content){
+      content = content.substring(0, 100);
+    }
+
+    return content;
+  }
 
   //
   // set like for timeline

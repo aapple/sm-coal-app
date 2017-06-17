@@ -46,7 +46,7 @@ export class TimelineCreatePage {
   // timeline create handler
   timelineCreateHandler(ngForm) {
     console.log(this.imgIdArr, ngForm.value.content, this.video);
-    if (this.imgIdArr.length || ngForm.value.content || this.video) {
+    if (this.imgs.length || ngForm.value.content || this.video) {
       if (this.waiting) {
         let params = {
           title: "请等待",
@@ -59,7 +59,7 @@ export class TimelineCreatePage {
 
         let data: any = {
           content: ngForm.value.content,
-          imgs: this.imgIdArr,
+          imgs: this.imgs,
           video: this.video ? this.video.id : null,
         };
 
@@ -170,7 +170,7 @@ export class TimelineCreatePage {
     this.heyApp.fileUploadService.upload(this.timelineService.timelineStoreImgAPI, files).then(data => {
       this.waiting = false;
 
-      let result = [data];
+      let result = [{"uri": data}];
       // merge imgs
       this.mergeImgs(result);
     }, () => {
@@ -185,7 +185,7 @@ export class TimelineCreatePage {
     this.video = null;
 
     for (let i = 0; i < imgs.length; i++) {
-      this.imgIdArr = this.imgIdArr.concat(imgs[i]['id']);
+      //this.imgIdArr = this.imgIdArr.concat(imgs[i]['id']);
       this.imgs = this.imgs.concat(imgs[i]);
     }
   }
