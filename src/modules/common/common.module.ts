@@ -15,6 +15,8 @@ import { FileUploadService } from './services/fileUpload.service';
 import { UtilityComponent } from './pages/utilityComponent';
 import {SessionStorageService} from "./services/sessionStorage.service";
 import {LocalStorageService} from "./services/localStorage.service";
+import {BrowserPage} from "./pages/browser";
+import {BrowserPopoverPage} from "./pages/browser-popover";
 
 
 @NgModule({
@@ -27,8 +29,12 @@ import {LocalStorageService} from "./services/localStorage.service";
     TimeagoPipe,
     Nl2brPipe,
     UtilityComponent,
+    BrowserPage,
+    BrowserPopoverPage
   ],
   entryComponents: [
+    BrowserPage,
+    BrowserPopoverPage
   ],
   providers: [
     Helper,

@@ -9,6 +9,7 @@ import { TimelineService } from '../../timeline/services/timeline.service';
 import { HCAboutPage } from './hc-about';
 import { HCGuidePage } from './hc-guide';
 import { HCFeedbackPage } from './hc-feedback';
+import {BrowserPage} from "../../common/pages/browser";
 
 @Component({
   selector: 'page-setting',
@@ -52,12 +53,13 @@ export class MeSettingPage {
   //
   // open terms page
   openTermsPage() {
-    let url = (<any> window).API_DOMAIN + '/docs/terms.html';
-    if (this.heyApp.platform.is('cordova')) {
-      let browser = new InAppBrowser(url, '_system');
-      browser.show();
-    } else {
-      (<any> window).open(url, '_blank');
-    }
+
+    this.navCtrl.push(BrowserPage, {
+      browser: {
+        title: '用户协议',
+        url: 'http://119.29.250.146:8900/docs/terms.html'
+      }
+    });
+
   }
 }
