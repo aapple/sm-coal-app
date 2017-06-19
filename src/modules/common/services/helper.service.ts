@@ -1,14 +1,19 @@
 import { Injectable } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { AuthService } from './auth.service';
+import {Http, RequestOptions} from "@angular/http";
 
 
 @Injectable()
 export class Helper {
+
+  headers: Headers;
+  requestOptions: RequestOptions;
   //
   // constructor
   constructor(
     public platform: Platform,
+    private http: Http,
     public authService: AuthService
   ) {
   }
@@ -89,5 +94,21 @@ export class Helper {
     }
 
     document.body.appendChild(i);
+  }
+
+  getResponseFromUrl(url) {
+
+    return this.http.get(url, this.requestOptions)
+      .toPromise()
+      .then(response => {
+        return response;
+      }).catch(this.handleError);
+  }
+
+
+  //
+  // handle error
+  private handleError(error: any) {
+    return Promise.reject(error.message || error);
   }
 }

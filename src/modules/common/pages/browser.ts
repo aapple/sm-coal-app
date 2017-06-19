@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams, PopoverController } from 'ionic-angular';
 import { DomSanitizer } from "@angular/platform-browser";
 import {BrowserPopoverPage} from "./browser-popover";
+import {Helper} from "../services/helper.service";
 
 @Component({
   selector: 'page-browser',
@@ -16,6 +17,7 @@ export class BrowserPage {
 
     title: '加载中',
     url: '',
+    isWechatPage: false,
     share: null // 是否具有分享功能（传递一个分享对象ShareModel过来）
   };
 
@@ -26,12 +28,26 @@ export class BrowserPage {
   constructor(public navCtrl: NavController,
               private params: NavParams,
               private sanitizer: DomSanitizer,
+              private helper: Helper,
               private popoverCtrl: PopoverController) {
     let browser = this.params.get('browser');
     if(browser) {
       this.browser.title = browser.title;
-      this.browser.url = browser.url;
-      this.browser.secUrl = this.sanitizer.bypassSecurityTrustResourceUrl(browser.url);
+      if(browser.isWechatPage){
+
+        this.helper.getResponseFromUrl(browser.url)
+          .then(ret => {
+            let html = ret + "";
+            html = html.replace(/data-src/g, "src");
+            this.browser.secUrl = 'data:text/html;charset=utf-8,' + html;
+            }
+          );
+
+      } else {
+        this.browser.url = browser.url;
+        this.browser.secUrl = this.sanitizer.bypassSecurityTrustResourceUrl(browser.url);
+      }
+
 
       if(browser.share) {
         this.browser.share = browser.share;
