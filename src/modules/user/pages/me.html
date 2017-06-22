@@ -59,6 +59,15 @@
   </ion-list>
 
   <ion-list>
+    <button ion-item [navPush]="HCAboutPage">
+      关于我们
+    </button>
+    <button ion-item (click)="openTermsPage()">
+      用户协议
+    </button>
+    <button ion-item [navPush]="HCFeedbackPage">
+      意见反馈
+    </button>
     <button ion-item [navPush]="MeSettingPage">
       设置
     </button>

@@ -15,12 +15,15 @@
 
 <ion-content>
 
-  <div class="search_sec">
-    <input type="text" placeholder="出发地" class="search_input" [(ngModel)]="departure">
-    <ion-icon name="md-send" class="search_icon"></ion-icon>
-    <input type="text" placeholder="到达地" class="search_input" [(ngModel)]="destination">
-    <button ion-button clear (click)="doQuery(logistics)">搜索</button>
-  </div>
+  <ion-toolbar no-border-top>
+    <ion-searchbar color="primary"
+                   [(ngModel)]="queryText"
+                   [showCancelButton]="showCancelButton"
+                   [cancelButtonText]="cancelButtonText"
+                   (ionCancel)="doQuery($event)"
+                   placeholder="根据目的地查询">
+    </ion-searchbar>
+  </ion-toolbar>
 
   <ion-refresher (ionRefresh)="doRefresh($event)">
     <ion-refresher-content></ion-refresher-content>

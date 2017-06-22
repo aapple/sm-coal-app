@@ -18,12 +18,21 @@ import {ColaSalerPriceManage} from "../../manage/pages/cola-saler-price-manage";
 import {LifestoreAddUpdate} from "../../manage/pages/lifestore-add-update";
 import {LifestoreManage} from "../../manage/pages/lifestore-manage";
 
+import { HCAboutPage } from './hc-about';
+import { HCGuidePage } from './hc-guide';
+import { HCFeedbackPage } from './hc-feedback';
+import {BrowserPage} from "../../common/pages/browser";
+
 @Component({
   selector: 'page-me',
   templateUrl: 'me.html'
 })
 export class MePage {
+
   MeSettingPage = MeSettingPage;
+  HCAboutPage = HCAboutPage;
+  HCGuidePage = HCGuidePage;
+  HCFeedbackPage = HCFeedbackPage;
 
   constructor(
     public heyApp: AppService,
@@ -99,6 +108,18 @@ export class MePage {
     setTimeout(function(){
       refresher.complete();
     }, 1000)
+  }
+
+  //
+  // open terms page
+  openTermsPage() {
+
+    this.navCtrl.push(BrowserPage, {
+      browser: {
+        title: '用户协议',
+        url: 'http://119.29.250.146:8900/docs/terms.html'
+      }
+    });
   }
 
 }

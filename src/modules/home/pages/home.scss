@@ -85,4 +85,31 @@ page-home {
     margin-right: 15px;
   }
 
+  .area_icon{
+    font-size: 20px !important;
+    padding-left: 4px !important;
+    padding-top: 2px !important;
+  }
+
+  .title{
+    font-size: 15px;
+    background: #fff;
+  }
+
+  .news_detail{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    word-break: break-all;
+    white-space: inherit;
+    height: 53px;
+
+  }
+
+  .interest_list ul li {
+    padding-bottom: 5px;
+    margin-top: 10px;
+  }
+
 }

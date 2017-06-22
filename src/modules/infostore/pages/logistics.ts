@@ -15,8 +15,9 @@ import {LogisticsDetailPage} from "./logistics-detail";
 })
 export class LogisticsPage {
 
-  departure: string="";
-  destination: string="";
+  showCancelButton: boolean=true;
+  cancelButtonText: string="搜索";
+  queryText: string;
 
   logisticsList: any = [];
 
@@ -48,15 +49,20 @@ export class LogisticsPage {
     this.navCtrl.push(LogisticsDetailPage, logistics)
   }
 
-  doQuery() {
+  doQuery(ev) {
+
+    if(!this.queryText){
+      this.queryText = null;
+    }
+    let text = this.queryText;
+    let me = this;
+    setTimeout(function () {
+      me.queryText = text;
+    }, 100);
+
 
     let data : any = {};
-    if(this.departure){
-      data.departure = this.departure;
-    }
-    if(this.destination){
-      data.destination = this.destination;
-    }
+    data.destination = text;
 
     this.infostoreService.getLogisticsList(data)
       .then( ret => {

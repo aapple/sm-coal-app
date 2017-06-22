@@ -1,17 +1,5 @@
 page-logistics {
 
-
-  .toolbar-background-ios{
-    //background: black;
-    background: #f8f8f8;
-  }
-
-  .toolbar .searchbar-ios .searchbar-ios-cancel{
-    color: #06c1ae !important;
-    display: block !important;
-    padding-left: 8px;
-  }
-
   .I_list {
     height: auto;
     overflow: hidden;
@@ -60,5 +48,11 @@ page-logistics {
     border-bottom: 0.55px solid rgba(0, 0, 0, 0.05);
     height: 60px;
     padding: 10px 10px;
+  }
+
+  .toolbar .searchbar-ios .searchbar-ios-cancel{
+    color: #06c1ae !important;
+    display: block !important;
+    padding-left: 8px;
   }
 }

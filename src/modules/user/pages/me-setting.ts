@@ -49,17 +49,4 @@ export class MeSettingPage {
     this.heyApp.utilityComp.presentToast('清空缓存成功');
   }
 
-
-  //
-  // open terms page
-  openTermsPage() {
-
-    this.navCtrl.push(BrowserPage, {
-      browser: {
-        title: '用户协议',
-        url: 'http://119.29.250.146:8900/docs/terms.html'
-      }
-    });
-
-  }
 }
