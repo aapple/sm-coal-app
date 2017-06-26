@@ -27,8 +27,7 @@
           <p *ngIf="productPrice.factory.factoryType==1">代发人：{{productPrice.factory.saler.nickname}}</p>
           <p *ngIf="productPrice.factory.factoryType==1">
             <a href="tel:{{productPrice.factory.saler.phoneNum}}" style="color: #666 !important;">
-              联系电话：{{productPrice.factory.saler.phoneNum}}
-              <ion-icon name="call" class="icon_phone"></ion-icon>
+              联系电话：<span class="text_phone">{{productPrice.factory.saler.phoneNum}}</span>
             </a>
           </p>
         </div>
