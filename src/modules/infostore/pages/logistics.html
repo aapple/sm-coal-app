@@ -38,7 +38,7 @@
     </ion-segment-button>
   </ion-segment>
 
-  <div class="I_list">
+  <div class="I_list" *ngIf="showType == 'logistics'">
     <ul>
       <li (click)="goLogisticsDetail(logistics)" *ngFor="let logistics of logisticsList" style="font-size: 14px;">
         <p>出发地</p>
@@ -53,27 +53,27 @@
     </ul>
   </div>
 
-  <div class="interest_list">
+  <div class="interest_list" *ngIf="showType == 'infostore'">
     <ul>
       <li *ngFor="let infostore of infostoreList" (click)="gotoInfoStoreDetail(infostore)">
         <a>
           <img src="./assets/images/banner2.jpg" >
           <div class="list_r">
-            <p><span style="font-size: 14px;">{{infostore.title}}</span><span class="color_y">物流信息：20条</span></p>
-            <p>主营山东、上海专线，代发煤矿</p>
-            <ion-icon name="arrow-forward"></ion-icon>
+            <p><span style="font-size: 14px;">{{infostore.title}}</span></p>
+            <p>联系方式：刘先生 13333333333</p>
+            <p>主营业务：山东、上海专线，代发煤矿</p>
           </div>
         </a>
       </li>
     </ul>
   </div>
 
-  <div [hidden]="infostoreList.length > 0" class="empty_tips">
+  <div [hidden]="infostoreList.length > 0" class="empty_tips" *ngIf="showType == 'infostore'">
     没有查询到数据
   </div>
 
 
-  <div [hidden]="logisticsList.length > 0" class="empty_tips">
+  <div [hidden]="logisticsList.length > 0" class="empty_tips" *ngIf="showType == 'logistics'">
     没有查询到数据
   </div>
 

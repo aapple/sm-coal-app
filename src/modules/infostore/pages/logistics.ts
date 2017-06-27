@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {InfostoreService} from "../services/infostore.service";
 import {LogisticsDetailPage} from "./logistics-detail";
+import {InfostoreDetailPage} from "./infostore-detail";
 
 /**
  * Generated class for the Logistics page.
@@ -21,6 +22,7 @@ export class LogisticsPage {
   showType: string = "logistics";
 
   logisticsList: any = [];
+  infostoreList: any = [];
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -33,6 +35,11 @@ export class LogisticsPage {
     this.infostoreService.getLogisticsList({})
       .then( ret => {
         this.logisticsList = ret;
+      });
+
+    this.infostoreService.getInfoDepartmentList({})
+      .then( ret => {
+        this.infostoreList = ret;
       });
   }
 
@@ -48,6 +55,10 @@ export class LogisticsPage {
   goLogisticsDetail(logistics) {
 
     this.navCtrl.push(LogisticsDetailPage, logistics)
+  }
+
+  gotoInfoStoreDetail(infostore){
+    this.navCtrl.push(InfostoreDetailPage, infostore);
   }
 
   doQuery(ev) {
