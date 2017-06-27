@@ -15,16 +15,7 @@ import {AppService} from "../../common/services/app.service";
 })
 export class CokePriceManage {
 
-  factory: string = "";
-  productType: string = "";
-  factoryList: any = [];
-  productTypeList: any = [];
-  price: string = "";
-  coke_hantan: string = "";
-  coke_hanliu: string = "";
-  coke_shuifen: string = "";
-  coke_huifafen: string = "";
-  coke_huifen: string = "";
+  productPrice: any = "";
 
   constructor(
     public navCtrl: NavController,
@@ -32,51 +23,32 @@ export class CokePriceManage {
     public heyApp: AppService,
     public manageService: ManageService) {
 
+    this.productPrice = navParams.data;
   }
 
   ionViewDidLoad() {
-    let data: Object = {
-      factoryType: 2
-    };
 
-    this.manageService.getFactoryList(data)
-      .then(ret => {
-        this.factoryList = ret.factoryList;
-        this.productTypeList = ret.productTypeList;
+  }
+
+  uploadImg(event, imagesName) {
+    this.heyApp.utilityComp.presentLoading();
+    let files = event.srcElement.files;
+
+    this.heyApp.fileUploadService.upload(this.heyApp.fileUploadService.imageUploadAPI, files)
+      .then(data => {
+        this.productPrice[imagesName] = data;
+        this.heyApp.utilityComp.dismissLoading();
+      }, () => {
+        this.heyApp.utilityComp.dismissLoading();
       });
   }
 
-  onFactoryChange() {
-
-  }
-
-  onProductTypeChange() {
-
-  }
-
   onSubmit() {
-    let data: Object = {
-      factory: {id: this.factory},
-      productType: {id: this.productType},
-      price: this.price,
-      coke_hantan: this.coke_hantan,
-      coke_hanliu: this.coke_hanliu,
-      coke_shuifen: this.coke_shuifen,
-      coke_huifafen: this.coke_huifafen,
-      coke_huifen: this.coke_huifen
-    };
 
-    this.manageService.saveOrUpdateProductPrice(data)
+    this.manageService.saveOrUpdateProductPrice(this.productPrice)
       .then(ret => {
         this.heyApp.utilityComp.presentToast("提交成功");
-        this.factory = "";
-        this.productType = "";
-        this.price = "";
-        this.coke_hantan = "";
-        this.coke_hanliu = "";
-        this.coke_shuifen = "";
-        this.coke_huifafen = "";
-        this.coke_huifen = "";
+        this.navCtrl.pop();
       });
   }
 

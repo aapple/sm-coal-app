@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/share';
+import {Helper} from "./helper.service";
 
 
 @Injectable()
@@ -17,7 +18,9 @@ private progress: number = 0;
 
 private progressObserver: any;
 
-constructor () {
+  imageUploadAPI: string = this.helper.getAPP('imageUtil/uploadImage');
+
+constructor (private helper: Helper) {
     this.progress$ = new Observable(observer => {
         this.progressObserver = observer
     });

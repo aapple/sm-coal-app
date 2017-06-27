@@ -27,52 +27,94 @@
 
   <ion-list>
     <button ion-item (click)="gotoMeProfilePage()">
+      <svg class="icon svg_icon" aria-hidden="true">
+        <use xlink:href="#icon-wodeziliao"></use>
+      </svg>
       我的资料
     </button>
     <button ion-item (click)="gotoMyTimelinePage()">
+      <svg class="icon svg_icon" aria-hidden="true">
+        <use xlink:href="#icon-meiyouquan"></use>
+      </svg>
       煤炭圈
     </button>
   </ion-list>
 
   <ion-list>
     <button ion-item (click)="gotoCoalOrignPriceMangePage()" *ngIf="heyApp.authService.userInfo?.isCoalManager == 1">
+      <svg class="icon svg_icon" aria-hidden="true">
+        <use xlink:href="#icon-jiaohuachangweihu"></use>
+      </svg>
       煤炭矿方价管理
     </button>
     <button ion-item (click)="gotoCoalSalePriceManagePage()" *ngIf="heyApp.authService.userInfo?.isCoalSaler == 1">
+      <svg class="icon svg_icon" aria-hidden="true">
+        <use xlink:href="#icon-jiaohuachangweihu"></use>
+      </svg>
       煤炭代发价管理
     </button>
     <button ion-item (click)="gotoLantanPriceManagePage()" *ngIf="heyApp.authService.userInfo?.isCokeManager == 1">
+      <svg class="icon svg_icon" aria-hidden="true">
+        <use xlink:href="#icon-jiaohuachangweihu"></use>
+      </svg>
       焦化厂兰炭价管理
     </button>
     <button ion-item (click)="gotoLogisticseManagePage()" *ngIf="heyApp.authService.userInfo?.isInfoStoreManager == 1">
+      <svg class="icon svg_icon" aria-hidden="true">
+        <use xlink:href="#icon-jiaohuachangweihu"></use>
+      </svg>
       信息部物流管理
     </button>
     <button ion-item (click)="gotoInfoStoreManagePage()" *ngIf="heyApp.authService.userInfo?.isSuperManager == 1">
+      <svg class="icon svg_icon" aria-hidden="true">
+        <use xlink:href="#icon-jiaohuachangweihu"></use>
+      </svg>
       煤矿焦化厂管理
     </button>
     <button ion-item (click)="gotoInfoStoreManagePage()" *ngIf="heyApp.authService.userInfo?.isSuperManager == 1">
+      <svg class="icon svg_icon" aria-hidden="true">
+        <use xlink:href="#icon-jiaohuachangweihu"></use>
+      </svg>
       信息部管理
     </button>
     <button ion-item (click)="gotoLifeStoreManagePage()" *ngIf="heyApp.authService.userInfo?.isSuperManager == 1">
+      <svg class="icon svg_icon" aria-hidden="true">
+        <use xlink:href="#icon-jiaohuachangweihu"></use>
+      </svg>
       生活服务类数据管理
     </button>
   </ion-list>
 
   <ion-list>
     <button ion-item [navPush]="HCAboutPage">
+      <svg class="icon svg_icon" aria-hidden="true">
+        <use xlink:href="#icon-guanyuwomen"></use>
+      </svg>
       关于我们
     </button>
     <button ion-item (click)="openTermsPage()">
+      <svg class="icon svg_icon" aria-hidden="true">
+        <use xlink:href="#icon-yonghuxieyi"></use>
+      </svg>
       用户协议
     </button>
     <button ion-item [navPush]="HCFeedbackPage">
+      <svg class="icon svg_icon" aria-hidden="true">
+        <use xlink:href="#icon-yijianfankui"></use>
+      </svg>
       意见反馈
     </button>
     <button ion-item (click)="gotoContact()">
+      <svg class="icon svg_icon" aria-hidden="true">
+        <use xlink:href="#icon-jiaohuachangweihu"></use>
+      </svg>
       客服电话
       <span item-end class="text_phone">0912-8888888</span>
     </button>
     <button ion-item [navPush]="MeSettingPage">
+      <svg class="icon svg_icon" aria-hidden="true">
+        <use xlink:href="#icon-shezhi"></use>
+      </svg>
       设置
     </button>
   </ion-list>
