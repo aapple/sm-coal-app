@@ -8,6 +8,7 @@ import { InfostorePage } from './pages/infostore';
 import { InfostoreDetailPage } from './pages/infostore-detail';
 import {LogisticsDetailPage} from "./pages/logistics-detail";
 import {LogisticsPage} from "./pages/logistics";
+import {LogisticsListPage} from "./pages/logistics-list";
 
 
 @NgModule({
@@ -18,13 +19,15 @@ import {LogisticsPage} from "./pages/logistics";
     InfostorePage,
     InfostoreDetailPage,
     LogisticsDetailPage,
-    LogisticsPage
+    LogisticsPage,
+    LogisticsListPage
   ],
   entryComponents: [
     InfostorePage,
     InfostoreDetailPage,
     LogisticsDetailPage,
-    LogisticsPage
+    LogisticsPage,
+    LogisticsListPage
   ],
   providers: [
     InfostoreService

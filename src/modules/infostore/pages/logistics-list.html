@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>物流</ion-title>
+    <ion-title>{{infostore.title}}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -29,16 +29,7 @@
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
 
-  <ion-segment style="padding: 10px 16px;background: #fff;" [(ngModel)]="showType" padding>
-    <ion-segment-button value="logistics">
-      物流
-    </ion-segment-button>
-    <ion-segment-button value="infostore">
-      信息部
-    </ion-segment-button>
-  </ion-segment>
-
-  <div class="I_list" *ngIf="showType == 'logistics'">
+  <div class="I_list">
     <ul>
       <li (click)="goLogisticsDetail(logistics)" *ngFor="let logistics of logisticsList" style="font-size: 14px;">
         <p>出发地</p>
@@ -53,27 +44,7 @@
     </ul>
   </div>
 
-  <div class="interest_list" *ngIf="showType == 'infostore'">
-    <ul>
-      <li *ngFor="let infostore of infostoreList" (click)="gotoLogisticsList(infostore)">
-        <a>
-          <img src="./assets/images/banner2.jpg" >
-          <div class="list_r">
-            <p><span style="font-size: 14px;font-weight: bold;">{{infostore.title}}</span></p>
-            <p>联系方式：刘先生 13333333333</p>
-            <p>主营业务：山东、上海专线，代发煤矿</p>
-          </div>
-        </a>
-      </li>
-    </ul>
-  </div>
-
-  <div [hidden]="infostoreList.length > 0" class="empty_tips" *ngIf="showType == 'infostore'">
-    没有查询到数据
-  </div>
-
-
-  <div [hidden]="logisticsList.length > 0" class="empty_tips" *ngIf="showType == 'logistics'">
+  <div [hidden]="logisticsList.length > 0" class="empty_tips">
     没有查询到数据
   </div>
 

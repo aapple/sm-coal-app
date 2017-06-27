@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { ViewController } from 'ionic-angular';
+import {ViewController, NavController} from 'ionic-angular';
 import { InAppBrowser } from 'ionic-native';
 
 import { AppService } from '../../common/services/app.service';
 import { UserService} from '../services/user.service';
+import {BrowserPage} from "../../common/pages/browser";
 
 
 @Component({
@@ -21,6 +22,7 @@ export class AuthenticatePage {
     public heyApp: AppService,
     public userService: UserService,
     public viewCtrl: ViewController,
+    public navCtrl: NavController
   ) {
 
   }
@@ -81,16 +83,14 @@ export class AuthenticatePage {
     });
   }
 
-
-  //
   // open terms page
   openTermsPage() {
-    let url = (<any> window).API_DOMAIN + '/docs/terms.html';
-    if (this.heyApp.platform.is('cordova')) {
-      let browser = new InAppBrowser(url, '_system');
-      browser.show();
-    } else {
-      (<any> window).open(url, '_blank');
-    }
+
+    this.navCtrl.push(BrowserPage, {
+      browser: {
+        title: '用户协议',
+        url: 'http://119.29.250.146:8900/docs/terms.html'
+      }
+    });
   }
 }
