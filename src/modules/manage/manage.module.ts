@@ -11,11 +11,12 @@ import {InfostoreManage} from "./pages/infostore-manage";
 import {FactoryAddUpdate} from "./pages/factory-add-update";
 import {InfostoreAddUpdate} from "./pages/infostore-add-update";
 import {LogisticsAddUpdate} from "./pages/logistics-add-update";
-import {ColaSalerPriceManage} from "./pages/cola-saler-price-manage";
+import {CoalPriceManagePage} from "./pages/coal-price-manage";
 import {LogisticsList} from "./pages/logistics-list";
 import {CokePriceManage} from "./pages/coke-price-manage";
 import {LifestoreAddUpdate} from "./pages/lifestore-add-update";
 import {LifestoreManage} from "./pages/lifestore-manage";
+import {ProductListPage} from "./pages/product-list";
 
 
 @NgModule({
@@ -30,11 +31,12 @@ import {LifestoreManage} from "./pages/lifestore-manage";
     InfostoreAddUpdate,
     LogisticsList,
     CokePriceManage,
-    ColaSalerPriceManage,
+    CoalPriceManagePage,
     LogisticsAddUpdate,
     LogisticsManagePage,
     LifestoreManage,
-    LifestoreAddUpdate
+    LifestoreAddUpdate,
+    ProductListPage
   ],
   entryComponents: [
     ProductPriceManagePage,
@@ -44,11 +46,12 @@ import {LifestoreManage} from "./pages/lifestore-manage";
     InfostoreAddUpdate,
     LogisticsList,
     CokePriceManage,
-    ColaSalerPriceManage,
+    CoalPriceManagePage,
     LogisticsAddUpdate,
     LogisticsManagePage,
     LifestoreManage,
-    LifestoreAddUpdate
+    LifestoreAddUpdate,
+    ProductListPage
   ],
   providers: [
     ManageService,

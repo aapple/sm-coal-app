@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {InfostoreService} from "../services/infostore.service";
 import {LogisticsDetailPage} from "./logistics-detail";
 import {InfostoreDetailPage} from "./infostore-detail";
+import {LogisticsListPage} from "./logistics-list";
+
 
 /**
  * Generated class for the Logistics page.
@@ -57,8 +59,8 @@ export class LogisticsPage {
     this.navCtrl.push(LogisticsDetailPage, logistics)
   }
 
-  gotoInfoStoreDetail(infostore){
-    this.navCtrl.push(InfostoreDetailPage, infostore);
+  gotoLogisticsList(infostore){
+    this.navCtrl.push(LogisticsListPage, infostore);
   }
 
   doQuery(ev) {

@@ -178,6 +178,16 @@ export class ManageService {
       .catch(this.handleError);
   }
 
+  loadProductPriceList(params): Promise<CoalPrice> {
+    let api: string = this.helper.getAPP('product/getProductPriceList');
+    let data: Object = params;
+
+    return this.http.post(api, data, this.requestOptions)
+      .toPromise()
+      .then(response => response.json())
+      .catch(this.handleError);
+  }
+
   //
   // handle error
   private handleError(error: any) {

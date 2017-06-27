@@ -9,12 +9,11 @@ import { MeNoticePage } from '../../notice/pages/me-notice';
 import { MyTimelinePage } from '../../timeline/pages/my-timeline';
 import { MeSettingPage } from './me-setting';
 import { TimelinePage } from '../../timeline/pages/timeline';
-import { ProductPriceManagePage } from '../../manage/pages/product-price-manage';
 import { LogisticsManagePage } from '../../manage/pages/logistics-manage';
 import {FactoryManage} from "../../manage/pages/factory-manage";
 import {InfostoreManage} from "../../manage/pages/infostore-manage";
 import {CokePriceManage} from "../../manage/pages/coke-price-manage";
-import {ColaSalerPriceManage} from "../../manage/pages/cola-saler-price-manage";
+import {CoalPriceManagePage} from "../../manage/pages/coal-price-manage";
 import {LifestoreAddUpdate} from "../../manage/pages/lifestore-add-update";
 import {LifestoreManage} from "../../manage/pages/lifestore-manage";
 
@@ -22,6 +21,7 @@ import { HCAboutPage } from './hc-about';
 import { HCGuidePage } from './hc-guide';
 import { HCFeedbackPage } from './hc-feedback';
 import {BrowserPage} from "../../common/pages/browser";
+import {ProductListPage} from "../../manage/pages/product-list";
 
 @Component({
   selector: 'page-me',
@@ -63,19 +63,19 @@ export class MePage {
 
   gotoCoalOrignPriceMangePage() {
     if (this.heyApp.authService.authOrLogin()) {
-      this.navCtrl.push(ProductPriceManagePage);
+      this.navCtrl.push(ProductListPage, 1);
     }
   }
 
   gotoCoalSalePriceManagePage() {
     if (this.heyApp.authService.authOrLogin()) {
-      this.navCtrl.push(ColaSalerPriceManage);
+      this.navCtrl.push(ProductListPage, 2);
     }
   }
 
   gotoLantanPriceManagePage() {
     if (this.heyApp.authService.authOrLogin()) {
-      this.navCtrl.push(CokePriceManage);
+      this.navCtrl.push(ProductListPage, 3);
     }
   }
 
@@ -113,7 +113,6 @@ export class MePage {
   //
   // open terms page
   openTermsPage() {
-
     this.navCtrl.push(BrowserPage, {
       browser: {
         title: '用户协议',

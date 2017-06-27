@@ -1,26 +1,31 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {AppService} from "../../common/services/app.service";
-import {ManageService} from "../services/manage.service";
+import { AppService } from '../../common/services/app.service';
+import { ManageService } from '../services/manage.service';
 
 /**
- * Generated class for the ColaSalerPriceManage page.
+ * Generated class for the CoalPriceManage page.
  *
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
 @Component({
-  selector: 'page-cola-saler-price-manage',
-  templateUrl: 'cola-saler-price-manage.html',
+  selector: 'page-coal-price-manage',
+  templateUrl: 'coal-price-manage.html',
 })
-export class ColaSalerPriceManage {
+export class CoalPriceManagePage {
 
   factory: string = "";
   productType: string = "";
   factoryList: any = [];
   productTypeList: any = [];
   price: string = "";
-  price2: string = "";
+  coal_fareliang: string = "";
+  coal_quanshuifen: string = "";
+  coal_liufen: string = "";
+  coal_huifafen: string = "";
+  coal_huifen: string = "";
+  coal_gudingtan: string = "";
 
   constructor(
     public navCtrl: NavController,
@@ -33,7 +38,7 @@ export class ColaSalerPriceManage {
   ionViewDidLoad() {
     let data: Object = {
       factoryType: 1,
-      saler: {id: 1}
+      onwer: {id: 1}
     };
 
     this.manageService.getFactoryList(data)
@@ -55,7 +60,13 @@ export class ColaSalerPriceManage {
     let data: Object = {
       factory: {id: this.factory},
       productType: {id: this.productType},
-      price2: this.price2
+      price: this.price,
+      coal_fareliang: this.coal_fareliang,
+      coal_quanshuifen: this.coal_quanshuifen,
+      coal_liufen: this.coal_liufen,
+      coal_huifafen: this.coal_huifafen,
+      coal_huifen: this.coal_huifen,
+      coal_gudingtan: this.coal_gudingtan
     };
 
     this.manageService.saveOrUpdateProductPrice(data)
@@ -63,7 +74,14 @@ export class ColaSalerPriceManage {
         this.heyApp.utilityComp.presentToast("提交成功");
         this.factory = "";
         this.productType = "";
-        this.price2 = "";
+        this.price = "";
+        this.coal_fareliang= "";
+        this.coal_quanshuifen = "";
+        this.coal_liufen = "";
+        this.coal_huifafen = "";
+        this.coal_huifen = "";
+        this.coal_gudingtan = "";
       });
   }
+
 }

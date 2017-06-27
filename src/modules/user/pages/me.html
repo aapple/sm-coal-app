@@ -36,16 +36,16 @@
 
   <ion-list>
     <button ion-item (click)="gotoCoalOrignPriceMangePage()" *ngIf="heyApp.authService.userInfo?.isCoalManager == 1">
-      煤炭矿方价维护
+      煤炭矿方价管理
     </button>
     <button ion-item (click)="gotoCoalSalePriceManagePage()" *ngIf="heyApp.authService.userInfo?.isCoalSaler == 1">
-      煤炭代发价维护
+      煤炭代发价管理
     </button>
     <button ion-item (click)="gotoLantanPriceManagePage()" *ngIf="heyApp.authService.userInfo?.isCokeManager == 1">
-      兰炭价维护
+      焦化厂兰炭价管理
     </button>
     <button ion-item (click)="gotoLogisticseManagePage()" *ngIf="heyApp.authService.userInfo?.isInfoStoreManager == 1">
-      信息部物流维护
+      信息部物流管理
     </button>
     <button ion-item (click)="gotoInfoStoreManagePage()" *ngIf="heyApp.authService.userInfo?.isSuperManager == 1">
       煤矿焦化厂管理
