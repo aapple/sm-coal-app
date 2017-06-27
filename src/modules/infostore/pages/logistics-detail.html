@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>物流简介</ion-title>
+    <ion-title>物流详情</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,56 +15,25 @@
 
 <ion-content>
 
-  <div>
-    <img src="./assets/images/banner2.jpg" style="height: 150px;width: 100%;">
+  <div style="padding: 12px;background: #fff;font-size: 16px;margin-top: 16px;">
+    <div style="padding: 14px;">出发地：<span>陕西神木市</span></div>
+    <div style="padding: 14px;">目的地：<span>山东营口市大枣县大洲乡</span></div>
   </div>
-
-  <div class="interest_list">
-    <ul>
-      <li>
-        <div class="list_r">
-          <p><span style="font-size: 16px;">{{logistics.infoDepartment.title}}</span></p>
-          <p>地址：{{logistics.infoDepartment.address}}</p>
-          <p>
-            <a href="tel:{{logistics.infoDepartment.callNumber}}" style="color: #666 !important;">
-              联系电话：<span class="text_phone">{{logistics.infoDepartment.callNumber}}</span>
-            </a>
-          </p>
-        </div>
-      </li>
-    </ul>
+  <div style="padding: 10px 0 10px 24px;">
+    货物：煤
   </div>
-
-  <div class="intro">
-    <span style="font-weight: bold;">信息部简介：</span>{{logistics.infoDepartment.introduction}}
-  </div>
-
-  <ion-grid padding style="background: #fff">
+  <ion-grid style="text-align: center;padding: 16px;background: #fff;border-bottom: 1px solid #efefef;">
     <ion-row>
-      <ion-col>
-        <span>出发地</span>
-      </ion-col>
-      <ion-col>
-        <div>{{logistics.departure}}</div>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <span>目的地</span>
-      </ion-col>
-      <ion-col>
-        <div>￥{{logistics.destination}}</div>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <span>价格</span>
-      </ion-col>
-      <ion-col>
-        <div>￥{{logistics.loadingCharge}}</div>
-      </ion-col>
+      <ion-col style="border-right: 1px solid #efefef;">运输费用 <div style="padding-top: 13px;">300元/吨</div></ion-col>
+      <ion-col style="border-right: 1px solid #efefef;">装货费用 <div style="padding-top: 13px;">100元/吨</div></ion-col>
+      <ion-col>卸货费用 <div style="padding-top: 13px;">200元/吨</div></ion-col>
     </ion-row>
   </ion-grid>
+  <div style="background: #fff;">
+    <div style="padding: 16px;">信息来源：金山信息部</div>
+    <div style="padding: 16px;">咨询电话：13666666666 程红</div>
+    <div style="padding: 16px;">发布时间：2017年05月12日 11:00:00</div>
+  </div>
 </ion-content>
 
 <ion-footer>

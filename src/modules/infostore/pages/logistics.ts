@@ -18,6 +18,7 @@ export class LogisticsPage {
   showCancelButton: boolean=true;
   cancelButtonText: string="搜索";
   queryText: string;
+  showType: string = "logistics";
 
   logisticsList: any = [];
 

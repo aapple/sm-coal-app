@@ -121,8 +121,9 @@ $segment-button-ios-line-height: 35px;
 
 ion-content {
   font-family: "Microsoft YaHei", Arial, "Helvetica";
-  color: #333;
-  font-size: 1.4rem;
+  //color: #333;
+  color: #000 !important;
+  font-size: 14px;
   line-height: 1;
   background-color: #f3f3f3 !important;
 }

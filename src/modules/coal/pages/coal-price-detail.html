@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>价格详细</ion-title>
+    <ion-title>产品详情</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,90 +15,49 @@
 
 <ion-content>
 
-  <div>
-    <img src="./assets/images/banner2.jpg" style="height: 150px;width: 100%;">
+  <div style="color: #000;background: #fff;margin: 10px;border-radius: 4px;">
+    <div style="padding: 16px;border-bottom: 1px solid #efefef;font-size: 20px;">煤种：面煤</div>
+    <div style="padding: 16px;border-bottom: 1px solid #efefef">价格：300元/吨</div>
+    <div style="padding: 16px;border-bottom: 1px solid #efefef">变更幅度：涨10元</div>
+    <div style="padding: 16px;">更新时间：{{ productPrice.createdTime | moment: ['MM-DD HH:mm'] }}</div>
   </div>
 
-  <div class="interest_list">
-    <ul>
-      <li>
-        <div class="list_r">
-          <p><span style="font-size: 16px;">{{productPrice.factory.name}}</span></p>
-          <p *ngIf="productPrice.factory.factoryType==1">代发人：{{productPrice.factory.saler.nickname}}</p>
-          <p *ngIf="productPrice.factory.factoryType==1">
-            <a href="tel:{{productPrice.factory.saler.phoneNum}}" style="color: #666 !important;">
-              联系电话：<span class="text_phone">{{productPrice.factory.saler.phoneNum}}</span>
-            </a>
-          </p>
-        </div>
-      </li>
-    </ul>
-  </div>
+  <ion-list style="padding: 6px;margin-bottom: 0;">
+    <ion-item style="border-radius: 4px;border: 0;">
+      <div item-start>
+        <ion-icon name="call" style="display: block;font-size: 30px;text-align: center;color: #06c1ae"></ion-icon>
+        <span style="color: #666;font-size: 12px;">电话咨询</span>
+      </div>
+      <h2>{{productPrice.factory.name}}</h2>
+      <p style="padding-top: 10px;">专属交易员：{{productPrice.factory.saler.nickname}} <span class="text_phone">{{productPrice.factory.saler.phoneNum}}</span></p>
+    </ion-item>
+  </ion-list>
 
-  <ion-grid padding style="background: #fff">
+  <div style="padding: 13px;">详细指标</div>
+  <ion-grid style="text-align: center;color: #000;padding: 0">
     <ion-row>
-      <ion-col>
-        <span>煤种</span>
-      </ion-col>
-      <ion-col>
-        <div>{{productPrice.productType.name}}</div>
-      </ion-col>
+      <ion-col>发热量</ion-col>
+      <ion-col>{{productPrice.coal_fareliang}}大卡</ion-col>
     </ion-row>
     <ion-row>
-      <ion-col>
-        <span>价格</span>
-      </ion-col>
-      <ion-col>
-        <div>￥{{productPrice.price}}</div>
-      </ion-col>
+      <ion-col>全水分</ion-col>
+      <ion-col>{{productPrice.coal_quanshuifen}}%</ion-col>
     </ion-row>
     <ion-row>
-      <ion-col>
-        <span>发热量</span>
-      </ion-col>
-      <ion-col>
-        <div>{{productPrice.coal_fareliang}}K/kg</div>
-      </ion-col>
+      <ion-col>硫份</ion-col>
+      <ion-col>{{productPrice.coal_liufen}}%</ion-col>
     </ion-row>
     <ion-row>
-      <ion-col>
-        <span>全水分</span>
-      </ion-col>
-      <ion-col>
-        <div>{{productPrice.coal_quanshuifen}}%</div>
-      </ion-col>
+      <ion-col>挥发份</ion-col>
+      <ion-col>{{productPrice.coal_huifafen}}%</ion-col>
     </ion-row>
     <ion-row>
-      <ion-col>
-        <span>硫份</span>
-      </ion-col>
-      <ion-col>
-        <div>{{productPrice.coal_liufen}}%</div>
-      </ion-col>
+      <ion-col>灰分</ion-col>
+      <ion-col>{{productPrice.coal_huifen}}%</ion-col>
     </ion-row>
     <ion-row>
-      <ion-col>
-        <span>挥发份</span>
-      </ion-col>
-      <ion-col>
-        <div>{{productPrice.coal_huifafen}}%</div>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <span>灰分</span>
-      </ion-col>
-      <ion-col>
-        <div>{{productPrice.coal_huifen}}%</div>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <span>固定碳</span>
-      </ion-col>
-      <ion-col>
-        <div>{{productPrice.coal_gudingtan}}%</div>
-      </ion-col>
+      <ion-col>固定碳</ion-col>
+      <ion-col>{{productPrice.coal_gudingtan}}%</ion-col>
     </ion-row>
   </ion-grid>
 

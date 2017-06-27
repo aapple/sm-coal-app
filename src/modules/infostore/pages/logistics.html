@@ -29,6 +29,15 @@
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
 
+  <ion-segment style="padding: 10px 16px;background: #fff;" [(ngModel)]="showType" padding>
+    <ion-segment-button value="logistics">
+      物流
+    </ion-segment-button>
+    <ion-segment-button value="infostore">
+      信息部
+    </ion-segment-button>
+  </ion-segment>
+
   <div class="I_list">
     <ul>
       <li (click)="goLogisticsDetail(logistics)" *ngFor="let logistics of logisticsList" style="font-size: 14px;">
@@ -39,9 +48,28 @@
         <span style="right: 52%;top: 33px;"><ion-icon name="md-send" style="color: #06c1ae;font-size: 25px;"></ion-icon></span>
         <span style="top: 36px;font-weight: bold;" >{{logistics.destination}}</span>
         <p style="border-top: 1px solid #fff;padding-top: 5px;margin-top: 5px;">{{logistics.infoDepartment.title}}</p>
-        <span style="top: 70px;">06-23 09:05</span>
+        <span style="top: 70px;">06-23 09:05发布</span>
       </li>
     </ul>
+  </div>
+
+  <div class="interest_list">
+    <ul>
+      <li *ngFor="let infostore of infostoreList" (click)="gotoInfoStoreDetail(infostore)">
+        <a>
+          <img src="./assets/images/banner2.jpg" >
+          <div class="list_r">
+            <p><span style="font-size: 14px;">{{infostore.title}}</span><span class="color_y">物流信息：20条</span></p>
+            <p>主营山东、上海专线，代发煤矿</p>
+            <ion-icon name="arrow-forward"></ion-icon>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div [hidden]="infostoreList.length > 0" class="empty_tips">
+    没有查询到数据
   </div>
 
 
