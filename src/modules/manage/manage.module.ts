@@ -4,19 +4,18 @@ import { CommonModule } from '../common/common.module';
 import { AppService } from '../common/services/app.service';
 import { ManageService } from './services/manage.service';
 
-import { ProductPriceManagePage } from './pages/product-price-manage';
-import { LogisticsManagePage } from './pages/logistics-manage';
-import {FactoryManage} from "./pages/factory-manage";
-import {InfostoreManage} from "./pages/infostore-manage";
-import {FactoryAddUpdate} from "./pages/factory-add-update";
-import {InfostoreAddUpdate} from "./pages/infostore-add-update";
-import {LogisticsAddUpdate} from "./pages/logistics-add-update";
-import {CoalPriceManagePage} from "./pages/coal-price-manage";
-import {LogisticsList} from "./pages/logistics-list";
-import {CokePriceManage} from "./pages/coke-price-manage";
-import {LifestoreAddUpdate} from "./pages/lifestore-add-update";
-import {LifestoreManage} from "./pages/lifestore-manage";
-import {ProductListPage} from "./pages/product-list";
+import { LogisticsManagePage } from './pages/logistics-manage/logistics-manage';
+import {FactoryManage} from "./pages/factory-manage/factory-manage";
+import {InfostoreManage} from "./pages/infostore-manage/infostore-manage";
+import {FactoryAddUpdate} from "./pages/factory-manage/factory-add-update";
+import {InfostoreAddUpdate} from "./pages/infostore-manage/infostore-add-update";
+import {LogisticsAddUpdate} from "./pages/logistics-manage/logistics-add-update";
+import {CoalPriceManagePage} from "./pages/price-manage/coal-price-manage";
+import {LogisticsList} from "./pages/logistics-manage/logistics-list";
+import {CokePriceManage} from "./pages/price-manage/coke-price-manage";
+import {LifestoreAddUpdate} from "./pages/lifestore-manage/lifestore-add-update";
+import {LifestoreManage} from "./pages/lifestore-manage/lifestore-manage";
+import {ProductListPage} from "./pages/price-manage/product-list";
 
 
 @NgModule({
@@ -24,7 +23,6 @@ import {ProductListPage} from "./pages/product-list";
     CommonModule,
   ],
   declarations: [
-    ProductPriceManagePage,
     FactoryManage,
     InfostoreManage,
     FactoryAddUpdate,
@@ -39,7 +37,6 @@ import {ProductListPage} from "./pages/product-list";
     ProductListPage
   ],
   entryComponents: [
-    ProductPriceManagePage,
     FactoryManage,
     InfostoreManage,
     FactoryAddUpdate,

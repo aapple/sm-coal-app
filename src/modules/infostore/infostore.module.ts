@@ -4,11 +4,11 @@ import { CommonModule } from '../common/common.module';
 import { AppService } from '../common/services/app.service';
 import { InfostoreService } from './services/infostore.service';
 
-import { InfostorePage } from './pages/infostore';
-import { InfostoreDetailPage } from './pages/infostore-detail';
-import {LogisticsDetailPage} from "./pages/logistics-detail";
-import {LogisticsPage} from "./pages/logistics";
-import {LogisticsListPage} from "./pages/logistics-list";
+import { InfostorePage } from './pages/infostore/infostore';
+import { InfostoreDetailPage } from './pages/infostore/infostore-detail';
+import {LogisticsDetailPage} from "./pages/logistics/logistics-detail";
+import {LogisticsPage} from "./pages/logistics/logistics";
+import {LogisticsListPage} from "./pages/logistics/logistics-list";
 
 
 @NgModule({

@@ -5,18 +5,18 @@ import { CommonModule } from '../common/common.module';
 import { AppService } from '../common/services/app.service';
 import { UserService } from './services/user.service';
 
-import { MePage } from './pages/me';
-import { MeProfilePage } from './pages/me-profile';
-import { MeProfileUpdatePage } from './pages/me-profileUpdate';
+import { MePage } from './pages/me/me';
+import { MeProfilePage } from './pages/me/me-profile';
+import { MeProfileUpdatePage } from './pages/me/me-profileUpdate';
 
-import { MeSettingPage } from './pages/me-setting';
+import { MeSettingPage } from './pages/me/me-setting';
 
-import { HCAboutPage } from './pages/hc-about';
-import { HCGuidePage } from './pages/hc-guide';
-import { HCFeedbackPage } from './pages/hc-feedback';
-import { HCDebugPage } from './pages/hc-debug';
+import { HCAboutPage } from './pages/setting/hc-about';
+import { HCGuidePage } from './pages/setting/hc-guide';
+import { HCFeedbackPage } from './pages/setting/hc-feedback';
+import { HCDebugPage } from './pages/setting/hc-debug';
 
-import { AuthenticatePage } from './pages/authenticate';
+import { AuthenticatePage } from './pages/authenticate/authenticate';
 
 
 

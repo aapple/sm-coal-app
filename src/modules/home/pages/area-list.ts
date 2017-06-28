@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {IonicPage, NavController, NavParams, ViewController} from 'ionic-angular';
+import { NavController, NavParams, ViewController} from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import {AppGlobal} from "../../../app/app.global";
 import {LocalStorageService} from "../../common/services/localStorage.service";

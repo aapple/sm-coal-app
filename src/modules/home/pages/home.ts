@@ -1,20 +1,17 @@
 import {Component, ViewChild} from '@angular/core';
-import {IonicPage, ModalController, NavController, NavParams, Slides} from 'ionic-angular';
-import {LifestoreList} from "./lifestore-list";
-import {LifestoreDetail} from "./lifestore-detail";
+import { ModalController, NavController, NavParams, Slides} from 'ionic-angular';
+
 import {HomeService} from "../services/home.service";
 import {AreaList} from "./area-list";
 import {AppGlobal} from "../../../app/app.global";
-import { Storage } from '@ionic/storage';
-import {CoalPage} from "../../coal/pages/coal";
 import {TimelinePage} from "../../timeline/pages/timeline";
-import {InfostorePage} from "../../infostore/pages/infostore";
 import {LocalStorageService} from "../../common/services/localStorage.service";
-import {ShareModel} from "../../common/models/ShareModel";
 import {BrowserPage} from "../../common/pages/browser";
-import {HCAboutPage} from "../../user/pages/hc-about";
-import {NewsDetailPage} from "./news-detail";
-import {NewsListPage} from "./news-list";
+import {HCAboutPage} from "../../user/pages/setting/hc-about";
+import {LifestoreList} from "./lifestore/lifestore-list";
+import {LifestoreDetail} from "./lifestore/lifestore-detail";
+import {NewsListPage} from "./news/news-list";
+import {NewsDetailPage} from "./news/news-detail";
 
 
 @Component({

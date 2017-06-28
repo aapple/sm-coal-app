@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { Events, Platform, NavController } from 'ionic-angular';
 
-import { MePage } from '../../modules/user/pages/me';
+import { MePage } from '../../modules/user/pages/me/me';
 import { CoalPage } from '../../modules/coal/pages/coal';
-import { InfostorePage } from '../../modules/infostore/pages/infostore';
+import { InfostorePage } from '../../modules/infostore/pages/infostore/infostore';
 import {HomePage} from "../../modules/home/pages/home";
-import {LogisticsPage} from "../../modules/infostore/pages/logistics";
+import {LogisticsPage} from "../../modules/infostore/pages/logistics/logistics";
 
 
 @Component({
