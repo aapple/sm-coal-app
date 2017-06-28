@@ -6,15 +6,11 @@ import { NoticeService } from '../../notice/services/notice.service';
 
 import { MeProfilePage } from './me-profile';
 import { MeNoticePage } from '../../notice/pages/me-notice';
-import { MyTimelinePage } from '../../timeline/pages/my-timeline';
 import { MeSettingPage } from './me-setting';
 import { TimelinePage } from '../../timeline/pages/timeline';
 import { LogisticsManagePage } from '../../manage/pages/logistics-manage';
 import {FactoryManage} from "../../manage/pages/factory-manage";
 import {InfostoreManage} from "../../manage/pages/infostore-manage";
-import {CokePriceManage} from "../../manage/pages/coke-price-manage";
-import {CoalPriceManagePage} from "../../manage/pages/coal-price-manage";
-import {LifestoreAddUpdate} from "../../manage/pages/lifestore-add-update";
 import {LifestoreManage} from "../../manage/pages/lifestore-manage";
 
 import { HCAboutPage } from './hc-about';
