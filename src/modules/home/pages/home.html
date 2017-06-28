@@ -65,12 +65,12 @@
     <div class="pictitle">
       <span class="picbg"></span>
       <span>热点资讯</span>
-      <a (click)="gotoLifeStore('')" class="puff_right">更多 ></a>
+      <a (click)="gotoNewsList()" class="puff_right">更多 ></a>
     </div>
 
     <div class="interest_list">
       <ul>
-        <li *ngFor="let lifestore of lifestoreList" (click)="gotoDetail(lifestore)">
+        <li *ngFor="let lifestore of lifestoreList" (click)="gotoNewsDetail(lifestore)">
           <a>
             <img src="./assets/images/banner2.jpg" >
             <div class="list_r">

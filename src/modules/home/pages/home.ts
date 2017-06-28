@@ -13,6 +13,8 @@ import {LocalStorageService} from "../../common/services/localStorage.service";
 import {ShareModel} from "../../common/models/ShareModel";
 import {BrowserPage} from "../../common/pages/browser";
 import {HCAboutPage} from "../../user/pages/hc-about";
+import {NewsDetailPage} from "./news-detail";
+import {NewsListPage} from "./news-list";
 
 
 @Component({
@@ -126,6 +128,13 @@ export class HomePage {
     this.navCtrl.push(HCAboutPage);
   }
 
+  gotoNewsList(){
+    this.navCtrl.push(NewsListPage);
+  }
+
+  gotoNewsDetail(news){
+    this.navCtrl.push(NewsDetailPage, news);
+  }
 
 }
 

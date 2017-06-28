@@ -1,0 +1,33 @@
+<!--
+  Generated template for the NewsList page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>新闻列表</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div class="interest_list">
+    <ul>
+      <li *ngFor="let lifestore of lifestoreList" (click)="gotoNewsDetail(lifestore)">
+        <a>
+          <img src="./assets/images/banner2.jpg" >
+          <div class="list_r">
+            <p class="news_detail" style="-webkit-box-orient: vertical;"><span style="font-size: 16px;">全国煤价全面上涨，市场回暖，政府发布煤炭相关企业多项利好政策</span></p>
+
+            <p>
+              人民日报  1小时前
+            </p>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+</ion-content>

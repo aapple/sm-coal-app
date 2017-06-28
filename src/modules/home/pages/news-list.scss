@@ -1,0 +1,17 @@
+page-news-list {
+  .news_detail{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    word-break: break-all;
+    white-space: inherit;
+    height: 53px;
+
+  }
+
+  .interest_list ul li {
+    padding-bottom: 5px;
+    margin-top: 10px;
+  }
+}
