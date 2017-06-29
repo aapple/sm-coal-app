@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import {  NavController, NavParams } from 'ionic-angular';
+import {ModalController, NavController, NavParams} from 'ionic-angular';
 import {ManageService} from "../../services/manage.service";
 import {AppService} from "../../../common/services/app.service";
+import {UserSelectPage} from "../user-select/user-select";
 
 /**
  * Generated class for the FactoryAddUpdate page.
@@ -16,10 +17,11 @@ import {AppService} from "../../../common/services/app.service";
 export class FactoryAddUpdate {
 
   factory: any = {};
-  userList: any = [];
+
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public manageService: ManageService,
+              public modalCtrl: ModalController,
               public heyApp: AppService,) {
 
     this.factory = navParams.data;
@@ -33,8 +35,17 @@ export class FactoryAddUpdate {
   }
 
   ionViewDidLoad() {
-    this.loadUserList();
     console.log('ionViewDidLoad FactoryAddUpdate');
+  }
+
+  onUserSelect(name){
+    let modal = this.modalCtrl.create(UserSelectPage)
+    modal.present();
+    modal.onDidDismiss(data=>{
+      if(data){
+        this.factory[name] = data;
+      }
+    });
   }
 
   onSubmit() {
@@ -44,12 +55,19 @@ export class FactoryAddUpdate {
         this.navCtrl.pop();
       });
   }
-  
-  loadUserList() {
-    this.manageService.getUserList()
-      .then(ret => {
-        this.userList = ret;
+
+  uploadImg(event) {
+    this.heyApp.utilityComp.presentLoading();
+    let files = event.srcElement.files;
+
+    this.heyApp.fileUploadService.upload(this.heyApp.fileUploadService.imageUploadAPI, files)
+      .then(data => {
+        this.factory.picture = data;
+        this.heyApp.utilityComp.dismissLoading();
+      }, () => {
+        this.heyApp.utilityComp.dismissLoading();
       });
   }
+
 
 }

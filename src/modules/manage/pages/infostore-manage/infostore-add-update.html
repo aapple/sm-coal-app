@@ -38,10 +38,20 @@
     </ion-item>
 
     <ion-item>
-      <ion-label>管理员</ion-label>
-      <ion-select [(ngModel)]="infostore.user.id" interface="popover" >
-        <ion-option value="{{user.id}}" *ngFor="let user of userList">{{user.phoneNum}}</ion-option>
-      </ion-select>
+      <ion-label>管理员：</ion-label>
+      <ion-input type="text" readonly [(ngModel)]="infostore.user.phoneNum" (click)="onUserSelect('user')"></ion-input>
+      <button ion-button outline item-end icon-left (click)="onUserSelect('user')">
+        选择用户
+      </button>
+    </ion-item>
+
+    <ion-item style="height: 200px;">
+      <ion-label fixed>照片：</ion-label>
+      <img item-start src="{{infostore.picture}}" style="width: 150px;position: absolute;left: 130px;">
+      <button ion-button outline item-end icon-left>
+        选择图片
+        <input class="input-img" #inputReportImg type="file" (change)="uploadImg($event)" accept="image/*">
+      </button>
     </ion-item>
 
   </ion-list>

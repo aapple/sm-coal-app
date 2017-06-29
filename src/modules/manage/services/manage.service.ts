@@ -67,10 +67,10 @@ export class ManageService {
       .catch(this.handleError);
   }
 
-  getUserList() {
+  getUserList(data) {
     let api: string = this.helper.getAPP('user/getUserList');
 
-    return this.http.post(api, null, this.requestOptions)
+    return this.http.post(api, data, this.requestOptions)
       .toPromise()
       .then((response) => {
         return response.json();

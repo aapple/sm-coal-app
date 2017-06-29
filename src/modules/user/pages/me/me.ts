@@ -117,7 +117,7 @@ export class MePage {
   }
 
   gotoContact(){
-    window.location.href = "tel:0912-8888888";
+    window.location.href = "tel:0912-8313333";
   }
 
 }

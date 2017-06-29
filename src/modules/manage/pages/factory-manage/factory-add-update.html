@@ -36,17 +36,28 @@
     </ion-item>
 
     <ion-item>
-      <ion-label>管理员</ion-label>
-      <ion-select [(ngModel)]="factory.onwer.id" interface="popover" >
-        <ion-option value="{{user.id}}" *ngFor="let user of userList">{{user.phoneNum}}</ion-option>
-      </ion-select>
+      <ion-label>管理员：</ion-label>
+      <ion-input type="text" readonly [(ngModel)]="factory.onwer.phoneNum" (click)="onUserSelect('onwer')"></ion-input>
+      <button ion-button outline item-end icon-left (click)="onUserSelect('onwer')">
+        选择用户
+      </button>
     </ion-item>
 
     <ion-item *ngIf="factory.factoryType == 1">
-      <ion-label>代发人</ion-label>
-      <ion-select [(ngModel)]="factory.saler.id" interface="popover" >
-        <ion-option value="{{user.id}}" *ngFor="let user of userList">{{user.phoneNum}}</ion-option>
-      </ion-select>
+      <ion-label>代发人：</ion-label>
+      <ion-input type="text" readonly [(ngModel)]="factory.saler.phoneNum" (click)="onUserSelect('saler')"></ion-input>
+      <button ion-button outline item-end icon-left (click)="onUserSelect('saler')">
+        选择用户
+      </button>
+    </ion-item>
+
+    <ion-item style="height: 200px;">
+      <ion-label fixed>照片：</ion-label>
+      <img item-start src="{{factory.picture}}" style="width: 150px;position: absolute;left: 130px;">
+      <button ion-button outline item-end icon-left>
+        选择图片
+        <input class="input-img" #inputReportImg type="file" (change)="uploadImg($event)" accept="image/*">
+      </button>
     </ion-item>
 
   </ion-list>

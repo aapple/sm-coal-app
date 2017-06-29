@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import {  NavController, NavParams } from 'ionic-angular';
+import {  NavController, NavParams, ModalController } from 'ionic-angular';
 import {ManageService} from "../../services/manage.service";
 import {AppService} from "../../../common/services/app.service";
+import {UserSelectPage} from "../user-select/user-select";
 
 /**
  * Generated class for the InfostoreAddUpdate page.
@@ -16,10 +17,10 @@ import {AppService} from "../../../common/services/app.service";
 export class InfostoreAddUpdate {
 
   infostore: any = {};
-  userList: any = [];
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public manageService: ManageService,
+              public modalCtrl: ModalController,
               public heyApp: AppService,) {
 
     this.infostore = navParams.data;
@@ -29,9 +30,19 @@ export class InfostoreAddUpdate {
   }
 
   ionViewDidLoad() {
-    this.loadUserList();
     console.log('ionViewDidLoad FactoryAddUpdate');
   }
+
+  onUserSelect(name){
+    let modal = this.modalCtrl.create(UserSelectPage)
+    modal.present();
+    modal.onDidDismiss(data=>{
+      if(data){
+        this.infostore[name] = data;
+      }
+    });
+  }
+
 
   onSubmit() {
     this.manageService.saveOrUpdateInfostore(this.infostore)
@@ -41,11 +52,17 @@ export class InfostoreAddUpdate {
       });
   }
 
+  uploadImg(event) {
+    this.heyApp.utilityComp.presentLoading();
+    let files = event.srcElement.files;
 
-  loadUserList() {
-    this.manageService.getUserList()
-      .then(ret => {
-        this.userList = ret;
+    this.heyApp.fileUploadService.upload(this.heyApp.fileUploadService.imageUploadAPI, files)
+      .then(data => {
+        this.infostore.picture = data;
+        this.heyApp.utilityComp.dismissLoading();
+      }, () => {
+        this.heyApp.utilityComp.dismissLoading();
       });
   }
+
 }

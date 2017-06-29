@@ -203,6 +203,15 @@ ion-content {
   overflow: hidden;
 }
 
+.input-img {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 45px;
+}
+
 //.icon {
 //  width: 1em; height: 1em;
 //  vertical-align: -0.15em;

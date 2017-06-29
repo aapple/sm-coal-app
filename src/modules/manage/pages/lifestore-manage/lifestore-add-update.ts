@@ -39,4 +39,17 @@ export class LifestoreAddUpdate {
       });
   }
 
+  uploadImg(event) {
+    this.heyApp.utilityComp.presentLoading();
+    let files = event.srcElement.files;
+
+    this.heyApp.fileUploadService.upload(this.heyApp.fileUploadService.imageUploadAPI, files)
+      .then(data => {
+        this.lifestore.picture = data;
+        this.heyApp.utilityComp.dismissLoading();
+      }, () => {
+        this.heyApp.utilityComp.dismissLoading();
+      });
+  }
+
 }

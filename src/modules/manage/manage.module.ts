@@ -16,6 +16,7 @@ import {CokePriceManage} from "./pages/price-manage/coke-price-manage";
 import {LifestoreAddUpdate} from "./pages/lifestore-manage/lifestore-add-update";
 import {LifestoreManage} from "./pages/lifestore-manage/lifestore-manage";
 import {ProductListPage} from "./pages/price-manage/product-list";
+import {UserSelectPage} from "./pages/user-select/user-select";
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import {ProductListPage} from "./pages/price-manage/product-list";
     LogisticsManagePage,
     LifestoreManage,
     LifestoreAddUpdate,
-    ProductListPage
+    ProductListPage,
+    UserSelectPage
   ],
   entryComponents: [
     FactoryManage,
@@ -48,7 +50,8 @@ import {ProductListPage} from "./pages/price-manage/product-list";
     LogisticsManagePage,
     LifestoreManage,
     LifestoreAddUpdate,
-    ProductListPage
+    ProductListPage,
+    UserSelectPage
   ],
   providers: [
     ManageService,
