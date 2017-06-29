@@ -22,6 +22,7 @@ export class LogisticsPage {
   cancelButtonText: string="搜索";
   queryText: string;
   showType: string = "logistics";
+  placeHolderText: string = "根据目的地查询";
 
   logisticsList: any = [];
   infostoreList: any = [];
@@ -39,19 +40,41 @@ export class LogisticsPage {
         this.logisticsList = ret;
       });
 
-    this.infostoreService.getInfoDepartmentList({})
-      .then( ret => {
-        this.infostoreList = ret;
-      });
+  }
+
+  onShowTypeChange(){
+    if(this.showType == "logistics"){
+      this.placeHolderText = "根据目的地查询";
+    } else {
+      this.placeHolderText = "根据信息部名称查询";
+
+      if(this.infostoreList.length == 0){
+        this.infostoreService.getInfoDepartmentList({})
+          .then( ret => {
+            this.infostoreList = ret;
+          });
+      }
+    }
   }
 
   doRefresh(refresher) {
 
-    this.infostoreService.getLogisticsList({})
-      .then( ret => {
-        this.logisticsList = ret;
-        refresher.complete();
-      });
+    this.queryText = "";
+    if(this.showType == "logistics"){
+
+      this.infostoreService.getLogisticsList({})
+        .then( ret => {
+          this.logisticsList = ret;
+          refresher.complete();
+        });
+    } else {
+
+      this.infostoreService.getInfoDepartmentList({})
+        .then( ret => {
+          this.infostoreList = ret;
+        });
+    }
+
   }
 
   goLogisticsDetail(logistics) {
@@ -75,13 +98,28 @@ export class LogisticsPage {
     }, 100);
 
 
-    let data : any = {};
-    data.destination = text;
+    if(this.showType == "logistics"){
 
-    this.infostoreService.getLogisticsList(data)
-      .then( ret => {
-        this.logisticsList = ret;
-      });
+      let data : any = {};
+      data.destination = text;
+
+      this.infostoreService.getLogisticsList(data)
+        .then( ret => {
+          this.logisticsList = ret;
+        });
+
+    } else {
+
+      let data: Object = {
+        title: text,
+      };
+
+      this.infostoreService.getInfoDepartmentList(data)
+        .then( ret => {
+          this.infostoreList = ret;
+        });
+    }
+
   }
 
 }

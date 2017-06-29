@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>物流线路添加修改</ion-title>
+    <ion-title>物流线路编辑</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -28,8 +28,33 @@
     </ion-item>
 
     <ion-item>
-      <ion-label fixed>装车价格：</ion-label>
+      <ion-label fixed>货物名称：</ion-label>
       <ion-input type="text" [(ngModel)]="logistics.loadingCharge" placeholder="请输入装车价格"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>数量：</ion-label>
+      <ion-input type="text" [(ngModel)]="logistics.loadingCharge" placeholder="请输入装车价格"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>运输费用：</ion-label>
+      <ion-input type="text" [(ngModel)]="logistics.loadingCharge" placeholder="请输入运输费用"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>装车费用：</ion-label>
+      <ion-input type="text" [(ngModel)]="logistics.loadingCharge" placeholder="请输入装车费用"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>卸车费用：</ion-label>
+      <ion-input type="text" [(ngModel)]="logistics.loadingCharge" placeholder="请输入卸车费用"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>备注：</ion-label>
+      <ion-input type="text" [(ngModel)]="logistics.loadingCharge" placeholder="请输入备注"></ion-input>
     </ion-item>
 
   </ion-list>

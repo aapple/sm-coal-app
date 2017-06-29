@@ -7,26 +7,31 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>信息部列表</ion-title>
+    <ion-title>物流列表</ion-title>
+    <ion-buttons right>
+      <button ion-button (click)="gotoAddPage()">
+        <ion-icon name="md-add"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 <ion-content>
 
-
-  <ion-list>
-    <ion-item *ngFor="let infostore of infostoreList" (click)="gotoInfoStoreDetail(infostore)">
-
-      <ion-thumbnail item-left>
-        <img src="./assets/images/thumbnail-totoro.png">
-      </ion-thumbnail>
-
-      <h2>{{infostore.title}}</h2>
-      <p style="font-size: 10px;">信用等级：5星</p>
-      <p style="font-size: 10px;">联系方式：{{infostore.callNumber}}</p>
-      <p style="font-size: 10px;">地址：{{infostore.address}}</p>
-    </ion-item>
-  </ion-list>
+  <div class="I_list">
+    <ul>
+      <li (click)="goLogisticsDetail(logistics)" *ngFor="let logistics of logisticsList" style="font-size: 14px;">
+        <p>出发地</p>
+        <span style="right: 50%;top: 13px;" class="color_y">￥{{logistics.loadingCharge}}</span>
+        <span style="top: 14px;">目的地</span>
+        <p style="font-weight: bold;">{{logistics.departure}}</p>
+        <span style="right: 52%;top: 33px;"><ion-icon name="md-send" style="color: #06c1ae;font-size: 25px;"></ion-icon></span>
+        <span style="top: 36px;font-weight: bold;" >{{logistics.destination}}</span>
+        <p style="border-top: 1px solid #fff;padding-top: 5px;margin-top: 5px;">{{logistics.infoDepartment.title}}</p>
+        <span style="top: 70px;">06-23 09:05发布</span>
+      </li>
+    </ul>
+  </div>
 
 </ion-content>

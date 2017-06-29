@@ -21,7 +21,7 @@
                    [showCancelButton]="showCancelButton"
                    [cancelButtonText]="cancelButtonText"
                    (ionCancel)="doQuery($event)"
-                   placeholder="根据目的地查询">
+                   placeholder="{{placeHolderText}}">
     </ion-searchbar>
   </ion-toolbar>
 
@@ -29,7 +29,7 @@
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
 
-  <ion-segment style="padding: 10px 16px;background: #fff;" [(ngModel)]="showType" padding>
+  <ion-segment style="padding: 10px 16px;background: #fff;" [(ngModel)]="showType" padding (ionChange)="onShowTypeChange()">
     <ion-segment-button value="logistics">
       物流
     </ion-segment-button>

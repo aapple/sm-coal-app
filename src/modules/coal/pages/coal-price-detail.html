@@ -16,8 +16,9 @@
 <ion-content>
 
   <div style="color: #000;background: #fff;margin: 10px;border-radius: 4px;">
-    <div style="padding: 16px;border-bottom: 1px solid #efefef;font-size: 20px;">煤种：面煤</div>
-    <div style="padding: 16px;border-bottom: 1px solid #efefef">价格：300元/吨</div>
+    <div style="padding: 16px;border-bottom: 1px solid #efefef;font-size: 20px;">煤炭种类：{{productPrice.productType.name}}</div>
+    <div style="padding: 16px;border-bottom: 1px solid #efefef">煤炭价格：{{productPrice.price}}元/吨</div>
+    <div style="padding: 16px;border-bottom: 1px solid #efefef">价格类型：{{productPrice.priceType}}</div>
     <div style="padding: 16px;border-bottom: 1px solid #efefef">变更幅度：涨10元</div>
     <div style="padding: 16px;">更新时间：{{ productPrice.createdTime | moment: ['MM-DD HH:mm'] }}</div>
   </div>
@@ -29,7 +30,8 @@
         <span style="color: #666;font-size: 12px;">电话咨询</span>
       </div>
       <h2>{{productPrice.factory.name}}</h2>
-      <p style="padding-top: 10px;">专属交易员：{{productPrice.factory.saler?.nickname}} <span class="text_phone">{{productPrice.factory.saler?.phoneNum}}</span></p>
+      <p style="padding-top: 10px;">交易专员：{{productPrice.factory.saler?.nickname}} </p>
+      <p>交易电话：<span class="text_phone">{{productPrice.factory.saler?.phoneNum}}</span></p>
     </ion-item>
   </ion-list>
 

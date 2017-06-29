@@ -17,7 +17,8 @@ import {LogisticsList} from "./logistics-list";
 })
 export class LogisticsManagePage {
 
-  infostoreList: any = [];
+  logisticsList: any = [];
+  infostore: any = null;
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -26,17 +27,29 @@ export class LogisticsManagePage {
 
   }
 
-  ionViewDidLoad() {
+  ionViewWillEnter() {
     let data = {
       user :{id: this.heyApp.authService.userInfo.id}
     };
-    this.manageService.getInfostoreList(data)
+    this.manageService.getLogisticsList({})
       .then(ret => {
-        this.infostoreList = ret;
+        this.logisticsList = ret;
       });
   }
 
-  gotoInfoStoreDetail(infostore){
-    this.navCtrl.push(LogisticsList, infostore);
+  deleteLogistics(logistics) {
+    this.manageService.deleteLogistics(logistics)
+      .then(ret => {
+        this.heyApp.utilityComp.presentToast('删除成功');
+        this.ionViewWillEnter();
+      });
+  }
+
+  gotoAddPage() {
+    this.navCtrl.push(LogisticsAddUpdate, this.infostore);
+  }
+
+  goLogisticsDetail(logistics) {
+    this.navCtrl.push(LogisticsAddUpdate, logistics);
   }
 }

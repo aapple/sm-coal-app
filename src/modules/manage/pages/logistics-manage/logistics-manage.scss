@@ -1,3 +1,25 @@
 page-logistics-manage {
 
+  .I_list {
+    height: auto;
+    overflow: hidden;
+    padding: 0;
+    background-color: #f3f3f3 !important;
+  }
+
+  .I_list ul li {
+    padding: 1rem 16px;
+    background: #fff;
+    height: auto;
+    margin: 0 0 10px 0;
+    overflow: hidden;
+    line-height: 2rem;
+    border-bottom: .1rem #EFEFEF solid;
+    position: relative;
+  }
+
+  .I_list ul li span {
+    font-size: 1.4rem;
+  }
+
 }
