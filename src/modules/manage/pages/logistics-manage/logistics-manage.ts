@@ -28,13 +28,23 @@ export class LogisticsManagePage {
   }
 
   ionViewWillEnter() {
+
     let data = {
       user :{id: this.heyApp.authService.userInfo.id}
     };
-    this.manageService.getLogisticsList({})
-      .then(ret => {
-        this.logisticsList = ret;
-      });
+    this.manageService.getInfostoreList(data)
+    .then(ret => {
+
+      let data = {
+        infoDepartment : ret[0]
+      };
+
+      this.manageService.getLogisticsList(data)
+        .then(ret => {
+          this.logisticsList = ret;
+        });
+    });
+
   }
 
   deleteLogistics(logistics) {

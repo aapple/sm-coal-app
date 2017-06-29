@@ -64,13 +64,13 @@ export class MePage {
 
   gotoCoalSalePriceManagePage() {
     if (this.heyApp.authService.authOrLogin()) {
-      this.navCtrl.push(ProductListPage, 2);
+      this.navCtrl.push(ProductListPage, 3);
     }
   }
 
   gotoLantanPriceManagePage() {
     if (this.heyApp.authService.authOrLogin()) {
-      this.navCtrl.push(ProductListPage, 3);
+      this.navCtrl.push(ProductListPage, 2);
     }
   }
 
