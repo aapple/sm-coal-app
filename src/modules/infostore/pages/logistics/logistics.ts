@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import {  NavController, NavParams } from 'ionic-angular';
 import {InfostoreService} from "../../services/infostore.service";
 import {LogisticsDetailPage} from "./logistics-detail";
-import {InfostoreDetailPage} from "../infostore/infostore-detail";
 import {LogisticsListPage} from "./logistics-list";
 
 

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {  NavController, NavParams } from 'ionic-angular';
 import {NewsAddUpdatePage} from "./news-add-update";
 import {AppService} from "../../../common/services/app.service";
 import {ManageService} from "../../services/manage.service";

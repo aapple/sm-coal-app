@@ -20,15 +20,15 @@
 <ion-content>
 
   <ion-list>
-    <ion-item-sliding *ngFor="let traffic of newsList">
-      <ion-item (click)="gotoUpdatePage(traffic)">
-        {{factory.name}}
+    <ion-item-sliding *ngFor="let news of newsList">
+      <ion-item (click)="gotoUpdatePage(news)">
+        {{news.name}}
         <button ion-button item-right clear>
           <ion-icon name="arrow-forward"></ion-icon>
         </button>
       </ion-item>
       <ion-item-options side="right">
-        <button ion-button color="danger" (click)="deleteTraffic(traffic)">
+        <button ion-button color="danger" (click)="deleteTraffic(news)">
           删除
         </button>
       </ion-item-options>
