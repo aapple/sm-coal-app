@@ -1,6 +1,6 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { IonicApp, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HttpModule } from '@angular/http';
 
@@ -20,6 +20,7 @@ import { CoalModule } from '../modules/coal/coal.module';
 import { ManageModule } from '../modules/manage/manage.module';
 import {HomeModule} from "../modules/home/home.module";
 import {MyErrorHandler} from "../modules/common/services/my-error-handler";
+import { IonicImageViewerModule } from 'ionic-img-viewer';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import {MyErrorHandler} from "../modules/common/services/my-error-handler";
     HomeModule,
     InfostoreModule,
     ManageModule,
-    CoalModule
+    CoalModule,
+    IonicImageViewerModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
