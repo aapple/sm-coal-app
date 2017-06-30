@@ -17,6 +17,8 @@ import {BrowserPage} from "../../../common/pages/browser";
 import {ProductListPage} from "../../../manage/pages/price-manage/product-list";
 import {AppService} from "../../../common/services/app.service";
 import {NoticeService} from "../../../notice/services/notice.service";
+import {TrafficManagePage} from "../../../manage/pages/traffic-manage/traffic-manage";
+import {NewsManagePage} from "../../../manage/pages/news-manage/news-manage";
 
 @Component({
   selector: 'page-me',
@@ -95,6 +97,18 @@ export class MePage {
   gotoLifeStoreManagePage() {
     if (this.heyApp.authService.authOrLogin()) {
       this.navCtrl.push(LifestoreManage);
+    }
+  }
+
+  gotoNewsManagePage() {
+    if (this.heyApp.authService.authOrLogin()) {
+      this.navCtrl.push(NewsManagePage);
+    }
+  }
+
+  gotoTrafficManagePage() {
+    if (this.heyApp.authService.authOrLogin()) {
+      this.navCtrl.push(TrafficManagePage);
     }
   }
 

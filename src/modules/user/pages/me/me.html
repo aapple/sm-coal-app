@@ -83,6 +83,20 @@
       </svg>
       生活服务类数据管理
     </button>
+
+    <button ion-item (click)="gotoNewsManagePage()" *ngIf="heyApp.authService.userInfo?.isSuperManager == 1">
+      <svg class="icon svg_icon" aria-hidden="true">
+        <use xlink:href="#icon-jiaohuachangweihu"></use>
+      </svg>
+      新闻管理
+    </button>
+
+    <button ion-item (click)="gotoTrafficManagePage()" *ngIf="heyApp.authService.userInfo?.isSuperManager == 1">
+      <svg class="icon svg_icon" aria-hidden="true">
+        <use xlink:href="#icon-jiaohuachangweihu"></use>
+      </svg>
+      路况信息管理
+    </button>
   </ion-list>
 
   <ion-list>

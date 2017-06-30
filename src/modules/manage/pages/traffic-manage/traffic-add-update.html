@@ -1,0 +1,41 @@
+<!--
+  Generated template for the TrafficAddUpdate page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>路况信息编辑</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label fixed>起点：</ion-label>
+      <ion-input type="text" [(ngModel)]="factory.name" placeholder="请输入起点"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>终点：</ion-label>
+      <ion-textarea type="text" [(ngModel)]="factory.factoryDescribe" placeholder="请输入终点"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>交通状况：</ion-label>
+      <ion-textarea type="text" [(ngModel)]="factory.factoryDescribe" placeholder="请输入交通状况"></ion-textarea>
+    </ion-item>
+
+  </ion-list>
+
+  <div padding>
+    <button ion-button color="primary" block (click)="onSubmit()">保存</button>
+  </div>
+
+</ion-content>

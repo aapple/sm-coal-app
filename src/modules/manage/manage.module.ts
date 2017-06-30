@@ -17,6 +17,10 @@ import {LifestoreAddUpdate} from "./pages/lifestore-manage/lifestore-add-update"
 import {LifestoreManage} from "./pages/lifestore-manage/lifestore-manage";
 import {ProductListPage} from "./pages/price-manage/product-list";
 import {UserSelectPage} from "./pages/user-select/user-select";
+import {TrafficManagePage} from "./pages/traffic-manage/traffic-manage";
+import {TrafficAddUpdatePage} from "./pages/traffic-manage/traffic-add-update";
+import {NewsManagePage} from "./pages/news-manage/news-manage";
+import {NewsAddUpdatePage} from "./pages/news-manage/news-add-update";
 
 
 @NgModule({
@@ -36,7 +40,11 @@ import {UserSelectPage} from "./pages/user-select/user-select";
     LifestoreManage,
     LifestoreAddUpdate,
     ProductListPage,
-    UserSelectPage
+    UserSelectPage,
+    TrafficManagePage,
+    TrafficAddUpdatePage,
+    NewsManagePage,
+    NewsAddUpdatePage
   ],
   entryComponents: [
     FactoryManage,
@@ -51,7 +59,11 @@ import {UserSelectPage} from "./pages/user-select/user-select";
     LifestoreManage,
     LifestoreAddUpdate,
     ProductListPage,
-    UserSelectPage
+    UserSelectPage,
+    TrafficManagePage,
+    TrafficAddUpdatePage,
+    NewsManagePage,
+    NewsAddUpdatePage
   ],
   providers: [
     ManageService,

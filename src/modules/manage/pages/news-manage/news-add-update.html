@@ -1,0 +1,50 @@
+<!--
+  Generated template for the NewsAddUpdate page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>新闻编辑</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label fixed>文章标题：</ion-label>
+      <ion-input type="text" [(ngModel)]="news.name" placeholder="请输入文章标题"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>发布者：</ion-label>
+      <ion-textarea type="text" [(ngModel)]="news.factoryDescribe" placeholder="请输入发布者"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>文章内容链接：</ion-label>
+      <ion-textarea type="text" [(ngModel)]="news.factoryDescribe" placeholder="请输入文章内容链接"></ion-textarea>
+    </ion-item>
+
+    <ion-item style="height: 200px;">
+      <ion-label fixed>照片：</ion-label>
+      <img item-start src="{{news.picture}}" style="width: 150px;position: absolute;left: 130px;">
+      <button ion-button outline item-end icon-left>
+        选择图片
+        <input class="input-img" #inputReportImg type="file" (change)="uploadImg($event)" accept="image/*">
+      </button>
+    </ion-item>
+
+  </ion-list>
+
+  <div padding>
+    <button ion-button color="primary" block (click)="onSubmit()">保存</button>
+  </div>
+
+</ion-content>
