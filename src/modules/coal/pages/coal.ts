@@ -14,14 +14,15 @@ export class CoalPage {
 
   factoryType: string = "";
   productTypeList: any = [];
+  productTypeList2: any = [];
   productType: string;
   productPriceList: any = [];
-  priceType: string = "coal";
   queryText: string;
   pageTitle: string = "";
+  priceType: string = "coal";
 
   pageIndex: number = 0;
-  pageNumber: number = 5;
+  pageNumber: number = 6;
   slides: any = [];
 
   selectedIndex: number = 0;
@@ -38,8 +39,10 @@ export class CoalPage {
 
     if(this.factoryType == 1+''){
       this.pageTitle = "煤价";
+      this.pageNumber = 5;
     } else {
       this.pageTitle = "兰炭价";
+      this.pageNumber = 6;
     }
   }
 
@@ -60,7 +63,14 @@ export class CoalPage {
 
     this.coalService.getProductTypeList(data)
       .then(ret => {
-        this.productTypeList = ret;
+
+        if(this.factoryType == 1+''){
+          this.productTypeList = ret.slice(0, 5);
+          this.productTypeList2 = ret.slice(5);
+        } else {
+          this.productTypeList = ret;
+        }
+
 
         this.productType = this.productTypeList[0].id;
         this.loadProductPriceList();

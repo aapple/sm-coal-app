@@ -31,6 +31,14 @@
     </ion-slide>
   </ion-slides>
 
+  <ion-slides *ngIf="factoryType == 1" class="slide-title" class="slide-title" [slidesPerView]="pageNumber" [pager]="false">
+    <ion-slide *ngFor="let slide of productTypeList2; let i = pageIndex;">
+      <div (click)="onSlideClick(slide.id)">
+        <span class="slide-title-unit" [ngClass]="{'slide-title-active': productType == slide.id}">{{slide.name}}</span>
+      </div>
+    </ion-slide>
+  </ion-slides>
+
   <ion-segment style="padding: 10px 16px;" [(ngModel)]="priceType" padding *ngIf="factoryType == 1">
     <ion-segment-button value="coal">
       矿方价

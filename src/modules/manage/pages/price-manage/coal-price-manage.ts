@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {  NavController, NavParams } from 'ionic-angular';
 import { AppService } from '../../../common/services/app.service';
 import { ManageService } from '../../services/manage.service';
+import {CoalService} from "../../../coal/services/coal.service";
 
 /**
  * Generated class for the CoalPriceManage page.
@@ -16,11 +17,13 @@ import { ManageService } from '../../services/manage.service';
 export class CoalPriceManagePage {
 
   productPrice: any = "";
+  productTypeList: any = [];
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     public heyApp: AppService,
+    public coalService: CoalService,
     public manageService: ManageService) {
 
     this.productPrice = navParams.data;
@@ -28,7 +31,41 @@ export class CoalPriceManagePage {
 
   ionViewDidLoad() {
 
+    if(!this.productPrice.productType.name){
+      let data: Object = {
+        factoryType: this.productPrice.factory.factoryType
+      };
+
+      this.coalService.getProductTypeList(data)
+        .then(ret => {
+
+          let currentProducts = [];
+          if(this.productPrice.currentProductList){
+            for(let product of this.productPrice.currentProductList){
+              currentProducts.push(product.productType.id);
+            }
+          }
+          for(let product of ret){
+            if(!this.contains(currentProducts, product.id)){
+              this.productTypeList.push(product);
+            }
+          }
+
+        });
+    }
+
   }
+
+  contains(arr, obj) {
+    var i = arr.length;
+    while (i--) {
+      if (arr[i] === obj) {
+        return true;
+      }
+    }
+    return false;
+}
+
 
   uploadImg(event, imagesName) {
     this.heyApp.utilityComp.presentLoading();

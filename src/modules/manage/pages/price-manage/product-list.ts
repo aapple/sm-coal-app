@@ -18,6 +18,7 @@ export class ProductListPage {
 
   factoryType: string = "";
   productPriceList: any = [];
+  factory: any = null;
 
   constructor(
     public navCtrl: NavController,
@@ -47,6 +48,7 @@ export class ProductListPage {
       .then(ret => {
 
         if(ret.factoryList.length > 0){
+          this.factory = ret.factoryList[0];
           let data = {
             factory : ret.factoryList[0]
           };
@@ -67,6 +69,13 @@ export class ProductListPage {
 
   goProductPriceDetail(productPrice) {
 
+    if(!productPrice){
+      productPrice = {
+        factory: this.factory,
+        currentProductList: this.productPriceList,
+        productType: {}
+      }
+    }
     this.navCtrl.push(CoalPriceManagePage, productPrice)
   }
 
