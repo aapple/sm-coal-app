@@ -81,24 +81,12 @@ page-home {
 
   .interest_list a img{
     border-radius: 0;
-  }
-
-  .interest_list a img {
     width: 8rem;
     height: 6rem;
-  }
-
-  .interest_list a img {
     margin-right: 15px;
   }
 
-  .area_icon{
-    font-size: 20px !important;
-    padding-left: 4px !important;
-    padding-top: 2px !important;
-  }
-
-  .title{
+  .traffic_title{
     font-size: 15px;
     background: #fff;
   }
@@ -112,6 +100,12 @@ page-home {
     white-space: inherit;
     height: 53px;
 
+  }
+
+  .area_icon{
+    font-size: 20px !important;
+    padding-left: 4px !important;
+    padding-top: 2px !important;
   }
 
   .interest_list ul li {

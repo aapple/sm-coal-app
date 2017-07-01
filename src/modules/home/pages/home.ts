@@ -11,7 +11,6 @@ import {HCAboutPage} from "../../user/pages/setting/hc-about";
 import {LifestoreList} from "./lifestore/lifestore-list";
 import {LifestoreDetail} from "./lifestore/lifestore-detail";
 import {NewsListPage} from "./news/news-list";
-import {NewsDetailPage} from "./news/news-detail";
 
 
 @Component({
@@ -130,7 +129,13 @@ export class HomePage {
   }
 
   gotoNewsDetail(news){
-    this.navCtrl.push(NewsDetailPage, news);
+    this.navCtrl.push(BrowserPage, {
+      browser: {
+        title: '热点资讯',
+        // isWechatPage: true,
+        url: "https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzAwNzM3NzU4OQ==&scene=124&#wechat_redirect",
+      }
+    });
   }
 
 }

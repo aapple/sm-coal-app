@@ -42,72 +42,80 @@
 
   <div class="I_list">
     <ul>
-      <li (click)="goProductPriceDetail(productPrice)" *ngFor="let productPrice of productPriceList">
-        <a href="#">
-          <p style="font-weight: bold;">{{productPrice.factory.name}}</p>
-          <span class="color_green" style="top: 14px;">{{ productPrice.createdTime | moment: ['MM-DD HH:mm'] }}</span>
-          <p [ngSwitch]="priceType">
-            <b class="color_y" *ngSwitchCase="'coal'">价格：￥{{productPrice.price}}</b>
-            <b class="color_y" *ngSwitchCase="'saler'">价格：￥{{productPrice.price2}}</b>
-          </p>
-          <span  style="top: 36px;color: red;" *ngIf="productPrice.priceDiff>0">涨{{productPrice.priceDiff}}元</span>
-          <span  style="top: 36px;color: green;" *ngIf="productPrice.priceDiff==0">价格无变化</span>
-          <span  style="top: 36px;color: green;" *ngIf="productPrice.priceDiff<0">跌{{Math.abs(productPrice.priceDiff)}}元</span>
-          <p *ngIf="factoryType==1" style="font-size: 10px;">
-            <ion-grid style="padding: 0">
-              <ion-row>
-                <ion-col style="padding: 0">
-                  <svg class="icon svg_icon icon_params_1" aria-hidden="true">
-                    <use xlink:href="#icon-hui1"></use>
-                  </svg>{{productPrice.coal_huifafen}}%
-                </ion-col>
-                <ion-col style="padding: 0">
-                  <svg class="icon svg_icon icon_params_2" aria-hidden="true">
-                    <use xlink:href="#icon-shui"></use>
-                  </svg>{{productPrice.coal_quanshuifen}}%
-                </ion-col>
-                <ion-col style="padding: 0">
-                  <svg class="icon svg_icon icon_params_1" aria-hidden="true">
-                    <use xlink:href="#icon-hui"></use>
-                  </svg>{{productPrice.coal_huifen}}%
-                </ion-col>
-                <ion-col style="padding: 0">
-                  <svg class="icon svg_icon icon_params_2" aria-hidden="true">
-                    <use xlink:href="#icon-liu"></use>
-                  </svg>{{productPrice.coal_liufen}}%
-                </ion-col>
-                <ion-col style="padding: 0;white-space: nowrap;">
-                  <svg class="icon svg_icon icon_params_1" aria-hidden="true">
-                    <use xlink:href="#icon-re"></use>
-                  </svg>{{productPrice.coal_fareliang}}大卡
-                </ion-col>
-              </ion-row>
-            </ion-grid>
+      <li (click)="goProductPriceDetail(productPrice)" *ngFor="let productPrice of productPriceList" [ngStyle]="{'background':productPrice.state===0 ? '#efefef' : '' }">
+        <p style="font-weight: bold;">{{productPrice.factory.name}}</p>
+        <span class="color_green" style="top: 14px;">{{ productPrice.createdTime | moment: ['MM-DD HH:mm'] }}</span>
 
-          </p>
+        <b [ngStyle]="{'color':productPrice.state===0 ? '#333' : '#ff5400'}">
+          价格：￥{{productPrice.price}} <b *ngIf="productPrice.state===0">已停产</b>
+        </b>
 
-          <p *ngIf="factoryType==2" style="font-size: 10px;">
-            <svg class="icon svg_icon icon_params_1" aria-hidden="true">
-              <use xlink:href="#icon-hui1"></use>
-            </svg>{{productPrice.coke_huifafen}}%
+        <span  style="top: 36px;color: red;" *ngIf="productPrice.priceDiff>0">涨{{productPrice.priceDiff}}元</span>
+        <span  style="top: 36px;color: green;" *ngIf="productPrice.priceDiff==0">价格无变化</span>
+        <span  style="top: 36px;color: green;" *ngIf="productPrice.priceDiff<0">跌{{Math.abs(productPrice.priceDiff)}}元</span>
+        <p *ngIf="factoryType==1" style="font-size: 10px;">
+          <ion-grid style="padding: 0">
+            <ion-row>
+              <ion-col style="padding: 0">
+                <svg class="icon svg_icon icon_params_1" aria-hidden="true">
+                  <use xlink:href="#icon-hui1"></use>
+                </svg>{{productPrice.coal_huifafen}}%
+              </ion-col>
+              <ion-col style="padding: 0">
+                <svg class="icon svg_icon icon_params_2" aria-hidden="true">
+                  <use xlink:href="#icon-shui"></use>
+                </svg>{{productPrice.coal_quanshuifen}}%
+              </ion-col>
+              <ion-col style="padding: 0">
+                <svg class="icon svg_icon icon_params_1" aria-hidden="true">
+                  <use xlink:href="#icon-hui"></use>
+                </svg>{{productPrice.coal_huifen}}%
+              </ion-col>
+              <ion-col style="padding: 0">
+                <svg class="icon svg_icon icon_params_2" aria-hidden="true">
+                  <use xlink:href="#icon-liu"></use>
+                </svg>{{productPrice.coal_liufen}}%
+              </ion-col>
+              <ion-col style="padding: 0;white-space: nowrap;">
+                <svg class="icon svg_icon icon_params_1" aria-hidden="true">
+                  <use xlink:href="#icon-re"></use>
+                </svg>{{productPrice.coal_fareliang}}大卡
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </p>
 
-            <svg class="icon svg_icon icon_params_2" aria-hidden="true">
-              <use xlink:href="#icon-shui"></use>
-            </svg>{{productPrice.coke_quanshuifen}}%
-
-            <svg class="icon svg_icon icon_params_1" aria-hidden="true">
-              <use xlink:href="#icon-hui"></use>
-            </svg>{{productPrice.coke_huifen}}%
-
-            <svg class="icon svg_icon icon_params_2" aria-hidden="true">
-              <use xlink:href="#icon-liu"></use>
-            </svg>{{productPrice.coke_liufen}}%
-
-            <svg class="icon svg_icon icon_params_1" aria-hidden="true">
-              <use xlink:href="#icon-liu"></use>
-            </svg>{{productPrice.coke_hantan}}%
-          </p>
-        </a>
+        <p *ngIf="factoryType==2" style="font-size: 10px;">
+          <ion-grid style="padding: 0">
+            <ion-row>
+              <ion-col style="padding: 0">
+                <svg class="icon svg_icon icon_params_1" aria-hidden="true">
+                  <use xlink:href="#icon-hui1"></use>
+                </svg>{{productPrice.coke_huifafen}}%
+              </ion-col>
+              <ion-col style="padding: 0">
+                <svg class="icon svg_icon icon_params_2" aria-hidden="true">
+                  <use xlink:href="#icon-shui"></use>
+                </svg>{{productPrice.coke_quanshuifen}}%
+              </ion-col>
+              <ion-col style="padding: 0">
+                <svg class="icon svg_icon icon_params_1" aria-hidden="true">
+                  <use xlink:href="#icon-hui"></use>
+                </svg>{{productPrice.coke_huifen}}%
+              </ion-col>
+              <ion-col style="padding: 0">
+                <svg class="icon svg_icon icon_params_2" aria-hidden="true">
+                  <use xlink:href="#icon-liu"></use>
+                </svg>{{productPrice.coke_liufen}}%
+              </ion-col>
+              <ion-col style="padding: 0;white-space: nowrap;">
+                <svg class="icon svg_icon icon_params_1" aria-hidden="true">
+                  <use xlink:href="#icon-tan"></use>
+                </svg>{{productPrice.coke_hantan}}%
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </p>
       </li>
     </ul>
   </div>

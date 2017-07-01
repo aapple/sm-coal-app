@@ -2,14 +2,13 @@ page-lifestore-list {
 
   .interest_list a img{
     border-radius: 0;
-  }
-
-  .interest_list a img {
     width: 8rem;
     height: 6rem;
+    margin-right: 15px;
   }
 
-  .interest_list a img {
-    margin-right: 15px;
+  .interest_list ul li {
+    padding-bottom: 5px;
+    margin-top: 10px;
   }
 }

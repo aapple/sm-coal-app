@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {  NavController, NavParams } from 'ionic-angular';
-import {NewsDetailPage} from "./news-detail";
+import {BrowserPage} from "../../../common/pages/browser";
+import {HomeService} from "../../services/home.service";
 
 /**
  * Generated class for the NewsList page.
@@ -14,13 +15,29 @@ import {NewsDetailPage} from "./news-detail";
 })
 export class NewsListPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  lifestoreList: any = [];
+
+  constructor(public navCtrl: NavController,
+              public homeService: HomeService,
+              public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
+    this.homeService.loadLifestoreList({})
+      .then(ret => {
+          this.lifestoreList = ret;
+        }
+      );
     console.log('ionViewDidLoad NewsList');
   }
+
   gotoNewsDetail(news){
-    this.navCtrl.push(NewsDetailPage, news);
+    this.navCtrl.push(BrowserPage, {
+      browser: {
+        title: '热点资讯',
+        // isWechatPage: true,
+        url: "https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzAwNzM3NzU4OQ==&scene=124&#wechat_redirect",
+      }
+    });
   }
 }
