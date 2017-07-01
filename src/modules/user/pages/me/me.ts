@@ -112,6 +112,24 @@ export class MePage {
     }
   }
 
+  gotoLogisticsPricePage() {
+    this.navCtrl.push(BrowserPage, {
+      browser: {
+        title: '查运价',
+        url: 'http://shipper.huodada.com/freight/list.shtml?startProvince=%E9%99%95%E8%A5%BF%E7%9C%81&startCity=%E6%A6%86%E6%9E%97%E5%B8%82&startCountry=%E7%A5%9E%E6%9C%A8%E5%8E%BF&endProvince=&endCity=&endCountry='
+      }
+    });
+  }
+
+  gotoTrafficPage() {
+    this.navCtrl.push(BrowserPage, {
+      browser: {
+        title: '路况信息',
+        url: 'http://www.meitanjianghu.com/Application/searchInfo?keyWord=%E6%96%B0%E8%B7%AF%E5%86%B5%E5%AE%9E%E6%97%B6%E6%92%AD%E6%8A%A5'
+      }
+    });
+  }
+
   doRefresh(refresher) {
 
     setTimeout(function(){

@@ -23,6 +23,9 @@
   <preference name="SplashScreen" value="screen"/>
   <preference name="SplashScreenDelay" value="3000"/>
   <preference name="loadUrlTimeoutValue" value="60000" />
+  <preference name="ShowSplashScreenSpinner" value="false"/>
+  <!--<preference name="AutoHideSplashScreen" value="false" />-->
+  <!--<preference name="auto-hide-splash-screen" value="false"/>-->
   <platform name="android">
     <allow-intent href="market:*"/>
     <icon src="resources/android/icon/drawable-ldpi-icon.png" density="ldpi"/>
