@@ -45,7 +45,7 @@ export class LifestoreAddUpdate {
 
     this.heyApp.fileUploadService.upload(this.heyApp.fileUploadService.imageUploadAPI, files)
       .then(data => {
-        this.lifestore.picture = data;
+        this.lifestore.photoPath = data;
         this.heyApp.utilityComp.dismissLoading();
       }, () => {
         this.heyApp.utilityComp.dismissLoading();

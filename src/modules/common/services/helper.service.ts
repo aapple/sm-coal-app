@@ -96,13 +96,16 @@ export class Helper {
     document.body.appendChild(i);
   }
 
-  getResponseFromUrl(url) {
+  getResponseFromUrl(params) {
 
-    return this.http.get(url, this.requestOptions)
+    let api: string = this.getAPP('wechatUtil/loadPageByUrl');
+    let data = {
+      url: params
+    };
+    return this.http.post(api, params, this.requestOptions)
       .toPromise()
-      .then(response => {
-        return response;
-      }).catch(this.handleError);
+      .then(response => response)
+      .catch(this.handleError);
   }
 
 

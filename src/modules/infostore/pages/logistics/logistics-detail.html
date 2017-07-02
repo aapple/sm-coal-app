@@ -16,27 +16,27 @@
 <ion-content>
 
   <div style="padding: 12px;background: #fff;font-size: 16px;margin-top: 16px;">
-    <div style="padding: 14px;">出发地：<span>陕西神木市</span></div>
-    <div style="padding: 14px;">目的地：<span>山东营口市大枣县大洲乡</span></div>
+    <div style="padding: 14px;">出发地：<span>{{logistics.departure}}</span></div>
+    <div style="padding: 14px;">目的地：<span>{{logistics.destination}}</span></div>
   </div>
   <div style="padding: 10px 0 10px 24px;">
-    货物：煤  <span style="padding-left: 30px">数量：1单</span>
+    货物：{{logistics.loadingCharge}}  <span style="padding-left: 30px">数量：{{logistics.totalQty}}单</span>
   </div>
   <ion-grid style="text-align: center;padding: 16px;background: #fff;border-bottom: 1px solid #efefef;">
     <ion-row>
-      <ion-col style="border-right: 1px solid #efefef;">运输费用 <div style="padding-top: 13px;">300元/吨</div></ion-col>
-      <ion-col style="border-right: 1px solid #efefef;">装车费用 <div style="padding-top: 13px;">100元/吨</div></ion-col>
-      <ion-col>卸车费用 <div style="padding-top: 13px;">200元/吨</div></ion-col>
+      <ion-col style="border-right: 1px solid #efefef;">运输费用 <div style="padding-top: 13px;">{{logistics.freightCharge}}元/吨</div></ion-col>
+      <ion-col style="border-right: 1px solid #efefef;">装车费用 <div style="padding-top: 13px;">{{logistics.loadingCharge}}元/吨</div></ion-col>
+      <ion-col>卸车费用 <div style="padding-top: 13px;">{{logistics.unloadingCharge}}元/吨</div></ion-col>
     </ion-row>
   </ion-grid>
   <div style="background: #fff;">
-    <div style="padding: 16px;">信息来源：金山信息部</div>
-    <div style="padding: 16px;">负责专员：程红</div>
-    <div style="padding: 16px;">咨询电话：<span class="text_phone">13666666666</span></div>
-    <div style="padding: 16px;">发布时间：2017年05月12日 11:00:00</div>
+    <div style="padding: 16px;">信息来源：{{logistics.infoDepartment.title}}</div>
+    <div style="padding: 16px;">负责专员：{{logistics.infoDepartment.user.userName}}</div>
+    <div style="padding: 16px;">咨询电话：<span class="text_phone">{{logistics.infoDepartment.callNumber}}</span></div>
+    <div style="padding: 16px;">发布时间：{{ logistics.updatedTime | moment: ['MM-DD HH:mm'] }}</div>
   </div>
   <div style="padding-left: 16px;padding-top: 10px;">
-    备注：店塔装车，路程比较远
+    备注：{{logistics.comment}}
   </div>
 </ion-content>
 

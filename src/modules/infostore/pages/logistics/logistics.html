@@ -52,7 +52,7 @@
         </span>
         <span style="top: 36px;font-weight: bold;" >{{logistics.destination}}</span>
         <p style="border-top: 1px solid #fff;padding-top: 5px;margin-top: 5px;">{{logistics.infoDepartment.title}}</p>
-        <span style="top: 70px;">06-23 09:05发布</span>
+        <span style="top: 70px;">{{ logistics.updatedTime | moment: ['MM-DD HH:mm'] }}发布</span>
       </li>
     </ul>
   </div>
@@ -61,11 +61,11 @@
     <ul>
       <li *ngFor="let infostore of infostoreList" (click)="gotoLogisticsList(infostore)">
         <a>
-          <img src="./assets/images/banner2.jpg" >
+          <img src="{{infostore.photoPath? infostore.photoPath : '/assets/images/banner2.jpg'}}" >
           <div class="list_r">
             <p><span style="font-size: 14px;font-weight: bold;">{{infostore.title}}</span></p>
-            <p>联系方式：刘先生 13333333333</p>
-            <p>主营业务：山东、上海专线，代发煤矿</p>
+            <p>联系方式：{{infostore.user.userName}} {{infostore.callNumber}}</p>
+            <p>主营业务：{{infostore.introduction}}</p>
           </div>
         </a>
       </li>

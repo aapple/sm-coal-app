@@ -58,7 +58,7 @@ export class InfostoreAddUpdate {
 
     this.heyApp.fileUploadService.upload(this.heyApp.fileUploadService.imageUploadAPI, files)
       .then(data => {
-        this.infostore.picture = data;
+        this.infostore.photoPath = data;
         this.heyApp.utilityComp.dismissLoading();
       }, () => {
         this.heyApp.utilityComp.dismissLoading();

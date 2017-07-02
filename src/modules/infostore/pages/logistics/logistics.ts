@@ -71,6 +71,7 @@ export class LogisticsPage {
       this.infostoreService.getInfoDepartmentList({})
         .then( ret => {
           this.infostoreList = ret;
+          refresher.complete();
         });
     }
 

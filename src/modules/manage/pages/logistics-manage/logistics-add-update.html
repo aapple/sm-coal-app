@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>物流线路编辑</ion-title>
+    <ion-title>物流单编辑</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -24,22 +24,35 @@
 
     <ion-item>
       <ion-label fixed>目的地：</ion-label>
-      <ion-input type="text" [(ngModel)]="logistics.destination" placeholder="请输入代目的地"></ion-input>
+      <ion-input type="text" [(ngModel)]="logistics.destination" placeholder="请输入目的地"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>是否停产：</ion-label>
+      <ion-select [(ngModel)]="logistics.state" interface="popover">
+        <ion-option value="1">否</ion-option>
+        <ion-option value="0">是</ion-option>
+      </ion-select>
     </ion-item>
 
     <ion-item>
       <ion-label fixed>货物名称：</ion-label>
-      <ion-input type="text" [(ngModel)]="logistics.loadingCharge" placeholder="请输入装车价格"></ion-input>
+      <ion-input type="text" [(ngModel)]="logistics.loadingCharge" placeholder="请输入货物名称"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label fixed>数量：</ion-label>
-      <ion-input type="text" [(ngModel)]="logistics.loadingCharge" placeholder="请输入装车价格"></ion-input>
+      <ion-label fixed>总数量：</ion-label>
+      <ion-input type="text" [(ngModel)]="logistics.totalQty" placeholder="请输入总数量"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>剩余数量：</ion-label>
+      <ion-input type="text" [(ngModel)]="logistics.remainQty" placeholder="请输入剩余数量"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label fixed>运输费用：</ion-label>
-      <ion-input type="text" [(ngModel)]="logistics.loadingCharge" placeholder="请输入运输费用"></ion-input>
+      <ion-input type="text" [(ngModel)]="logistics.freightCharge" placeholder="请输入运输费用"></ion-input>
     </ion-item>
 
     <ion-item>
@@ -49,12 +62,12 @@
 
     <ion-item>
       <ion-label fixed>卸车费用：</ion-label>
-      <ion-input type="text" [(ngModel)]="logistics.loadingCharge" placeholder="请输入卸车费用"></ion-input>
+      <ion-input type="text" [(ngModel)]="logistics.unloadingCharge" placeholder="请输入卸车费用"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label fixed>备注：</ion-label>
-      <ion-input type="text" [(ngModel)]="logistics.loadingCharge" placeholder="请输入备注"></ion-input>
+      <ion-textarea type="text" [(ngModel)]="logistics.comment" placeholder="请输入备注"></ion-textarea>
     </ion-item>
 
   </ion-list>

@@ -18,7 +18,13 @@
   <iframe id="iframe" class="iframe"
           sandbox="allow-scripts allow-top-navigation allow-pointer-lock allow-same-origin allow-popups allow-forms"
           [src]="browser.secUrl"
-          (load)="loaded()">
+          (load)="loaded()"
+          [ngStyle]="{'margin-top': browser.isLogisticsPrice ? '-70px' : ''}"
+          *ngIf="!browser.isWechatPage">
   </iframe>
+  <div *ngIf="browser.isWechatPage" [innerHtml]="browser.innerHtml">
+  </div>
 </ion-content>
+<!--[src]="browser.secUrl"-->
 <!--<panel-share [(isShow)]="shareConfig.isShow" [share]="browser.share"></panel-share>-->
+<!---->

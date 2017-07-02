@@ -12,6 +12,9 @@ export class CoalPriceDetailPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 
     this.productPrice = navParams.data;
+    if(this.productPrice.factory.factoryType == 2){
+      this.productPrice.priceOwnerType = 1;
+    }
   }
 
   ionViewDidLoad() {
@@ -20,6 +23,10 @@ export class CoalPriceDetailPage {
 
 
   gotoBuy(){
-    window.location.href = "tel:" + this.productPrice.factory.saler.phoneNum;
+    if(this.productPrice.priceOwnerType == 1){
+      window.location.href = "tel:" + this.productPrice.factory.onwer.phoneNum;
+    } else {
+      window.location.href = "tel:" + this.productPrice.factory.saler.phoneNum;
+    }
   }
 }

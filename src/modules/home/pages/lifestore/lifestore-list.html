@@ -19,7 +19,7 @@
     <ul>
       <li *ngFor="let lifestore of lifestoreList" (click)="gotoDetail(lifestore)">
         <a>
-          <img src="./assets/images/banner2.jpg" >
+          <img src="{{lifestore.photoPath? lifestore.photoPath : '/assets/images/banner2.jpg'}}" >
           <div class="list_r">
             <p><span style="font-size: 16px;">{{lifestore.name}}</span></p>
             <p>地址：{{lifestore.address}}</p>

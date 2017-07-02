@@ -19,6 +19,7 @@ export class LogisticsManagePage {
 
   logisticsList: any = [];
   infostore: any = null;
+  infoDepartment: any = {};
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -35,6 +36,7 @@ export class LogisticsManagePage {
     this.manageService.getInfostoreList(data)
     .then(ret => {
 
+      this.infoDepartment = ret[0];
       let data = {
         infoDepartment : ret[0]
       };
@@ -60,6 +62,13 @@ export class LogisticsManagePage {
   }
 
   goLogisticsDetail(logistics) {
+
+    if(!logistics){
+      logistics = {
+        infoDepartment: this.infoDepartment
+      }
+    }
+
     this.navCtrl.push(LogisticsAddUpdate, logistics);
   }
 }

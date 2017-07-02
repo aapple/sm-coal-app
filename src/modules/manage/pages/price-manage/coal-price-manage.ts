@@ -82,6 +82,11 @@ export class CoalPriceManagePage {
 
   onSubmit() {
 
+    if(this.productPrice.state == 1){
+      this.productPrice.state = 1;
+    } else {
+      this.productPrice.state = 0;
+    }
     this.manageService.saveOrUpdateProductPrice(this.productPrice)
       .then(ret => {
         this.heyApp.utilityComp.presentToast("提交成功");

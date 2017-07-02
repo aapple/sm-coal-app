@@ -30,7 +30,7 @@ export class ProductListPage {
 
   }
 
-  ionViewDidLoad() {
+  ionViewWillEnter() {
 
     let data = {};
 
@@ -52,6 +52,11 @@ export class ProductListPage {
           let data = {
             factory : ret.factoryList[0]
           };
+          if(this.factoryType == 1+''){
+            data['priceOwnerType'] = 1;
+          } else if(this.factoryType == 3+''){
+            data['priceOwnerType'] = 2;
+          }
           this.loadProductPriceList(data);
         }
       });
@@ -75,6 +80,11 @@ export class ProductListPage {
         currentProductList: this.productPriceList,
         productType: {}
       }
+    }
+    if(this.factoryType == 1+'' || this.factoryType == 2+''){
+      productPrice['priceOwnerType'] = 1;
+    } else if(this.factoryType == 3+''){
+      productPrice['priceOwnerType'] = 2;
     }
     this.navCtrl.push(CoalPriceManagePage, productPrice)
   }

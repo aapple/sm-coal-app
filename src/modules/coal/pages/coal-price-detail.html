@@ -16,10 +16,10 @@
 <ion-content>
 
   <div style="color: #000;background: #fff;margin: 10px;border-radius: 4px;">
-    <div style="padding: 16px;border-bottom: 1px solid #efefef;font-size: 20px;">煤炭种类：{{productPrice.productType.name}}</div>
-    <div style="padding: 16px;border-bottom: 1px solid #efefef">煤炭价格：{{productPrice.price}}元/吨</div>
+    <div style="padding: 16px;border-bottom: 1px solid #efefef;font-size: 20px;">产品种类：{{productPrice.productType.name}}</div>
+    <div style="padding: 16px;border-bottom: 1px solid #efefef">产品价格：{{productPrice.price}}元/吨</div>
     <div style="padding: 16px;border-bottom: 1px solid #efefef">价格类型：{{productPrice.priceType}}</div>
-    <div style="padding: 16px;border-bottom: 1px solid #efefef">变更幅度：涨10元</div>
+    <div style="padding: 16px;border-bottom: 1px solid #efefef">变更幅度：{{productPrice.priceDiff}}</div>
     <div style="padding: 16px;">更新时间：{{ productPrice.createdTime | moment: ['MM-DD HH:mm'] }}</div>
   </div>
 
@@ -30,13 +30,17 @@
         <span style="color: #666;font-size: 12px;">电话咨询</span>
       </div>
       <h2>{{productPrice.factory.name}}</h2>
-      <p style="padding-top: 10px;">交易专员：{{productPrice.factory.saler?.nickname}} </p>
-      <p>交易电话：<span class="text_phone">{{productPrice.factory.saler?.phoneNum}}</span></p>
+
+      <p style="padding-top: 10px;" *ngIf="productPrice.priceOwnerType==1">交易专员：{{productPrice.factory.onwer?.nickname}} </p>
+      <p *ngIf="productPrice.priceOwnerType==1">交易电话：<span class="text_phone">{{productPrice.factory.onwer?.phoneNum}}</span></p>
+
+      <p style="padding-top: 10px;" *ngIf="productPrice.priceOwnerType==2">交易专员：{{productPrice.factory.saler?.nickname}} </p>
+      <p *ngIf="productPrice.priceOwnerType==2">交易电话：<span class="text_phone">{{productPrice.factory.saler?.phoneNum}}</span></p>
     </ion-item>
   </ion-list>
 
   <div style="padding: 13px;">详细指标</div>
-  <ion-grid style="text-align: center;color: #000;padding: 0">
+  <ion-grid style="text-align: center;color: #000;padding: 0" *ngIf="productPrice.factory.factoryType==1">
     <ion-row>
       <ion-col>发热量</ion-col>
       <ion-col>{{productPrice.coal_fareliang}}大卡</ion-col>
@@ -63,6 +67,31 @@
     </ion-row>
   </ion-grid>
 
+  <ion-grid style="text-align: center;color: #000;padding: 0" *ngIf="productPrice.factory.factoryType==2">
+    <ion-row>
+      <ion-col>含硫</ion-col>
+      <ion-col>{{productPrice.coke_hanliu}}%</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>含碳</ion-col>
+      <ion-col>{{productPrice.coke_hantan}}%</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>挥发份</ion-col>
+      <ion-col>{{productPrice.coke_huifafen}}%</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>灰分</ion-col>
+      <ion-col>{{productPrice.coke_huifen}}%</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>水份</ion-col>
+      <ion-col>{{productPrice.coke_shuifen}}%</ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <img src="{{productPrice.reportImage}}" *ngIf="productPrice.reportImage">
+  <img src="{{productPrice.productImage}}" *ngIf="productPrice.productImage">
 </ion-content>
 
 <ion-footer>

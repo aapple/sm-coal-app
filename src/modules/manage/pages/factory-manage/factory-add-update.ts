@@ -62,7 +62,7 @@ export class FactoryAddUpdate {
 
     this.heyApp.fileUploadService.upload(this.heyApp.fileUploadService.imageUploadAPI, files)
       .then(data => {
-        this.factory.picture = data;
+        this.factory.factoryImage = data;
         this.heyApp.utilityComp.dismissLoading();
       }, () => {
         this.heyApp.utilityComp.dismissLoading();

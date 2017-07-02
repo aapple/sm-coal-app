@@ -16,13 +16,12 @@ import {AppService} from "../../../common/services/app.service";
 export class LogisticsAddUpdate {
 
   logistics: any = {};
-  infostore: any = {};
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public manageService: ManageService,
               public heyApp: AppService,) {
 
-    this.infostore = navParams.data;
+    this.logistics = navParams.data;
 
   }
 
@@ -32,7 +31,6 @@ export class LogisticsAddUpdate {
 
   onSubmit() {
 
-    this.logistics.infoDepartment = this.infostore;
     this.manageService.saveOrUpdateLogistics(this.logistics)
       .then(ret => {
         this.heyApp.utilityComp.presentToast("保存成功");
