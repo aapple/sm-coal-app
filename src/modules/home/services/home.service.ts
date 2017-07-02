@@ -33,6 +33,16 @@ export class HomeService {
       .catch(this.handleError);
   }
 
+  loadNewsList(params) {
+    let api: string = this.helper.getAPP('news/getDailyNewsList');
+    let data: Object = params;
+
+    return this.http.post(api, data, this.requestOptions)
+      .toPromise()
+      .then(response => response.json())
+      .catch(this.handleError);
+  }
+
   //
   // handle error
   private handleError(error: any) {

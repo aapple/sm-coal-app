@@ -15,7 +15,7 @@ import {HomeService} from "../../services/home.service";
 })
 export class NewsListPage {
 
-  lifestoreList: any = [];
+  newsList: any = [];
 
   constructor(public navCtrl: NavController,
               public homeService: HomeService,
@@ -23,9 +23,10 @@ export class NewsListPage {
   }
 
   ionViewDidLoad() {
-    this.homeService.loadLifestoreList({})
+    let data = {pageNumber: 0};
+    this.homeService.loadNewsList(data)
       .then(ret => {
-          this.lifestoreList = ret;
+          this.newsList = ret;
         }
       );
     console.log('ionViewDidLoad NewsList');
@@ -35,8 +36,8 @@ export class NewsListPage {
     this.navCtrl.push(BrowserPage, {
       browser: {
         title: '热点资讯',
-        // isWechatPage: true,
-        url: "https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzAwNzM3NzU4OQ==&scene=124&#wechat_redirect",
+        isWechatPage: true,
+        url: news.content
       }
     });
   }

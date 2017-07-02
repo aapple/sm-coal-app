@@ -16,14 +16,15 @@
 <ion-content>
   <div class="interest_list">
     <ul>
-      <li *ngFor="let lifestore of lifestoreList" (click)="gotoNewsDetail(lifestore)">
+      <li *ngFor="let news of newsList" (click)="gotoNewsDetail(news)">
         <a>
-          <img src="./assets/images/banner2.jpg" >
+          <img src="{{news.image? news.image : '/assets/images/banner2.jpg'}}" >
+          <img imageViewer src="./assets/images/banner2.jpg" >
           <div class="list_r">
-            <p class="news_detail" style="-webkit-box-orient: vertical;"><span style="font-size: 16px;">全国煤价全面上涨，市场回暖，政府发布煤炭相关企业多项利好政策</span></p>
+            <p class="news_detail" style="-webkit-box-orient: vertical;"><span style="font-size: 16px;">{{news.title}}</span></p>
 
             <p>
-              人民日报  1小时前
+              {{news.publisher}}  <span style="float: right;color: #666;">{{ news.updateTime | moment: ['MM-DD HH:mm'] }}</span>
             </p>
           </div>
         </a>

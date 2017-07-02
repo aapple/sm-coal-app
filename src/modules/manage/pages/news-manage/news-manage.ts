@@ -25,7 +25,8 @@ export class NewsManagePage {
 
   ionViewWillEnter() {
     console.log('ionViewDidLoad TrafficManage');
-    this.manageService.getFactoryList({})
+    let data = {pageNumber: 0};
+    this.manageService.loadNewsList(data)
       .then(ret => {
         this.newsList = ret.factoryList;
       });

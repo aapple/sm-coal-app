@@ -33,26 +33,28 @@ export class HomePage {
     }
   }
 
-  lifestoreList: any = [];
+  newsList: any = [];
   areaName: string = "地区";
 
   ionViewWillEnter(){
     console.log('ionViewWillEnter Home');
     this.slider.startAutoplay();
-
-    this.loadLifestoreList();
-
   }
   ionViewWillLeave(){
     console.log('ionViewWillLeave Home');
     this.slider.stopAutoplay();
   }
 
-  loadLifestoreList() {
+  ionViewDidLoad() {
+    this.loadNewsList();
+  }
 
-    this.homeService.loadLifestoreList({})
+  loadNewsList() {
+
+    let data = {pageNumber: 0};
+    this.homeService.loadNewsList(data)
       .then(ret => {
-          this.lifestoreList = ret;
+          this.newsList = ret;
         }
       );
   }
@@ -61,10 +63,6 @@ export class HomePage {
     this.slider.pager = true;
     this.slider.loop = true;
     this.slider.autoplay = 2000;
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad Home');
   }
 
   gotoLifeStore(data) {
@@ -133,7 +131,7 @@ export class HomePage {
       browser: {
         title: '热点资讯',
         isWechatPage: true,
-        url: "https://mp.weixin.qq.com/s?__biz=MzI2MDc0NTQ2NA==&mid=2247483716&idx=1&sn=cf2a65937b92093b7aed0d8cf21e94af&chksm=ea65b0d3dd1239c57c69daed07458ba7c5580d5fe7252d8dfe921540577e76acae5e0bb4ddf7&scene=0&key=6369de1f14048989766c6b2de3d068dec8e946393028399257ccb13c195b997b9558e5f37afeb404fbc1ebe96ea6cb49712da4bcf13f69e00aa94903a9b2d5cccbc29db6dc35d9cf1fb34b85e31f0526&ascene=0&uin=NTEwMTgyNjU%3D&devicetype=iMac+MacBookAir7%2C2+OSX+OSX+10.12.5+build(16F73)&version=12020810&nettype=WIFI&fontScale=100&pass_ticket=uGVEyRQ8DpYnw2jXHeOdgTaiMsxA9djbc50Rliw5I10%3D",
+        url: news.content
       }
     });
   }

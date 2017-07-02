@@ -19,7 +19,7 @@ export class CoalPage {
   productPriceList: any = [];
   queryText: string;
   pageTitle: string = "";
-  priceType: string = "coal";
+  priceOwnerType: string = "1";
 
   pageIndex: number = 0;
   pageNumber: number = 6;
@@ -79,9 +79,17 @@ export class CoalPage {
 
   loadProductPriceList() {
 
-    let data: Object = {
-      productType: {id: this.productType}
-    };
+    let data : Object = null;
+    if(this.factoryType == 1 + ""){
+      data = {
+        productType: {id: this.productType},
+        priceOwnerType: this.priceOwnerType
+      };
+    } else {
+      data = {
+        productType: {id: this.productType}
+      };
+    }
 
     this.coalService.loadProductPriceList(data)
     .then(ret => {
@@ -93,9 +101,17 @@ export class CoalPage {
 
   doRefresh(refresher) {
 
-    let data: Object = {
-      productType: {id: this.productType}
-    };
+    let data : Object = null;
+    if(this.factoryType == 1 + ""){
+      data = {
+        productType: {id: this.productType},
+        priceOwnerType: this.priceOwnerType
+      };
+    } else {
+      data = {
+        productType: {id: this.productType}
+      };
+    }
 
     this.coalService.loadProductPriceList(data)
       .then(ret => {
@@ -105,6 +121,10 @@ export class CoalPage {
 
       });
 
+  }
+
+  onSegmentClick(){
+    this.loadProductPriceList();
   }
 
   doQuery(ev){
@@ -118,10 +138,19 @@ export class CoalPage {
       me.queryText = text;
     }, 100);
 
-    let data: Object = {
-      productType: {id: this.productType},
-      factory:{name: text}
-    };
+    let data : Object = null;
+    if(this.factoryType == 1 + ""){
+      data = {
+        productType: {id: this.productType},
+        priceOwnerType: this.priceOwnerType,
+        factory:{name: text}
+      };
+    } else {
+      data = {
+        productType: {id: this.productType},
+        factory:{name: text}
+      };
+    }
 
     this.coalService.loadProductPriceList(data)
       .then(ret => {

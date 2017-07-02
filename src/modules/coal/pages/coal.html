@@ -39,11 +39,11 @@
     </ion-slide>
   </ion-slides>
 
-  <ion-segment style="padding: 10px 16px;" [(ngModel)]="priceType" padding *ngIf="factoryType == 1">
-    <ion-segment-button value="coal">
+  <ion-segment style="padding: 10px 16px;" [(ngModel)]="priceOwnerType" padding *ngIf="factoryType == 1" (click)="onSegmentClick()">
+    <ion-segment-button value="1">
       矿方价
     </ion-segment-button>
-    <ion-segment-button value="saler">
+    <ion-segment-button value="2">
       代发价
     </ion-segment-button>
   </ion-segment>

@@ -15,7 +15,7 @@ import {AppService} from "../../../common/services/app.service";
 })
 export class NewsAddUpdatePage {
 
-  news: any = null;
+  news: any = {};
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public manageService: ManageService,
@@ -29,7 +29,7 @@ export class NewsAddUpdatePage {
   }
 
   onSubmit() {
-    this.manageService.saveOrUpdateFactory(this.news)
+    this.manageService.saveOrUpdateNews(this.news)
       .then(ret => {
         this.heyApp.utilityComp.presentToast("保存成功");
         this.navCtrl.pop();
@@ -42,7 +42,7 @@ export class NewsAddUpdatePage {
 
     this.heyApp.fileUploadService.upload(this.heyApp.fileUploadService.imageUploadAPI, files)
       .then(data => {
-        this.news.picture = data;
+        this.news.image = data;
         this.heyApp.utilityComp.dismissLoading();
       }, () => {
         this.heyApp.utilityComp.dismissLoading();
