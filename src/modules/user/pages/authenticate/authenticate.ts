@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import {ViewController, NavController} from 'ionic-angular';
+import {ViewController, NavController, ModalController} from 'ionic-angular';
 import { InAppBrowser } from 'ionic-native';
 
 import { AppService } from '../../../common/services/app.service';
 import { UserService} from '../../services/user.service';
 import {BrowserPage} from "../../../common/pages/browser";
+import {RoleSelectPage} from "./role-select";
 
 
 @Component({
@@ -22,6 +23,7 @@ export class AuthenticatePage {
     public heyApp: AppService,
     public userService: UserService,
     public viewCtrl: ViewController,
+    public modalCtrl: ModalController,
     public navCtrl: NavController
   ) {
 
@@ -50,6 +52,10 @@ export class AuthenticatePage {
         this.viewCtrl.dismiss().then(() => {
           this.heyApp.utilityComp.dismissLoading();
           this.heyApp.utilityComp.presentToast('验证成功, 欢迎你： ' + ret.nickname);
+          if(ret.firstFlag == 1){
+            let modal = this.modalCtrl.create(RoleSelectPage, ret)
+            modal.present();
+          }
         });
       }, (data) => {
         this.heyApp.utilityComp.dismissLoading().then(() => {

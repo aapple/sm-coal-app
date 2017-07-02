@@ -28,12 +28,12 @@
 
   <ion-list padding-top radio-group [(ngModel)]="userInfo.role" (ngModelChange)="isUpdated = 'role'" [hidden]="item !== 'role'">
     <ion-item>
-      <ion-label>买煤者</ion-label>
+      <ion-label>煤炭买家</ion-label>
       <ion-radio name="role" checked="true" value="1"></ion-radio>
     </ion-item>
 
     <ion-item>
-      <ion-label>卖煤者</ion-label>
+      <ion-label>煤炭卖家</ion-label>
       <ion-radio name="role" value="2"></ion-radio>
     </ion-item>
 

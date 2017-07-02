@@ -17,6 +17,7 @@ import { HCFeedbackPage } from './pages/setting/hc-feedback';
 import { HCDebugPage } from './pages/setting/hc-debug';
 
 import { AuthenticatePage } from './pages/authenticate/authenticate';
+import {RoleSelectPage} from "./pages/authenticate/role-select";
 
 
 
@@ -34,6 +35,7 @@ import { AuthenticatePage } from './pages/authenticate/authenticate';
     HCFeedbackPage,
     HCDebugPage,
     AuthenticatePage,
+    RoleSelectPage
   ],
   entryComponents: [
     MePage,
@@ -45,6 +47,7 @@ import { AuthenticatePage } from './pages/authenticate/authenticate';
     HCFeedbackPage,
     HCDebugPage,
     AuthenticatePage,
+    RoleSelectPage
   ],
   providers: [
     UserService,

@@ -18,7 +18,7 @@
   <div style="color: #000;background: #fff;margin: 10px;border-radius: 4px;">
     <div style="padding: 16px;border-bottom: 1px solid #efefef;font-size: 20px;">产品种类：{{productPrice.productType.name}}</div>
     <div style="padding: 16px;border-bottom: 1px solid #efefef">产品价格：{{productPrice.price}}元/吨</div>
-    <div style="padding: 16px;border-bottom: 1px solid #efefef">价格类型：{{productPrice.priceType}}</div>
+    <div style="padding: 16px;border-bottom: 1px solid #efefef">价格类型：{{productPrice.priceType==1?'一票制':'两票制'}}</div>
     <div style="padding: 16px;border-bottom: 1px solid #efefef">变更幅度：{{productPrice.priceDiff}}</div>
     <div style="padding: 16px;">更新时间：{{ productPrice.createdTime | moment: ['MM-DD HH:mm'] }}</div>
   </div>

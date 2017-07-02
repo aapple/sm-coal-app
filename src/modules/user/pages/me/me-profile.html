@@ -41,9 +41,9 @@
     <button ion-item [navPush]="MeProfileUpdatePage" [navParams]="{item: 'role'}">
       <ion-label>角色</ion-label>
       <ion-note item-right>
-        <span [hidden]="heyApp.authService.userInfo.role != 1">买煤者</span>
-        <span [hidden]="heyApp.authService.userInfo.role != 2">卖煤者</span>
-        <span [hidden]="heyApp.authService.userInfo.role != 3">火车司机</span>
+        <span [hidden]="heyApp.authService.userInfo.role != 1">煤炭买家</span>
+        <span [hidden]="heyApp.authService.userInfo.role != 2">煤炭卖家</span>
+        <span [hidden]="heyApp.authService.userInfo.role != 3">货车司机</span>
       </ion-note>
     </button>
 

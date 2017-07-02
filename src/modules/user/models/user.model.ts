@@ -5,6 +5,7 @@ export class User {
     public avatar: string,
     public bio: string,
     public gender: number,
+    public firstFlag: number,
     public email: string,
     public phone: string,
     public is_admin: number,
