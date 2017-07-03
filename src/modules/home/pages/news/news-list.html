@@ -18,7 +18,7 @@
     <ul>
       <li *ngFor="let news of newsList" (click)="gotoNewsDetail(news)">
         <a>
-          <img src="{{news.image? news.image : '/assets/images/banner2.jpg'}}" >
+          <img src="{{news.image? news.image : './assets/images/default.jpg'}}" >
           <div class="list_r">
             <p class="news_detail" style="-webkit-box-orient: vertical;"><span style="font-size: 16px;">{{news.title}}</span></p>
 

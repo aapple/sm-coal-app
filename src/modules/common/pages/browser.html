@@ -19,7 +19,7 @@
           sandbox="allow-scripts allow-top-navigation allow-pointer-lock allow-same-origin allow-popups allow-forms"
           [src]="browser.secUrl"
           (load)="loaded()"
-          [ngStyle]="{'margin-top': browser.isLogisticsPrice ? '-70px' : ''}"
+          [ngClass]="{'logisticsPrice': browser.isLogisticsPrice}"
           *ngIf="!browser.isWechatPage">
   </iframe>
   <div *ngIf="browser.isWechatPage" [innerHtml]="browser.innerHtml">

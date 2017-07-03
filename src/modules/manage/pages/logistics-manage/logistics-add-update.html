@@ -28,7 +28,7 @@
     </ion-item>
 
     <ion-item>
-      <ion-label>是否停产：</ion-label>
+      <ion-label>是否过期：</ion-label>
       <ion-select [(ngModel)]="logistics.state" interface="popover">
         <ion-option value="1">否</ion-option>
         <ion-option value="0">是</ion-option>
@@ -36,8 +36,8 @@
     </ion-item>
 
     <ion-item>
-      <ion-label fixed>货物名称：</ion-label>
-      <ion-input type="text" [(ngModel)]="logistics.loadingCharge" placeholder="请输入货物名称"></ion-input>
+      <ion-label fixed>货物类型：</ion-label>
+      <ion-input type="text" [(ngModel)]="logistics.productType" placeholder="请输入货物类型"></ion-input>
     </ion-item>
 
     <ion-item>

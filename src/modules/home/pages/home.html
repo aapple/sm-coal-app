@@ -20,14 +20,14 @@
 
   <ion-slides #mySlider style="width:100%;height:135px" pager (click)="gotoBannerDetail()">
     <ion-slide>
-      <img src="./assets/images/banner2.jpg">
+      <img src="./assets/images/banner3.jpg">
     </ion-slide>
   </ion-slides>
 
-  <div class="title traffic_title" (click)="gotoRoadStatus()">
-    <span class="puff_left"><ion-icon name="ios-megaphone" class="color_y" style="padding-right: 6px;"></ion-icon>神木到店塔路段拥堵</span>
-    <span class="puff_right">18:30</span>
-  </div>
+  <!--<div class="title traffic_title" (click)="gotoRoadStatus()">-->
+    <!--<span class="puff_left"><ion-icon name="ios-megaphone" class="color_y" style="padding-right: 6px;"></ion-icon>神木到店塔路段拥堵</span>-->
+    <!--<span class="puff_right">18:30</span>-->
+  <!--</div>-->
   <div class="nav">
     <div class="pictitle" style="line-height: 24px;padding-top: 10px;">
       <span class="picbg"></span>
@@ -35,15 +35,9 @@
     </div>
     <ul>
       <li>
-        <a (click)="gotoLifeStore('饭店')">
-          <p><img src="./assets/img/icon_cy.png"></p>
-          <span>饭店</span>
-        </a>
-      </li>
-      <li>
-        <a (click)="gotoLifeStore('宾馆')">
+        <a (click)="gotoLifeStore('餐饮')">
           <p><img src="./assets/img/icon_zs.png"></p>
-          <span>宾馆</span>
+          <span>餐饮</span>
         </a>
       </li>
       <li>
@@ -56,6 +50,12 @@
         <a (click)="gotoLifeStore('加油站')">
           <p><img src="./assets/img/icon_sy.png"></p>
           <span>加油站</span>
+        </a>
+      </li>
+      <li>
+        <a (click)="gotoLogisticsPricePage()">
+          <p><img src="./assets/img/icon_tc.png"></p>
+          <span>查运价</span>
         </a>
       </li>
     </ul>
@@ -72,7 +72,7 @@
       <ul>
         <li *ngFor="let news of newsList" (click)="gotoNewsDetail(news)">
           <a>
-            <img src="{{news.image? news.image : '/assets/images/banner2.jpg'}}" >
+            <img src="{{news.image? news.image : './assets/images/default.jpg'}}" >
             <div class="list_r">
               <p class="news_detail" style="-webkit-box-orient: vertical;"><span style="font-size: 16px;">{{news.title}}</span></p>
 

@@ -38,42 +38,30 @@
       </svg>
       煤炭圈
     </button>
-    <button ion-item (click)="gotoLogisticsPricePage()">
-      <svg class="icon svg_icon" aria-hidden="true">
-        <use xlink:href="#icon-daifajia"></use>
-      </svg>
-      查运价
-    </button>
-    <button ion-item (click)="gotoTrafficPage()">
-      <svg class="icon svg_icon" aria-hidden="true">
-        <use xlink:href="#icon-daifajia"></use>
-      </svg>
-      路况信息
-    </button>
   </ion-list>
 
   <ion-list>
     <button ion-item (click)="gotoCoalOrignPriceMangePage()" *ngIf="heyApp.authService.userInfo?.isCoalManager == 1">
       <svg class="icon svg_icon" aria-hidden="true">
-        <use xlink:href="#icon-jiaohuachangweihu"></use>
+        <use xlink:href="#icon-kuangfangjia"></use>
       </svg>
       煤炭矿方价管理
     </button>
     <button ion-item (click)="gotoCoalSalePriceManagePage()" *ngIf="heyApp.authService.userInfo?.isCoalSaler == 1">
       <svg class="icon svg_icon" aria-hidden="true">
-        <use xlink:href="#icon-jiaohuachangweihu"></use>
+        <use xlink:href="#icon-daifajia"></use>
       </svg>
       煤炭代发价管理
     </button>
     <button ion-item (click)="gotoLantanPriceManagePage()" *ngIf="heyApp.authService.userInfo?.isCokeManager == 1">
       <svg class="icon svg_icon" aria-hidden="true">
-        <use xlink:href="#icon-jiaohuachangweihu"></use>
+        <use xlink:href="#icon-lantanjia"></use>
       </svg>
       焦化厂兰炭价管理
     </button>
     <button ion-item (click)="gotoLogisticseManagePage()" *ngIf="heyApp.authService.userInfo?.isInfoStoreManager == 1">
       <svg class="icon svg_icon" aria-hidden="true">
-        <use xlink:href="#icon-jiaohuachangweihu"></use>
+        <use xlink:href="#icon-wuliuweihu"></use>
       </svg>
       信息部物流管理
     </button>
@@ -85,27 +73,27 @@
     </button>
     <button ion-item (click)="gotoInfoStoreManagePage()" *ngIf="heyApp.authService.userInfo?.isSuperManager == 1">
       <svg class="icon svg_icon" aria-hidden="true">
-        <use xlink:href="#icon-jiaohuachangweihu"></use>
+        <use xlink:href="#icon-xinxibuguanli"></use>
       </svg>
       信息部管理
     </button>
     <button ion-item (click)="gotoLifeStoreManagePage()" *ngIf="heyApp.authService.userInfo?.isSuperManager == 1">
       <svg class="icon svg_icon" aria-hidden="true">
-        <use xlink:href="#icon-jiaohuachangweihu"></use>
+        <use xlink:href="#icon-shenghuofuwuleishujuguanli"></use>
       </svg>
       生活服务类数据管理
     </button>
 
     <button ion-item (click)="gotoNewsManagePage()" *ngIf="heyApp.authService.userInfo?.isSuperManager == 1">
       <svg class="icon svg_icon" aria-hidden="true">
-        <use xlink:href="#icon-jiaohuachangweihu"></use>
+        <use xlink:href="#icon-xinwen"></use>
       </svg>
       新闻管理
     </button>
 
     <button ion-item (click)="gotoTrafficManagePage()" *ngIf="heyApp.authService.userInfo?.isSuperManager == 1">
       <svg class="icon svg_icon" aria-hidden="true">
-        <use xlink:href="#icon-jiaohuachangweihu"></use>
+        <use xlink:href="#icon-shishilukuang"></use>
       </svg>
       路况信息管理
     </button>

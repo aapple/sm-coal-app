@@ -35,7 +35,8 @@ export class LogisticsListPage {
     console.log('ionViewDidLoad Logistics');
 
     let data = {
-      infoDepartment: {id: this.infostore.id}
+      infoDepartment: {id: this.infostore.id},
+      state: 1
     }
     this.infostoreService.getLogisticsList(data)
       .then( ret => {
@@ -47,7 +48,8 @@ export class LogisticsListPage {
   doRefresh(refresher) {
 
     let data = {
-      infoDepartment: {id: this.infostore.id}
+      infoDepartment: {id: this.infostore.id},
+      state: 1
     }
     this.infostoreService.getLogisticsList(data)
       .then( ret => {
@@ -74,7 +76,8 @@ export class LogisticsListPage {
 
     let data = {
       destination: text,
-      infoDepartment: {id: this.infostore.id}
+      infoDepartment: {id: this.infostore.id},
+      state: 1
     }
 
     this.infostoreService.getLogisticsList(data)

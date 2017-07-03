@@ -34,7 +34,7 @@ export class LogisticsPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad Logistics');
 
-    this.infostoreService.getLogisticsList({})
+    this.infostoreService.getLogisticsList({state: 1})
       .then( ret => {
         this.logisticsList = ret;
       });
@@ -61,7 +61,7 @@ export class LogisticsPage {
     this.queryText = "";
     if(this.showType == "logistics"){
 
-      this.infostoreService.getLogisticsList({})
+      this.infostoreService.getLogisticsList({state: 1})
         .then( ret => {
           this.logisticsList = ret;
           refresher.complete();
@@ -102,6 +102,7 @@ export class LogisticsPage {
 
       let data : any = {};
       data.destination = text;
+      data.state = 1;
 
       this.infostoreService.getLogisticsList(data)
         .then( ret => {
