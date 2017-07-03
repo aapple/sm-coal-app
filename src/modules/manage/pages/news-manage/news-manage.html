@@ -19,20 +19,21 @@
 
 <ion-content>
 
-  <ion-list>
-    <ion-item-sliding *ngFor="let news of newsList">
-      <ion-item (click)="gotoUpdatePage(news)">
-        {{news.name}}
-        <button ion-button item-right clear>
-          <ion-icon name="arrow-forward"></ion-icon>
-        </button>
-      </ion-item>
-      <ion-item-options side="right">
-        <button ion-button color="danger" (click)="deleteTraffic(news)">
-          删除
-        </button>
-      </ion-item-options>
-    </ion-item-sliding>
-  </ion-list>
+  <div class="interest_list">
+    <ul>
+      <li *ngFor="let news of newsList" (click)="gotoUpdatePage(news)">
+        <a>
+          <img src="{{news.image? news.image : '/assets/images/banner2.jpg'}}" >
+          <div class="list_r">
+            <p class="news_detail" style="-webkit-box-orient: vertical;"><span style="font-size: 16px;">{{news.title}}</span></p>
+
+            <p>
+              {{news.publisher}}  <span style="float: right;color: #666;">{{ news.updateTime | moment: ['MM-DD HH:mm'] }}</span>
+            </p>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
 
 </ion-content>

@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>新闻列表</ion-title>
+    <ion-title>热点资讯</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -19,7 +19,6 @@
       <li *ngFor="let news of newsList" (click)="gotoNewsDetail(news)">
         <a>
           <img src="{{news.image? news.image : '/assets/images/banner2.jpg'}}" >
-          <img imageViewer src="./assets/images/banner2.jpg" >
           <div class="list_r">
             <p class="news_detail" style="-webkit-box-orient: vertical;"><span style="font-size: 16px;">{{news.title}}</span></p>
 

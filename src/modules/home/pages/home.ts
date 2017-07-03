@@ -54,7 +54,7 @@ export class HomePage {
     let data = {pageNumber: 0};
     this.homeService.loadNewsList(data)
       .then(ret => {
-          this.newsList = ret;
+        this.newsList = ret.content;
         }
       );
   }
@@ -113,6 +113,7 @@ export class HomePage {
 
   doRefresh(refresher) {
 
+    this.loadNewsList();
     setTimeout(function(){
       refresher.complete();
     }, 1000)

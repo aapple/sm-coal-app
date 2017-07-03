@@ -26,7 +26,7 @@ export class NewsListPage {
     let data = {pageNumber: 0};
     this.homeService.loadNewsList(data)
       .then(ret => {
-          this.newsList = ret;
+        this.newsList = ret.content;
         }
       );
     console.log('ionViewDidLoad NewsList');

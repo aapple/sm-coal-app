@@ -189,10 +189,9 @@ export class ManageService {
   }
 
   loadNewsList(params) {
-    let api: string = this.helper.getAPP('news/getDailyNewsList');
-    let data: Object = params;
+    let api: string = this.helper.getAPP('news/getDailyNewsList?pageNumber=' + params.pageNumber);
 
-    return this.http.post(api, data, this.requestOptions)
+    return this.http.get(api, this.requestOptions)
       .toPromise()
       .then(response => response.json())
       .catch(this.handleError);

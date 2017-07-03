@@ -32,10 +32,12 @@
   </div>
 
   <div class="intro">
-    <span style="font-weight: bold;">简介：</span>{{lifestore.introduction}}
+    <span style="font-weight: bold;">简介：</span>
+    <span style="color: #999;">{{lifestore.introduction}}</span>
+
   </div>
 
-  <div>
+  <div *ngIf="lifestore.photoPath">
     <img src="{{lifestore.photoPath}}" style="height: 150px;width: 100%;">
   </div>
 </ion-content>
