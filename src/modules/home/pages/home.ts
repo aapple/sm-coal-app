@@ -62,7 +62,7 @@ export class HomePage {
   ngOnInit(){//页面加载完成后自己调用
     this.slider.pager = true;
     this.slider.loop = true;
-    this.slider.autoplay = 2000;
+    this.slider.autoplay = 5000;
   }
 
   gotoLifeStore(data) {

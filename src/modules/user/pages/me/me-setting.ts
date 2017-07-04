@@ -9,7 +9,6 @@ import { TimelineService } from '../../../timeline/services/timeline.service';
 import { HCAboutPage } from '../setting/hc-about';
 import { HCGuidePage } from '../setting/hc-guide';
 import { HCFeedbackPage } from '../setting/hc-feedback';
-import {BrowserPage} from "../../../common/pages/browser";
 
 @Component({
   selector: 'page-setting',
@@ -19,6 +18,7 @@ export class MeSettingPage {
   HCAboutPage = HCAboutPage;
   HCGuidePage = HCGuidePage;
   HCFeedbackPage = HCFeedbackPage;
+  appVersion = (window as any).APP_VERSION;
 
 
   //
@@ -47,6 +47,10 @@ export class MeSettingPage {
     this.timelineService.timelines = [];
     this.timelineService.clearCache();
     this.heyApp.utilityComp.presentToast('清空缓存成功');
+  }
+
+  updateApp(){
+    this.heyApp.utilityComp.presentToast('您的软件已是最新版本！');
   }
 
 }
