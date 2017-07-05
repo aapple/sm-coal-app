@@ -125,6 +125,15 @@ export class UserService {
       .catch(this.handleError);
   }
 
+  checkUpdate(params) {
+    let api: string = this.helper.getAPP('version/checkNewVersion');
+
+    return this.http.post(api, params, this.requestOptions)
+      .toPromise()
+      .then(response => response.json())
+      .catch(this.handleError);
+  }
+
 
   //
   // handle error

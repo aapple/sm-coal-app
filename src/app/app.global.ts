@@ -9,5 +9,6 @@ export class AppGlobal {
 
   public static areaName: string = "areaName";
   public static areaList: any = ["锦界","大柳塔","店塔","西沟","孙家岔"];
+  public static CANCEL_VERSION: string = "cancelVersion";
 
 }

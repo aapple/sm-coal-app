@@ -9,11 +9,13 @@ import { InfostoreDetailPage } from './pages/infostore/infostore-detail';
 import {LogisticsDetailPage} from "./pages/logistics/logistics-detail";
 import {LogisticsPage} from "./pages/logistics/logistics";
 import {LogisticsListPage} from "./pages/logistics/logistics-list";
+import {IonicImageViewerModule} from "ionic-img-viewer";
 
 
 @NgModule({
   imports: [
     CommonModule,
+    IonicImageViewerModule
   ],
   declarations: [
     InfostorePage,

@@ -9,11 +9,13 @@ import { TimelinePage } from './pages/timeline';
 import { TimelineCreatePage } from './pages/timeline-create';
 import { TimelineDetailPage } from './pages/timeline-detail';
 import { TimelineCommentPage } from './pages/timeline-comment';
+import {IonicImageViewerModule} from "ionic-img-viewer";
 
 
 @NgModule({
   imports: [
     CommonModule,
+    IonicImageViewerModule
   ],
   declarations: [
     MyTimelinePage,

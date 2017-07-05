@@ -17,6 +17,7 @@ import {SessionStorageService} from "./services/sessionStorage.service";
 import {LocalStorageService} from "./services/localStorage.service";
 import {BrowserPage} from "./pages/browser";
 import {BrowserPopoverPage} from "./pages/browser-popover";
+import {UtilService} from "./services/util.service";
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import {BrowserPopoverPage} from "./pages/browser-popover";
     FileUploadService,
     UtilityComponent,
     LocalStorageService,
-    SessionStorageService
+    SessionStorageService,
+    UtilService
   ],
   exports: [
     IonicModule,

@@ -19,8 +19,8 @@ import { InfostoreModule } from '../modules/infostore/infostore.module';
 import { CoalModule } from '../modules/coal/coal.module';
 import { ManageModule } from '../modules/manage/manage.module';
 import {HomeModule} from "../modules/home/home.module";
-import {MyErrorHandler} from "../modules/common/services/my-error-handler";
 import { IonicImageViewerModule } from 'ionic-img-viewer';
+import {MyErrorHandler} from "../modules/common/services/myErrorHandler";
 
 
 @NgModule({

@@ -1,9 +1,6 @@
 import {ErrorHandler, Injectable} from '@angular/core';
-import { Http, Headers, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
-import { System } from '../models/system.model';
-import { Helper } from './helper.service';
 import {UtilityComponent} from "../pages/utilityComponent";
 
 

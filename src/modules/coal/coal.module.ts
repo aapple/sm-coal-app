@@ -8,9 +8,12 @@ import { CoalPriceDetailPage } from './pages/coal-price-detail';
 import { CoalPage } from './pages/coal';
 import {CokePriceDetailPage} from "./pages/coke-price-detail";
 
+import { IonicImageViewerModule } from 'ionic-img-viewer';
+
 @NgModule({
   imports: [
     CommonModule,
+    IonicImageViewerModule
   ],
   declarations: [
     CoalPage,

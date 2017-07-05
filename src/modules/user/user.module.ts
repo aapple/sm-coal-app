@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Platform, Events, ModalController } from 'ionic-angular';
+import {Platform, Events, ModalController, AlertController} from 'ionic-angular';
 import { CommonModule } from '../common/common.module';
 
 import { AppService } from '../common/services/app.service';
@@ -18,6 +18,9 @@ import { HCDebugPage } from './pages/setting/hc-debug';
 
 import { AuthenticatePage } from './pages/authenticate/authenticate';
 import {RoleSelectPage} from "./pages/authenticate/role-select";
+import {UtilService} from "../common/services/util.service";
+import {LocalStorageService} from "../common/services/localStorage.service";
+import {AppGlobal} from "../../app/app.global";
 
 
 
@@ -61,7 +64,10 @@ export class UserModule {
     public events: Events,
     public heyApp: AppService,
     public userService: UserService,
-    public modalCtrl: ModalController
+    public modalCtrl: ModalController,
+    public alertCtrl: AlertController,
+    public utilService: UtilService,
+    public localStorageService: LocalStorageService
   ) {
 
     // subcribe events
@@ -71,7 +77,59 @@ export class UserModule {
     this.platform.ready().then(() => {
       // get user
       this.getUser();
+
+      //启动时自动检查更新
+      this.updateApp();
     });
+  }
+
+  updateApp(){
+
+    if(this.utilService.isAndroid() || this.utilService.isIos()){
+
+    }
+
+    this.utilService.getVersionNumber().then(ret => {
+
+    });
+
+
+    let params = {
+      versionNum : '1.0.0',
+      systemType: 'android'
+    }
+
+    this.userService.checkUpdate(params).then(data => {
+
+      if(data.isNeedUpdate){
+
+        //检查当前版本是否要弹出提示
+        let cancelVersion = this.localStorageService.get(AppGlobal.CANCEL_VERSION);
+        if(cancelVersion == data.versionNum){
+          return;
+        }
+
+        this.alertCtrl.create({
+          title: '升级',
+          subTitle: '发现新版本,是否立即升级？',
+          buttons: [
+            {
+              text: '取消',
+              handler: () => {
+                this.localStorageService.set(AppGlobal.CANCEL_VERSION, data.versionNum);
+              }
+            },
+            {
+              text: '确定',
+              handler: () => {
+                this.utilService.downloadApp(data.versionAddr);
+              }
+            }
+          ]
+        }).present();
+      }
+    });
+
   }
 
 

@@ -15,11 +15,11 @@
       </svg>
       清空缓存
     </button>
-    <button ion-item (click)="updateApp()">
+    <button ion-item (click)="updateApp()" *ngIf="!this.utilService.isMobile()">
       <svg class="icon svg_icon" aria-hidden="true" style="width: 20px;height: 20px;margin-bottom: 3px;">
         <use xlink:href="#icon-shezhi"></use>
       </svg>
-      检查更新
+      检查更新<ion-badge style="background-color: red;" *ngIf="hasNewVersion">有可用更新</ion-badge>
       <span item-end style="color: #333;font-size: 1.5rem;">当前版本：v{{appVersion}}</span>
     </button>
   </ion-list>

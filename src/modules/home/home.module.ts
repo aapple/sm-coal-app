@@ -11,12 +11,14 @@ import {LifestoreDetail} from "./pages/lifestore/lifestore-detail";
 import {LifestoreList} from "./pages/lifestore/lifestore-list";
 import {NewsDetailPage} from "./pages/news/news-detail";
 import {NewsListPage} from "./pages/news/news-list";
+import {IonicImageViewerModule} from "ionic-img-viewer";
 
 
 
 @NgModule({
   imports: [
     CommonModule,
+    IonicImageViewerModule
   ],
   declarations: [
     HomePage,

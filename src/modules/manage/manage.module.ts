@@ -21,11 +21,13 @@ import {TrafficManagePage} from "./pages/traffic-manage/traffic-manage";
 import {TrafficAddUpdatePage} from "./pages/traffic-manage/traffic-add-update";
 import {NewsManagePage} from "./pages/news-manage/news-manage";
 import {NewsAddUpdatePage} from "./pages/news-manage/news-add-update";
+import {IonicImageViewerModule} from "ionic-img-viewer";
 
 
 @NgModule({
   imports: [
     CommonModule,
+    IonicImageViewerModule
   ],
   declarations: [
     FactoryManage,
