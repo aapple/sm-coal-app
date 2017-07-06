@@ -27,6 +27,7 @@ export class ProductListPage {
     public manageService: ManageService) {
 
     this.factory = navParams.data;
+    this.factoryType = navParams.data.manageType;
 
   }
 
@@ -61,12 +62,14 @@ export class ProductListPage {
         currentProductList: this.productPriceList,
         productType: {}
       }
+
+      if(this.factoryType == 1+'' || this.factoryType == 2+''){
+        productPrice['priceOwnerType'] = 1;
+      } else if(this.factoryType == 3+''){
+        productPrice['priceOwnerType'] = 2;
+      }
     }
-    if(this.factoryType == 1+'' || this.factoryType == 2+''){
-      productPrice['priceOwnerType'] = 1;
-    } else if(this.factoryType == 3+''){
-      productPrice['priceOwnerType'] = 2;
-    }
+
     this.navCtrl.push(CoalPriceManagePage, productPrice)
   }
 

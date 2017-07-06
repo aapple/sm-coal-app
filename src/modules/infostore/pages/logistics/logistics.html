@@ -41,18 +41,27 @@
   <div class="I_list" *ngIf="showType == 'logistics'">
     <ul>
       <li (click)="goLogisticsDetail(logistics)" *ngFor="let logistics of logisticsList" style="font-size: 14px;">
-        <p>出发地</p>
-        <span style="right: 50%;top: 13px;" class="color_y">￥{{logistics.loadingCharge}}</span>
-        <span style="top: 14px;">目的地</span>
-        <p style="font-weight: bold;">{{logistics.departure}}</p>
-        <span style="right: 48%;top: 27px;">
-          <svg class="icon svg_icon" aria-hidden="true" style="height: 40px;width: 40px;">
-            <use xlink:href="#icon-icon-test"></use>
-          </svg>
-        </span>
-        <span style="top: 36px;font-weight: bold;" >{{logistics.destination}}</span>
-        <p style="border-top: 1px solid #fff;padding-top: 5px;margin-top: 5px;">{{logistics.infoDepartment.title}}</p>
-        <span style="top: 70px;">{{ logistics.updatedTime | moment: ['MM-DD HH:mm'] }}发布</span>
+        <div>
+          <span>出发地</span>
+          <span style="padding-left: 30%;" class="color_y">￥{{logistics.loadingCharge}}</span>
+          <span style="float: right;">目的地</span>
+        </div>
+        <span ></span>
+
+        <div>
+          <span style="font-weight: bold;">{{logistics.departure}}</span>
+          <span style="padding-left: 36%;">
+            <svg class="icon svg_icon" aria-hidden="true" >
+              <use xlink:href="#icon-icon-test"></use>
+            </svg>
+          </span>
+          <span style="float: right;font-weight: bold;" >{{logistics.destination}}</span>
+        </div>
+
+        <div style="color: #666;">
+          <span>{{logistics.infoDepartment.title}}</span>
+          <span style="float: right;font-size: 12px;">{{ logistics.updatedTime | moment: ['MM-DD HH:mm'] }}发布</span>
+        </div>
       </li>
     </ul>
   </div>

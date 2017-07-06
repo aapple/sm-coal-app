@@ -219,6 +219,30 @@ ion-content {
   height: 45px;
 }
 
+.I_list{
+  height: auto;
+  overflow: hidden;
+  padding: 0px 16px;
+  background-color: #fff;
+}
+.I_list ul li{
+  padding:1rem 0rem;
+  height:auto;
+  overflow: hidden;
+  line-height:2rem;
+  border-bottom: .1rem #EFEFEF solid;
+  position: relative;
+}
+.I_list ul li p{
+  font-size: 1.4rem;
+  color: #333;
+}
+.I_list ul li p font{
+  color: #999;
+  font-size: 1.2rem;
+}
+
+
 //.icon {
 //  width: 1em; height: 1em;
 //  vertical-align: -0.15em;
