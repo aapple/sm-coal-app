@@ -28,10 +28,10 @@
     </ion-item>
 
     <ion-item>
-      <ion-label>是否过期：</ion-label>
+      <ion-label>是否有效：</ion-label>
       <ion-select [(ngModel)]="logistics.state" interface="popover">
+        <ion-option value="0" selected>是</ion-option>
         <ion-option value="1">否</ion-option>
-        <ion-option value="0">是</ion-option>
       </ion-select>
     </ion-item>
 

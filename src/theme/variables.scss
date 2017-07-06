@@ -145,8 +145,8 @@ ion-content {
   font-size: 1.5rem;
 }
 
-.back-button.show-back-button{
-  padding-left: 10px;
+.back-button.show-back-button {
+  padding-left: 10px !important;
 }
 
 .bar-buttons-ios{
@@ -163,6 +163,10 @@ ion-content {
 .button-outline-ios{
   border-color: #06c1ae !important;
   color: #06c1ae !important;
+}
+
+.toolbar .searchbar-ios .searchbar-ios-cancel {
+  padding-left: 10px !important;
 }
 
 

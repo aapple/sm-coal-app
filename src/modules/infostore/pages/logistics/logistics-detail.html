@@ -32,10 +32,14 @@
   <div style="background: #fff;">
     <div style="padding: 16px;">信息来源：{{logistics.infoDepartment.title}}</div>
     <div style="padding: 16px;">负责专员：{{logistics.infoDepartment.user.userName}}</div>
-    <div style="padding: 16px;">咨询电话：<span class="text_phone">{{logistics.infoDepartment.callNumber}}</span></div>
+    <div style="padding: 16px;">咨询电话：
+      <a class="text_phone" href="tel:{{logistics.infoDepartment.callNumber}}">
+        {{logistics.infoDepartment.callNumber}}
+      </a>
+    </div>
     <div style="padding: 16px;">发布时间：{{ logistics.updatedTime | moment: ['MM-DD HH:mm'] }}</div>
   </div>
-  <div style="padding-left: 16px;padding-top: 10px;">
+  <div style="padding-left: 16px;padding-top: 10px;line-height: 22px;">
     备注：{{logistics.comment}}
   </div>
 </ion-content>

@@ -19,11 +19,18 @@
     <div style="padding: 16px;border-bottom: 1px solid #efefef;font-size: 20px;">产品种类：{{productPrice.productType.name}}</div>
     <div style="padding: 16px;border-bottom: 1px solid #efefef">产品价格：{{productPrice.price}}元/吨</div>
     <div style="padding: 16px;border-bottom: 1px solid #efefef">价格类型：{{priceType}}</div>
-    <div style="padding: 16px;border-bottom: 1px solid #efefef">变更幅度：{{productPrice.priceDiff}}</div>
+    <div style="padding: 16px;border-bottom: 1px solid #efefef" >
+      变更幅度：
+      <span [ngStyle]="{'color':productPrice.priceDiff>0 ? 'red' : '','color':productPrice.priceDiff<0 ? 'green' : ''}">
+        {{productPrice.priceDiff>0?'涨': ''}}
+        {{productPrice.priceDiff<0?'降': ''}}
+        {{productPrice.priceDiff?productPrice.priceDiff+'元/吨': '无'}}
+      </span>
+    </div>
     <div style="padding: 16px;">更新时间：{{ productPrice.createdTime | moment: ['MM-DD HH:mm'] }}</div>
   </div>
 
-  <ion-list style="padding: 6px;margin-bottom: 0;">
+  <ion-list style="padding: 0px 10px;margin-bottom: 0;">
     <ion-item style="border-radius: 4px;border: 0;">
       <div item-start>
         <ion-icon name="call" style="display: block;font-size: 30px;text-align: center;color: #06c1ae"></ion-icon>
@@ -32,10 +39,10 @@
       <h2>{{productPrice.factory.name}}</h2>
 
       <p style="padding-top: 10px;" *ngIf="productPrice.priceOwnerType==1">交易专员：{{productPrice.factory.onwer?.nickname}} </p>
-      <p *ngIf="productPrice.priceOwnerType==1">交易电话：<span class="text_phone">{{productPrice.factory.onwer?.phoneNum}}</span></p>
+      <p *ngIf="productPrice.priceOwnerType==1">交易电话：<a class="text_phone" href="tel:{{productPrice.factory.onwer?.phoneNum}}">{{productPrice.factory.onwer?.phoneNum}}</a></p>
 
       <p style="padding-top: 10px;" *ngIf="productPrice.priceOwnerType==2">交易专员：{{productPrice.factory.saler?.nickname}} </p>
-      <p *ngIf="productPrice.priceOwnerType==2">交易电话：<span class="text_phone">{{productPrice.factory.saler?.phoneNum}}</span></p>
+      <p *ngIf="productPrice.priceOwnerType==2">交易电话：<a class="text_phone" href="tel:{{productPrice.factory.saler?.phoneNum}}">{{productPrice.factory.saler?.phoneNum}}</a></p>
     </ion-item>
   </ion-list>
 

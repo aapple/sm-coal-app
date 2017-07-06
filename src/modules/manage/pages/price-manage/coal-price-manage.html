@@ -35,74 +35,74 @@
     </ion-item>
 
     <ion-item>
-      <ion-label>是否停产：</ion-label>
+      <ion-label>是否生产：</ion-label>
       <ion-select [(ngModel)]="productPrice.state" interface="popover">
+        <ion-option value="0" selected>是</ion-option>
         <ion-option value="1">否</ion-option>
-        <ion-option value="0">是</ion-option>
       </ion-select>
     </ion-item>
 
     <ion-item>
       <ion-label fixed>价格：</ion-label>
-      <ion-input type="text" [(ngModel)]="productPrice.price" placeholder="请输入煤炭价格"></ion-input>
+      <ion-input type="number" [(ngModel)]="productPrice.price" placeholder="请输入煤炭价格"></ion-input>
     </ion-item>
 
     <div *ngIf="productPrice.factory.factoryType==1">
       <ion-item>
         <ion-label fixed>发热量：</ion-label>
-        <ion-input type="text" [(ngModel)]="productPrice.coal_fareliang" placeholder="请输入发热量"></ion-input>
+        <ion-input type="number" [(ngModel)]="productPrice.coal_fareliang" placeholder="请输入发热量"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label fixed>全水分：</ion-label>
-        <ion-input type="text" [(ngModel)]="productPrice.coal_quanshuifen" placeholder="请输入全水分"></ion-input>
+        <ion-input type="number" [(ngModel)]="productPrice.coal_quanshuifen" placeholder="请输入全水分"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label fixed>硫份：</ion-label>
-        <ion-input type="text" [(ngModel)]="productPrice.coal_liufen" placeholder="请输入硫份"></ion-input>
+        <ion-input type="number" [(ngModel)]="productPrice.coal_liufen" placeholder="请输入硫份"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label fixed>挥发份：</ion-label>
-        <ion-input type="text" [(ngModel)]="productPrice.coal_huifafen" placeholder="请输入挥发份"></ion-input>
+        <ion-input type="number" [(ngModel)]="productPrice.coal_huifafen" placeholder="请输入挥发份"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label fixed>灰分：</ion-label>
-        <ion-input type="text" [(ngModel)]="productPrice.coal_huifen" placeholder="请输入灰分"></ion-input>
+        <ion-input type="number" [(ngModel)]="productPrice.coal_huifen" placeholder="请输入灰分"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label fixed>固定碳：</ion-label>
-        <ion-input type="text" [(ngModel)]="productPrice.coal_gudingtan" placeholder="请输入固定碳"></ion-input>
+        <ion-input type="number" [(ngModel)]="productPrice.coal_gudingtan" placeholder="请输入固定碳"></ion-input>
       </ion-item>
     </div>
 
     <div *ngIf="productPrice.factory.factoryType==2">
       <ion-item>
         <ion-label fixed>含硫：</ion-label>
-        <ion-input type="text" [(ngModel)]="productPrice.coke_hanliu" placeholder="请输入含硫"></ion-input>
+        <ion-input type="number" [(ngModel)]="productPrice.coke_hanliu" placeholder="请输入含硫"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label fixed>含碳：</ion-label>
-        <ion-input type="text" [(ngModel)]="productPrice.coke_hantan" placeholder="请输入含碳"></ion-input>
+        <ion-input type="number" [(ngModel)]="productPrice.coke_hantan" placeholder="请输入含碳"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label fixed>挥发份：</ion-label>
-        <ion-input type="text" [(ngModel)]="productPrice.coke_huifafen" placeholder="请输入挥发份"></ion-input>
+        <ion-input type="number" [(ngModel)]="productPrice.coke_huifafen" placeholder="请输入挥发份"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label fixed>灰分：</ion-label>
-        <ion-input type="text" [(ngModel)]="productPrice.coke_huifen" placeholder="请输入灰分"></ion-input>
+        <ion-input type="number" [(ngModel)]="productPrice.coke_huifen" placeholder="请输入灰分"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label fixed>水份：</ion-label>
-        <ion-input type="text" [(ngModel)]="productPrice.coke_shuifen" placeholder="请输入水份"></ion-input>
+        <ion-input type="number" [(ngModel)]="productPrice.coke_shuifen" placeholder="请输入水份"></ion-input>
       </ion-item>
     </div>
 
