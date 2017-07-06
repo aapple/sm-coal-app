@@ -294,15 +294,10 @@ page-timeline {
 
   .img-muilt {
     display: block;
-    span {
+    img {
       width: 50%;
       height: 120px !important;
       float: left;
-      background-repeat: no-repeat;
-      background-size: 100%;
-      background-position: center;
-      border: 1px solid #f9f9f9;
-      background-color: #000;
 
       &:nth-of-type(1), &:nth-of-type(3), &:nth-of-type(5) {
         border-left: none;

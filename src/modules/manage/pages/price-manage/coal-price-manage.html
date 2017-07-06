@@ -116,7 +116,7 @@
 
     <ion-item style="height: 200px;">
       <ion-label fixed>化验报告照片：</ion-label>
-      <img item-start src="{{productPrice.reportImage}}" style="width: 150px;position: absolute;left: 130px;">
+      <img imageViewer item-start src="{{productPrice.reportImage}}" style="width: 150px;position: absolute;left: 130px;">
       <button ion-button outline item-end icon-left>
         选择图片
         <input class="input-img" #inputReportImg type="file" (change)="uploadImg($event, 'reportImage')" accept="image/*">
@@ -125,7 +125,7 @@
 
     <ion-item style="height: 200px;">
       <ion-label fixed>产品照片：</ion-label>
-      <img item-start src="{{productPrice.productImage}}" style="width: 150px;position: absolute;left: 130px;">
+      <img imageViewer item-start src="{{productPrice.productImage}}" style="width: 150px;position: absolute;left: 130px;">
       <button ion-button outline item-end icon-left>
         选择图片
         <input class="input-img" #inputProductImg type="file" (change)="uploadImg($event, 'productImage')" accept="image/*">

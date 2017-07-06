@@ -20,7 +20,7 @@
   <header>
     <img id="bg" src="./assets/picture/1_bg.png">
     <p id="user-name" class="data-name">{{ heyApp.authService.userInfo?.nickname }}</p>
-    <img id="avt" class="data-avt" src="{{ heyApp.helper.getImg(heyApp.authService.userInfo?.avatar) }}?imageView/2/w/100">
+    <img imageViewer id="avt" class="data-avt" src="{{ heyApp.helper.getImg(heyApp.authService.userInfo?.avatar) }}?imageView/2/w/100">
   </header>
 
   <div id="main">
@@ -42,7 +42,7 @@
                 <img imageViewer *ngIf="timeline.imgs.length === 1" src="{{ timeline.imgs[0].uri}}">
 
                 <span class="img-muilt" [ngClass]="{'img-odd': (timeline.imgs.length % 2)}" *ngIf="timeline.imgs.length > 1">
-                  <span *ngFor="let img of timeline.imgs; let i = index" [ngStyle]="{'background-image': 'url(' + heyApp.helper.getImg(img.uri) + ')'}"></span>
+                  <img imageViewer src="{{heyApp.helper.getImg(img.uri)}}" *ngFor="let img of timeline.imgs; let i = index">
                   <font class="clear-float"></font>
                 </span>
               </p>

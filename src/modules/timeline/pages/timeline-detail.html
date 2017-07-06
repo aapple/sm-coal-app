@@ -19,7 +19,7 @@
         <li>
 
           <div class="po-avt-wrap">
-            <img class="po-avt" src="{{ heyApp.helper.getImg(timeline.author?.avatar) }}?imageView/2/w/100">
+            <img imageViewer class="po-avt" src="{{ heyApp.helper.getImg(timeline.author?.avatar) }}?imageView/2/w/100">
           </div>
 
           <div class="po-cmt">
@@ -27,10 +27,10 @@
               <p class="po-name">{{ timeline.author?.nickname }}</p>
               <p class="post">
                 <span>{{timeline.content| nl2br}}</span>
-                <img *ngIf="timeline.imgs.length === 1" src="{{ timeline.imgs[0].uri}}">
+                <img imageViewer *ngIf="timeline.imgs.length === 1" src="{{ timeline.imgs[0].uri}}">
 
                 <span class="img-muilt" [ngClass]="{'img-odd': (timeline.imgs.length % 2)}" *ngIf="timeline.imgs.length > 1">
-                  <span *ngFor="let img of timeline.imgs; let i = index" [ngStyle]="{'background-image': 'url(' + heyApp.helper.getImg(img.uri) + ')'}"></span>
+                  <img imageViewer src="{{heyApp.helper.getImg(img.uri)}}" *ngFor="let img of timeline.imgs; let i = index">
                   <font class="clear-float"></font>
                 </span>
               </p>
