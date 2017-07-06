@@ -29,7 +29,7 @@
         <li *ngFor="let timeline of timelineService.timelines; let i=index">
 
           <div class="po-avt-wrap">
-            <img class="po-avt" src="{{ heyApp.helper.getImg(timeline.author?.avatar) }}?imageView/2/w/100">
+            <img imageViewer class="po-avt" src="{{ heyApp.helper.getImg(timeline.author?.avatar) }}?imageView/2/w/100">
           </div>
 
           <div class="po-cmt">
@@ -39,7 +39,7 @@
                 <span (click)="gotoTimelineDetailPage(timeline, i)">{{formatContent(timeline.content, timeline.isAll)| nl2br}}</span>
                 <u *ngIf="!timeline.isAll && timeline.content && timeline.content.length>100" (click)="showTimelineAll(i)" class="is_show">展开</u>
                 <u *ngIf="timeline.isAll && timeline.content && timeline.content.length>100" (click)="showTimelineAll(i)" class="is_show">收起</u>
-                <img *ngIf="timeline.imgs.length === 1" src="{{ timeline.imgs[0].uri}}">
+                <img imageViewer *ngIf="timeline.imgs.length === 1" src="{{ timeline.imgs[0].uri}}">
 
                 <span class="img-muilt" [ngClass]="{'img-odd': (timeline.imgs.length % 2)}" *ngIf="timeline.imgs.length > 1">
                   <span *ngFor="let img of timeline.imgs; let i = index" [ngStyle]="{'background-image': 'url(' + heyApp.helper.getImg(img.uri) + ')'}"></span>

@@ -62,7 +62,7 @@
   <hr>
 
   <div class="preview-imgs" *ngIf="imgs">
-    <img *ngFor="let item of imgs" src="{{ item.uri  }}">
+    <img imageViewer *ngFor="let item of imgs" src="{{ item.uri  }}">
   </div>
 
   <div class="preview-video" *ngIf="video">
