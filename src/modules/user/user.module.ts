@@ -21,6 +21,7 @@ import {RoleSelectPage} from "./pages/authenticate/role-select";
 import {UtilService} from "../common/services/util.service";
 import {LocalStorageService} from "../common/services/localStorage.service";
 import {AppGlobal} from "../../app/app.global";
+import {AmapPage} from "./pages/map/ampa";
 
 
 
@@ -38,7 +39,8 @@ import {AppGlobal} from "../../app/app.global";
     HCFeedbackPage,
     HCDebugPage,
     AuthenticatePage,
-    RoleSelectPage
+    RoleSelectPage,
+    AmapPage
   ],
   entryComponents: [
     MePage,
@@ -50,7 +52,8 @@ import {AppGlobal} from "../../app/app.global";
     HCFeedbackPage,
     HCDebugPage,
     AuthenticatePage,
-    RoleSelectPage
+    RoleSelectPage,
+    AmapPage
   ],
   providers: [
     UserService,

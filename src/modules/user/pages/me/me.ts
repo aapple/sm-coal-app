@@ -20,6 +20,7 @@ import {NoticeService} from "../../../notice/services/notice.service";
 import {TrafficManagePage} from "../../../manage/pages/traffic-manage/traffic-manage";
 import {NewsManagePage} from "../../../manage/pages/news-manage/news-manage";
 import {FactoryListPage} from "../../../manage/pages/price-manage/factory-list";
+import {AmapPage} from "../map/ampa";
 
 @Component({
   selector: 'page-me',
@@ -152,6 +153,10 @@ export class MePage {
 
   gotoContact(){
     window.location.href = "tel:0912-8313333";
+  }
+
+  gotoAmapPage(){
+    this.navCtrl.push(AmapPage);
   }
 
 }

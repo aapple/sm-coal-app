@@ -6,7 +6,6 @@ import { CoalService } from './services/coal.service';
 
 import { CoalPriceDetailPage } from './pages/coal-price-detail';
 import { CoalPage } from './pages/coal';
-import {CokePriceDetailPage} from "./pages/coke-price-detail";
 
 import { IonicImageViewerModule } from 'ionic-img-viewer';
 
@@ -17,13 +16,11 @@ import { IonicImageViewerModule } from 'ionic-img-viewer';
   ],
   declarations: [
     CoalPage,
-    CoalPriceDetailPage,
-    CokePriceDetailPage
+    CoalPriceDetailPage
   ],
   entryComponents: [
     CoalPage,
-    CoalPriceDetailPage,
-    CokePriceDetailPage
+    CoalPriceDetailPage
   ],
   providers: [
     CoalService,

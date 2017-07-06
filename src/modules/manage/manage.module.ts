@@ -12,7 +12,6 @@ import {InfostoreAddUpdate} from "./pages/infostore-manage/infostore-add-update"
 import {LogisticsAddUpdate} from "./pages/logistics-manage/logistics-add-update";
 import {CoalPriceManagePage} from "./pages/price-manage/coal-price-manage";
 import {LogisticsList} from "./pages/logistics-manage/logistics-list";
-import {CokePriceManage} from "./pages/price-manage/coke-price-manage";
 import {LifestoreAddUpdate} from "./pages/lifestore-manage/lifestore-add-update";
 import {LifestoreManage} from "./pages/lifestore-manage/lifestore-manage";
 import {ProductListPage} from "./pages/price-manage/product-list";
@@ -36,7 +35,6 @@ import {FactoryListPage} from "./pages/price-manage/factory-list";
     FactoryAddUpdate,
     InfostoreAddUpdate,
     LogisticsList,
-    CokePriceManage,
     CoalPriceManagePage,
     LogisticsAddUpdate,
     LogisticsManagePage,
@@ -56,7 +54,6 @@ import {FactoryListPage} from "./pages/price-manage/factory-list";
     FactoryAddUpdate,
     InfostoreAddUpdate,
     LogisticsList,
-    CokePriceManage,
     CoalPriceManagePage,
     LogisticsAddUpdate,
     LogisticsManagePage,
