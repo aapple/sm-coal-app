@@ -26,40 +26,21 @@ export class ProductListPage {
     public heyApp: AppService,
     public manageService: ManageService) {
 
-    this.factoryType = navParams.data;
+    this.factory = navParams.data;
 
   }
 
   ionViewWillEnter() {
 
-    let data = {};
-
-    if(this.factoryType == 1+''){
-      data['onwer'] = {id: this.heyApp.authService.userInfo.id};
-      data['factoryType'] = 1;
-    } else if(this.factoryType == 2+''){
-      data['onwer'] = {id: this.heyApp.authService.userInfo.id};
-      data['factoryType'] = 2;
-    } else if(this.factoryType == 3+''){
-      data['saler'] = {id: this.heyApp.authService.userInfo.id};
-      data['factoryType'] = 1;
+    let data = {
+      factory : this.factory
+    };
+    if(this.factory.manageType == 1+''){
+      data['priceOwnerType'] = 1;
+    } else if(this.factory.manageType == 3+''){
+      data['priceOwnerType'] = 2;
     }
-    this.manageService.getFactoryList(data)
-      .then(ret => {
-
-        if(ret.factoryList.length > 0){
-          this.factory = ret.factoryList[0];
-          let data = {
-            factory : ret.factoryList[0]
-          };
-          if(this.factoryType == 1+''){
-            data['priceOwnerType'] = 1;
-          } else if(this.factoryType == 3+''){
-            data['priceOwnerType'] = 2;
-          }
-          this.loadProductPriceList(data);
-        }
-      });
+    this.loadProductPriceList(data);
   }
 
   loadProductPriceList(data) {

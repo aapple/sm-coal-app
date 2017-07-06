@@ -22,6 +22,7 @@ import {TrafficAddUpdatePage} from "./pages/traffic-manage/traffic-add-update";
 import {NewsManagePage} from "./pages/news-manage/news-manage";
 import {NewsAddUpdatePage} from "./pages/news-manage/news-add-update";
 import {IonicImageViewerModule} from "ionic-img-viewer";
+import {FactoryListPage} from "./pages/price-manage/factory-list";
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import {IonicImageViewerModule} from "ionic-img-viewer";
     TrafficManagePage,
     TrafficAddUpdatePage,
     NewsManagePage,
-    NewsAddUpdatePage
+    NewsAddUpdatePage,
+    FactoryListPage
   ],
   entryComponents: [
     FactoryManage,
@@ -65,7 +67,8 @@ import {IonicImageViewerModule} from "ionic-img-viewer";
     TrafficManagePage,
     TrafficAddUpdatePage,
     NewsManagePage,
-    NewsAddUpdatePage
+    NewsAddUpdatePage,
+    FactoryListPage
   ],
   providers: [
     ManageService,

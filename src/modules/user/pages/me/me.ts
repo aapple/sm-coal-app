@@ -19,6 +19,7 @@ import {AppService} from "../../../common/services/app.service";
 import {NoticeService} from "../../../notice/services/notice.service";
 import {TrafficManagePage} from "../../../manage/pages/traffic-manage/traffic-manage";
 import {NewsManagePage} from "../../../manage/pages/news-manage/news-manage";
+import {FactoryListPage} from "../../../manage/pages/price-manage/factory-list";
 
 @Component({
   selector: 'page-me',
@@ -60,19 +61,19 @@ export class MePage {
 
   gotoCoalOrignPriceMangePage() {
     if (this.heyApp.authService.authOrLogin()) {
-      this.navCtrl.push(ProductListPage, 1);
+      this.navCtrl.push(FactoryListPage, 1);
     }
   }
 
   gotoCoalSalePriceManagePage() {
     if (this.heyApp.authService.authOrLogin()) {
-      this.navCtrl.push(ProductListPage, 3);
+      this.navCtrl.push(FactoryListPage, 3);
     }
   }
 
   gotoLantanPriceManagePage() {
     if (this.heyApp.authService.authOrLogin()) {
-      this.navCtrl.push(ProductListPage, 2);
+      this.navCtrl.push(FactoryListPage, 2);
     }
   }
 
