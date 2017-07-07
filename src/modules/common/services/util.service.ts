@@ -27,8 +27,8 @@ export class UtilService {
       alert.present();
 
       const fileTransfer = new Transfer();
-      // const apk = File.externalRootDirectory + 'android.apk'; //apk保存的目录
-      const apk = "";
+      const apk = File.externalRootDirectory + 'android.apk'; //apk保存的目录
+      // const apk = "";
       fileTransfer.download(upgradeUrl, apk).then(() => {
         // window['install'].install(apk.replace('file://', ''));
         FileOpener.open(apk, 'application/vnd.android.package-archive').then(
