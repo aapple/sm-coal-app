@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import * as $ from "jquery";
+// import * as $ from "jquery";
 
 
 @Component({
@@ -27,7 +27,7 @@ export class AmapPage {
     });
 
     //设置DomLibrary，jQuery或者Zepto
-    AMapUI.setDomLibrary($);
+    // AMapUI.setDomLibrary($);
 
     //加载PoiPicker，loadUI的路径参数为模块名中 'ui/' 之后的部分
     AMapUI.loadUI(['misc/PoiPicker'], function(PoiPicker) {

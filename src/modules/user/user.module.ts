@@ -90,48 +90,45 @@ export class UserModule {
 
     if(this.utilService.isAndroid() || this.utilService.isIos()){
 
-    }
+      this.utilService.getVersionNumber().then(ret => {
 
-    this.utilService.getVersionNumber().then(ret => {
-
-    });
-
-
-    let params = {
-      versionNum : '1.0.0',
-      systemType: 'android'
-    }
-
-    this.userService.checkUpdate(params).then(data => {
-
-      if(data.isNeedUpdate){
-
-        //检查当前版本是否要弹出提示
-        let cancelVersion = this.localStorageService.get(AppGlobal.CANCEL_VERSION);
-        if(cancelVersion == data.versionNum){
-          return;
+        let params = {
+          versionNum : ret,
+          systemType: 'android'
         }
 
-        this.alertCtrl.create({
-          title: '升级',
-          subTitle: '发现新版本,是否立即升级？',
-          buttons: [
-            {
-              text: '取消',
-              handler: () => {
-                this.localStorageService.set(AppGlobal.CANCEL_VERSION, data.versionNum);
-              }
-            },
-            {
-              text: '确定',
-              handler: () => {
-                this.utilService.downloadApp(data.versionAddr);
-              }
+        this.userService.checkUpdate(params).then(data => {
+
+          if(data.isNeedUpdate){
+
+            //检查当前版本是否要弹出提示
+            let cancelVersion = this.localStorageService.get(AppGlobal.CANCEL_VERSION);
+            if(cancelVersion == data.versionNum){
+              return;
             }
-          ]
-        }).present();
-      }
-    });
+
+            this.alertCtrl.create({
+              title: '升级',
+              subTitle: '发现新版本,是否立即升级？',
+              buttons: [
+                {
+                  text: '取消',
+                  handler: () => {
+                    this.localStorageService.set(AppGlobal.CANCEL_VERSION, data.versionNum);
+                  }
+                },
+                {
+                  text: '确定',
+                  handler: () => {
+                    this.utilService.downloadApp(data.versionAddr);
+                  }
+                }
+              ]
+            }).present();
+          }
+        });
+      });
+    }
 
   }
 
