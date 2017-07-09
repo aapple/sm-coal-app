@@ -23,7 +23,7 @@
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
 
-  <ion-slides class="slide-title" class="slide-title" [slidesPerView]="pageNumber" [pager]="false">
+  <ion-slides *ngIf="factoryType==2" class="slide-title" class="slide-title" [slidesPerView]="pageNumber" [pager]="false">
     <ion-slide *ngFor="let slide of productTypeList; let i = pageIndex;">
       <div (click)="onSlideClick(slide.id)">
         <span class="slide-title-unit" [ngClass]="{'slide-title-active': productType == slide.id}">{{slide.name}}</span>
@@ -31,13 +31,35 @@
     </ion-slide>
   </ion-slides>
 
-  <ion-slides *ngIf="factoryType == 1" class="slide-title" class="slide-title" [slidesPerView]="pageNumber" [pager]="false">
+  <ion-slides *ngIf="factoryType == 0" class="slide-title" class="slide-title" [slidesPerView]="pageNumber" [pager]="false">
     <ion-slide *ngFor="let slide of productTypeList2; let i = pageIndex;">
       <div (click)="onSlideClick(slide.id)">
         <span class="slide-title-unit" [ngClass]="{'slide-title-active': productType == slide.id}">{{slide.name}}</span>
       </div>
     </ion-slide>
   </ion-slides>
+
+  <ion-grid style="padding: 0;" *ngIf="factoryType==1">
+    <ion-row>
+      <ion-col style="background: #fff;">
+        <ion-select (ionChange)="onParamsChange($event)" placeholder="选择煤种" [(ngModel)]="productType" interface="popover" style="max-width: 100%;text-align: center;">
+          <ion-option value="{{item.id}}" *ngFor="let item of productTypeList">{{item.name}}</ion-option>
+        </ion-select>
+      </ion-col>
+      <ion-col style="background: #fff;">
+        <ion-select (ionChange)="onParamsChange($event)" placeholder="是否水洗" [(ngModel)]="coalWashing" interface="popover" style="max-width: 100%;text-align: center;">
+          <ion-option value="0">非水洗</ion-option>
+          <ion-option value="1">水洗</ion-option>
+        </ion-select>
+      </ion-col>
+      <ion-col style="background: #fff;">
+        <ion-select (ionChange)="onParamsChange($event)" placeholder="是否过筛" [(ngModel)]="graded" interface="popover" style="max-width: 100%;text-align: center;">
+          <ion-option value="0">不过筛</ion-option>
+          <ion-option value="1">过筛</ion-option>
+        </ion-select>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
   <ion-segment style="padding: 10px 16px;" [(ngModel)]="priceOwnerType" padding *ngIf="factoryType == 1" (click)="onSegmentClick()">
     <ion-segment-button value="1">

@@ -15,7 +15,7 @@ export class CoalPage {
   factoryType: string = "";
   productTypeList: any = [];
   productTypeList2: any = [];
-  productType: string;
+
   productPriceList: any = [];
   queryText: string;
   pageTitle: string = "";
@@ -29,6 +29,10 @@ export class CoalPage {
 
   showCancelButton: boolean=true;
   cancelButtonText: string="搜索";
+
+  productType: number = -1;
+  coalWashing: number = -1;
+  graded: number = -1;
 
   constructor(
     public navCtrl: NavController,
@@ -48,7 +52,8 @@ export class CoalPage {
 
   onSlideClick(id) {
     this.productType = id;
-    this.loadProductPriceList();
+    let params = this.getQueryParams();
+    this.loadProductPriceList(params);
   }
 
   ionViewDidLoad() {
@@ -64,34 +69,30 @@ export class CoalPage {
     this.coalService.getProductTypeList(data)
       .then(ret => {
 
-        if(this.factoryType == 1+''){
-          this.productTypeList = ret.slice(0, 5);
-          this.productTypeList2 = ret.slice(5);
-        } else {
-          this.productTypeList = ret;
-        }
+        this.productTypeList = ret;
+        // if(this.factoryType == 1+''){
+        //   this.productTypeList = ret.slice(0, 5);
+        //   this.productTypeList2 = ret.slice(5);
+        // } else {
+        //   this.productTypeList = ret;
+        // }
 
 
-        this.productType = this.productTypeList[0].id;
-        this.loadProductPriceList();
+        //this.productType = this.productTypeList[0].id;
+        let params = this.getQueryParams();
+        this.loadProductPriceList(params);
       });
   }
 
-  loadProductPriceList() {
+  onParamsChange(e){
 
-    let data : Object = null;
-    if(this.factoryType == 1 + ""){
-      data = {
-        productType: {id: this.productType},
-        priceOwnerType: this.priceOwnerType
-      };
-    } else {
-      data = {
-        productType: {id: this.productType}
-      };
-    }
+    let params = this.getQueryParams();
+    this.loadProductPriceList(params);
+  }
 
-    this.coalService.loadProductPriceList(data)
+  loadProductPriceList(params) {
+
+    this.coalService.loadProductPriceList(params)
     .then(ret => {
       this.productPriceList = ret;
     }, (data) => {
@@ -101,19 +102,8 @@ export class CoalPage {
 
   doRefresh(refresher) {
 
-    let data : Object = null;
-    if(this.factoryType == 1 + ""){
-      data = {
-        productType: {id: this.productType},
-        priceOwnerType: this.priceOwnerType
-      };
-    } else {
-      data = {
-        productType: {id: this.productType}
-      };
-    }
-
-    this.coalService.loadProductPriceList(data)
+    let params = this.getQueryParams();
+    this.coalService.loadProductPriceList(params)
       .then(ret => {
         this.productPriceList = ret;
         refresher.complete();
@@ -124,7 +114,9 @@ export class CoalPage {
   }
 
   onSegmentClick(){
-    this.loadProductPriceList();
+
+    let params = this.getQueryParams();
+    this.loadProductPriceList(params);
   }
 
   doQuery(ev){
@@ -138,26 +130,27 @@ export class CoalPage {
       me.queryText = text;
     }, 100);
 
-    let data : Object = null;
+    let params = this.getQueryParams();
+    params.factory = {name: text};
+
+    this.loadProductPriceList(params);
+
+  }
+
+  getQueryParams(){
+
+    let params : any = {
+      productType: this.productType != -1?{id: this.productType}: null,
+      coalWashing: this.coalWashing != -1?this.coalWashing: null,
+      graded: this.graded != -1?this.graded: null,
+
+    };
+
     if(this.factoryType == 1 + ""){
-      data = {
-        productType: {id: this.productType},
-        priceOwnerType: this.priceOwnerType,
-        factory:{name: text}
-      };
-    } else {
-      data = {
-        productType: {id: this.productType},
-        factory:{name: text}
-      };
+      params.priceOwnerType = this.priceOwnerType;
     }
 
-    this.coalService.loadProductPriceList(data)
-      .then(ret => {
-        this.productPriceList = ret;
-      }, (data) => {
-
-      });
+    return params;
 
   }
 

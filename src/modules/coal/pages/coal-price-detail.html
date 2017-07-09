@@ -95,8 +95,8 @@
     </ion-row>
   </ion-grid>
 
-  <img imageViewer src="{{productPrice.reportImage}}" *ngIf="productPrice.reportImage" style="display: block;padding-bottom: 10px;">
-  <img imageViewer src="{{productPrice.productImage}}" *ngIf="productPrice.productImage">
+  <img imageViewer="{{productPrice.reportImage}}" src="{{productPrice.reportImage}}?imageView/2/w/400" *ngIf="productPrice.reportImage" style="display: block;padding-bottom: 10px;">
+  <img imageViewer="{{productPrice.productImage}}" src="{{productPrice.productImage}}?imageView/2/w/400" *ngIf="productPrice.productImage">
 </ion-content>
 
 <ion-footer>

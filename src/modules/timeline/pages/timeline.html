@@ -20,7 +20,7 @@
   <header>
     <img id="bg" src="./assets/picture/1_bg.png">
     <p id="user-name" class="data-name">{{ heyApp.authService.userInfo?.nickname }}</p>
-    <img imageViewer id="avt" class="data-avt" src="{{ heyApp.helper.getImg(heyApp.authService.userInfo?.avatar) }}?imageView/2/w/100">
+    <img imageViewer="{{ heyApp.helper.getImg(heyApp.authService.userInfo?.avatar) }}" id="avt" class="data-avt" src="{{ heyApp.helper.getImg(heyApp.authService.userInfo?.avatar) }}?imageView/2/w/100">
   </header>
 
   <div id="main">
@@ -29,7 +29,7 @@
         <li *ngFor="let timeline of timelineService.timelines; let i=index">
 
           <div class="po-avt-wrap">
-            <img imageViewer class="po-avt" src="{{ heyApp.helper.getImg(timeline.author?.avatar) }}?imageView/2/w/100">
+            <img imageViewer="{{ heyApp.helper.getImg(timeline.author?.avatar) }}" class="po-avt" src="{{ heyApp.helper.getImg(timeline.author?.avatar) }}?imageView/2/w/100">
           </div>
 
           <div class="po-cmt">
@@ -39,10 +39,10 @@
                 <span (click)="gotoTimelineDetailPage(timeline, i)">{{formatContent(timeline.content, timeline.isAll)| nl2br}}</span>
                 <u *ngIf="!timeline.isAll && timeline.content && timeline.content.length>100" (click)="showTimelineAll(i)" class="is_show">展开</u>
                 <u *ngIf="timeline.isAll && timeline.content && timeline.content.length>100" (click)="showTimelineAll(i)" class="is_show">收起</u>
-                <img imageViewer *ngIf="timeline.imgs.length === 1" src="{{ timeline.imgs[0].uri}}">
+                <img imageViewer="{{ timeline.imgs[0].uri}}" *ngIf="timeline.imgs.length === 1" src="{{ timeline.imgs[0].uri}}?imageView/2/w/200">
 
                 <span class="img-muilt" [ngClass]="{'img-odd': (timeline.imgs.length % 2)}" *ngIf="timeline.imgs.length > 1">
-                  <img imageViewer src="{{heyApp.helper.getImg(img.uri)}}" *ngFor="let img of timeline.imgs; let i = index">
+                  <img imageViewer="{{heyApp.helper.getImg(img.uri)}}" src="{{heyApp.helper.getImg(img.uri)}}?imageView/2/w/200" *ngFor="let img of timeline.imgs; let i = index">
                   <font class="clear-float"></font>
                 </span>
               </p>
