@@ -42,6 +42,15 @@ export class HomeService {
       .catch(this.handleError);
   }
 
+  loadNoticeList(params) {
+    let api: string = this.helper.getAPP('news/getTrafficInfoList?pageNumber=' + params.pageNumber);
+
+    return this.http.get(api, this.requestOptions)
+      .toPromise()
+      .then(response => response.json())
+      .catch(this.handleError);
+  }
+
   //
   // handle error
   private handleError(error: any) {

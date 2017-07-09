@@ -21,15 +21,9 @@
       <ion-label>服务类型</ion-label>
       <ion-select [(ngModel)]="lifestore.serviceType" interface="popover">
         <ion-option value="餐饮">餐饮</ion-option>
-        <ion-option value="修理厂">修理厂</ion-option>
+        <ion-option value="汽修">汽修</ion-option>
         <ion-option value="加油站">加油站</ion-option>
-      </ion-select>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>区域</ion-label>
-      <ion-select [(ngModel)]="lifestore.area" interface="popover">
-        <ion-option value="{{area}}" *ngFor="let area of areaList">{{area}}</ion-option>
+        <ion-option value="化验所">化验所</ion-option>
       </ion-select>
     </ion-item>
 

@@ -19,6 +19,8 @@
     <div style="padding: 16px;border-bottom: 1px solid #efefef;font-size: 20px;">产品种类：{{productPrice.productType.name}}</div>
     <div style="padding: 16px;border-bottom: 1px solid #efefef">产品价格：{{productPrice.price}}元/吨</div>
     <div style="padding: 16px;border-bottom: 1px solid #efefef">价格类型：{{priceType}}</div>
+    <div style="padding: 16px;border-bottom: 1px solid #efefef" *ngIf="productPrice.factory.factoryType==1">是否水洗：{{coalWashing?'水洗':'不水洗'}}</div>
+    <div style="padding: 16px;border-bottom: 1px solid #efefef" *ngIf="productPrice.factory.factoryType==1">是否过筛：{{graded?'过筛':'不过筛'}}</div>
     <div style="padding: 16px;border-bottom: 1px solid #efefef" >
       变更幅度：
       <span [ngStyle]="{'color':productPrice.priceDiff>0 ? 'red' : '','color':productPrice.priceDiff<0 ? 'green' : ''}">

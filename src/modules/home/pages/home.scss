@@ -26,7 +26,6 @@ page-home {
 
   .nav{
     background-color: #fff;
-    margin-top: 1rem;
     height: auto;
     overflow: hidden;
     padding-bottom: 2rem;
@@ -34,7 +33,7 @@ page-home {
   .nav ul li{
     width: 15%;
     float: left;
-    margin-left: 8%;
+    margin-left: 13%;
     font-size: 1.2rem;
     text-align: center;
     margin-top: 2rem;
@@ -111,6 +110,10 @@ page-home {
   .interest_list ul li {
     padding-bottom: 5px;
     margin-top: 10px;
+  }
+
+  .interest_list {
+    padding: 0 16px;
   }
 
 }

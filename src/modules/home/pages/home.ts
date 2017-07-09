@@ -19,6 +19,10 @@ import {NewsListPage} from "./news/news-list";
 })
 export class HomePage {
 
+  newsList: any = [];
+  areaName: string = "地区";
+  notice: string = "欢迎来到神木煤炭app，这里有最实用的功能，最及时的信息！";
+
   @ViewChild('mySlider') slider:Slides;
 
   constructor(public navCtrl: NavController,
@@ -31,10 +35,8 @@ export class HomePage {
     if(areaNameStr){
       this.areaName = areaNameStr;
     }
-  }
 
-  newsList: any = [];
-  areaName: string = "地区";
+  }
 
   ionViewWillEnter(){
     console.log('ionViewWillEnter Home');
@@ -46,7 +48,11 @@ export class HomePage {
   }
 
   ionViewDidLoad() {
+
     this.loadNewsList();
+
+    //初始化公告信息
+    //this.loadNotice();
   }
 
   loadNewsList() {
@@ -55,6 +61,16 @@ export class HomePage {
     this.homeService.loadNewsList(data)
       .then(ret => {
         this.newsList = ret.content;
+        }
+      );
+  }
+
+  loadNotice() {
+
+    let data = {pageNumber: 0};
+    this.homeService.loadNoticeList(data)
+      .then(ret => {
+          this.notice = ret[0];
         }
       );
   }

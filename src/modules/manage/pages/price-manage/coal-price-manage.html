@@ -37,8 +37,8 @@
     <ion-item>
       <ion-label>是否生产：</ion-label>
       <ion-select [(ngModel)]="productPrice.state" interface="popover">
-        <ion-option value="0" selected="true">是</ion-option>
-        <ion-option value="1">否</ion-option>
+        <ion-option value="1" selected="true">是</ion-option>
+        <ion-option value="0">否</ion-option>
       </ion-select>
     </ion-item>
 
@@ -48,6 +48,23 @@
     </ion-item>
 
     <div *ngIf="productPrice.factory.factoryType==1">
+
+      <ion-item>
+        <ion-label>有无水洗：</ion-label>
+        <ion-select [(ngModel)]="productPrice.coalWashing" interface="popover">
+          <ion-option value="0">不水洗</ion-option>
+          <ion-option value="1">水洗</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>是否过筛：</ion-label>
+        <ion-select [(ngModel)]="productPrice.graded" interface="popover">
+          <ion-option value="0">不过筛</ion-option>
+          <ion-option value="1">过筛</ion-option>
+        </ion-select>
+      </ion-item>
+
       <ion-item>
         <ion-label fixed>发热量：</ion-label>
         <ion-input type="number" [(ngModel)]="productPrice.coal_fareliang" placeholder="请输入发热量"></ion-input>
