@@ -74,4 +74,14 @@ page-coal {
     color: #333;
   }
 
+  .popover-ios .popover-arrow {
+    display: none !important;
+  }
+
+  .popover-ios .popover-content {
+    width: 100%;
+    left: 0px !important;
+    border-radius: 0 !important;
+  }
+
 }

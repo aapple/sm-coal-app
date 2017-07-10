@@ -23,13 +23,18 @@ export class NewsListPage {
   }
 
   ionViewDidLoad() {
+    this.loadNewsList();
+    console.log('ionViewDidLoad NewsList');
+  }
+
+  loadNewsList(){
+
     let data = {pageNumber: 0};
     this.homeService.loadNewsList(data)
       .then(ret => {
-        this.newsList = ret.content;
+          this.newsList = ret.content;
         }
       );
-    console.log('ionViewDidLoad NewsList');
   }
 
   gotoNewsDetail(news){
@@ -40,5 +45,27 @@ export class NewsListPage {
         url: news.content
       }
     });
+  }
+
+  doRefresh(refresher) {
+
+    this.loadNewsList();
+    setTimeout(function(){
+      refresher.complete();
+    }, 1000)
+  }
+
+  doInfinite(infiniteScroll) {
+    // let length = this.timelineService.timelines.length;
+    // let params: any = {
+    //   id: length ? this.timelineService.timelines[length - 1].id : 0,
+    // }
+    //
+    // this.timelineService.infinite(params)
+    //   .then(timelines => {
+    //     infiniteScroll.complete();
+    //   }, ret => {
+    //     infiniteScroll.complete();
+    //   });
   }
 }

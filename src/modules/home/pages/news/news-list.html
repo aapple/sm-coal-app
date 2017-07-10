@@ -13,21 +13,25 @@
 </ion-header>
 
 
-<ion-content>
-  <div class="interest_list">
-    <ul>
-      <li *ngFor="let news of newsList" (click)="gotoNewsDetail(news)">
-        <a>
-          <img src="{{news.image? news.image : './assets/images/default.jpg'}}" >
-          <div class="list_r">
-            <p class="news_detail" style="-webkit-box-orient: vertical;"><span style="font-size: 16px;">{{news.title}}</span></p>
+<ion-content style="background: #fff !important;">
 
-            <p>
-              {{news.publisher}}  <span style="float: right;color: #666;">{{ news.updateTime | moment: ['MM-DD HH:mm'] }}</span>
-            </p>
-          </div>
-        </a>
-      </li>
-    </ul>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <div *ngFor="let news of newsList" (click)="gotoNewsDetail(news)" style="height: 70px;
+    margin: 10px;
+    background: #F8F8F8;">
+    <div style="color:#fff;border-radius: 0;width: 65px;height: 70px;margin-right: 15px;display: inline-block;float: left;background: red;text-align: right;">
+      <div style="font-size: 26px;font-weight: bold;padding-right: 5px;padding-top: 10px;">{{ news.updateTime | moment: ['DD'] }}</div>
+      <div style="padding-right: 5px;padding-top: 5px;FONT-WEIGHT: bold;">{{ news.updateTime | moment: ['YYYY-MM'] }}</div>
+    </div>
+    <div style="text-align: left;font-size: 16px;padding-top: 20px;">
+      <div style="overflow: hidden;display: -webkit-box;-webkit-line-clamp: 2;word-break: break-all;white-space: inherit;height: 30px;">{{news.title}}</div>
+    </div>
   </div>
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 </ion-content>

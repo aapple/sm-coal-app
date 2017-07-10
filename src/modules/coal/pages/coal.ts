@@ -80,6 +80,11 @@ export class CoalPage {
 
         //this.productType = this.productTypeList[0].id;
         let params = this.getQueryParams();
+
+        if(this.factoryType == 2+''){
+          this.productType = this.productTypeList[0].id;
+          params.productType = {id: this.productType};
+        }
         this.loadProductPriceList(params);
       });
   }
@@ -143,7 +148,7 @@ export class CoalPage {
       productType: this.productType != -1?{id: this.productType}: null,
       coalWashing: this.coalWashing != -1?this.coalWashing: null,
       graded: this.graded != -1?this.graded: null,
-
+      factory: {factoryType: this.factoryType}
     };
 
     if(this.factoryType == 1 + ""){
