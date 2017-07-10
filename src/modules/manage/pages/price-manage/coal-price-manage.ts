@@ -70,6 +70,10 @@ export class CoalPriceManagePage {
     return false;
 }
 
+  clearImage(imagesName){
+    this.productPrice[imagesName] = '';
+  }
+
 
   uploadImg(event, imagesName) {
     this.heyApp.utilityComp.presentLoading();

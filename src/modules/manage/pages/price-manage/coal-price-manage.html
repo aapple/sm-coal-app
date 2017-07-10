@@ -136,6 +136,9 @@
         选择图片
         <input class="input-img" #inputReportImg type="file" (change)="uploadImg($event, 'reportImage')" accept="image/*">
       </button>
+      <button ion-button outline item-end icon-left style="position: absolute;right: 8px;top: 110px;" (click)="clearImage('reportImage')">
+        删除图片
+      </button>
     </ion-item>
 
     <ion-item style="height: 200px;">
@@ -144,6 +147,9 @@
       <button ion-button outline item-end icon-left>
         选择图片
         <input class="input-img" #inputProductImg type="file" (change)="uploadImg($event, 'productImage')" accept="image/*">
+      </button>
+      <button ion-button outline item-end icon-left style="position: absolute;right: 8px;top: 110px;" (click)="clearImage('productImage')">
+        删除图片
       </button>
     </ion-item>
 
