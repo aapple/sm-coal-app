@@ -18,6 +18,7 @@ export class CoalPriceManagePage {
 
   productPrice: any = "";
   productTypeList: any = [];
+  currentProductList: any = [];
 
   constructor(
     public navCtrl: NavController,
@@ -27,6 +28,7 @@ export class CoalPriceManagePage {
     public manageService: ManageService) {
 
     this.productPrice = navParams.data;
+    this.currentProductList = this.productPrice.currentProductList;
   }
 
   ionViewDidLoad() {
@@ -39,17 +41,19 @@ export class CoalPriceManagePage {
       this.coalService.getProductTypeList(data)
         .then(ret => {
 
-          let currentProducts = [];
-          if(this.productPrice.currentProductList){
-            for(let product of this.productPrice.currentProductList){
-              currentProducts.push(product.productType.id);
-            }
-          }
-          for(let product of ret){
-            if(!this.contains(currentProducts, product.id)){
-              this.productTypeList.push(product);
-            }
-          }
+          this.productTypeList = ret;
+
+          // let currentProducts = [];
+          // if(this.productPrice.currentProductList){
+          //   for(let product of this.productPrice.currentProductList){
+          //     currentProducts.push(product.productType.id);
+          //   }
+          // }
+          // for(let product of ret){
+          //   if(!this.contains(currentProducts, product.id)){
+          //     this.productTypeList.push(product);
+          //   }
+          // }
 
         });
     }
@@ -87,6 +91,43 @@ export class CoalPriceManagePage {
     } else {
       this.productPrice.state = 0;
     }
+
+    if(!this.productPrice.productType.id){
+      this.heyApp.utilityComp.presentToast("必须选择产品种类！");
+      return;
+    }
+
+    if(this.productPrice.coalWashing == undefined && this.productPrice.factory.factoryType==1){
+      this.heyApp.utilityComp.presentToast("必须选择是否水洗!");
+      return;
+    }
+
+    if(this.productPrice.graded == undefined && this.productPrice.factory.factoryType==1){
+      this.heyApp.utilityComp.presentToast("必须选择是否过筛!");
+      return;
+    }
+
+    if(this.currentProductList){
+      for(let product of this.currentProductList){
+
+        if(product.productType.id == this.productPrice.productType.id
+          && this.productPrice.factory.factoryType==2){
+
+          this.heyApp.utilityComp.presentToast("该产品种类已经添加过，不能重复添加");
+          return;
+        }
+
+        if(product.productType.id+"" == this.productPrice.productType.id
+          && product.coalWashing+""==this.productPrice.coalWashing
+          && product.graded+""==this.productPrice.graded
+          && this.productPrice.factory.factoryType==1){
+
+          this.heyApp.utilityComp.presentToast("该产品种类已经添加过，不能重复添加");
+          return;
+        }
+      }
+    }
+
     this.manageService.saveOrUpdateProductPrice(this.productPrice)
       .then(ret => {
         this.heyApp.utilityComp.presentToast("提交成功");

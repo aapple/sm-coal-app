@@ -19,7 +19,7 @@
 
     <ion-item>
       <ion-label fixed>厂矿名称：</ion-label>
-      <ion-input type="text" [(ngModel)]="productPrice.factory.name" placeholder="请输入煤炭名称" readonly></ion-input>
+      <ion-input type="text" [(ngModel)]="productPrice.factory.name" placeholder="请输入厂矿名称" readonly></ion-input>
     </ion-item>
 
     <ion-item *ngIf="productPrice.productType.name">
@@ -34,7 +34,33 @@
       </ion-select>
     </ion-item>
 
-    <ion-item>
+    <ion-item *ngIf="productPrice.productType.name">
+      <ion-label fixed>有无水洗：</ion-label>
+      <ion-input type="text"  value="{{productPrice.coalWashing?'水洗':'不水洗'}}" readonly></ion-input>
+    </ion-item>
+
+    <ion-item *ngIf="!productPrice.productType.name">>
+      <ion-label>有无水洗：</ion-label>
+      <ion-select [(ngModel)]="productPrice.coalWashing" interface="popover">
+        <ion-option value="0">不水洗</ion-option>
+        <ion-option value="1">水洗</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item *ngIf="productPrice.productType.name">
+      <ion-label fixed>是否过筛：</ion-label>
+      <ion-input type="text"  value="{{productPrice.graded?'过筛':'不过筛'}}" readonly></ion-input>
+    </ion-item>
+
+    <ion-item *ngIf="!productPrice.productType.name">>
+      <ion-label>是否过筛：</ion-label>
+      <ion-select [(ngModel)]="productPrice.graded" interface="popover">
+        <ion-option value="0">不过筛</ion-option>
+        <ion-option value="1">过筛</ion-option>
+      </ion-select>
+    </ion-item>
+
+      <ion-item>
       <ion-label>是否生产：</ion-label>
       <ion-select [(ngModel)]="productPrice.state" interface="popover">
         <ion-option value="1" selected="true">是</ion-option>
@@ -48,22 +74,6 @@
     </ion-item>
 
     <div *ngIf="productPrice.factory.factoryType==1">
-
-      <ion-item>
-        <ion-label>有无水洗：</ion-label>
-        <ion-select [(ngModel)]="productPrice.coalWashing" interface="popover">
-          <ion-option value="0">不水洗</ion-option>
-          <ion-option value="1">水洗</ion-option>
-        </ion-select>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>是否过筛：</ion-label>
-        <ion-select [(ngModel)]="productPrice.graded" interface="popover">
-          <ion-option value="0">不过筛</ion-option>
-          <ion-option value="1">过筛</ion-option>
-        </ion-select>
-      </ion-item>
 
       <ion-item>
         <ion-label fixed>发热量：</ion-label>
@@ -121,7 +131,7 @@
 
     <ion-item style="height: 200px;">
       <ion-label fixed>化验报告照片：</ion-label>
-      <img imageViewer item-start src="{{productPrice.reportImage}}" style="width: 150px;position: absolute;left: 130px;">
+      <img imageViewer="{{productPrice.reportImage}}" item-start src="{{productPrice.reportImage}}?imageView/2/w/400" style="width: 150px;position: absolute;left: 130px;">
       <button ion-button outline item-end icon-left>
         选择图片
         <input class="input-img" #inputReportImg type="file" (change)="uploadImg($event, 'reportImage')" accept="image/*">
@@ -130,7 +140,7 @@
 
     <ion-item style="height: 200px;">
       <ion-label fixed>产品照片：</ion-label>
-      <img imageViewer item-start src="{{productPrice.productImage}}" style="width: 150px;position: absolute;left: 130px;">
+      <img imageViewer="{{productPrice.productImage}}" item-start src="{{productPrice.productImage}}?imageView/2/w/400" style="width: 150px;position: absolute;left: 130px;">
       <button ion-button outline item-end icon-left>
         选择图片
         <input class="input-img" #inputProductImg type="file" (change)="uploadImg($event, 'productImage')" accept="image/*">
