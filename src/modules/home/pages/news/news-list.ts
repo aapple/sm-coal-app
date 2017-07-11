@@ -16,6 +16,8 @@ import {HomeService} from "../../services/home.service";
 export class NewsListPage {
 
   newsList: any = [];
+  pageNumber: number = 0;
+  isInfiniteEnabled: boolean = true;
 
   constructor(public navCtrl: NavController,
               public homeService: HomeService,
@@ -29,7 +31,8 @@ export class NewsListPage {
 
   loadNewsList(){
 
-    let data = {pageNumber: 0};
+    this.pageNumber = 0;
+    let data = {pageNumber: this.pageNumber};
     this.homeService.loadNewsList(data)
       .then(ret => {
           this.newsList = ret.content;
@@ -53,19 +56,21 @@ export class NewsListPage {
     setTimeout(function(){
       refresher.complete();
     }, 1000)
+    this.isInfiniteEnabled = true;
   }
 
   doInfinite(infiniteScroll) {
-    // let length = this.timelineService.timelines.length;
-    // let params: any = {
-    //   id: length ? this.timelineService.timelines[length - 1].id : 0,
-    // }
-    //
-    // this.timelineService.infinite(params)
-    //   .then(timelines => {
-    //     infiniteScroll.complete();
-    //   }, ret => {
-    //     infiniteScroll.complete();
-    //   });
+
+    let pageNumber = ++this.pageNumber;
+    let data = {pageNumber: pageNumber};
+
+    this.homeService.loadNewsList(data)
+      .then(ret => {
+         this.newsList = this.newsList.concat(ret.content);
+         infiniteScroll.complete();
+         this.isInfiniteEnabled = !ret.last;
+        }
+      );
+
   }
 }

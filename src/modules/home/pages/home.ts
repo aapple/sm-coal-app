@@ -20,8 +20,11 @@ import {NewsListPage} from "./news/news-list";
 export class HomePage {
 
   newsList: any = [];
+  pageNumber: number = 0;
+  isInfiniteEnabled: boolean = true;
   areaName: string = "地区";
   notice: string = "欢迎来到神木煤炭app，这里有最实用的功能，最及时的信息！";
+
 
   @ViewChild('mySlider') slider:Slides;
 
@@ -57,7 +60,8 @@ export class HomePage {
 
   loadNewsList() {
 
-    let data = {pageNumber: 0};
+    this.pageNumber = 0;
+    let data = {pageNumber: this.pageNumber};
     this.homeService.loadNewsList(data)
       .then(ret => {
         this.newsList = ret.content;
@@ -132,7 +136,9 @@ export class HomePage {
     this.loadNewsList();
     setTimeout(function(){
       refresher.complete();
-    }, 1000)
+    }, 1000);
+
+    this.isInfiniteEnabled = true;
   }
 
   gotoLogisticsPricePage() {
@@ -161,6 +167,20 @@ export class HomePage {
         url: news.content
       }
     });
+  }
+
+  doInfinite(infiniteScroll) {
+
+    let pageNumber = ++this.pageNumber;
+    let data = {pageNumber: pageNumber};
+
+    this.homeService.loadNewsList(data)
+      .then(ret => {
+          this.newsList = this.newsList.concat(ret.content);
+          infiniteScroll.complete();
+          this.isInfiniteEnabled = !ret.last;
+        }
+      );
   }
 
 }
