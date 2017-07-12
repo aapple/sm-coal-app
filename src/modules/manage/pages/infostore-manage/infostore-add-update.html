@@ -28,6 +28,11 @@
     </ion-item>
 
     <ion-item>
+      <ion-label fixed>联系人姓名：</ion-label>
+      <ion-textarea type="text" [(ngModel)]="infostore.callPerson" placeholder="请输入联系人姓名"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
       <ion-label fixed>联系电话：</ion-label>
       <ion-input type="text" [(ngModel)]="infostore.callNumber" placeholder="请输入联系电话"></ion-input>
     </ion-item>

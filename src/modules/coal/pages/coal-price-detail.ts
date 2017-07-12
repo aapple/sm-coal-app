@@ -15,7 +15,7 @@ export class CoalPriceDetailPage {
 
     this.productPrice = navParams.data;
     if(this.productPrice.factory.factoryType == 2){
-      this.productPrice.priceOwnerType = 1;
+      this.productPrice.priceOwnerType = 2;
     }
 
 
@@ -30,12 +30,11 @@ export class CoalPriceDetailPage {
     console.log('ionViewDidLoad CoalPriceDetail');
   }
 
-
   gotoBuy(){
     if(this.productPrice.priceOwnerType == 1){
-      window.location.href = "tel:" + this.productPrice.factory.onwer.phoneNum;
+      window.location.href = "tel:" + this.productPrice.factory.onwerCallNumber;
     } else {
-      window.location.href = "tel:" + this.productPrice.factory.saler.phoneNum;
+      window.location.href = "tel:" + this.productPrice.factory.salerCallNumber;
     }
   }
 }

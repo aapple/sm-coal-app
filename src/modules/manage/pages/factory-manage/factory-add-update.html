@@ -27,6 +27,26 @@
       <ion-textarea type="text" [(ngModel)]="factory.factoryDescribe" placeholder="请输入描述"></ion-textarea>
     </ion-item>
 
+    <ion-item *ngIf="factory.factoryType == 1">
+      <ion-label fixed>联系人姓名：</ion-label>
+      <ion-textarea type="text" [(ngModel)]="factory.onwerCallPerson" placeholder="请输入联系人姓名"></ion-textarea>
+    </ion-item>
+
+    <ion-item *ngIf="factory.factoryType == 1">
+      <ion-label fixed>联系电话：</ion-label>
+      <ion-textarea type="text" [(ngModel)]="factory.onwerCallNumber" placeholder="请输入联系电话"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>业务专员姓名：</ion-label>
+      <ion-textarea type="text" [(ngModel)]="factory.salerCallPerson" placeholder="请输入业务专员姓名"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>业务专员电话：</ion-label>
+      <ion-textarea type="text" [(ngModel)]="factory.salerCallNumber" placeholder="请输入业务专员电话"></ion-textarea>
+    </ion-item>
+
     <ion-item>
       <ion-label>种类</ion-label>
       <ion-select [(ngModel)]="factory.factoryType" interface="popover">

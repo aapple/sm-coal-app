@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {  NavController, NavParams } from 'ionic-angular';
+import {LogisticsListPage} from "./logistics-list";
 
 /**
  * Generated class for the LogisticsDetail page.
@@ -26,5 +27,7 @@ export class LogisticsDetailPage {
     window.location.href = "tel:" + this.logistics.infoDepartment.callNumber;
   }
 
-
+  gotoInfoStore(){
+    this.navCtrl.push(LogisticsListPage, this.logistics.infoDepartment);
+  }
 }
