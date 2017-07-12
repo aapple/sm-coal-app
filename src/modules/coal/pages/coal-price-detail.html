@@ -17,7 +17,7 @@
 
   <div style="color: #000;background: #fff;margin: 10px;border-radius: 4px;">
     <div style="padding: 16px;border-bottom: 1px solid #efefef;font-size: 20px;">产品种类：{{productPrice.productType.name}}</div>
-    <div style="padding: 16px;border-bottom: 1px solid #efefef">产品价格：{{productPrice.price}}元/吨</div>
+    <div style="padding: 16px;border-bottom: 1px solid #efefef">产品价格：<span style="color: red;font-weight: bold;">{{productPrice.price}}</span> 元/吨</div>
     <div style="padding: 16px;border-bottom: 1px solid #efefef">价格类型：{{priceType}}</div>
     <div style="padding: 16px;border-bottom: 1px solid #efefef" *ngIf="productPrice.factory.factoryType==1">是否水洗：{{coalWashing?'水洗':'不水洗'}}</div>
     <div style="padding: 16px;border-bottom: 1px solid #efefef" *ngIf="productPrice.factory.factoryType==1">是否过筛：{{graded?'过筛':'不过筛'}}</div>
@@ -26,7 +26,7 @@
       <span [ngStyle]="{'color':productPrice.priceDiff>0 ? 'red' : '','color':productPrice.priceDiff<0 ? 'green' : ''}">
         {{productPrice.priceDiff>0?'涨': ''}}
         {{productPrice.priceDiff<0?'降': ''}}
-        {{productPrice.priceDiff?productPrice.priceDiff+'元/吨': '无'}}
+        {{productPrice.priceDiff?productPrice.priceDiff+' 元/吨': '无'}}
       </span>
     </div>
     <div style="padding: 16px;">更新时间：{{ productPrice.createdTime | moment: ['MM-DD HH:mm'] }}</div>

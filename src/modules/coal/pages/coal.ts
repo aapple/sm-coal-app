@@ -15,6 +15,7 @@ export class CoalPage {
   factoryType: string = "";
   productTypeList: any = [];
   productTypeList2: any = [];
+  productTypeList3: any = [];
 
   productPriceList: any = [];
   queryText: string;
@@ -43,10 +44,10 @@ export class CoalPage {
 
     if(this.factoryType == 1+''){
       this.pageTitle = "煤价";
-      this.pageNumber = 5;
+      this.pageNumber = 6;
     } else {
       this.pageTitle = "兰炭价";
-      this.pageNumber = 6;
+      this.pageNumber = 4;
     }
   }
 
@@ -70,12 +71,13 @@ export class CoalPage {
       .then(ret => {
 
         this.productTypeList = ret;
-        // if(this.factoryType == 1+''){
-        //   this.productTypeList = ret.slice(0, 5);
-        //   this.productTypeList2 = ret.slice(5);
-        // } else {
-        //   this.productTypeList = ret;
-        // }
+        if(this.factoryType == 1+''){
+          this.productTypeList = ret.slice(0, 6);
+          this.productTypeList2 = ret.slice(6, 12);
+          this.productTypeList3 = ret.slice(12);
+        } else {
+          this.productTypeList = ret;
+        }
 
 
         //this.productType = this.productTypeList[0].id;
