@@ -34,12 +34,12 @@
       </ion-select>
     </ion-item>
 
-    <ion-item *ngIf="productPrice.productType.name">
+    <ion-item *ngIf="productPrice.productType.name && productPrice.factory.factoryType==1">
       <ion-label fixed>有无水洗：</ion-label>
       <ion-input type="text"  value="{{productPrice.coalWashing?'水洗':'不水洗'}}" readonly></ion-input>
     </ion-item>
 
-    <ion-item *ngIf="!productPrice.productType.name">>
+    <ion-item *ngIf="!productPrice.productType.name && productPrice.factory.factoryType==1">
       <ion-label>有无水洗：</ion-label>
       <ion-select [(ngModel)]="productPrice.coalWashing" interface="popover">
         <ion-option value="0">不水洗</ion-option>
@@ -47,12 +47,12 @@
       </ion-select>
     </ion-item>
 
-    <ion-item *ngIf="productPrice.productType.name">
+    <ion-item *ngIf="productPrice.productType.name && productPrice.factory.factoryType==1">
       <ion-label fixed>是否过筛：</ion-label>
       <ion-input type="text"  value="{{productPrice.graded?'过筛':'不过筛'}}" readonly></ion-input>
     </ion-item>
 
-    <ion-item *ngIf="!productPrice.productType.name">>
+    <ion-item *ngIf="!productPrice.productType.name && productPrice.factory.factoryType==1">
       <ion-label>是否过筛：</ion-label>
       <ion-select [(ngModel)]="productPrice.graded" interface="popover">
         <ion-option value="0">不过筛</ion-option>

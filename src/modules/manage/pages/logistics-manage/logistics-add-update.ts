@@ -38,4 +38,14 @@ export class LogisticsAddUpdate {
       });
   }
 
+  onDelete() {
+
+    this.logistics.state = 0;
+    this.manageService.saveOrUpdateLogistics(this.logistics)
+      .then(ret => {
+        this.heyApp.utilityComp.presentToast("删除成功");
+        this.navCtrl.pop();
+      });
+  }
+
 }

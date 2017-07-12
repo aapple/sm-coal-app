@@ -208,6 +208,26 @@ export class ManageService {
       .catch(this.handleError);
   }
 
+  loadTrafficList(params) {
+    let api: string = this.helper.getAPP('traffic/getTrafficInfoList?pageNumber=' + params.pageNumber);
+
+    return this.http.get(api, this.requestOptions)
+      .toPromise()
+      .then(response => response.json())
+      .catch(this.handleError);
+  }
+
+  saveOrUpdateTraffic(data) {
+    let api: string = this.helper.getAPP('traffic/addTrafficInfo');
+
+    return this.http.post(api, data, this.requestOptions)
+      .toPromise()
+      .then((response) => {
+        return response;
+      })
+      .catch(this.handleError);
+  }
+
   //
   // handle error
   private handleError(error: any) {

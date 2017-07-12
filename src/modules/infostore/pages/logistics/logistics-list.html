@@ -15,16 +15,6 @@
 
 <ion-content>
 
-  <ion-toolbar no-border-top>
-    <ion-searchbar color="primary"
-                   [(ngModel)]="queryText"
-                   [showCancelButton]="showCancelButton"
-                   [cancelButtonText]="cancelButtonText"
-                   (ionCancel)="doQuery($event)"
-                   placeholder="根据目的地查询">
-    </ion-searchbar>
-  </ion-toolbar>
-
   <ion-refresher (ionRefresh)="doRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>

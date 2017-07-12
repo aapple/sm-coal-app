@@ -38,7 +38,8 @@ export class LogisticsManagePage {
 
       this.infoDepartment = ret[0];
       let data = {
-        infoDepartment : ret[0]
+        infoDepartment : ret[0],
+        state: 1
       };
 
       this.manageService.getLogisticsList(data)

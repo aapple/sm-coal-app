@@ -29,7 +29,7 @@ export class TrafficAddUpdatePage {
   }
 
   onSubmit() {
-    this.manageService.saveOrUpdateFactory(this.traffic)
+    this.manageService.saveOrUpdateTraffic(this.traffic)
       .then(ret => {
         this.heyApp.utilityComp.presentToast("保存成功");
         this.navCtrl.pop();

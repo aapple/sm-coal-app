@@ -41,27 +41,22 @@
     </ion-item>
 
     <ion-item>
-      <ion-label fixed>总数量：</ion-label>
-      <ion-input type="text" [(ngModel)]="logistics.totalQty" placeholder="请输入总数量"></ion-input>
+      <ion-label fixed>用车数量：</ion-label>
+      <ion-input type="text" [(ngModel)]="logistics.totalQty" placeholder="请输入用车数量"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label fixed>剩余数量：</ion-label>
-      <ion-input type="text" [(ngModel)]="logistics.remainQty" placeholder="请输入剩余数量"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label fixed>运输费用：</ion-label>
+      <ion-label fixed>运费：</ion-label>
       <ion-input type="text" [(ngModel)]="logistics.freightCharge" placeholder="请输入运输费用"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label fixed>装车费用：</ion-label>
+      <ion-label fixed>装车费：</ion-label>
       <ion-input type="text" [(ngModel)]="logistics.loadingCharge" placeholder="请输入装车费用"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label fixed>卸车费用：</ion-label>
+      <ion-label fixed>卸车费：</ion-label>
       <ion-input type="text" [(ngModel)]="logistics.unloadingCharge" placeholder="请输入卸车费用"></ion-input>
     </ion-item>
 
@@ -74,6 +69,10 @@
 
   <div padding>
     <button ion-button color="primary" block (click)="onSubmit()">保存</button>
+  </div>
+
+  <div padding>
+    <button ion-button color="danger" block (click)="onDelete()">删除</button>
   </div>
 
 </ion-content>

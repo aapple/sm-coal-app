@@ -20,9 +20,9 @@ export class CoalPriceDetailPage {
 
 
     if(this.productPrice.priceOwnerType == 2 || this.productPrice.factory.factoryType == 2){
-      this.priceType = "两票制";
+      this.priceType = "一票价";
     } else {
-      this.priceType = "一票制";
+      this.priceType = "两票价";
     }
   }
 
