@@ -20,13 +20,30 @@
     <div style="padding: 14px;">目的地：<span>{{logistics.destination}}</span></div>
   </div>
   <div style="padding: 10px 0 10px 24px;">
-    货物：{{logistics.productType}}  <span style="padding-left: 30px;color: blue;">用车数量：{{logistics.totalQty}} 辆</span>
+    货物：{{logistics.productType}}
+    <span style="padding-left: 30px;">用车数量：
+      <span style="color: blue;">{{logistics.totalQty}}</span> 辆
+    </span>
   </div>
   <ion-grid style="text-align: center;padding: 16px;background: #fff;border-bottom: 1px solid #efefef;">
     <ion-row>
-      <ion-col style="border-right: 1px solid #efefef;">运费 <div style="padding-top: 13px;color: red;font-weight: bold;">{{logistics.freightCharge}} 元/吨</div></ion-col>
-      <ion-col style="border-right: 1px solid #efefef;">装车费 <div style="padding-top: 13px;color: red;font-weight: bold;">{{logistics.loadingCharge}} 元/吨</div></ion-col>
-      <ion-col>卸车费 <div style="padding-top: 13px;color: red;font-weight: bold;">{{logistics.unloadingCharge}} 元/吨</div></ion-col>
+      <ion-col style="border-right: 1px solid #efefef;">运费
+        <div style="padding-top: 13px;">
+          <span style="color: red;font-weight: bold;">{{logistics.freightCharge}}</span> 元/吨
+        </div>
+      </ion-col>
+
+      <ion-col style="border-right: 1px solid #efefef;">装车费
+        <div style="padding-top: 13px;color: red;font-weight: bold;">
+          <span style="color: red;font-weight: bold;">{{logistics.loadingCharge}}</span> 元/吨
+        </div>
+      </ion-col>
+
+      <ion-col>卸车费
+        <div style="padding-top: 13px;color: red;font-weight: bold;">
+          <span style="color: red;font-weight: bold;">{{logistics.unloadingCharge}}</span> 元/吨
+        </div>
+      </ion-col>
     </ion-row>
   </ion-grid>
   <div style="background: #fff;">

@@ -24,14 +24,14 @@
       <li (click)="goLogisticsDetail(logistics)" *ngFor="let logistics of logisticsList" style="font-size: 14px;">
         <div>
           <span>出发地</span>
-          <span style="padding-left: 30%;" class="color_y">￥{{logistics.freightCharge}}</span>
+          <span style="padding-left: 30%;color: red;font-weight: bold;">￥{{logistics.freightCharge}}</span>
           <span style="float: right;">目的地</span>
         </div>
         <span ></span>
 
         <div>
-          <span style="font-weight: bold;">{{logistics.departure}}</span>
-          <span style="padding-left: 36%;">
+          <span style="font-weight: bold;width: 50px;display: inline-block;">{{logistics.departure}}</span>
+          <span style="padding-left: 30%;">
             <svg class="icon svg_icon" aria-hidden="true" >
               <use xlink:href="#icon-icon-test"></use>
             </svg>

@@ -95,8 +95,15 @@
     </ion-row>
   </ion-grid>
 
-  <img imageViewer="{{productPrice.reportImage}}" src="{{productPrice.reportImage}}?imageView/2/w/400" *ngIf="productPrice.reportImage" style="display: block;padding-bottom: 10px;">
-  <img imageViewer="{{productPrice.productImage}}" src="{{productPrice.productImage}}?imageView/2/w/400" *ngIf="productPrice.productImage">
+  <div>
+    <div padding>化验单照片</div>
+    <img padding imageViewer="{{productPrice.reportImage}}" src="{{productPrice.reportImage}}?imageView/2/w/400" *ngIf="productPrice.reportImage">
+  </div>
+
+  <div>
+    <div padding>产品照片</div>
+    <img padding imageViewer="{{productPrice.productImage}}" src="{{productPrice.productImage}}?imageView/2/w/400" *ngIf="productPrice.productImage">
+  </div>
 </ion-content>
 
 <ion-footer>

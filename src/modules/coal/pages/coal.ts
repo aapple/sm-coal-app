@@ -80,7 +80,7 @@ export class CoalPage {
         }
 
 
-        //this.productType = this.productTypeList[0].id;
+        this.productType = this.productTypeList[0].id;
         let params = this.getQueryParams();
 
         if(this.factoryType == 2+''){
