@@ -45,6 +45,7 @@ export class HomePage {
     console.log('ionViewWillEnter Home');
     this.slider.startAutoplay();
   }
+
   ionViewWillLeave(){
     console.log('ionViewWillLeave Home');
     this.slider.stopAutoplay();
@@ -64,7 +65,7 @@ export class HomePage {
     let data = {pageNumber: this.pageNumber};
     this.homeService.loadNewsList(data)
       .then(ret => {
-        this.newsList = ret.content;
+        this.newsList = ret.content.slice(0,3);
         }
       );
   }
@@ -167,20 +168,6 @@ export class HomePage {
         url: news.content
       }
     });
-  }
-
-  doInfinite(infiniteScroll) {
-
-    let pageNumber = ++this.pageNumber;
-    let data = {pageNumber: pageNumber};
-
-    this.homeService.loadNewsList(data)
-      .then(ret => {
-          this.newsList = this.newsList.concat(ret.content);
-          infiniteScroll.complete();
-          this.isInfiniteEnabled = !ret.last;
-        }
-      );
   }
 
 }

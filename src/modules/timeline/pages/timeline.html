@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      煤友圈
+      煤炭圈
     </ion-title>
 
     <ion-buttons end>
@@ -37,7 +37,7 @@
               <p class="po-name" (click)="gotoTimelineDetailPage(timeline, i)">{{ timeline.author?.nickname }}</p>
               <p class="post">
                 <span (click)="gotoTimelineDetailPage(timeline, i)">{{formatContent(timeline.content, timeline.isAll)| nl2br}}</span>
-                <u *ngIf="!timeline.isAll && timeline.content && timeline.content.length>100" (click)="showTimelineAll(i)" class="is_show">展开</u>
+                <u *ngIf="!timeline.isAll && timeline.content && timeline.content.length>100" (click)="showTimelineAll(i)" class="is_show">全文</u>
                 <u *ngIf="timeline.isAll && timeline.content && timeline.content.length>100" (click)="showTimelineAll(i)" class="is_show">收起</u>
                 <img imageViewer="{{ timeline.imgs[0].uri}}" *ngIf="timeline.imgs.length === 1" src="{{ timeline.imgs[0].uri}}?imageView/2/w/200">
 
