@@ -95,14 +95,14 @@
     </ion-row>
   </ion-grid>
 
-  <div>
+  <div *ngIf="productPrice.reportImage">
     <div padding>化验单照片</div>
-    <img padding imageViewer="{{productPrice.reportImage}}" src="{{productPrice.reportImage}}?imageView/2/w/400" *ngIf="productPrice.reportImage">
+    <img padding imageViewer="{{productPrice.reportImage}}" src="{{productPrice.reportImage}}?imageView/2/w/400">
   </div>
 
-  <div>
+  <div *ngIf="productPrice.productImage">
     <div padding>产品照片</div>
-    <img padding imageViewer="{{productPrice.productImage}}" src="{{productPrice.productImage}}?imageView/2/w/400" *ngIf="productPrice.productImage">
+    <img padding imageViewer="{{productPrice.productImage}}" src="{{productPrice.productImage}}?imageView/2/w/400">
   </div>
 </ion-content>
 
