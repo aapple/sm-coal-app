@@ -19,17 +19,22 @@
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
 
-  <div style="padding: 10px 16px;background: #fff;margin-bottom: 10px;">
-    <div style="padding-top: 10px;border-bottom: 1px solid #999;
-    padding-bottom: 10px"><span style="font-weight: bold;">名称：</span>{{infostore.title}}</div>
-    <div style="padding-top: 10px;border-bottom: 1px solid #999;
-    padding-bottom: 10px"><span style="font-weight: bold;">联系人：</span>{{infostore.callPerson}}</div>
-    <div style="padding-top: 10px;border-bottom: 1px solid #999;
-    padding-bottom: 10px"><span style="font-weight: bold;">联系电话：</span>{{infostore.callNumber}}</div>
-    <div style="padding-top: 10px;line-height: 18px;border-bottom: 1px solid #999;
-    padding-bottom: 10px"><span style="font-weight: bold;">联系地址：</span>{{infostore.address}}</div>
-    <div style="padding-top: 10px;line-height: 18px;border-bottom: 1px solid #999;
-    padding-bottom: 10px"><span style="font-weight: bold;">主营业务：</span>{{infostore.introduction}}</div>
+  <div class="interest_list">
+    <ul>
+      <li>
+        <a>
+          <img src="{{infostore.photoPath? infostore.photoPath : './assets/images/default.jpg'}}" >
+          <div class="list_r">
+            <p><span style="font-size: 14px;font-weight: bold;">{{infostore.title}}</span></p>
+            <p>
+              联系方式：{{infostore.user.userName}} {{infostore.callNumber}}
+              <ion-icon name="call" style="color: #06c1ae;float: right;font-size: 20px;"></ion-icon>
+            </p>
+            <p>主营业务：{{infostore.introduction}}</p>
+          </div>
+        </a>
+      </li>
+    </ul>
   </div>
 
   <div class="I_list">

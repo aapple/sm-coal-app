@@ -14,15 +14,11 @@ export class CoalPriceDetailPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 
     this.productPrice = navParams.data;
-    if(this.productPrice.factory.factoryType == 2){
-      this.productPrice.priceOwnerType = 2;
-    }
 
-
-    if(this.productPrice.priceOwnerType == 2 || this.productPrice.factory.factoryType == 2){
-      this.priceType = "一票价";
-    } else {
+    if(this.productPrice.priceOwnerType == 1){
       this.priceType = "两票价";
+    } else {
+      this.priceType = "一票价";
     }
   }
 
