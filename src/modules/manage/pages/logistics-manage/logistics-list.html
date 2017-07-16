@@ -29,7 +29,7 @@
 
   <ion-list>
     <ion-item-sliding *ngFor="let logistics of logisticsListShow">
-      <ion-item (click)="gotoUpdatePage(logistics)">
+      <ion-item tappable (click)="gotoUpdatePage(logistics)">
         出发地：{{logistics.departure}}，到达地：{{logistics.destination}}
         <button ion-button item-right clear>
           <ion-icon name="arrow-forward"></ion-icon>
@@ -44,7 +44,7 @@
   </ion-list>
 
   <ion-list>
-    <ion-item *ngFor="let infostore of infostoreList" (click)="gotoInfoStoreDetail(infostore)">
+    <ion-item *ngFor="let infostore of infostoreList" tappable (click)="gotoInfoStoreDetail(infostore)">
 
       <ion-thumbnail item-left>
         <img src="./assets/images/thumbnail-totoro.png">

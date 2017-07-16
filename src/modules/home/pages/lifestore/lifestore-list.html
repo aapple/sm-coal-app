@@ -17,7 +17,7 @@
 
   <div class="interest_list">
     <ul>
-      <li *ngFor="let lifestore of lifestoreList" (click)="gotoDetail(lifestore)">
+      <li *ngFor="let lifestore of lifestoreList" tappable (click)="gotoDetail(lifestore)">
         <a>
           <img src="{{lifestore.photoPath? lifestore.photoPath : './assets/images/default.jpg'}}" >
           <div class="list_r">

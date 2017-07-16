@@ -57,7 +57,7 @@
 
     <ion-item>
       <ion-label>管理员：</ion-label>
-      <ion-input type="text" readonly [(ngModel)]="factory.onwer.phoneNum" (click)="onUserSelect('onwer')"></ion-input>
+      <ion-input type="text" readonly tappable [(ngModel)]="factory.onwer.phoneNum" (click)="onUserSelect('onwer')"></ion-input>
       <button ion-button outline item-end icon-left (click)="onUserSelect('onwer')">
         选择用户
       </button>
@@ -65,7 +65,7 @@
 
     <ion-item *ngIf="factory.factoryType == 1">
       <ion-label>代发人：</ion-label>
-      <ion-input type="text" readonly [(ngModel)]="factory.saler.phoneNum" (click)="onUserSelect('saler')"></ion-input>
+      <ion-input type="text" readonly tappable [(ngModel)]="factory.saler.phoneNum" (click)="onUserSelect('saler')"></ion-input>
       <button ion-button outline item-end icon-left (click)="onUserSelect('saler')">
         选择用户
       </button>

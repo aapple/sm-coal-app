@@ -44,7 +44,7 @@
 
     <ion-item>
       <ion-label>管理员：</ion-label>
-      <ion-input type="text" readonly [(ngModel)]="infostore.user.phoneNum" (click)="onUserSelect('user')"></ion-input>
+      <ion-input tappable type="text" readonly [(ngModel)]="infostore.user.phoneNum" (click)="onUserSelect('user')"></ion-input>
       <button ion-button outline item-end icon-left (click)="onUserSelect('user')">
         选择用户
       </button>

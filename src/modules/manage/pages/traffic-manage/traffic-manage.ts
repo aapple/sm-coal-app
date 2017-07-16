@@ -26,7 +26,7 @@ export class TrafficManagePage {
   ionViewWillEnter() {
     console.log('ionViewDidLoad TrafficManage');
     let data = {pageNumber: 0};
-    this.manageService.loadTrafficList({})
+    this.manageService.loadTrafficList(data)
       .then(ret => {
         this.trafficList = ret.content;
       });

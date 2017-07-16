@@ -20,7 +20,7 @@ export class MeSettingPage {
   HCAboutPage = HCAboutPage;
   HCGuidePage = HCGuidePage;
   HCFeedbackPage = HCFeedbackPage;
-  appVersion = (window as any).APP_VERSION;
+  appVersion = "";
   hasNewVersion: boolean = false;
 
   //
@@ -38,6 +38,7 @@ export class MeSettingPage {
 
       this.utilService.getVersionNumber().then(ret => {
 
+        this.appVersion = ret;
         let params = null;
         if(this.utilService.isAndroid()){
           params = {

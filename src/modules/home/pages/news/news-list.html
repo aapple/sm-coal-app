@@ -19,7 +19,7 @@
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
 
-  <div *ngFor="let news of newsList" (click)="gotoNewsDetail(news)" style="height: 70px;
+  <div tappable *ngFor="let news of newsList" (click)="gotoNewsDetail(news)" style="height: 70px;
     margin: 10px;
     background: #F8F8F8;">
     <div style="color:#fff;border-radius: 0;width: 65px;height: 70px;margin-right: 15px;display: inline-block;float: left;background: red;text-align: right;">

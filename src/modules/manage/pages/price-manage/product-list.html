@@ -22,7 +22,7 @@
 
   <div class="I_list">
     <ul>
-      <li (click)="goProductPriceDetail(productPrice)" *ngFor="let productPrice of productPriceList" [ngStyle]="{'background':productPrice.state===0 ? '#efefef' : '' }">
+      <li tappable (click)="goProductPriceDetail(productPrice)" *ngFor="let productPrice of productPriceList" [ngStyle]="{'background':productPrice.state===0 ? '#efefef' : '' }">
 
         <div>
           <span style="font-weight: bold;">{{productPrice.productType.name}}</span><span *ngIf="productPrice.state===0" style="color: red">(已停产)</span>

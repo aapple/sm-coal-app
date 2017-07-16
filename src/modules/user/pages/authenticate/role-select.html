@@ -19,7 +19,7 @@
     <div class="car_t">请选择您的身份</div>
     <div class="I_list">
       <ul>
-        <li *ngFor="let item of items" (click)="itemSelected(item)">
+        <li *ngFor="let item of items" (click)="itemSelected(item)" tappable>
           <p>{{ item.name }}</p>
           <span class="color_y" style="top: 0px;" *ngIf="curentValue == item.value">
             <ion-icon name="checkmark" style="font-size: 42px;color: #06c1ae;"></ion-icon>

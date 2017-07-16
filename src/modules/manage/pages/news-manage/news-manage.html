@@ -20,7 +20,7 @@
 
   <div class="interest_list">
     <ul>
-      <li *ngFor="let news of newsList" (click)="gotoUpdatePage(news)">
+      <li *ngFor="let news of newsList" tappable (click)="gotoUpdatePage(news)">
         <a>
           <img src="{{news.image? news.image : './assets/images/default.jpg'}}" >
           <div class="list_r">

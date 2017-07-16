@@ -12,6 +12,7 @@ import {LifestoreList} from "./pages/lifestore/lifestore-list";
 import {NewsDetailPage} from "./pages/news/news-detail";
 import {NewsListPage} from "./pages/news/news-list";
 import {IonicImageViewerModule} from "ionic-img-viewer";
+import {TrafficListPage} from "./pages/traffic/traffic-list";
 
 
 
@@ -26,7 +27,8 @@ import {IonicImageViewerModule} from "ionic-img-viewer";
     LifestoreList,
     NewsDetailPage,
     NewsListPage,
-    AreaList
+    AreaList,
+    TrafficListPage
   ],
   entryComponents: [
     HomePage,
@@ -34,7 +36,8 @@ import {IonicImageViewerModule} from "ionic-img-viewer";
     LifestoreList,
     NewsDetailPage,
     NewsListPage,
-    AreaList
+    AreaList,
+    TrafficListPage
   ],
   providers: [
     HomeService,

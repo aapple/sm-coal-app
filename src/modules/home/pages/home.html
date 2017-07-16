@@ -12,7 +12,7 @@
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
 
-  <ion-slides #mySlider style="width:100%;height:135px" pager (click)="gotoBannerDetail()">
+  <ion-slides #mySlider style="width:100%;height:135px" pager tappable (click)="gotoBannerDetail()">
     <ion-slide>
       <img src="./assets/images/banner3.jpg">
     </ion-slide>
@@ -23,9 +23,12 @@
     <!--<marquee behavior="scroll" style="position: absolute;"> {{notice}} </marquee>-->
   <!--</div>-->
 
-  <div class="title traffic_title">
-    <span class="puff_left"><ion-icon name="ios-megaphone" class="color_y" style="padding-right: 6px;"></ion-icon>神盘路修路堵车中</span>
-    <span class="puff_right">10:00</span>
+  <div class="title traffic_title" (click)="gotoTrafficList()">
+    <span class="puff_left">
+      <ion-icon name="ios-megaphone" class="color_y" style="padding-right: 6px;"></ion-icon>
+      {{trafficInfo.departure}} {{trafficInfo.state}}
+    </span>
+    <span class="puff_right">{{trafficInfo.trafficTime}}</span>
   </div>
 
   <div class="nav">
@@ -84,7 +87,7 @@
 
     <div class="interest_list">
       <ul>
-        <li *ngFor="let news of newsList" (click)="gotoNewsDetail(news)">
+        <li *ngFor="let news of newsList" tappable (click)="gotoNewsDetail(news)">
           <a>
             <div class="list_r">
               <p class="news_detail" style="-webkit-box-orient: vertical;padding-top: 5px;"><span style="font-size: 16px;">{{news.title}}</span></p>

@@ -40,7 +40,7 @@
 
   <div class="I_list" *ngIf="showType == 'logistics'">
     <ul>
-      <li (click)="goLogisticsDetail(logistics)" *ngFor="let logistics of logisticsList" style="font-size: 14px;">
+      <li (click)="goLogisticsDetail(logistics)" tappable *ngFor="let logistics of logisticsList" style="font-size: 14px;">
         <div>
           <span>出发地</span>
           <span style="padding-left: 30%;color: red;font-weight: bold;">￥{{logistics.freightCharge}}</span>
@@ -70,7 +70,7 @@
     <ul>
       <li *ngFor="let infostore of infostoreList" (click)="gotoLogisticsList(infostore)">
         <a>
-          <img src="{{infostore.photoPath? infostore.photoPath : './assets/images/default.jpg'}}" >
+          <img src="{{infostore.photoPath? infostore.photoPath : './assets/images/default.jpg'}}?imageView/2/w/100" >
           <div class="list_r">
             <p><span style="font-size: 14px;font-weight: bold;">{{infostore.title}}</span></p>
             <p>联系方式：{{infostore.user.userName}} {{infostore.callNumber}}</p>

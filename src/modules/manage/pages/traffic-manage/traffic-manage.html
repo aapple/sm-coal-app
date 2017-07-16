@@ -22,8 +22,8 @@
 
   <ion-list>
     <ion-item-sliding *ngFor="let traffic of trafficList">
-      <ion-item (click)="gotoUpdatePage(traffic)">
-        {{traffic.departure}} {{traffic.state}}
+      <ion-item tappable (click)="gotoUpdatePage(traffic)">
+        {{traffic.departure}}-{{traffic.state}}
         <button ion-button item-right clear>
           <ion-icon name="arrow-forward"></ion-icon>
         </button>

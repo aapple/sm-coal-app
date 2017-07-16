@@ -29,7 +29,7 @@
 
   <ion-list>
     <ion-item-sliding *ngFor="let factory of factoryListShow">
-      <ion-item (click)="gotoUpdatePage(factory)">
+      <ion-item tappable (click)="gotoUpdatePage(factory)">
         {{factory.name}}
         <button ion-button item-right clear>
           <ion-icon name="arrow-forward"></ion-icon>

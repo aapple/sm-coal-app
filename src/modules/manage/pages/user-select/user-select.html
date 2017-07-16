@@ -28,7 +28,7 @@
   </ion-toolbar>
 
   <ion-list>
-    <ion-item (click)="itemSelected(user)" *ngFor="let user of userList">
+    <ion-item tappable (click)="itemSelected(user)" *ngFor="let user of userList">
       {{user.phoneNum}}
     </ion-item>
   </ion-list>

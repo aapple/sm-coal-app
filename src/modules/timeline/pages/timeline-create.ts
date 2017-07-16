@@ -112,8 +112,9 @@ export class TimelineCreatePage {
     Camera.getPicture(options).then((result) => {
       this.waiting = true;
 
+      this.heyApp.utilityComp.presentLoading();
       console.log('the file', result);
-      this.uploadFileByFileTransfer(result, this.timelineService.timelineStoreImgAPI);
+      this.uploadFileByFileTransfer(result, this.heyApp.fileUploadService.imageUploadAPI);
     }, (err) => {
       console.log('Camera getPictures err', err);
     });
@@ -130,8 +131,10 @@ export class TimelineCreatePage {
     ImagePicker.getPictures(options).then((results) => {
       this.waiting = true;
 
+
       for (var i = 0; i < results.length; i++) {
-        this.uploadFileByFileTransfer(results[i], this.timelineService.timelineStoreImgAPI);
+        this.heyApp.utilityComp.presentLoading();
+        this.uploadFileByFileTransfer(results[i], this.heyApp.fileUploadService.imageUploadAPI);
       }
     }, (err) => {
       console.log('ImagePIcker getPictures err', err);
@@ -144,7 +147,7 @@ export class TimelineCreatePage {
     const fileTransfer = new Transfer();
     let options: any;
     options = {
-      fileKey: 'uploads[]',
+      fileKey: 'file',
       fileName: file.replace(/^.*[\\\/]/, ''),
       headers: {},
     }
@@ -153,9 +156,12 @@ export class TimelineCreatePage {
       .then((ret) => {
         this.waiting = false;
 
+        this.heyApp.utilityComp.dismissLoading();
+        let result = [{"uri": ret.response}];
         // merge imgs
-        this.mergeImgs(JSON.parse((<any> ret).response).imgs);
+        this.mergeImgs(result);
       }, (err) => {
+        this.heyApp.utilityComp.dismissLoading();
         this.waiting = false;
       })
   }
@@ -164,17 +170,21 @@ export class TimelineCreatePage {
   //
   // upload imgs
   uploadImgs(event) {
+
+    this.heyApp.utilityComp.presentLoading();
     this.waiting = true;
     let files = event.srcElement.files;
 
-    this.heyApp.fileUploadService.upload(this.timelineService.timelineStoreImgAPI, files).then(data => {
+    this.heyApp.fileUploadService.upload(this.heyApp.fileUploadService.imageUploadAPI, files).then(data => {
       this.waiting = false;
 
+      this.heyApp.utilityComp.dismissLoading();
       let result = [{"uri": data}];
       // merge imgs
       this.mergeImgs(result);
     }, () => {
       this.waiting = false;
+      this.heyApp.utilityComp.dismissLoading();
     });
   }
 

@@ -29,7 +29,7 @@
 
   <ion-list>
     <ion-item-sliding *ngFor="let lifestore of lifestoreListShow">
-      <ion-item (click)="gotoUpdatePage(lifestore)">
+      <ion-item tappable (click)="gotoUpdatePage(lifestore)">
         {{lifestore.name}}
         <button ion-button item-right clear>
           <ion-icon name="arrow-forward"></ion-icon>

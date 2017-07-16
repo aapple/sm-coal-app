@@ -11,6 +11,7 @@ import {HCAboutPage} from "../../user/pages/setting/hc-about";
 import {LifestoreList} from "./lifestore/lifestore-list";
 import {LifestoreDetail} from "./lifestore/lifestore-detail";
 import {NewsListPage} from "./news/news-list";
+import {TrafficListPage} from "./traffic/traffic-list";
 
 
 @Component({
@@ -20,6 +21,7 @@ import {NewsListPage} from "./news/news-list";
 export class HomePage {
 
   newsList: any = [];
+  trafficInfo: any = {};
   pageNumber: number = 0;
   isInfiniteEnabled: boolean = true;
   areaName: string = "地区";
@@ -55,8 +57,7 @@ export class HomePage {
 
     this.loadNewsList();
 
-    //初始化公告信息
-    //this.loadNotice();
+    this.loadTrafficList();
   }
 
   loadNewsList() {
@@ -68,6 +69,16 @@ export class HomePage {
         this.newsList = ret.content.slice(0,3);
         }
       );
+  }
+
+  loadTrafficList() {
+
+    this.pageNumber = 0;
+    let data = {pageNumber: this.pageNumber};
+    this.homeService.loadTrafficList(data)
+      .then(ret => {
+        this.trafficInfo = ret.content[0];
+      });
   }
 
   loadNotice() {
@@ -168,6 +179,10 @@ export class HomePage {
         url: news.content
       }
     });
+  }
+
+  gotoTrafficList(){
+    this.navCtrl.push(TrafficListPage);
   }
 
 }

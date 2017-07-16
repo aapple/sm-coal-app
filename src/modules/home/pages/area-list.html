@@ -19,7 +19,7 @@
     <div class="car_t">请选择当前所在矿区</div>
     <div class="I_list">
       <ul>
-        <li *ngFor="let item of items" (click)="itemSelected(item)">
+        <li *ngFor="let item of items" tappable (click)="itemSelected(item)">
           <p>{{ item }}</p>
           <span class="color_y" style="top: 0px;" *ngIf="currentArea == item">
             <ion-icon name="checkmark" style="font-size: 42px;color: #06c1ae;"></ion-icon>
