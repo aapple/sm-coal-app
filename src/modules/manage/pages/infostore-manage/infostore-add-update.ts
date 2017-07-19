@@ -45,6 +45,33 @@ export class InfostoreAddUpdate {
 
 
   onSubmit() {
+
+    if(!this.infostore.title){
+      this.heyApp.utilityComp.presentToast("名称必须输入！");
+      return;
+    }
+
+    if(!this.infostore.introduction){
+      this.heyApp.utilityComp.presentToast("简介必须输入！");
+      return;
+    }
+
+    if(!this.infostore.callPerson){
+      this.heyApp.utilityComp.presentToast("联系人姓名必须输入！");
+      return;
+    }
+
+    if(!this.infostore.callNumber){
+      this.heyApp.utilityComp.presentToast("联系电话必须输入！");
+      return;
+    }
+
+    if(!this.infostore.address){
+      this.heyApp.utilityComp.presentToast("详细地址必须输入！");
+      return;
+    }
+
+
     this.manageService.saveOrUpdateInfostore(this.infostore)
       .then(ret => {
         this.heyApp.utilityComp.presentToast("保存成功");

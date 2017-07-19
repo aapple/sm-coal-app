@@ -15,12 +15,15 @@ export class MyErrorHandler implements ErrorHandler{
   }
 
   handleError(err: any): void {
-    if(err.rejection && err.rejection.status == 0) {
-      this.utilityComp.presentToast('网络连接异常，请检查网络！');
-    }
 
-    if(err.rejection && err.rejection._body) {
+    if(err.rejection && err.rejection.status == 0) {
+
+      this.utilityComp.presentToast('网络连接异常，请检查网络！');
+
+    } else if(err.rejection && err.rejection._body ) {
+
       this.utilityComp.presentToast(err.rejection._body);
     }
+
   }
 }

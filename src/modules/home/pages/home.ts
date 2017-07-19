@@ -12,6 +12,7 @@ import {LifestoreList} from "./lifestore/lifestore-list";
 import {LifestoreDetail} from "./lifestore/lifestore-detail";
 import {NewsListPage} from "./news/news-list";
 import {TrafficListPage} from "./traffic/traffic-list";
+import {AppService} from "../../common/services/app.service";
 
 
 @Component({
@@ -34,6 +35,7 @@ export class HomePage {
               public navParams: NavParams,
               public homeService: HomeService,
               public modalCtrl: ModalController,
+              public heyApp: AppService,
               public localStorageService: LocalStorageService) {
 
     let areaNameStr = this.localStorageService.get(AppGlobal.areaName)
@@ -140,7 +142,10 @@ export class HomePage {
   }
 
   gotoTimeline(data){
-    this.navCtrl.push(TimelinePage);
+    if (this.heyApp.authService.authOrLogin()) {
+      this.navCtrl.push(TimelinePage);
+    }
+
   }
 
   doRefresh(refresher) {

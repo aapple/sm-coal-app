@@ -97,17 +97,72 @@ export class CoalPriceManagePage {
     }
 
     if(!this.productPrice.productType.id){
-      this.heyApp.utilityComp.presentToast("必须选择产品种类！");
+      this.heyApp.utilityComp.presentToast("产品种类必须选择！");
       return;
     }
 
     if(this.productPrice.coalWashing == undefined && this.productPrice.factory.factoryType==1){
-      this.heyApp.utilityComp.presentToast("必须选择是否水洗!");
+      this.heyApp.utilityComp.presentToast("是否水洗必须选择!");
       return;
     }
 
     if(this.productPrice.graded == undefined && this.productPrice.factory.factoryType==1){
-      this.heyApp.utilityComp.presentToast("必须选择是否过筛!");
+      this.heyApp.utilityComp.presentToast("是否过筛必须选择!");
+      return;
+    }
+
+    if(!this.productPrice.price){
+      this.heyApp.utilityComp.presentToast("价格必须输入！");
+      return;
+    }
+
+    if(!this.productPrice.coal_fareliang && this.productPrice.factory.factoryType==1){
+      this.heyApp.utilityComp.presentToast("发热量必须输入！");
+      return;
+    }
+
+    if(!this.productPrice.coal_quanshuifen && this.productPrice.factory.factoryType==1){
+      this.heyApp.utilityComp.presentToast("全水分必须输入！");
+      return;
+    }
+
+    if(!this.productPrice.coal_liufen && this.productPrice.factory.factoryType==1){
+      this.heyApp.utilityComp.presentToast("硫份必须输入！");
+      return;
+    }
+
+    if(!this.productPrice.coal_huifafen && this.productPrice.factory.factoryType==1){
+      this.heyApp.utilityComp.presentToast("挥发份必须输入！");
+      return;
+    }
+
+    if(!this.productPrice.coal_huifen && this.productPrice.factory.factoryType==1){
+      this.heyApp.utilityComp.presentToast("灰分必须输入！");
+      return;
+    }
+
+    if(!this.productPrice.coke_hanliu && this.productPrice.factory.factoryType==2){
+      this.heyApp.utilityComp.presentToast("含硫必须输入！");
+      return;
+    }
+
+    if(!this.productPrice.coke_hantan && this.productPrice.factory.factoryType==2){
+      this.heyApp.utilityComp.presentToast("固定碳必须输入！");
+      return;
+    }
+
+    if(!this.productPrice.coke_huifafen && this.productPrice.factory.factoryType==2){
+      this.heyApp.utilityComp.presentToast("挥发份必须输入！");
+      return;
+    }
+
+    if(!this.productPrice.coke_huifen && this.productPrice.factory.factoryType==2){
+      this.heyApp.utilityComp.presentToast("灰分必须输入！");
+      return;
+    }
+
+    if(!this.productPrice.coke_shuifen && this.productPrice.factory.factoryType==2){
+      this.heyApp.utilityComp.presentToast("全水必须输入！");
       return;
     }
 

@@ -49,6 +49,42 @@ export class FactoryAddUpdate {
   }
 
   onSubmit() {
+
+    if(!this.factory.name){
+      this.heyApp.utilityComp.presentToast("厂矿名称必须输入！");
+      return;
+    }
+
+    if(!this.factory.factoryDescribe){
+      this.heyApp.utilityComp.presentToast("描述必须输入！");
+      return;
+    }
+
+    if(!this.factory.onwerCallPerson && this.factory.factoryType == 1){
+      this.heyApp.utilityComp.presentToast("联系人姓名必须输入！");
+      return;
+    }
+
+    if(!this.factory.onwerCallNumber && this.factory.factoryType == 1){
+      this.heyApp.utilityComp.presentToast("联系电话必须输入！");
+      return;
+    }
+
+    if(!this.factory.salerCallPerson){
+      this.heyApp.utilityComp.presentToast("业务专员姓名必须输入！");
+      return;
+    }
+
+    if(!this.factory.salerCallNumber){
+      this.heyApp.utilityComp.presentToast("业务专员电话必须输入！");
+      return;
+    }
+
+    if(!this.factory.factoryType){
+      this.heyApp.utilityComp.presentToast("种类必须选择！");
+      return;
+    }
+
     this.manageService.saveOrUpdateFactory(this.factory)
       .then(ret => {
         this.heyApp.utilityComp.presentToast("保存成功");
