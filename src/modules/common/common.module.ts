@@ -86,5 +86,9 @@ export class CommonModule {
     this.events.subscribe('auth:logOut', () => {
       this.heyApp.authService.logOut();
     });
+
+    this.events.subscribe('request:error', () => {
+      this.utilityComp.presentToast("请求异常");
+    });
   }
 }

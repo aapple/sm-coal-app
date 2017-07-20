@@ -71,7 +71,7 @@
     <button ion-button color="primary" block (click)="onSubmit()">保存</button>
   </div>
 
-  <div padding>
+  <div padding *ngIf="logistics.departure">
     <button ion-button color="danger" block (click)="onDelete()">删除</button>
   </div>
 

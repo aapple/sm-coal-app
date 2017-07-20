@@ -8,7 +8,7 @@
 
   <ion-navbar>
     <ion-title>物流列表</ion-title>
-    <ion-buttons right>
+    <ion-buttons right [hidden]="!infoDepartment">
       <button ion-button (click)="goLogisticsDetail()">
         <ion-icon name="md-add"></ion-icon>
       </button>
@@ -45,6 +45,10 @@
         </div>
       </li>
     </ul>
+  </div>
+
+  <div [hidden]="logisticsList.length > 0" class="empty_tips">
+    暂无物流信息
   </div>
 
 </ion-content>

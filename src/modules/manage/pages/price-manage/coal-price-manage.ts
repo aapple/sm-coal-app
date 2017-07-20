@@ -29,6 +29,10 @@ export class CoalPriceManagePage {
 
     this.productPrice = navParams.data;
     this.currentProductList = this.productPrice.currentProductList;
+
+    if(this.productPrice.state == undefined){
+      this.productPrice.state = 1;
+    }
   }
 
   ionViewDidLoad() {
@@ -89,12 +93,6 @@ export class CoalPriceManagePage {
   }
 
   onSubmit() {
-
-    if(this.productPrice.state == 1){
-      this.productPrice.state = 1;
-    } else {
-      this.productPrice.state = 0;
-    }
 
     if(!this.productPrice.productType.id){
       this.heyApp.utilityComp.presentToast("产品种类必须选择！");

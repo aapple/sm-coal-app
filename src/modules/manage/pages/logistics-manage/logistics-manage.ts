@@ -18,7 +18,7 @@ import {LogisticsList} from "./logistics-list";
 export class LogisticsManagePage {
 
   logisticsList: any = [];
-  infostore: any = null;
+
   infoDepartment: any = {};
 
   constructor(public navCtrl: NavController,
@@ -35,6 +35,10 @@ export class LogisticsManagePage {
     };
     this.manageService.getInfostoreList(data)
     .then(ret => {
+
+      if(ret.length == 0){
+        return;
+      }
 
       this.infoDepartment = ret[0];
       let data = {
@@ -56,10 +60,6 @@ export class LogisticsManagePage {
         this.heyApp.utilityComp.presentToast('删除成功');
         this.ionViewWillEnter();
       });
-  }
-
-  gotoAddPage() {
-    this.navCtrl.push(LogisticsAddUpdate, this.infostore);
   }
 
   goLogisticsDetail(logistics) {

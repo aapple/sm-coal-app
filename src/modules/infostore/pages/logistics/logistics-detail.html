@@ -27,15 +27,16 @@
   </div>
   <ion-grid style="text-align: center;padding: 16px;background: #fff;border-bottom: 1px solid #efefef;">
     <ion-row>
-      <ion-col style="border-right: 1px solid #efefef;">运费
-        <div style="padding-top: 13px;">
-          <span style="color: red;font-weight: bold;">{{logistics.freightCharge}}</span> 元/吨
-        </div>
-      </ion-col>
 
       <ion-col style="border-right: 1px solid #efefef;">装车费
         <div style="padding-top: 13px;">
           <span style="color: red;font-weight: bold;">{{logistics.loadingCharge}}</span> 元/吨
+        </div>
+      </ion-col>
+
+      <ion-col style="border-right: 1px solid #efefef;font-weight: bold;font-size: 16px;">运费
+        <div style="padding-top: 13px;">
+          <span style="color: red;font-weight: bold;">{{logistics.freightCharge}}</span> 元/吨
         </div>
       </ion-col>
 

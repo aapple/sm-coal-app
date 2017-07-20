@@ -54,7 +54,7 @@
 
     <ion-item style="height: 200px;">
       <ion-label fixed>照片：</ion-label>
-      <img imageViewer item-start src="{{lifestore.photoPath}}" style="width: 150px;position: absolute;left: 130px;">
+      <img tappable imageViewer item-start src="{{lifestore.photoPath}}" style="width: 150px;position: absolute;left: 130px;">
       <button ion-button outline item-end icon-left>
         选择图片
         <input class="input-img" #inputReportImg type="file" (change)="uploadImg($event)" accept="image/*">

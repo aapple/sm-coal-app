@@ -20,7 +20,7 @@
   <header>
     <img id="bg" src="./assets/picture/1_bg.png">
     <p id="user-name" class="data-name">{{ heyApp.authService.userInfo?.nickname }}</p>
-    <img imageViewer="{{ heyApp.helper.getImg(heyApp.authService.userInfo?.avatar) }}" id="avt" class="data-avt" src="{{ heyApp.helper.getImg(heyApp.authService.userInfo?.avatar) }}?imageView/2/w/100">
+    <img tappable imageViewer="{{ heyApp.helper.getImg(heyApp.authService.userInfo?.avatar) }}" id="avt" class="data-avt" src="{{ heyApp.helper.getImg(heyApp.authService.userInfo?.avatar) }}?imageView/2/w/100">
   </header>
 
   <div id="main">
@@ -29,7 +29,7 @@
         <li *ngFor="let timeline of timelineService.timelines; let i=index">
 
           <div class="po-avt-wrap">
-            <img imageViewer="{{ heyApp.helper.getImg(timeline.author?.avatar) }}" class="po-avt" src="{{ heyApp.helper.getImg(timeline.author?.avatar) }}?imageView/2/w/100">
+            <img tappable imageViewer="{{ heyApp.helper.getImg(timeline.author?.avatar) }}" class="po-avt" src="{{ heyApp.helper.getImg(timeline.author?.avatar) }}?imageView/2/w/100">
           </div>
 
           <div class="po-cmt">
@@ -39,20 +39,20 @@
                 <span tappable (click)="gotoTimelineDetailPage(timeline, i)">{{formatContent(timeline.content, timeline.isAll)| nl2br}}</span>
                 <u tappable *ngIf="!timeline.isAll && timeline.content && timeline.content.length>100" (click)="showTimelineAll(i)" class="is_show">全文</u>
                 <u tappable *ngIf="timeline.isAll && timeline.content && timeline.content.length>100" (click)="showTimelineAll(i)" class="is_show">收起</u>
-                <img imageViewer="{{ timeline.imgs[0].uri}}" *ngIf="timeline.imgs.length === 1" src="{{ timeline.imgs[0].uri}}?imageView/2/w/200">
+                <img tappable imageViewer="{{ timeline.imgs[0].uri}}" *ngIf="timeline.imgs.length === 1" src="{{ timeline.imgs[0].uri}}?imageView/2/w/200">
 
                 <span class="img-muilt" [ngClass]="{'img-odd': (timeline.imgs.length % 2)}" *ngIf="timeline.imgs.length > 1">
-                  <img imageViewer="{{heyApp.helper.getImg(img.uri)}}" src="{{heyApp.helper.getImg(img.uri)}}?imageView/2/w/200" *ngFor="let img of timeline.imgs; let i = index">
+                  <img tappable imageViewer="{{heyApp.helper.getImg(img.uri)}}" src="{{heyApp.helper.getImg(img.uri)}}?imageView/2/w/200" *ngFor="let img of timeline.imgs; let i = index">
                   <font class="clear-float"></font>
                 </span>
               </p>
               <p class="time">{{ timeline.created_at | timeago }}</p>
-              <span style="position: absolute;right: 70px;font-size: 14px;">
+              <span tappable style="position: absolute;right: 60px;font-size: 14px;width: 40px;height: 35px;">
                 <ion-icon *ngIf="!timeline.is_like" name="ios-heart-outline" (click)="setLikeForTimeline(timeline)"></ion-icon>
                 <ion-icon style="color: red;" *ngIf="timeline.is_like" name="ios-heart" (click)="setLikeForTimeline(timeline)"></ion-icon>
                 {{timeline.like_num}}
               </span>
-              <span style="position: absolute;right: 18px;font-size: 14px;">
+              <span tappable style="position: absolute;right: 0px;font-size: 14px;width: 40px;height: 35px;">
                 <ion-icon name="ios-chatbubbles-outline" (click)="gotoTimelineDetailPage(timeline, i)"></ion-icon>
                 {{timeline.comment_num}}
               </span>

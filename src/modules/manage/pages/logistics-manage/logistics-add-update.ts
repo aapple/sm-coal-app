@@ -23,6 +23,10 @@ export class LogisticsAddUpdate {
 
     this.logistics = navParams.data;
 
+    if(this.logistics.state == undefined){
+      this.logistics.state = 1;
+    }
+
   }
 
   ionViewDidLoad() {
