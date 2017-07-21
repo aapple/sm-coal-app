@@ -31,7 +31,7 @@ export class TrafficListPage {
   loadList(){
 
     this.pageNumber = 0;
-    let data = {pageNumber: this.pageNumber};
+    let data = {pageNumber: this.pageNumber, pageSize: 25};
     this.homeService.loadTrafficList(data)
       .then(ret => {
           this.trafficList = ret.content;

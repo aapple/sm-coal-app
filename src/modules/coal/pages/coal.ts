@@ -15,7 +15,6 @@ export class CoalPage {
   factoryType: string = "";
   productTypeList: any = [];
   productTypeList2: any = [];
-  productTypeList3: any = [];
 
   productPriceList: any = [];
   queryText: string;
@@ -24,6 +23,11 @@ export class CoalPage {
 
   pageIndex: number = 0;
   pageNumber: number = 6;
+  subPageNumber: number = 0;
+  showSubPage: boolean = false;
+  side1: number = 0;
+  side2: number = 0;
+
   slides: any = [];
 
   selectedIndex: number = 0;
@@ -51,8 +55,24 @@ export class CoalPage {
     }
   }
 
-  onSlideClick(id) {
-    this.productType = id;
+  onSlideClick(side, isSub) {
+
+    if(side.subList){
+      this.subPageNumber = side.subList.length;
+      this.productTypeList2 = side.subList;
+      this.productType = side.subList[0].id;
+      this.side1 = side.id;
+      this.side2 = side.subList[0].id;
+      this.showSubPage = true;
+    } else if(isSub){
+      this.productType = side.id;
+      this.side2 = side.id;
+    } else {
+      this.productType = side.id;
+      this.side1 = side.id;
+      this.showSubPage = false;
+    }
+
     let params = this.getQueryParams();
     this.loadProductPriceList(params);
   }
@@ -63,30 +83,25 @@ export class CoalPage {
   }
 
   loadProductTypeList() {
-    let data: Object = {
+
+    let data: any = {
       factoryType: this.factoryType
     };
+
+    if(this.factoryType == 1+""){
+      data.name = "tab";
+    }
 
     this.coalService.getProductTypeList(data)
       .then(ret => {
 
         this.productTypeList = ret;
-        if(this.factoryType == 1+''){
-          this.productTypeList = ret.slice(0, 6);
-          this.productTypeList2 = ret.slice(6, 12);
-          this.productTypeList3 = ret.slice(12);
-        } else {
-          this.productTypeList = ret;
-        }
-
+        this.productTypeList = ret;
 
         this.productType = this.productTypeList[0].id;
+        this.side1 = this.productTypeList[0].id;
         let params = this.getQueryParams();
 
-        if(this.factoryType == 2+''){
-          this.productType = this.productTypeList[0].id;
-          params.productType = {id: this.productType};
-        }
         this.loadProductPriceList(params);
       });
   }
