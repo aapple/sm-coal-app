@@ -19,18 +19,16 @@
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
 
-  <ion-grid style="font-size: 12px;padding: 0;text-align: left;">
-    <ion-row style="background: #06c1ae;">
-      <ion-col class="info_row">省份</ion-col>
-      <ion-col class="info_row">位置</ion-col>
-      <ion-col class="info_row">道路状况</ion-col>
-      <ion-col class="info_row">时间</ion-col>
+  <ion-grid style="font-size: 14px;padding: 0;text-align: center;">
+    <ion-row style="background: #01478C;color: #fff">
+      <ion-col class="info_row">地名</ion-col>
+      <ion-col class="info_row">路况</ion-col>
+      <ion-col class="info_row">更新时间</ion-col>
     </ion-row>
-    <ion-row *ngFor="let trafficInfo of trafficList">
-      <ion-col class="info_row">{{trafficInfo.area}}</ion-col>
-      <ion-col class="info_row">{{trafficInfo.departure}}</ion-col>
-      <ion-col class="info_row">{{trafficInfo.state}}</ion-col>
-      <ion-col class="info_row">{{trafficInfo.trafficTime}}</ion-col>
+    <ion-row *ngFor="let trafficInfo of trafficList; let i=index" [ngClass]="{'bc': i%2 == 1}">
+      <ion-col class="info_row" col-4>{{trafficInfo.departure}}</ion-col>
+      <ion-col class="info_row" col-5>{{trafficInfo.state}}</ion-col>
+      <ion-col class="info_row" col-3>{{trafficInfo.trafficTime?trafficInfo.trafficTime: trafficInfo.updateTime | moment: ['HH:mm']}}</ion-col>
     </ion-row>
   </ion-grid>
 

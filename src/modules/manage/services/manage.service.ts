@@ -209,9 +209,9 @@ export class ManageService {
   }
 
   loadTrafficList(params) {
-    let api: string = this.helper.getAPP('traffic/getTrafficInfoList?pageNumber=' + params.pageNumber);
+    let api: string = this.helper.getAPP('traffic/getTrafficInfoList');
 
-    return this.http.get(api, this.requestOptions)
+    return this.http.post(api, params, this.requestOptions)
       .toPromise()
       .then(response => response.json())
       .catch(this.handleError);

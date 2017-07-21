@@ -28,7 +28,7 @@
       <ion-icon name="ios-megaphone" class="color_y" style="padding-right: 6px;"></ion-icon>
       {{trafficInfo.departure}} {{trafficInfo.state}}
     </span>
-    <span class="puff_right">{{trafficInfo.trafficTime}}</span>
+    <span class="puff_right">{{trafficInfo.trafficTime?trafficInfo.trafficTime: trafficInfo.updateTime | moment: ['HH:mm']}}</span>
   </div>
 
   <div class="nav">
