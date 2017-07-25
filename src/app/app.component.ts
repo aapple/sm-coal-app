@@ -17,6 +17,13 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
+
+      let mobclickAgent = (<any>window).MobclickAgent;
+      if(mobclickAgent){
+        mobclickAgent.init();
+        mobclickAgent.setDebugMode(false);
+      }
+
     });
   }
 }
