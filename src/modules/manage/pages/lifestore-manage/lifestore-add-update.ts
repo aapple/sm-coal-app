@@ -32,6 +32,37 @@ export class LifestoreAddUpdate {
   }
 
   onSubmit() {
+
+    if(!this.lifestore.serviceType){
+      this.heyApp.utilityComp.presentToast("服务类型必须选择！");
+      return;
+    }
+
+    if(!this.lifestore.name){
+      this.heyApp.utilityComp.presentToast("名称必须输入！");
+      return;
+    }
+
+    if(!this.lifestore.introduction){
+      this.heyApp.utilityComp.presentToast("简介必须输入！");
+      return;
+    }
+
+    if(!this.lifestore.callPerson){
+      this.heyApp.utilityComp.presentToast("联系人姓名输入！");
+      return;
+    }
+
+    if(!this.lifestore.address){
+      this.heyApp.utilityComp.presentToast("联系电话必须输入！");
+      return;
+    }
+
+    if(!this.lifestore.callPerson){
+      this.heyApp.utilityComp.presentToast("详细地址输入！");
+      return;
+    }
+
     this.manageService.saveOrUpdateLifestore(this.lifestore)
       .then(ret => {
         this.heyApp.utilityComp.presentToast("保存成功");

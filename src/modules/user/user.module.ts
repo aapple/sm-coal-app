@@ -22,6 +22,7 @@ import {UtilService} from "../common/services/util.service";
 import {LocalStorageService} from "../common/services/localStorage.service";
 import {AppGlobal} from "../../app/app.global";
 import {AmapPage} from "./pages/map/ampa";
+import {MeSharePage} from "./pages/me/me-share";
 
 
 
@@ -40,7 +41,8 @@ import {AmapPage} from "./pages/map/ampa";
     HCDebugPage,
     AuthenticatePage,
     RoleSelectPage,
-    AmapPage
+    AmapPage,
+    MeSharePage
   ],
   entryComponents: [
     MePage,
@@ -53,7 +55,8 @@ import {AmapPage} from "./pages/map/ampa";
     HCDebugPage,
     AuthenticatePage,
     RoleSelectPage,
-    AmapPage
+    AmapPage,
+    MeSharePage
   ],
   providers: [
     UserService,

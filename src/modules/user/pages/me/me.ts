@@ -21,6 +21,9 @@ import {TrafficManagePage} from "../../../manage/pages/traffic-manage/traffic-ma
 import {NewsManagePage} from "../../../manage/pages/news-manage/news-manage";
 import {FactoryListPage} from "../../../manage/pages/price-manage/factory-list";
 import {AmapPage} from "../map/ampa";
+import {ShareModel} from "../../../common/models/ShareModel";
+import {UtilService} from "../../../common/services/util.service";
+import {MeSharePage} from "./me-share";
 
 @Component({
   selector: 'page-me',
@@ -36,7 +39,8 @@ export class MePage {
   constructor(
     public heyApp: AppService,
     public noticeService: NoticeService,
-    public navCtrl: NavController
+    public navCtrl: NavController,
+    public utilService: UtilService
   ) {
   }
 
@@ -158,5 +162,10 @@ export class MePage {
   gotoAmapPage(){
     this.navCtrl.push(AmapPage);
   }
+
+  goShare(){
+    this.navCtrl.push(MeSharePage);
+  }
+
 
 }

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Platform, AlertController} from 'ionic-angular';
 import {AppVersion, Transfer, FileOpener, File, InAppBrowser} from 'ionic-native';
+import {UtilityComponent} from "../pages/utilityComponent";
 
 
 @Injectable()
@@ -10,7 +11,8 @@ export class UtilService {
   // constructor
   constructor(
     public alertCtrl: AlertController,
-    public platform: Platform
+    public platform: Platform,
+    public utilityComp: UtilityComponent
   ) {
   }
 
@@ -97,4 +99,62 @@ export class UtilService {
       });
     });
   }
+
+  shareWxSession(share){
+    let wechat = (<any>window).Wechat;
+    wechat.isInstalled(function (installed) {
+      if(!installed){
+        this.utilityComp.presentToast('您没有安装微信！');
+        return ;
+      }
+    }, function (reason) {
+      this.toastService.show("Failed: " + reason);
+    });
+    wechat.share({
+      message: {
+        title: share.shareTitle,
+        description: share.shareDesc,
+        thumb: share.shareImg,
+        media: {
+          type: wechat.Type.LINK,
+          webpageUrl: share.shareUrl
+        }
+      },
+      scene: wechat.Scene.SESSION   // share to SESSION
+    }, function () {
+      this.utilityComp.presentToast('分享成功');
+    }, function (reason) {
+      console.log("Failed: " + reason);
+    });
+  }
+
+  shareWxTimeLine(share){
+    let wechat = (<any>window).Wechat;
+    wechat.isInstalled(function (installed) {
+      if(!installed){
+        this.utilityComp.presentToast('您没有安装微信！');
+        return ;
+      }
+    }, function (reason) {
+      this.toastService.show("Failed: " + reason);
+    });
+    wechat.share({
+      message: {
+        title: share.shareTitle,
+        description: share.shareDesc,
+        thumb: share.shareImg,
+        media: {
+          type: wechat.Type.LINK,
+          webpageUrl: share.shareUrl
+        }
+      },
+      scene: wechat.Scene.TIMELINE   // share to Timeline
+    }, function () {
+      this.utilityComp.presentToast('分享成功');
+    }, function (reason) {
+      console.log("Failed: " + reason);
+    });
+
+  }
+
 }
