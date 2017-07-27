@@ -31,7 +31,7 @@ export class TrafficListPage {
   loadList(){
 
     this.pageNumber = 0;
-    let data = {pageNumber: this.pageNumber, pageSize: 25};
+    let data = {pageNumber: this.pageNumber, pageSize: 25, area: "陕西"};
     this.homeService.loadTrafficList(data)
       .then(ret => {
           this.trafficList = ret.content;
