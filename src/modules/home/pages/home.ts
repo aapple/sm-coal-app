@@ -76,7 +76,7 @@ export class HomePage {
   loadTrafficList() {
 
     this.pageNumber = 0;
-    let data = {pageNumber: this.pageNumber, pageSize: 1};
+    let data = {pageNumber: this.pageNumber, pageSize: 1, area: "陕西"};
     this.homeService.loadTrafficList(data)
       .then(ret => {
         this.trafficInfo = ret.content[0];
