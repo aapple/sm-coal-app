@@ -23,12 +23,14 @@ import {LocalStorageService} from "../common/services/localStorage.service";
 import {AppGlobal} from "../../app/app.global";
 import {AmapPage} from "./pages/map/ampa";
 import {MeSharePage} from "./pages/me/me-share";
+import {IonicImageViewerModule} from "ionic-img-viewer";
 
 
 
 @NgModule({
   imports: [
     CommonModule,
+    IonicImageViewerModule
   ],
   declarations: [
     MePage,

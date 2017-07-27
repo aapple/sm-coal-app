@@ -6,6 +6,7 @@ import { AppService } from '../../../common/services/app.service';
 import { HCDebugPage } from './hc-debug';
 import {UtilService} from "../../../common/services/util.service";
 import {ShareModel} from "../../../common/models/ShareModel";
+import {ImageViewerController} from "ionic-img-viewer";
 
 
 @Component({
@@ -13,7 +14,6 @@ import {ShareModel} from "../../../common/models/ShareModel";
   templateUrl: 'me-share.html'
 })
 export class MeSharePage {
-
 
   //
   // constructor
@@ -42,4 +42,5 @@ export class MeSharePage {
     share.shareUrl = "http://a.app.qq.com/o/simple.jsp?pkgname=com.ionicframework.smcoalapp562696";
     this.utilService.shareWxTimeLine(share);
   }
+
 }

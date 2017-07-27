@@ -11,7 +11,7 @@
 </ion-header>
 
 <ion-content class="content"> <!--scroll="true" overflow-scroll="true"-->
-  <div class="progress" [hidden]="browser.isLoaded">
+  <div class="progress" [hidden]="browser.isLoaded || browser.isWechatPage">
     <div class="progress-inner" id="progress"></div>
   </div>
 

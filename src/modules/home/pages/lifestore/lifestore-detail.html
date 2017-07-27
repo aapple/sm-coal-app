@@ -33,8 +33,7 @@
 
   <div class="intro">
     <span style="font-weight: bold;">简介：</span>
-    <span style="color: #999;">{{lifestore.introduction}}</span>
-
+    <span style="color: #999;">{{lifestore.introduction ? lifestore.introduction : "暂无简介"}}</span>
   </div>
 
   <div *ngIf="lifestore.photoPath">

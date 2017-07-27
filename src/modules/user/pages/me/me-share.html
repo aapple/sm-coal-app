@@ -7,22 +7,22 @@
 </ion-header>
 
 <ion-content>
-  <div class="logo">
-    <img src="./assets/images/qr.jpg">
-    <span style="display: block;">微信扫描二维码关注公众号</span>
+  <div class="logo" style="background: #fff !important;padding: 50px 0;">
+    <img src="./assets/images/poster_recommend.png">
+    <span style="display: block;"></span>
   </div>
-  <div>
-    <div style="display: inline-block;width: 33%;" (click)="shareWxSession()">
-      <img src="./assets/images/qr.jpg" >
-      <span>微信好友</span>
+  <div style="text-align: center;padding-top: 20px">
+    <div style="display: inline-block;width: 30%;" (click)="shareWxSession()">
+      <img src="./assets/images/icon_recommend_wechat.png" style="width: 75px;padding-bottom: 15px;">
+      <span style="display: block;">微信好友</span>
     </div>
-    <div style="display: inline-block;width: 33%;">
-      <img src="./assets/images/qr.jpg" >
-      <span>微信朋友圈</span>
+    <div style="display: inline-block;width: 30%;" (click)="shareWxTimeLine()">
+      <img src="./assets/images/icon_recommend_wechatfriends.png" style="width: 75px;padding-bottom: 15px;">
+      <span style="display: block;">微信朋友圈</span>
     </div>
-    <div style="display: inline-block;width: 33%;">
-      <img src="./assets/images/qr.jpg" >
-      <span>面对面分享</span>
+    <div style="display: inline-block;width: 30%;" >
+      <img imageViewer="http://coalapp-1251781407.costj.myqcloud.com/app_qr.png" src="./assets/images/icon_recommend_qrcode.png" #myImage style="width: 75px;padding-bottom: 15px;">
+      <span style="display: block;">面对面分享</span>
     </div>
 
   </div>

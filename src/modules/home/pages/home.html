@@ -23,7 +23,7 @@
     <!--<marquee behavior="scroll" style="position: absolute;"> {{notice}} </marquee>-->
   <!--</div>-->
 
-  <div class="title traffic_title" (click)="gotoTrafficList()">
+  <div tappable class="title traffic_title" (click)="gotoTrafficList()">
     <span class="puff_left">
       <ion-icon name="ios-megaphone" class="color_y" style="padding-right: 6px;"></ion-icon>
       {{trafficInfo.departure}} {{trafficInfo.state}}
