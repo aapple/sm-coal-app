@@ -45,6 +45,17 @@ export class ManageService {
       .catch(this.handleError);
   }
 
+  deleteProductPrice(data) {
+    let api: string = this.helper.getAPP('product/deleteProductPrice');
+
+    return this.http.post(api, data, this.requestOptions)
+      .toPromise()
+      .then((response) => {
+        return response;
+      })
+      .catch(this.handleError);
+  }
+
   deleteFactory(data) {
     let api: string = this.helper.getAPP('product/deleteFactory');
 

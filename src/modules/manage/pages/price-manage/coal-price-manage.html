@@ -159,4 +159,8 @@
     <button ion-button color="primary" block (click)="onSubmit()">提交</button>
   </div>
 
+  <div padding *ngIf="productPrice.id">
+    <button ion-button color="danger" block (click)="onDelete()">删除</button>
+  </div>
+
 </ion-content>
