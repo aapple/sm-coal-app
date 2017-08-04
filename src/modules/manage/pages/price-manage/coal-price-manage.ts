@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {  NavController, NavParams } from 'ionic-angular';
+import {AlertController, NavController, NavParams} from 'ionic-angular';
 import { AppService } from '../../../common/services/app.service';
 import { ManageService } from '../../services/manage.service';
 import {CoalService} from "../../../coal/services/coal.service";
@@ -23,6 +23,7 @@ export class CoalPriceManagePage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
+    public alertCtrl: AlertController,
     public heyApp: AppService,
     public coalService: CoalService,
     public manageService: ManageService) {
@@ -190,6 +191,31 @@ export class CoalPriceManagePage {
         this.heyApp.utilityComp.presentToast("提交成功");
         this.navCtrl.pop();
       });
+  }
+
+  onDelete() {
+
+    this.alertCtrl.create({
+      title: '温馨提示',
+      subTitle: '确定删除吗？',
+      buttons: [
+        {
+          text: '取消',
+          handler: () => {
+          }
+        },
+        {
+          text: '确定',
+          handler: () => {
+            this.manageService.deleteProductPrice(this.productPrice)
+              .then(ret => {
+                this.heyApp.utilityComp.presentToast("删除成功");
+                this.navCtrl.pop();
+              });
+          }
+        }
+      ]
+    }).present();
   }
 
 }
