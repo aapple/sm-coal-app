@@ -39,17 +39,17 @@
 
   <div class="I_list">
     <ul>
-      <li (click)="goLogisticsDetail(logistics)" tappable *ngFor="let logistics of logisticsList" style="font-size: 14px;">
-        <div>
+      <li (click)="goLogisticsDetail(logistics)" tappable *ngFor="let logistics of logisticsList" style="font-size: 16px;">
+        <div style="padding: 10px 0px;">
           <span>出发地</span>
           <span style="padding-left: 30%;color: red;font-weight: bold;">￥{{logistics.freightCharge}}</span>
           <span style="float: right;">目的地</span>
         </div>
         <span ></span>
 
-        <div>
+        <div style="padding-bottom: 10px;">
           <span style="font-weight: bold;width: 50px;display: inline-block;">{{logistics.departure}}</span>
-          <span style="padding-left: 24%;">
+          <span style="padding-left: 26%;">
             <img src="./assets/images/002.png" style="width: 60px;">
           </span>
           <span style="float: right;font-weight: bold;width: 100px;white-space: nowrap;text-align: right;" >{{logistics.destination}}</span>
@@ -57,7 +57,7 @@
 
         <div style="color: #666;">
           <span><ion-icon name="md-person" style="font-size: 16px;padding-right: 6px;color: #06c1ae;"></ion-icon>{{logistics.infoDepartment.title}}</span>
-          <span style="float: right;font-size: 12px;">{{ logistics.updatedTime | moment: ['MM-DD HH:mm'] }}发布</span>
+          <span style="float: right;font-size: 14px;">{{ logistics.updatedTime | moment: ['MM-DD HH:mm'] }}发布</span>
         </div>
       </li>
     </ul>

@@ -53,7 +53,7 @@ export class TrafficListPage {
     let pageNumber = ++this.pageNumber;
     let data = {pageNumber: pageNumber};
 
-    this.homeService.loadNewsList(data)
+    this.homeService.loadTrafficList(data)
       .then(ret => {
          this.trafficList = this.trafficList.concat(ret.content);
          infiniteScroll.complete();

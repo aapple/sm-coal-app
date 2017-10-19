@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      煤炭圈
+      神木煤炭
     </ion-title>
 
     <ion-buttons end>
@@ -17,12 +17,6 @@
     <ion-refresher-content pullingIcon="md-aperture"></ion-refresher-content>
   </ion-refresher>
 
-  <header>
-    <img id="bg" src="./assets/picture/1_bg.png">
-    <p id="user-name" class="data-name">{{ heyApp.authService.userInfo?.nickname }}</p>
-    <img tappable imageViewer="{{ heyApp.helper.getImg(heyApp.authService.userInfo?.avatar) }}" id="avt" class="data-avt" src="{{ heyApp.helper.getImg(heyApp.authService.userInfo?.avatar) }}?imageView/2/w/100">
-  </header>
-
   <div id="main">
     <div id="list">
       <ul>
@@ -35,8 +29,9 @@
           <div class="po-cmt">
             <div class="po-hd">
               <p class="po-name" tappable (click)="gotoTimelineDetailPage(timeline, i)">{{ timeline.author?.nickname }}</p>
+              <p class="time">{{ timeline.created_at | timeago }}</p>
               <p class="post">
-                <span tappable (click)="gotoTimelineDetailPage(timeline, i)">{{formatContent(timeline.content, timeline.isAll)| nl2br}}</span>
+                <span tappable (click)="gotoTimelineDetailPage(timeline, i)" style="white-space: pre-line;">{{formatContent(timeline.content, timeline.isAll)}}</span>
                 <u tappable *ngIf="!timeline.isAll && timeline.content && timeline.content.length>100" (click)="showTimelineAll(i)" class="is_show">全文</u>
                 <u tappable *ngIf="timeline.isAll && timeline.content && timeline.content.length>100" (click)="showTimelineAll(i)" class="is_show">收起</u>
                 <img tappable imageViewer="{{ timeline.imgs[0].uri}}" *ngIf="timeline.imgs.length === 1" src="{{ timeline.imgs[0].uri}}?imageView/2/w/200">
@@ -46,16 +41,22 @@
                   <font class="clear-float"></font>
                 </span>
               </p>
-              <p class="time">{{ timeline.created_at | timeago }}</p>
-              <span tappable style="position: absolute;right: 60px;font-size: 14px;width: 40px;height: 35px;">
-                <ion-icon *ngIf="!timeline.is_like" name="ios-heart-outline" (click)="setLikeForTimeline(timeline)"></ion-icon>
-                <ion-icon style="color: red;" *ngIf="timeline.is_like" name="ios-heart" (click)="setLikeForTimeline(timeline)"></ion-icon>
-                {{timeline.like_num}}
-              </span>
-              <span tappable style="position: absolute;right: 0px;font-size: 14px;width: 40px;height: 35px;">
-                <ion-icon name="ios-chatbubbles-outline" (click)="gotoTimelineDetailPage(timeline, i)"></ion-icon>
-                {{timeline.comment_num}}
-              </span>
+
+              <div>
+                <span tappable class="action-button" (click)="setLikeForTimeline(timeline)">
+                  <ion-icon *ngIf="!timeline.is_like" name="ios-thumbs-up-outline" ></ion-icon>
+                  <ion-icon style="color: red;" *ngIf="timeline.is_like" name="ios-thumbs-up-outline"></ion-icon>
+                  {{timeline.like_num}}
+                </span>
+                <span tappable class="action-button" (click)="gotoTimelineDetailPage(timeline, i)">
+                  <ion-icon name="ios-chatboxes-outline" ></ion-icon>
+                  {{timeline.comment_num}}
+                </span>
+                <span tappable class="action-button" (click)="gotoTimelineDetailPage(timeline, i)">
+                  <ion-icon name="ios-share-outline" ></ion-icon>
+                  {{timeline.comment_num}}
+                </span>
+              </div>
 
             </div>
 
@@ -65,6 +66,15 @@
       </ul>
     </div>
   </div>
+
+  <ion-fab right bottom>
+    <button ion-fab color="danger"><ion-icon name="camera"></ion-icon></button>
+    <ion-fab-list side="top">
+      <button ion-fab color="primary" (click)="presentTimelineCreateModal()">卖煤</button>
+      <button ion-fab color="secondary" (click)="presentTimelineCreateModal()">找车</button>
+      <button ion-fab color="dark" (click)="presentTimelineCreateModal()">心情</button>
+    </ion-fab-list>
+  </ion-fab>
 
   <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
     <ion-infinite-scroll-content></ion-infinite-scroll-content>

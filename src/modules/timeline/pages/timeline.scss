@@ -123,7 +123,6 @@ page-timeline {
     position: relative;
     border-bottom: 1px solid #e2e2e2;
     margin-top: 15px;
-    padding-bottom: 15px;
   }
   .po-hd{
     overflow: hidden;
@@ -180,7 +179,6 @@ page-timeline {
   .post{
     color: #252525;
     overflow: hidden;
-    padding-bottom: 10px;
   }
   .post img{
     padding: 10px 5px 0 0;
@@ -198,7 +196,14 @@ page-timeline {
   .time{
     clear: both;
     color: #b1b1b1;
-    float: left;
+    padding-bottom: 4px;
+  }
+  .action-button{
+    width: 30%;
+    display: inline-block;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
   .c-icon{
     width: 20px;

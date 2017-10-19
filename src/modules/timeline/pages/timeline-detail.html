@@ -26,7 +26,7 @@
             <div class="po-hd">
               <p class="po-name">{{ timeline.author?.nickname }}</p>
               <p class="post">
-                <span>{{timeline.content| nl2br}}</span>
+                <span style="white-space: pre-line;">{{timeline.content}}</span>
                 <img tappable imageViewer="{{ timeline.imgs[0].uri}}" *ngIf="timeline.imgs.length === 1" src="{{ timeline.imgs[0].uri}}?imageView/2/w/200">
 
                 <span class="img-muilt" [ngClass]="{'img-odd': (timeline.imgs.length % 2)}" *ngIf="timeline.imgs.length > 1">
@@ -67,7 +67,7 @@
           @{{ comment.parents.author.nickname }}:
         </span>
 
-        <div>
+        <div style="white-space: pre-line;">
           {{ comment.content }}
         </div>
       </div>

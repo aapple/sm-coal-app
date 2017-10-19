@@ -6,6 +6,7 @@ import { CoalPage } from '../../modules/coal/pages/coal';
 import { InfostorePage } from '../../modules/infostore/pages/infostore/infostore';
 import {HomePage} from "../../modules/home/pages/home";
 import {LogisticsPage} from "../../modules/infostore/pages/logistics/logistics";
+import {TimelinePage} from "../../modules/timeline/pages/timeline";
 
 
 @Component({
@@ -13,7 +14,8 @@ import {LogisticsPage} from "../../modules/infostore/pages/logistics/logistics";
 })
 export class TabsPage {
 
-  tab1Root = HomePage;
+  // tab1Root = HomePage;
+  tab1Root = TimelinePage;
   tab2Root = CoalPage;
   tab3Root = CoalPage;
   // tab4Root = InfostorePage;

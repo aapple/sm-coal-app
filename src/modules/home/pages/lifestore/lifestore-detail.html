@@ -15,6 +15,10 @@
 
 <ion-content>
 
+  <div *ngIf="lifestore.photoPath">
+    <img tappable imageViewer src="{{lifestore.photoPath}}" style="width: 100%;height: 200px;">
+  </div>
+
   <div class="interest_list">
     <ul>
       <li>
@@ -36,9 +40,7 @@
     <span style="color: #999;">{{lifestore.introduction ? lifestore.introduction : "暂无简介"}}</span>
   </div>
 
-  <div *ngIf="lifestore.photoPath">
-    <img tappable imageViewer src="{{lifestore.photoPath}}" style="width: 100%;">
-  </div>
+
 </ion-content>
 
 <ion-footer>
