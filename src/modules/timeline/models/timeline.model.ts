@@ -8,6 +8,7 @@ export class Timeline {
     public id: number,
     public user_id: number,
     public content: string,
+    public timelineType: string,
     public author: User,
     public imgs: TimelineImg[],
     public comments: TimelineComment[],

@@ -19,7 +19,7 @@ export class CoalPage {
   productPriceList: any = [];
   queryText: string;
   pageTitle: string = "";
-  priceOwnerType: string = "1";
+  priceOwnerType: string = "2";
 
   pageIndex: number = 0;
   pageNumber: number = 6;

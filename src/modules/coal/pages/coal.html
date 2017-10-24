@@ -62,11 +62,11 @@
   </ion-grid>
 
   <ion-segment tappable style="padding: 10px 16px;" [(ngModel)]="priceOwnerType" padding *ngIf="factoryType == 1" (click)="onSegmentClick()">
-    <ion-segment-button value="1">
-      矿方价
-    </ion-segment-button>
     <ion-segment-button value="2">
       代发价
+    </ion-segment-button>
+    <ion-segment-button value="1">
+      矿方价
     </ion-segment-button>
   </ion-segment>
 
@@ -97,22 +97,22 @@
             <ion-col class="pararm">
               <svg style="color:blue;" class="icon svg_icon icon_params_2" aria-hidden="true">
                 <use xlink:href="#icon-shui"></use>
-              </svg>{{productPrice.coal_quanshuifen}}%
+              </svg>{{productPrice.coal_quanshuifen}}
             </ion-col>
             <ion-col class="pararm">
               <svg style="color:grey;" class="icon svg_icon icon_params_1" aria-hidden="true">
                 <use xlink:href="#icon-hui"></use>
-              </svg>{{productPrice.coal_huifen}}%
+              </svg>{{productPrice.coal_huifen}}
             </ion-col>
             <ion-col class="pararm">
               <svg style="color:green;" class="icon svg_icon icon_params_2" aria-hidden="true">
                 <use xlink:href="#icon-liu"></use>
-              </svg>{{productPrice.coal_liufen}}%
+              </svg>{{productPrice.coal_liufen}}
             </ion-col>
             <ion-col class="pararm">
               <svg style="color:black;" class="icon svg_icon icon_params_1" aria-hidden="true">
                 <use xlink:href="#icon-hui1"></use>
-              </svg>{{productPrice.coal_huifafen}}%
+              </svg>{{productPrice.coal_huifafen}}
             </ion-col>
           </ion-row>
         </ion-grid>
@@ -122,27 +122,27 @@
             <ion-col class="pararm">
               <svg style="color:red; " class="icon svg_icon icon_params_1" aria-hidden="true">
                 <use xlink:href="#icon-hui1"></use>
-              </svg>{{productPrice.coke_huifafen}}%
+              </svg>{{productPrice.coke_huifafen}}
             </ion-col>
             <ion-col class="pararm">
               <svg style="color:blue;" class="icon svg_icon icon_params_2" aria-hidden="true">
                 <use xlink:href="#icon-shui"></use>
-              </svg>{{productPrice.coke_shuifen}}%
+              </svg>{{productPrice.coke_shuifen}}
             </ion-col>
             <ion-col class="pararm">
               <svg style="color:grey;" class="icon svg_icon icon_params_1" aria-hidden="true">
                 <use xlink:href="#icon-hui"></use>
-              </svg>{{productPrice.coke_huifen}}%
+              </svg>{{productPrice.coke_huifen}}
             </ion-col>
             <ion-col class="pararm">
               <svg style="color:green;" class="icon svg_icon icon_params_2" aria-hidden="true">
                 <use xlink:href="#icon-liu"></use>
-              </svg>{{productPrice.coke_hanliu}}%
+              </svg>{{productPrice.coke_hanliu}}
             </ion-col>
             <ion-col class="pararm">
               <svg style="color:black;" class="icon svg_icon icon_params_1" aria-hidden="true">
                 <use xlink:href="#icon-tan"></use>
-              </svg>{{productPrice.coke_hantan}}%
+              </svg>{{productPrice.coke_hantan}}
             </ion-col>
           </ion-row>
         </ion-grid>

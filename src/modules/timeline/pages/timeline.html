@@ -4,11 +4,6 @@
       神木煤炭
     </ion-title>
 
-    <ion-buttons end>
-      <button ion-button icon-only color="grey" (click)="presentTimelineCreateModal()">
-        <ion-icon name="camera"></ion-icon>
-      </button>
-    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
@@ -16,6 +11,18 @@
   <ion-refresher (ionRefresh)="doRefresh($event)" >
     <ion-refresher-content pullingIcon="md-aperture"></ion-refresher-content>
   </ion-refresher>
+
+  <ion-segment tappable style="padding: 10px 16px;" [(ngModel)]="timelineType" padding (click)="onSegmentClick()">
+    <ion-segment-button value="1">
+      煤炭
+    </ion-segment-button>
+    <ion-segment-button value="2">
+      物流
+    </ion-segment-button>
+    <ion-segment-button value="3">
+      生活
+    </ion-segment-button>
+  </ion-segment>
 
   <div id="main">
     <div id="list">
@@ -70,9 +77,9 @@
   <ion-fab right bottom>
     <button ion-fab color="danger"><ion-icon name="camera"></ion-icon></button>
     <ion-fab-list side="top">
-      <button ion-fab color="primary" (click)="presentTimelineCreateModal()">卖煤</button>
-      <button ion-fab color="secondary" (click)="presentTimelineCreateModal()">找车</button>
-      <button ion-fab color="dark" (click)="presentTimelineCreateModal()">心情</button>
+      <button ion-fab color="primary" (click)="presentTimelineCreateModal('1')">煤炭</button>
+      <button ion-fab color="secondary" (click)="presentTimelineCreateModal('2')">物流</button>
+      <button ion-fab color="dark" (click)="presentTimelineCreateModal('3')">生活</button>
     </ion-fab-list>
   </ion-fab>
 

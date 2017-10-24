@@ -15,6 +15,8 @@ import { TimelineCreatePage } from './timeline-create';
 export class TimelinePage {
 
   currentShowOptionIndex: -1;
+  timelineType: string = "1";
+
   //
   // constructor
   constructor(
@@ -33,6 +35,10 @@ export class TimelinePage {
   ionViewDidEnter() {
     // get timelines
     this.timelineService.index();
+  }
+
+  onSegmentClick(){
+
   }
 
 
@@ -76,11 +82,11 @@ export class TimelinePage {
 
   //
   // present timeline create modal
-  presentTimelineCreateModal() {
+  presentTimelineCreateModal(timelineType) {
     let me = this;
     if (this.heyApp.authService.authOrLogin()) {
       let page = TimelineCreatePage;
-      let params = {}
+      let params = {"timelineType": timelineType}
       let callback = function() {
         me.timelineService.index();
       }

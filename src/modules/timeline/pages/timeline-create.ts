@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, ViewController } from 'ionic-angular';
+import {NavController, NavParams, ViewController} from 'ionic-angular';
 import { ImagePicker, Transfer, Camera } from 'ionic-native';
 
 import { Timeline } from '../models/timeline.model';
@@ -30,6 +30,10 @@ export class TimelineCreatePage {
 
   timeline: Timeline;
 
+  timelineType: string = "3";
+
+  pageTitle: string = "新鲜事";
+
 
   //
   // constructor
@@ -37,8 +41,19 @@ export class TimelineCreatePage {
     public heyApp: AppService,
     public timelineService: TimelineService,
     public navCtrl: NavController,
-    public viewCtrl: ViewController
+    public viewCtrl: ViewController,
+    public navParams: NavParams
   ) {
+
+    this.timelineType = navParams.data.timelineType;
+
+    if(this.timelineType == "1"){
+      this.pageTitle = "煤炭";
+    } else if(this.timelineType == "2"){
+      this.pageTitle = "物流";
+    } else {
+      this.pageTitle = "新鲜事";
+    }
   }
 
 
@@ -59,6 +74,7 @@ export class TimelineCreatePage {
 
         let data: any = {
           content: ngForm.value.content,
+          timelineType: this.timelineType,
           imgs: this.imgs,
           video: this.video ? this.video.id : null,
         };
