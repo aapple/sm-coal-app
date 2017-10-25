@@ -25,49 +25,59 @@
   </ion-segment>
 
   <div id="main">
-    <div id="list">
+    <div>
       <ul>
         <li *ngFor="let timeline of timelineService.timelines; let i=index">
 
-          <div class="po-avt-wrap">
-            <img tappable imageViewer="{{ heyApp.helper.getImg(timeline.author?.avatar) }}" class="po-avt" src="{{ heyApp.helper.getImg(timeline.author?.avatar) }}?imageView/2/w/100">
-          </div>
+          <div style="clear: both;
+    line-height: 1.5;
+    overflow: hidden;
+    position: relative;
+    border-bottom: 1px solid #e2e2e2;
+    margin-top: 15px;"  *ngIf="timeline.timelineType == timelineType">
 
-          <div class="po-cmt">
-            <div class="po-hd">
-              <p class="po-name" tappable (click)="gotoTimelineDetailPage(timeline, i)">{{ timeline.author?.nickname }}</p>
-              <p class="time">{{ timeline.created_at | timeago }}</p>
-              <p class="post">
-                <span tappable (click)="gotoTimelineDetailPage(timeline, i)" style="white-space: pre-line;">{{formatContent(timeline.content, timeline.isAll)}}</span>
-                <u tappable *ngIf="!timeline.isAll && timeline.content && timeline.content.length>100" (click)="showTimelineAll(i)" class="is_show">全文</u>
-                <u tappable *ngIf="timeline.isAll && timeline.content && timeline.content.length>100" (click)="showTimelineAll(i)" class="is_show">收起</u>
-                <img tappable imageViewer="{{ timeline.imgs[0].uri}}" *ngIf="timeline.imgs.length === 1" src="{{ timeline.imgs[0].uri}}?imageView/2/w/200">
+            <div class="po-avt-wrap">
+              <img tappable imageViewer="{{ heyApp.helper.getImg(timeline.author?.avatar) }}" class="po-avt" src="{{ heyApp.helper.getImg(timeline.author?.avatar) }}?imageView/2/w/100">
+            </div>
 
-                <span class="img-muilt" [ngClass]="{'img-odd': (timeline.imgs.length % 2)}" *ngIf="timeline.imgs.length > 1">
+            <div class="po-cmt">
+              <div class="po-hd">
+                <p class="po-name" tappable (click)="gotoTimelineDetailPage(timeline, i)">{{ timeline.author?.nickname }}</p>
+                <p class="time">{{ timeline.created_at | timeago }}</p>
+                <p class="post">
+                  <span tappable (click)="gotoTimelineDetailPage(timeline, i)" style="white-space: pre-line;">{{formatContent(timeline.content, timeline.isAll)}}</span>
+                  <u tappable *ngIf="!timeline.isAll && timeline.content && timeline.content.length>100" (click)="showTimelineAll(i)" class="is_show">全文</u>
+                  <u tappable *ngIf="timeline.isAll && timeline.content && timeline.content.length>100" (click)="showTimelineAll(i)" class="is_show">收起</u>
+                  <img tappable imageViewer="{{ timeline.imgs[0].uri}}" *ngIf="timeline.imgs.length === 1" src="{{ timeline.imgs[0].uri}}?imageView/2/w/200">
+
+                  <span class="img-muilt" [ngClass]="{'img-odd': (timeline.imgs.length % 2)}" *ngIf="timeline.imgs.length > 1">
                   <img tappable imageViewer="{{heyApp.helper.getImg(img.uri)}}" src="{{heyApp.helper.getImg(img.uri)}}?imageView/2/w/200" *ngFor="let img of timeline.imgs; let i = index">
                   <font class="clear-float"></font>
                 </span>
-              </p>
+                </p>
 
-              <div>
+                <div>
                 <span tappable class="action-button" (click)="setLikeForTimeline(timeline)">
                   <ion-icon *ngIf="!timeline.is_like" name="ios-thumbs-up-outline" ></ion-icon>
                   <ion-icon style="color: red;" *ngIf="timeline.is_like" name="ios-thumbs-up-outline"></ion-icon>
                   {{timeline.like_num}}
                 </span>
-                <span tappable class="action-button" (click)="gotoTimelineDetailPage(timeline, i)">
+                  <span tappable class="action-button" (click)="gotoTimelineDetailPage(timeline, i)">
                   <ion-icon name="ios-chatboxes-outline" ></ion-icon>
                   {{timeline.comment_num}}
                 </span>
-                <span tappable class="action-button" (click)="gotoTimelineDetailPage(timeline, i)">
+                  <span tappable class="action-button" (click)="gotoTimelineDetailPage(timeline, i)">
                   <ion-icon name="ios-share-outline" ></ion-icon>
                   {{timeline.comment_num}}
                 </span>
+                </div>
+
               </div>
 
             </div>
 
           </div>
+
 
         </li>
       </ul>
