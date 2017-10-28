@@ -1,4 +1,25 @@
 page-timeline {
+
+  .content-ios {
+
+  }
+
+  .timeline-div{
+    clear: both;
+    line-height: 1.5;
+    overflow: hidden;
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 15px;
+    background-color: #fff !important;
+  }
+
+  .timeline-op{
+    border-top: 0.5px solid #e2e2e2;
+    margin-top: 10px;
+  }
+
   body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
     margin: 0;
     padding: 0;
@@ -152,8 +173,9 @@ page-timeline {
     width: 40px;
     height: 40px;
     position: absolute;
-    top: 0;
+    top: 15px;
     left: 10px;
+    border-radius: 20px;
   }
   .r {
     clear: both;
@@ -172,11 +194,10 @@ page-timeline {
     box-sizing: border-box;
   }
   .po-name{
-    /* font-weight: bold; */
-    color: #576b95;
+    font-weight: bold;
   }
   .post{
-    color: #252525;
+    //color: #252525;
     overflow: hidden;
   }
   .post img{

@@ -12,7 +12,7 @@
     <ion-refresher-content pullingIcon="md-aperture"></ion-refresher-content>
   </ion-refresher>
 
-  <ion-segment tappable style="padding: 10px 16px;" [(ngModel)]="timelineType" padding (click)="onSegmentClick()">
+  <ion-segment tappable style="padding: 10px 16px;background: #fff;" [(ngModel)]="timelineType" padding (click)="onSegmentClick()">
     <ion-segment-button value="1">
       煤炭
     </ion-segment-button>
@@ -29,12 +29,7 @@
       <ul>
         <li *ngFor="let timeline of timelineService.timelines; let i=index">
 
-          <div style="clear: both;
-    line-height: 1.5;
-    overflow: hidden;
-    position: relative;
-    border-bottom: 1px solid #e2e2e2;
-    margin-top: 15px;"  *ngIf="timeline.timelineType == timelineType">
+          <div class="timeline-div"  *ngIf="timeline.timelineType == timelineType">
 
             <div class="po-avt-wrap">
               <img tappable imageViewer="{{ heyApp.helper.getImg(timeline.author?.avatar) }}" class="po-avt" src="{{ heyApp.helper.getImg(timeline.author?.avatar) }}?imageView/2/w/100">
@@ -48,6 +43,11 @@
                   <span tappable (click)="gotoTimelineDetailPage(timeline, i)" style="white-space: pre-line;">{{formatContent(timeline.content, timeline.isAll)}}</span>
                   <u tappable *ngIf="!timeline.isAll && timeline.content && timeline.content.length>100" (click)="showTimelineAll(i)" class="is_show">全文</u>
                   <u tappable *ngIf="timeline.isAll && timeline.content && timeline.content.length>100" (click)="showTimelineAll(i)" class="is_show">收起</u>
+
+                  <u *ngIf="timeline.contactPhone" style="text-decoration: none;border-top: 0.5px solid #e2e2e2;
+    padding-top: 10px;
+    margin-top: 10px;
+    display: block;">联系电话：<a tappable class="text_phone" href="tel:{{timeline.contactPhone}}">{{timeline.contactPhone}}</a></u>
                   <img tappable imageViewer="{{ timeline.imgs[0].uri}}" *ngIf="timeline.imgs.length === 1" src="{{ timeline.imgs[0].uri}}?imageView/2/w/200">
 
                   <span class="img-muilt" [ngClass]="{'img-odd': (timeline.imgs.length % 2)}" *ngIf="timeline.imgs.length > 1">
@@ -56,20 +56,20 @@
                 </span>
                 </p>
 
-                <div>
-                <span tappable class="action-button" (click)="setLikeForTimeline(timeline)">
-                  <ion-icon *ngIf="!timeline.is_like" name="ios-thumbs-up-outline" ></ion-icon>
-                  <ion-icon style="color: red;" *ngIf="timeline.is_like" name="ios-thumbs-up-outline"></ion-icon>
-                  {{timeline.like_num}}
-                </span>
-                  <span tappable class="action-button" (click)="gotoTimelineDetailPage(timeline, i)">
-                  <ion-icon name="ios-chatboxes-outline" ></ion-icon>
-                  {{timeline.comment_num}}
-                </span>
-                  <span tappable class="action-button" (click)="gotoTimelineDetailPage(timeline, i)">
-                  <ion-icon name="ios-share-outline" ></ion-icon>
-                  {{timeline.comment_num}}
-                </span>
+                <div class="timeline-op">
+                  <span tappable class="action-button" (click)="setLikeForTimeline(timeline)">
+                    <ion-icon *ngIf="!timeline.is_like" name="ios-thumbs-up-outline" ></ion-icon>
+                    <ion-icon style="color: red;" *ngIf="timeline.is_like" name="ios-thumbs-up-outline"></ion-icon>
+                    {{timeline.like_num}}赞
+                  </span>
+                    <span tappable class="action-button" (click)="gotoTimelineDetailPage(timeline, i)">
+                    <ion-icon name="ios-chatboxes-outline" ></ion-icon>
+                    {{timeline.comment_num}}评论
+                  </span>
+                  <span tappable class="action-button" (click)="presentActionSheet(timeline, i)">
+                    <ion-icon name="ios-share-outline" ></ion-icon>
+                    分享
+                  </span>
                 </div>
 
               </div>

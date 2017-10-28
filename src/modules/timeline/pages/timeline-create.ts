@@ -14,7 +14,7 @@ import { TimelineService } from '../services/timeline.service';
   templateUrl: 'timeline-create.html',
 })
 export class TimelineCreatePage {
-  newTimeline: {content?: string} = {};
+  newTimeline: {content?: string,contactPhone?: string} = {};
 
   //
   waiting: boolean = false;
@@ -74,6 +74,7 @@ export class TimelineCreatePage {
 
         let data: any = {
           content: ngForm.value.content,
+          contactPhone: ngForm.value.contactPhone,
           timelineType: this.timelineType,
           imgs: this.imgs,
           video: this.video ? this.video.id : null,

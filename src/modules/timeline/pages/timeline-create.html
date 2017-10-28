@@ -24,6 +24,9 @@
           <ion-textarea [(ngModel)]="newTimeline.content" name="content" rows="8" placeholder="有什么新鲜事...">
           </ion-textarea>
         </ion-item>
+      <ion-item *ngIf="timelineType == '1' || timelineType == '2'" style="margin-top: 15px;">
+        <ion-input style="padding-left: 20px;" type="text" [(ngModel)]="newTimeline.contactPhone" name="contactPhone" placeholder="请输入联系电话"></ion-input>
+      </ion-item>
     </form>
   </ion-list>
 
