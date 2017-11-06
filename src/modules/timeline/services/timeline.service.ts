@@ -12,6 +12,8 @@ export class TimelineService {
 
   timelineStoreVideoAPI: string = this.helper.getAPP('timeline/store-video');
 
+  timelineType: string = "1";
+
   timelines: Timeline[] = [];
   CACHE_TIMELINES: string = 'cache_timelines';
 
@@ -44,7 +46,7 @@ export class TimelineService {
   //
   // refresh
   refresh(params): Promise<Timeline[]> {
-    let api: string = this.helper.getAPP('timeline?type=refresh&id=' + params.id);
+    let api: string = this.helper.getAPP('timeline?type=refresh&id=' + params.id + '&timelineType=' + this.timelineType);
 
     return this.http.get(api, this.requestOptions)
     .toPromise()
@@ -61,7 +63,7 @@ export class TimelineService {
   //
   // infinite
   infinite(params): Promise<Timeline[]> {
-    let api: string = this.helper.getAPP('timeline?type=infinite&id=' + params.id);
+    let api: string = this.helper.getAPP('timeline?type=infinite&id=' + params.id + '&timelineType=' + this.timelineType);
 
     return this.http.get(api, this.requestOptions)
     .toPromise()
@@ -92,7 +94,7 @@ export class TimelineService {
   // index
   index(): Promise<Timeline[]> {
     //
-    let api: string = this.helper.getAPP('timeline');
+    let api: string = this.helper.getAPP('timeline?timelineType=' + this.timelineType);
 
     return this.http.get(api, this.requestOptions)
     .toPromise()
@@ -164,8 +166,11 @@ export class TimelineService {
   //
   //
   storageTimelines() {
-    let timelines = JSON.stringify(this.timelines);
-    this.storage.set(this.CACHE_TIMELINES, timelines);
+    if(this.timelineType == '1'){
+      let timelines = JSON.stringify(this.timelines);
+      this.storage.set(this.CACHE_TIMELINES, timelines);
+    }
+
   }
 
 

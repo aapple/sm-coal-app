@@ -25,7 +25,7 @@ page-timeline-detail {
         .comment-content {
           margin-left: 46px;
           margin-bottom: 16px;
-          border-bottom: 1px solid #fff;
+          border-bottom: 1px solid #e2e2e2;
           padding-bottom: 16px;
 
           .header {
@@ -298,13 +298,13 @@ page-timeline-detail {
     box-sizing: border-box;
   }
   .po-name{
-    /* font-weight: bold; */
-    color: #576b95;
+    font-weight: bold;
   }
   .post{
     color: #252525;
     overflow: hidden;
     padding-bottom: 10px;
+    display: inline-block;
   }
   .post img{
     padding: 10px 5px 0 0;

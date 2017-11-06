@@ -12,7 +12,7 @@
     <ion-refresher-content pullingIcon="md-aperture"></ion-refresher-content>
   </ion-refresher>
 
-  <ion-segment tappable style="padding: 10px 16px;background: #fff;" [(ngModel)]="timelineType" padding (click)="onSegmentClick()">
+  <ion-segment tappable style="padding: 10px 16px;background: #fff;" [(ngModel)]="timelineService.timelineType" padding (click)="onSegmentClick()">
     <ion-segment-button value="1">
       煤炭
     </ion-segment-button>
@@ -29,7 +29,7 @@
       <ul>
         <li *ngFor="let timeline of timelineService.timelines; let i=index">
 
-          <div class="timeline-div"  *ngIf="timeline.timelineType == timelineType">
+          <div class="timeline-div">
 
             <div class="po-avt-wrap">
               <img tappable imageViewer="{{ heyApp.helper.getImg(timeline.author?.avatar) }}" class="po-avt" src="{{ heyApp.helper.getImg(timeline.author?.avatar) }}?imageView/2/w/100">

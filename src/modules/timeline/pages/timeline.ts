@@ -16,9 +16,6 @@ import { TimelineCreatePage } from './timeline-create';
 })
 export class TimelinePage {
 
-  currentShowOptionIndex: -1;
-  timelineType: string = "1";
-
   //
   // constructor
   constructor(
@@ -41,7 +38,7 @@ export class TimelinePage {
   }
 
   onSegmentClick(){
-
+    this.timelineService.index();
   }
 
 
@@ -73,14 +70,6 @@ export class TimelinePage {
         timeline.like_num = newTimeline.like_num;
       });
     }
-  }
-
-  changeOpent(index){
-    this.currentShowOptionIndex = index;
-  }
-
-  backdropclick(e){
-    this.currentShowOptionIndex = -1;
   }
 
   //
