@@ -36,12 +36,12 @@
     </div>
     <div class="right">
       <div class="first_row">
-        <div data-href="http://m.toutiao.com/profile/5439112463/?from=weitoutiao" class="name">
+        <div data-href="http://m.toutiao.com/profile/5439112463/?from=weitoutiao" class="name" id="poster">
           程浩
         </div>
 
       </div>
-      <div class="second_row">
+      <div class="second_row" id="post_time">
         昨天 8:37
       </div>
     </div>
@@ -49,7 +49,7 @@
 
     </div>
   </div>
-  <div class="content">
+  <div class="content" id="post_content">
     （转）茅台到了8100亿，老有一些朋友让我站在投资专业的角度分析一下茅台有没有泡沫？
     <br />统一答复一下：茅台属于酱香型白酒，没有泡沫，有泡沫的那叫啤酒！茅台和腾讯，facebook一样，都是社交概念股
   </div>
@@ -117,5 +117,20 @@
   </div>
 </div>
 </body>
-<script src="share_files/util.js"></script>
+<script>
+
+  $(document).ready(function(){
+
+    $.post("http://coalapp.smmeitan.cn:8900/app/findTimelineById", { id: 72},
+      function(data){
+        var obj = JSON.parse(data);
+        $("#poster").html(obj.author.nickname);
+        $("#poster").html(obj.author.nickname);
+        $("#post_content").html(obj.content);
+      });
+
+    //$("#myDiv").html(htmlobj.responseText);
+  });
+
+</script>
 </html>
