@@ -18,12 +18,11 @@
       <ul>
         <li>
 
-          <div class="po-avt-wrap">
-            <img tappable imageViewer="{{ heyApp.helper.getImg(timeline.author?.avatar) }}" class="po-avt" src="{{ heyApp.helper.getImg(timeline.author?.avatar) }}?imageView/2/w/100">
-          </div>
-
           <div class="po-cmt">
             <div class="po-hd">
+              <div class="po-avt-wrap">
+                <img tappable imageViewer="{{ heyApp.helper.getImg(timeline.author?.avatar) }}" class="po-avt" src="{{ heyApp.helper.getImg(timeline.author?.avatar) }}?imageView/2/w/100">
+              </div>
               <p class="po-name">{{ timeline.author?.nickname }}</p>
               <p class="time">{{ timeline.created_at | timeago }}</p>
 

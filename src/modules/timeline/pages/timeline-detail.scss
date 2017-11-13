@@ -292,13 +292,14 @@ page-timeline-detail {
   }
   .po-cmt{
     float: left;
-    padding-left: 50px;
+    //padding-left: 20px;
     padding-right: 10px;
     width: 100%;
     box-sizing: border-box;
   }
   .po-name{
     font-weight: bold;
+    padding-left: 50px;
   }
   .post{
     color: #252525;
@@ -323,6 +324,7 @@ page-timeline-detail {
     clear: both;
     color: #b1b1b1;
     float: left;
+    padding-left: 50px;
   }
   .c-icon{
     width: 20px;
