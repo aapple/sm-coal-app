@@ -5,12 +5,6 @@
     </ion-title>
 
   </ion-navbar>
-</ion-header>
-
-<ion-content>
-  <ion-refresher (ionRefresh)="doRefresh($event)" >
-    <ion-refresher-content pullingIcon="md-aperture"></ion-refresher-content>
-  </ion-refresher>
 
   <ion-segment tappable style="padding: 10px 16px;background: #fff;" [(ngModel)]="timelineService.timelineType" padding (click)="onSegmentClick()">
     <ion-segment-button value="1">
@@ -23,6 +17,13 @@
       生活
     </ion-segment-button>
   </ion-segment>
+  
+</ion-header>
+
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)" >
+    <ion-refresher-content pullingIcon="md-aperture"></ion-refresher-content>
+  </ion-refresher>
 
   <div id="main">
     <div>

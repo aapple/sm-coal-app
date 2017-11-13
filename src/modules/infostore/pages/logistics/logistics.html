@@ -10,11 +10,6 @@
     <ion-title>物流</ion-title>
   </ion-navbar>
 
-</ion-header>
-
-
-<ion-content>
-
   <ion-toolbar no-border-top>
     <ion-searchbar color="primary"
                    [(ngModel)]="queryText"
@@ -25,10 +20,6 @@
     </ion-searchbar>
   </ion-toolbar>
 
-  <ion-refresher (ionRefresh)="doRefresh($event)">
-    <ion-refresher-content></ion-refresher-content>
-  </ion-refresher>
-
   <ion-segment style="padding: 10px 16px;background: #fff;" [(ngModel)]="showType" padding (ionChange)="onShowTypeChange()">
     <ion-segment-button value="logistics">
       物流信息
@@ -37,6 +28,15 @@
       物流部
     </ion-segment-button>
   </ion-segment>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
 
   <div class="I_list" *ngIf="showType == 'logistics'">
     <ul>

@@ -5,11 +5,6 @@
     <ion-title>信息部</ion-title>
   </ion-navbar>
 
-</ion-header>
-
-
-<ion-content>
-
   <ion-toolbar no-border-top>
     <ion-searchbar color="primary"
                    [(ngModel)]="queryText"
@@ -19,6 +14,11 @@
                    placeholder="根据信息部名字查询">
     </ion-searchbar>
   </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content>
 
   <ion-refresher (ionRefresh)="doRefresh($event)">
     <ion-refresher-content></ion-refresher-content>

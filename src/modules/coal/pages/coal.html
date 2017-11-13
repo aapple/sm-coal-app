@@ -4,11 +4,6 @@
     <ion-title>{{pageTitle}}</ion-title>
   </ion-navbar>
 
-</ion-header>
-
-
-<ion-content>
-
   <ion-toolbar no-border-top>
     <ion-searchbar color="primary"
                    [(ngModel)]="queryText"
@@ -18,10 +13,6 @@
                    placeholder="根据厂矿名称查询">
     </ion-searchbar>
   </ion-toolbar>
-
-  <ion-refresher (ionRefresh)="doRefresh($event)">
-    <ion-refresher-content></ion-refresher-content>
-  </ion-refresher>
 
   <ion-slides class="slide-title" class="slide-title" [slidesPerView]="pageNumber" [pager]="false">
     <ion-slide *ngFor="let slide of productTypeList; let i = pageIndex;">
@@ -69,6 +60,18 @@
       矿方价
     </ion-segment-button>
   </ion-segment>
+
+
+</ion-header>
+
+
+<ion-content>
+
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
 
   <div class="I_list">
     <ul>
