@@ -56,3 +56,7 @@
   </ion-list>
 </ion-content>
 
+<ion-footer [hidden]="firstFlag != '1'">
+  <button ion-button full color="primary" (click)="gotoTimeline()">完成</button>
+</ion-footer>
+

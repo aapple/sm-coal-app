@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import {NavController, NavParams} from 'ionic-angular';
 
 import { AppService } from '../../common/services/app.service';
 import { TimelineService } from '../services/timeline.service';
@@ -16,17 +16,22 @@ import { TimelineCreatePage } from './timeline-create';
 })
 export class TimelinePage {
 
+  isPerson = "0";
   //
   // constructor
   constructor(
     public timelineService: TimelineService,
     public heyApp: AppService,
+    public navParams: NavParams,
     public utilService: UtilService,
     public navCtrl: NavController,
   ) {
     console.log('Hey Timeline ~');
 
+    this.isPerson = navParams.data;
+
     this.timelineService.getTimelinesFromStorage();
+
   }
 
 

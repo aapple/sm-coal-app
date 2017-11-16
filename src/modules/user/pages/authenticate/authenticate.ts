@@ -6,6 +6,8 @@ import { AppService } from '../../../common/services/app.service';
 import { UserService} from '../../services/user.service';
 import {BrowserPage} from "../../../common/pages/browser";
 import {RoleSelectPage} from "./role-select";
+import {MeProfilePage} from "../me/me-profile";
+import {LocalStorageService} from "../../../common/services/localStorage.service";
 
 
 @Component({
@@ -24,6 +26,7 @@ export class AuthenticatePage {
     public userService: UserService,
     public viewCtrl: ViewController,
     public modalCtrl: ModalController,
+    public localStorageService: LocalStorageService,
     public navCtrl: NavController
   ) {
 
@@ -50,11 +53,15 @@ export class AuthenticatePage {
       .then(ret => {
         this.heyApp.authService.logIn(ret);
         this.viewCtrl.dismiss().then(() => {
-          this.heyApp.utilityComp.dismissLoading();
-          this.heyApp.utilityComp.presentToast('验证成功, 欢迎你： ' + ret.nickname);
+
           if(ret.firstFlag == 1){
-            let modal = this.modalCtrl.create(RoleSelectPage, ret)
-            modal.present();
+            this.heyApp.utilityComp.dismissLoading();
+            this.localStorageService.set("firstFlag", "1");
+            this.heyApp.utilityComp.presentToast('请完善您的资料，以便更好的交流！');
+            this.navCtrl.push(MeProfilePage);
+          } else {
+            this.heyApp.utilityComp.dismissLoading();
+            this.heyApp.utilityComp.presentToast('验证成功, 欢迎你： ' + ret.nickname);
           }
         });
       }, (data) => {

@@ -60,7 +60,7 @@ export class MePage {
 
   gotoMyTimelinePage() {
     if (this.heyApp.authService.authOrLogin()) {
-      this.navCtrl.push(TimelinePage);
+      this.navCtrl.push(TimelinePage, 1);
     }
   }
 

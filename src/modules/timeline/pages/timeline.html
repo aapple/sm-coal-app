@@ -6,7 +6,7 @@
 
   </ion-navbar>
 
-  <ion-segment tappable style="padding: 10px 16px;background: #fff;" [(ngModel)]="timelineService.timelineType" padding (click)="onSegmentClick()">
+  <ion-segment *ngIf="isPerson==0" tappable style="padding: 10px 16px;background: #fff;" [(ngModel)]="timelineService.timelineType" padding (click)="onSegmentClick()">
     <ion-segment-button value="1">
       煤炭
     </ion-segment-button>
