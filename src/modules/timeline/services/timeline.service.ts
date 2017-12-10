@@ -14,6 +14,8 @@ export class TimelineService {
 
   timelineType: string = "1";
 
+  isPerson = "0";
+
   timelines: Timeline[] = [];
   CACHE_TIMELINES: string = 'cache_timelines';
 

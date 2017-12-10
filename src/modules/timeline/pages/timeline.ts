@@ -16,7 +16,6 @@ import { TimelineCreatePage } from './timeline-create';
 })
 export class TimelinePage {
 
-  isPerson = "0";
   //
   // constructor
   constructor(
@@ -28,8 +27,7 @@ export class TimelinePage {
   ) {
     console.log('Hey Timeline ~');
 
-    this.isPerson = navParams.data;
-
+    this.timelineService.isPerson = navParams.data;
     this.timelineService.getTimelinesFromStorage();
 
   }
