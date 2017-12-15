@@ -40,11 +40,14 @@
       </div>
       <h2>{{productPrice.factory.name}}</h2>
 
-      <p style="padding-top: 10px;" *ngIf="productPrice.priceOwnerType==1">联系人：{{productPrice.factory.onwerCallPerson}} </p>
-      <p *ngIf="productPrice.priceOwnerType==1">联系电话：<a class="text_phone" href="tel:{{productPrice.factory.onwerCallNumber}}">{{productPrice.factory.onwerCallNumber}}</a></p>
+      <p style="padding-top: 10px;" *ngIf="productPrice.factory.factoryType==2">联系人：{{productPrice.factory.salerCallPerson}} </p>
+      <p *ngIf="productPrice.factory.factoryType==2">联系电话：<a class="text_phone" href="tel:{{productPrice.factory.salerCallNumber}}">{{productPrice.factory.salerCallNumber}}</a></p>
 
-      <p style="padding-top: 10px;" *ngIf="productPrice.priceOwnerType==2">业务专员：{{productPrice.factory.salerCallPerson}} </p>
-      <p *ngIf="productPrice.priceOwnerType==2">销售电话：<a class="text_phone" href="tel:{{productPrice.factory.salerCallNumber}}">{{productPrice.factory.salerCallNumber}}</a></p>
+      <p style="padding-top: 10px;" *ngIf="productPrice.priceOwnerType==1 && productPrice.factory.factoryType==1">联系人：{{productPrice.factory.onwerCallPerson}} </p>
+      <p *ngIf="productPrice.priceOwnerType==1 && productPrice.factory.factoryType==1">联系电话：<a class="text_phone" href="tel:{{productPrice.factory.onwerCallNumber}}">{{productPrice.factory.onwerCallNumber}}</a></p>
+
+      <p style="padding-top: 10px;" *ngIf="productPrice.priceOwnerType==2 && productPrice.factory.factoryType==1">业务专员：{{productPrice.factory.salerCallPerson}} </p>
+      <p *ngIf="productPrice.priceOwnerType==2 && productPrice.factory.factoryType==1">销售电话：<a class="text_phone" href="tel:{{productPrice.factory.salerCallNumber}}">{{productPrice.factory.salerCallNumber}}</a></p>
     </ion-item>
   </ion-list>
 
