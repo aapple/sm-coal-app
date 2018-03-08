@@ -13,6 +13,7 @@ log.txt
 npm-debug.log*
 *sm-coal-app.iml
 *.js
+!font.*
 
 .idea/
 .sass-cache/
@@ -30,6 +31,8 @@ plugins/android.json
 plugins/ios.json
 www/
 $RECYCLE.BIN/
+
+
 
 .DS_Store
 Thumbs.db
