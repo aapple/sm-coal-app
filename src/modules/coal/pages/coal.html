@@ -73,7 +73,7 @@
   </ion-refresher>
 
 
-  <div class="I_list">
+  <div class="I_list" [ngStyle]="{'padding-top':showSubPage == 1 ? '30px' : '0' }">
     <ul>
       <li tappable (click)="goProductPriceDetail(productPrice)" *ngFor="let productPrice of productPriceList" [ngStyle]="{'background':productPrice.state===0 ? '#efefef' : '' }">
 
