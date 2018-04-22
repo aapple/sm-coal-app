@@ -1,10 +1,3 @@
-
-使用以下两个命令即可运行起网页版
-
-> 1.npm install
-
-> 2.ionic serve
-
 # 初衷
 跳槽以后来到了新的公司，新的项目，每天朝九晚五，终于摆脱了以前朝九晚九的加班生活，谁说程序员就必须加班了，感觉自己作息也变得正常了起来。
 
@@ -49,7 +42,6 @@
 
 # 开发阶段分解
 因为本专题重点想讲的是基于Ionic2的APP开发，所以就以前端为核心去分解，后端如有必要，后面再补充。
-
 ###### 1. [Ionic2实战-项目初始化](http://www.jianshu.com/p/307afd700fef)；
 ###### 2. [Ionic2实战-框架和模块目录结构说明和设计](http://www.jianshu.com/p/cd7fae4ef267)；
 ###### 3. [Ionic2实战-Android版打包](http://www.jianshu.com/p/37633bda766c)；
@@ -73,13 +65,20 @@
 ###### 21. [Ionic2实战-图片上传功能开发](https://www.jianshu.com/p/598de407620b)；
 ###### 22. [Ionic2实战-拍照功能开发](https://www.jianshu.com/p/212fa3b7548e)；
 ###### 23. [Ionic2实战-注册登录模块开发](https://www.jianshu.com/p/5cb92e049b9f)；
-###### 24. Ionic2实战-首页模块开发；
-###### 25. Ionic2实战-煤价模块开发；
-###### 26. Ionic2实战-物流模块开发；
-###### 27. Ionic2实战-个人中心模块开发；
-###### 28. Ionic2实战-APP如何在Android应用商店上架发布；
-###### 29. Ionic2实战-APP如何在App Store上架发布；
-###### 30. Ionic2实战-APP如何生成推广链接进行多渠道推广；
+###### 24. [Ionic2实战-首页模块开发](https://www.jianshu.com/p/1bc4cee83835)；
+###### 25. [Ionic2实战-煤价模块开发](https://www.jianshu.com/p/98b944cd2e7f)；
+###### 26. [Ionic2实战-物流模块开发](https://www.jianshu.com/p/bc841327820b)；
+###### 27. [Ionic2实战-个人中心模块开发](https://www.jianshu.com/p/a92d077b3f8c)；
+###### 28. [Ionic2实战-APP如何在Android应用商店上架发布](https://www.jianshu.com/p/f56787610c69)；
+###### 29. [Ionic2实战-APP如何在App Store上架发布](https://www.jianshu.com/p/76619c7852d4)；
+###### 30. [Ionic2实战-APP如何生成推广链接进行多渠道推广](https://www.jianshu.com/p/16e154364036)；
+
+
+# 编译运行方法
+
+> 1.npm install
+
+> 2.ionic serve
 
 ##### 最后说点
 以上过程包含了Ionic2APP从开始的项目创建到基础功能搭建，到业务功能开发，再到打包和发布，还有如何推广，包含了一个商业APP应用的整个生命周期，一些新手坑我会重点写出来提醒大家，因为自己作为新手也踩的很蛋疼。
